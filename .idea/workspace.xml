@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/CoursGroupe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/LibelleCours.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/Utilisateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionCoursGroupe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionCoursGroupeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/IGestionCoursGroupe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="ajout de MockDAO &#10;(NON TESTE, A UTILISER OU A MODIFIER EN CONSEQUENCE )">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOCoursGroupe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/IContatVuePresenteurVoirCoursGroupe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/Modele.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/daos/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/vue/CoursGroupeAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/vue/VueVoirCoursGroupe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +46,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="listeCoursGroupe" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -122,26 +116,43 @@
       <option name="presentableId" value="Default" />
       <updated>1587774185037</updated>
       <workItem from="1587839833159" duration="380000" />
-      <workItem from="1587919613978" duration="10193000" />
+      <workItem from="1587919613978" duration="22123000" />
     </task>
+    <task id="LOCAL-00001" summary="Entites CoursGroupe utilisateur(partiel)&#10;Interacteur CoursGroupe">
+      <created>1587930708624</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587930708624</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Entites CoursGroupe utilisateur(partiel)&#10;Interacteur CoursGroupe" />
+    <MESSAGE value="ajout de MockDAO &#10;(NON TESTE, A UTILISER OU A MODIFIER EN CONSEQUENCE )" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de MockDAO &#10;(NON TESTE, A UTILISER OU A MODIFIER EN CONSEQUENCE )" />
   </component>
   <component name="WindowStateProjectService">
     <state x="283" y="6" width="1024" height="840" key="#Project_Structure" timestamp="1587839877298">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="283" y="6" width="1024" height="840" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1587839877298" />
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1587927904463">
+    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1587941867972">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1587927904463" />
+    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1587941867972" />
     <state x="100" y="99" width="1400" height="660" key="AVDManager" timestamp="1587919636877">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="100" y="99" width="1400" height="660" key="AVDManager/0.0.1600.860@0.0.1600.860" timestamp="1587919636877" />
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1587942763764">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1587942763764" />
     <state width="779" height="217" key="GridCell.Tab.0.bottom" timestamp="1587840282284">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -158,5 +169,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="779" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1587840282284" />
+    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587930641432">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1587930641432" />
   </component>
 </project>
