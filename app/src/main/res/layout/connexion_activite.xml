@@ -1,57 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_connexion"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="509dp"
-        android:layout_weight="1"
-        android:paddingLeft="145dp"
-        android:paddingTop="50dp"
-        android:text="@string/app_name"
-        android:textColor="@color/colorAccent"
-        android:textSize="36sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="530dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:padding="10px">
-
-        <EditText
-            android:id="@+id/txtUtilisateur"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/nom_utilisateur"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/txtMotDePasse"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/mot_de_passe"
-            android:inputType="textPassword"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="370dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btnConnexion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/connexion" />
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

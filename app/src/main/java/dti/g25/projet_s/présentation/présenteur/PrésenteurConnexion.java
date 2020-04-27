@@ -2,6 +2,7 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 
+import dti.g25.projet_s.dao.UtlisateurFactice;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurConnexion;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 
@@ -28,11 +29,10 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
     }
 
     @Override
-    public void tenterConnexion() throws Exception{
-        if(modèle.connecterUtilisateur(vue.getNomUtilisateur(), vue.getMotDePasseUtilisateur()))
-            activité.finish();
-        else
-            throw new Exception("Mauvais nom utilisateur/mot de passe");
+    public Boolean tenterConnexion(String nomUtilasiteur, String motDePasse) {
+
+        return new UtlisateurFactice().tenterConnexion(nomUtilasiteur, motDePasse);
+
     }
 
 }
