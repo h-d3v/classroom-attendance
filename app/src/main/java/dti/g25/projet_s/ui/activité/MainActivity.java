@@ -1,8 +1,10 @@
-package dti.g25.projet_s;
+package dti.g25.projet_s.ui.activité;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import dti.g25.projet_s.R;
 
 public class MainActivity extends AppCompatActivity {
 
