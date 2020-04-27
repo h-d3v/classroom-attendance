@@ -55,8 +55,8 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
         txtMotDePasse=racine.findViewById(R.id.txtMotDePasse);
         btnConnexion = racine.findViewById(R.id.btnConnexion);
         btnConnexion.setEnabled(false);
-        txtUtilisateur.addTextChangedListener(billetTextWatcher);
-        txtMotDePasse.addTextChangedListener(billetTextWatcher);
+        txtUtilisateur.addTextChangedListener(connexionTextWatcher);
+        txtMotDePasse.addTextChangedListener(connexionTextWatcher);
         btnConnexion.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 try {
@@ -70,7 +70,7 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
         return racine;
     }
 
-    private TextWatcher billetTextWatcher = new TextWatcher() {
+    private TextWatcher connexionTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -80,6 +80,8 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             if (getNomUtilisateur().trim().isEmpty() || getNomUtilisateur().trim().isEmpty()) {
                 btnConnexion.setEnabled(false);
+            } else {
+                btnConnexion.setEnabled(true);
             }
         }
 
