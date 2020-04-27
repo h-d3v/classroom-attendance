@@ -16,19 +16,23 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
     ContratVuePrésenteurConnexion.IVueConnexion vue;
 
     /**
-     * Constructeur du presentateur pour la connexion
+     * Constructeur du presenteur pour la connexion
      * @param activité Activité dans laquelle le présenteur de connexion sera placé
      * @param vue La vue qui est relié au présenteur de la connexion
      * @param modèle le modele du MVP
      */
-    public PrésenteurCréerBillet(Activity activité, ContratVuePrésenteurConnexion.IVueConnexion vue, Modèle modèle) {
+    public PrésenteurConnexion(Activity activité, ContratVuePrésenteurConnexion.IVueConnexion vue, Modèle modèle) {
         this.activité=activité;
         this.vue=vue;
         this.modèle=modèle;
     }
 
     @Override
-    public void tenterConnexion() {
-
+    public void tenterConnexion() throws Exception{
+        if(modèle.connecterUtilisateur(vue.getNomUtilisateur(), vue.getMotDePasseUtilisateur()))
+            activité.finish();
+        else
+            throw new Exception("Mauvais nom utilisateur/mot de passe");
     }
+
 }

@@ -86,7 +86,7 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
     }
 
     @Override
-    public String getMdpUtilisateur() {
+    public String getMotDePasseUtilisateur() {
         return txtMotDePasse.getText().toString();
     }
 

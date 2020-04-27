@@ -7,14 +7,14 @@ public interface ContratVuePrésenteurConnexion {
      */
     public interface IVueConnexion{
         public String getNomUtilisateur();
-        public String getMdpUtilisateur();
+        public String getMotDePasseUtilisateur();
     }
 
     /**
      * contrat du présenteur de connexion
      */
     public interface IPrésenteurConnexion {
-        public void tenterConnexion();
+        public void tenterConnexion() throws Exception;
     }
 
 }

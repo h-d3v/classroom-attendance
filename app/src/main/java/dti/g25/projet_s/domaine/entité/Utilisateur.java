@@ -2,7 +2,7 @@ package dti.g25.projet_s.domaine.entité;
 
 public class Utilisateur {
 
-    private String username;
+    private String nom;
     private String mdp;
     private Role rôle;
 
@@ -14,18 +14,18 @@ public class Utilisateur {
 
     /**
      * Contructeur complet
-     * @param username
+     * @param nom
      * @param mdp
      * @param rôle
      */
-    public Utilisateur(String username, String mdp, Role rôle) {
-        this.username = username;
+    public Utilisateur(String nom, String mdp, Role rôle) {
+        this.nom = nom;
         this.mdp = mdp;
         this.rôle = rôle;
     }
 
     public String getUsername() {
-        return username;
+        return nom;
     }
 
     public String getMdp() {
@@ -36,15 +36,15 @@ public class Utilisateur {
         return rôle;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNom (String nom) {
+        this.nom = nom;
     }
 
-    public void setMdp(String mdp) {
+    public void setMdp (String mdp) {
         this.mdp = mdp;
     }
 
-    public void setRôle(Role rôle) {
+    public void setRôle (Role rôle) {
         this.rôle = rôle;
     }
 
