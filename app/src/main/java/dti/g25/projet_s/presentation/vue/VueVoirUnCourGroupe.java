@@ -40,7 +40,7 @@ public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCour
         btnVoirSeances=racine.findViewById(R.id.btnVoirSeanceCour);
         tvSigleDuCours=racine.findViewById(R.id.tvSigleCours);
         tvNomDuCours=racine.findViewById(R.id.tvNomCour);
-        tvNbElevesInscrits=racine.findViewById(R.id.tvNbElevesCour);
+        tvNbElevesInscrits=racine.findViewById(R.id.tvNbEleves);
         tvNbElevesInscrits.setText("23");
         tvNomDuCours.setText(_presenteur.getLibelleCours().getTITRE());
         tvSigleDuCours.setText(_presenteur.getLibelleCours().getCODE());
