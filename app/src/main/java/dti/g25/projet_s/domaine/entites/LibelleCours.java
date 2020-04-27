@@ -11,4 +11,13 @@ public class LibelleCours {
         this.TITRE = TITRE;
         this.CODE = CODE;
     }
+
+
+    public String getCODE() {
+        return CODE;
+    }
+
+    public String getTITRE() {
+        return TITRE;
+    }
 }

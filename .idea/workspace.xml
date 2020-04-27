@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="ajout de MockDAO &#10;(NON TESTE, A UTILISER OU A MODIFIER EN CONSEQUENCE )">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOCoursGroupe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/IContatVuePresenteurVoirCoursGroupe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/Modele.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/daos/DAOFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/vue/CoursGroupeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/vue/VueVoirCoursGroupe.java" afterDir="false" />
+    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/VoirUnCourGroupeActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/contratVuePresenteur/ContratVpVoirUnCoursGroupe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/presenteur/PresenteurBtnVoirListeCoursGroupe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/presenteur/PresenteurVoirUnCourGroupe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/vue/VueVoirBtnListeCoursGroupes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/vue/VueVoirUnCourGroupe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_voir_un_courgroupe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_btn_voir_un_courgroupe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_un_courgroupe.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/CoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/CoursGroupe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/LibelleCours.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/LibelleCours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/Modele.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/Modele.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/daos/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/daos/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="8d09b262" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -39,6 +58,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -46,19 +66,20 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="listeCoursGroupe" />
+        <entry key="$PROJECT_DIR$" value="MockDAO" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1b0fyOjaa7FLLQoPfPX8LNay2k8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_28" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-25T18:42:34.057736Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="8d09b262" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-27T09:53:45.516Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -67,6 +88,18 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -91,8 +124,31 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Java" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
       <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
@@ -137,41 +193,23 @@
     <option name="LAST_COMMIT_MESSAGE" value="ajout de MockDAO &#10;(NON TESTE, A UTILISER OU A MODIFIER EN CONSEQUENCE )" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="283" y="6" width="1024" height="840" key="#Project_Structure" timestamp="1587839877298">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="283" y="6" width="1024" height="840" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1587839877298" />
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1587941867972">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1587941867972" />
-    <state x="100" y="99" width="1400" height="660" key="AVDManager" timestamp="1587919636877">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="100" y="99" width="1400" height="660" key="AVDManager/0.0.1600.860@0.0.1600.860" timestamp="1587919636877" />
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1587942763764">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1587942763764" />
-    <state width="779" height="217" key="GridCell.Tab.0.bottom" timestamp="1587840282284">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="779" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1587840282284" />
-    <state width="779" height="217" key="GridCell.Tab.0.center" timestamp="1587840282284">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="779" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1587840282284" />
-    <state width="779" height="217" key="GridCell.Tab.0.left" timestamp="1587840282284">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="779" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1587840282284" />
-    <state width="779" height="217" key="GridCell.Tab.0.right" timestamp="1587840282284">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="779" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1587840282284" />
-    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587930641432">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1587930641432" />
+    <state x="283" y="6" width="1024" height="840" key="#Project_Structure" />
+    <state x="283" y="6" width="1024" height="840" key="#Project_Structure/0.0.1600.860@0.0.1600.860" />
+    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" />
+    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" />
+    <state x="100" y="99" width="1400" height="660" key="AVDManager" />
+    <state x="100" y="99" width="1400" height="660" key="AVDManager/0.0.1600.860@0.0.1600.860" />
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" />
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" />
+    <state width="779" height="217" key="GridCell.Tab.0.bottom" />
+    <state width="779" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" />
+    <state width="779" height="217" key="GridCell.Tab.0.center" />
+    <state width="779" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" />
+    <state width="779" height="217" key="GridCell.Tab.0.left" />
+    <state width="779" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" />
+    <state width="779" height="217" key="GridCell.Tab.0.right" />
+    <state width="779" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" />
+    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
+    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" />
   </component>
 </project>

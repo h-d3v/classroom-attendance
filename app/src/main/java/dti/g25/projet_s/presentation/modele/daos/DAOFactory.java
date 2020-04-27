@@ -7,6 +7,5 @@ import dti.g25.projet_s.domaine.entites.Utilisateur;
 import java.util.List;
 
 public abstract class DAOFactory {
-
     public abstract List<CoursGroupe> creerListeCoursGroupeParUtilisateur(Utilisateur utilisateur);
 }

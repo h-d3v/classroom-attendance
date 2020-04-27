@@ -14,9 +14,15 @@ public class Modele {
     private DAOFactory daoFactory;
     private Context context;
 
-    public Modele(DAOFactory daoFactory) {
-        this.daoFactory = daoFactory;
+    /**
+     * Constructeur du modele
+     */
+    public Modele(Context context, DAOFactory daoFactory){
+        this.context=context;
+        this.daoFactory=daoFactory;
     }
+
+
 
     public void setUtilisateur(Utilisateur utilisateur){
         this.utilisateur=utilisateur;
@@ -25,4 +31,10 @@ public class Modele {
     public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
         return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
     }
+
+    public CoursGroupe getCourGroupeParPos(int position){
+        return coursGroupes.get(position);
+    }
+
+
 }

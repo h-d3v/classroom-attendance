@@ -27,6 +27,7 @@ public class CoursGroupe {
 
     public LibelleCours getLibelleCours() {
         return libelleCours;
-
     }
+
+
 }
