@@ -3,12 +3,17 @@ package dti.g25.projet_s.présentation.vue;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
+
+import java.security.NoSuchAlgorithmException;
 
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurConnexion;
@@ -53,8 +58,12 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
         txtUtilisateur.addTextChangedListener(billetTextWatcher);
         txtMotDePasse.addTextChangedListener(billetTextWatcher);
         btnConnexion.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                présenteur.tenterConnexion();
+            public void onClick(View v){
+                try {
+                    présenteur.tenterConnexion();
+                } catch (Exception e) {
+                    Log.e("Erreur", e.toString());
+                }
             }
         });
 
