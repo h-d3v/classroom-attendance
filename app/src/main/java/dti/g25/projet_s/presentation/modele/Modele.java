@@ -5,6 +5,8 @@ import dti.g25.projet_s.dao.DAO;
 import dti.g25.projet_s.domaine.entites.CoursGroupe;
 import dti.g25.projet_s.domaine.entites.Utilisateur;
 import dti.g25.projet_s.presentation.modele.daos.DAOFactory;
+
+import java.util.LinkedList;
 import java.util.List;
 
 public class Modele {
@@ -22,7 +24,14 @@ public class Modele {
         this.daoFactory=daoFactory;
     }
 
+    public Modele(Context context){
+        this.context=context;
+        coursGroupes=new LinkedList<>();
+    }
 
+    public void addCoursGroupe(CoursGroupe courGroupe){
+        coursGroupes.add(courGroupe);
+    }
 
     public void setUtilisateur(Utilisateur utilisateur){
         this.utilisateur=utilisateur;

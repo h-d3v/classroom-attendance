@@ -8,25 +8,23 @@
     <TextView
         android:id="@+id/tvSigleCours"
         android:layout_width="match_parent"
-        android:layout_height="91dp"
-        android:text="TextView" />
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#3D5AFE"
+        android:textSize="30sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="569dp">
+        android:layout_height="440dp">
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="149dp"
             android:layout_height="42dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="107dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginBottom="80dp"
-            android:text="Nom du cours"
-            app:layout_constraintBottom_toTopOf="@+id/btnVoirListeEleves"
-            app:layout_constraintEnd_toStartOf="@+id/tvNbElevesCour"
-            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginTop="42dp"
+            android:text="Nombre deleve inscrits:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -35,41 +33,30 @@
             android:layout_width="123dp"
             android:layout_height="41dp"
             android:layout_marginStart="253dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginBottom="284dp"
+            android:layout_marginTop="42dp"
             android:text="tvNbElevesCour"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvNomCour"
             android:layout_width="124dp"
             android:layout_height="47dp"
-            android:layout_marginStart="253dp"
-            android:layout_marginEnd="34dp"
-            android:layout_marginBottom="108dp"
+            android:layout_marginStart="71dp"
+            android:layout_marginTop="120dp"
             android:text="Nom du cours"
-            app:layout_constraintBottom_toTopOf="@+id/tvNbElevesCour"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btnVoirListeEleves"
-            android:layout_width="wrap_content"
+            android:layout_width="183dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="112dp"
-            android:layout_marginTop="53dp"
-            android:layout_marginEnd="115dp"
-            android:layout_marginBottom="19dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginEnd="92dp"
             android:text="Consulter les élèves"
-            app:layout_constraintBottom_toTopOf="@+id/btnVoirSeanceCour"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNbElevesCour" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <Button
             android:id="@+id/btnVoirSeanceCour"
@@ -82,21 +69,18 @@
             android:text="Consulter les séances"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.431"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnVoirListeEleves" />
+            app:layout_constraintTop_toBottomOf="@+id/btnVoirListeEleves"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="149dp"
             android:layout_height="42dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="99dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginBottom="107dp"
+            android:layout_marginTop="42dp"
             android:text="Nom du cours"
-            app:layout_constraintBottom_toTopOf="@+id/textView5"
-            app:layout_constraintEnd_toStartOf="@+id/tvNomCour"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

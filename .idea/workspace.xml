@@ -7,34 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/VoirUnCourGroupeActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/contratVuePresenteur/ContratVpVoirUnCoursGroupe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/presenteur/PresenteurBtnVoirListeCoursGroupe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/presenteur/PresenteurVoirUnCourGroupe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/vue/VueVoirBtnListeCoursGroupes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/vue/VueVoirUnCourGroupe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_voir_un_courgroupe.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_btn_voir_un_courgroupe.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_un_courgroupe.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/CoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/CoursGroupe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/LibelleCours.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/LibelleCours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/VoirUnCourGroupeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/VoirUnCourGroupeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/Modele.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/Modele.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/daos/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/daos/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,6 +166,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Entites CoursGroupe utilisateur(partiel)&#10;Interacteur CoursGroupe" />
