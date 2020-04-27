@@ -78,7 +78,9 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            if (getNomUtilisateur().trim().isEmpty() || getNomUtilisateur().trim().isEmpty()) {
+            if (getNomUtilisateur().trim().isEmpty()) {
+                btnConnexion.setEnabled(false);
+            } else if(getMotDePasseUtilisateur().trim().isEmpty()) {
                 btnConnexion.setEnabled(false);
             } else {
                 btnConnexion.setEnabled(true);

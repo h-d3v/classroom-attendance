@@ -61,4 +61,5 @@ public class Modèle {
         //rentourne en BYTE le hash a utilisé
         return md.digest(mdp.getBytes(StandardCharsets.UTF_8));
     }
+
 }
