@@ -12,7 +12,7 @@ import dti.g25.projet_s.présentation.vue.VueConnexion;
 
 public class ConnexionActivité extends AppCompatActivity {
 
-    private PrésenteurConnexion présenteur;
+    PrésenteurConnexion présenteur;
 
     /**
      * Initialise la vue pour l'activité Créer billet ansi que le présenteur
@@ -24,14 +24,14 @@ public class ConnexionActivité extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connexion_activite);
 
+        Modèle modèle= new Modèle();
         VueConnexion vue=new VueConnexion();
-        Modèle modèle=new Modèle();
 
         présenteur=new PrésenteurConnexion(this, vue, modèle);
         vue.setPrésenteur(présenteur);
 
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
+        ft.add(R.id.layout_connexion, vue);
         ft.commit();
-
     }
 }

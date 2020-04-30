@@ -14,7 +14,7 @@ public interface ContratVuePrésenteurConnexion {
      * contrat du présenteur de connexion
      */
     public interface IPrésenteurConnexion {
-        public void tenterConnexion() throws Exception;
+        public Boolean tenterConnexion(String nomUtilisateur, String motDePasse) throws Exception;
     }
 
 }

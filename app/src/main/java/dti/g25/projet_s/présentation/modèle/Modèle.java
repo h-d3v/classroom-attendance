@@ -18,12 +18,12 @@ public class Modèle {
      * @param motDePasse
      * @return connexion Boolean
      */
-    public Boolean connecterUtilisateur(String nomUtlisateur, String motDePasse) throws NoSuchAlgorithmException {
+    public Boolean connecterUtilisateur(String nomUtlisateur, String motDePasse) {
         Boolean connexion = false;
 
 
         for (Utilisateur utilisateur: utilisateurs) {
-            if(obtenirEmpreinteEnString(obtenirEmprunteSha(motDePasse)).equals(motDePasse) && utilisateur.getUsername().equals(nomUtlisateur)) {
+            if(nomUtlisateur.equals(motDePasse) && utilisateur.getUsername().equals(nomUtlisateur)) {
                 connexion = true;
                 utilisateurActuelle = utilisateur;
             }
@@ -32,34 +32,5 @@ public class Modèle {
         return connexion;
     }
 
-
-
-    public static String obtenirEmpreinteEnString(byte[] hash)
-    {
-        BigInteger number = new BigInteger(1, hash);
-
-        StringBuilder hexString = new StringBuilder(number.toString(16));
-
-        while (hexString.length() < 32)
-        {
-            hexString.insert(0, '0');
-        }
-
-        return hexString.toString();
-    }
-
-    /**
-     * Retourne en byte un string hashe en sha256
-     * @param mdp
-     * @return
-     */
-    public static byte[] obtenirEmprunteSha(String mdp) throws NoSuchAlgorithmException {
-
-        //choisi le type a utilisé
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
-
-        //rentourne en BYTE le hash a utilisé
-        return md.digest(mdp.getBytes(StandardCharsets.UTF_8));
-    }
 
 }

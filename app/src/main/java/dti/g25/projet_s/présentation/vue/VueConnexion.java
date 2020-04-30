@@ -9,11 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-
-import java.security.NoSuchAlgorithmException;
 
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurConnexion;
@@ -28,6 +25,7 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
 
     private TextView txtUtilisateur;
     private TextView txtMotDePasse;
+    private TextView txtMessageErreur;
     private Button btnConnexion;
 
     /**
@@ -49,20 +47,25 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
     public View onCreateView (LayoutInflater inflater,
                               ViewGroup container,
                               Bundle savedInstanceState) {
-        View racine = inflater.inflate(R.layout.connexion_activite, container, false);
+        View racine = inflater.inflate(R.layout.fragement_connexion, container, false);
 
         txtUtilisateur=racine.findViewById(R.id.txtUtilisateur);
         txtMotDePasse=racine.findViewById(R.id.txtMotDePasse);
         btnConnexion = racine.findViewById(R.id.btnConnexion);
+        txtMessageErreur = racine.findViewById(R.id.txtMessageErreur);
         btnConnexion.setEnabled(false);
         txtUtilisateur.addTextChangedListener(connexionTextWatcher);
         txtMotDePasse.addTextChangedListener(connexionTextWatcher);
         btnConnexion.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            @Override
+            public void onClick(View v) {
                 try {
-                    présenteur.tenterConnexion();
+                    if(présenteur.tenterConnexion(getNomUtilisateur(), getMotDePasseUtilisateur()))
+                        txtMessageErreur.setText("vous êtes bien connecter");
+                    else
+                        txtMessageErreur.setText("erreur dans la connexion");
                 } catch (Exception e) {
-                    Log.e("Erreur", e.toString());
+                    e.printStackTrace();
                 }
             }
         });
@@ -78,13 +81,12 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            if (getNomUtilisateur().trim().isEmpty()) {
+            if(getMotDePasseUtilisateur().trim().isEmpty())
                 btnConnexion.setEnabled(false);
-            } else if(getMotDePasseUtilisateur().trim().isEmpty()) {
+            else if (getNomUtilisateur().trim().isEmpty())
                 btnConnexion.setEnabled(false);
-            } else {
+            else
                 btnConnexion.setEnabled(true);
-            }
         }
 
         @Override
