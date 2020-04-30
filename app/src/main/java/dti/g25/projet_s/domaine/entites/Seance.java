@@ -3,13 +3,13 @@ package dti.g25.projet_s.domaine.entites;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 
-public class Sceance {
+public class Seance {
     private CoursGroupe _coursGroupe;
     private LinkedList<Absence> _absenceListe;
     private String _etat;
     private LocalDateTime _dateTime;
 
-    public Sceance(){
+    public Seance(){
         _coursGroupe=null;
         _absenceListe=null;
         _etat=null;
