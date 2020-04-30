@@ -1,4 +1,4 @@
-package dti.g25.projet_s.domaine.interacteur;
+package dti.g25.projet_s.domaine.interacteurs;
 
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Utilisateur;

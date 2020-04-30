@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activité.MainActivity">
         </activity>
-        <activity android:name=".ui.activité.ConnexionActivité">
+        <activity android:name=".ui.activité.ConnexionActivité"/>
+        <activity android:name=".ui.activité.VoirCoursGroupeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

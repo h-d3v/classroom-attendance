@@ -1,0 +1,39 @@
+package dti.g25.projet_s.domaine.entité;
+
+import java.util.List;
+
+import dti.g25.projet_s.domaine.entité.LibelleCours;
+
+public class CoursGroupe {
+
+    private final LibelleCours libelleCours;
+    private final int numeroGroupe;
+    private List<Utilisateur> participants;
+
+    public CoursGroupe(LibelleCours libelleCours, int numeroGroupe) {
+        this.libelleCours = libelleCours;
+        this.numeroGroupe = numeroGroupe;
+    }
+
+    public int getNumeroGroupe() {
+        return numeroGroupe;
+    }
+
+    public List<Utilisateur> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(List<Utilisateur> participants) {
+        this.participants = participants;
+    }
+
+    public LibelleCours getLibelleCours() {
+        return libelleCours;
+    }
+
+    @Override
+    public String toString() {
+        return libelleCours +
+                " Groupe: " + numeroGroupe;
+    }
+}
