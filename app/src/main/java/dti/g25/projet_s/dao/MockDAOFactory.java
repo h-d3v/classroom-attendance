@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MockDAOFactory extends DAOFactory {
+public class MockDAOFactory extends  DAOFactory{
 
-    List<Utilisateur> listeUtilisateur;
+    List<Utilisateur> listeUtilisateur= new LinkedList<Utilisateur>();
     HashMap<Utilisateur, List<CoursGroupe>> utilisateurListHashMap;
     List<CoursGroupe> listeCoursGroupe;
 

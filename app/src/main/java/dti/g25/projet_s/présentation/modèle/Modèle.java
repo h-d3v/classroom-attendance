@@ -5,6 +5,8 @@ import android.content.Context;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
+
+import java.util.LinkedList;
 import java.util.List;
 
 public class Modèle {
@@ -23,19 +25,17 @@ public class Modèle {
     public Modèle() {};
 
     public Modèle(DAOFactory daoFactory, Utilisateur utilisateur) {
-        this.utilisateur=utilisateur;
+        this.utilisateur = utilisateur;
         this.daoFactory = daoFactory;
-        chargerCoursGroupeUtilisateur();
+        coursGroupes = chargerCoursGroupeUtilisateur();
     }
 
-
-
-    public List<CoursGroupe> getCoursGroupes() {
-        return coursGroupes;
-    }
-
-    public void chargerCoursGroupeUtilisateur(){
-        coursGroupes= daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
+    /**
+     * Constructeur du modele
+     */
+    public Modèle(Context context, DAOFactory daoFactory){
+        this.context=context;
+        this.daoFactory=daoFactory;
     }
 
     /**
@@ -56,5 +56,30 @@ public class Modèle {
         }
 
         return connexion;
+    }
+
+    public List<CoursGroupe> getCoursGroupes() {
+        return coursGroupes;
+    }
+
+    public Modèle(Context context){
+        this.context=context;
+        coursGroupes=new LinkedList<>();
+    }
+
+    public void addCoursGroupe(CoursGroupe courGroupe){
+        coursGroupes.add(courGroupe);
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur){
+        this.utilisateur=utilisateur;
+    }
+
+    public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
+        return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
+    }
+
+    public CoursGroupe getCourGroupeParPos(int position){
+        return coursGroupes.get(position);
     }
 }

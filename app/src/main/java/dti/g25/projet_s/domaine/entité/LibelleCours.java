@@ -12,6 +12,14 @@ public class LibelleCours {
         this.CODE = CODE;
     }
 
+    public String getTITRE() {
+        return TITRE;
+    }
+
+    public String getCODE() {
+        return CODE;
+    }
+
     @Override
     public String toString() {
         return TITRE + " : " + CODE;
