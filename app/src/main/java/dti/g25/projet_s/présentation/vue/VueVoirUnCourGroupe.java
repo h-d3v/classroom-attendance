@@ -44,7 +44,7 @@ public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCour
         tvNbElevesInscrits.setText("23");
         tvNomDuCours.setText(_presenteur.getLibelleCours().getTITRE());
         tvSigleDuCours.setText(_presenteur.getLibelleCours().getCODE());
-        //setRetainInstance(true);
+        setRetainInstance(true);
         return racine;
     }
 }

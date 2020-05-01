@@ -5,7 +5,6 @@
       <config />
     </shared>
   </component>
-<<<<<<< HEAD
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
@@ -48,16 +47,6 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" />
-=======
-  <component name="ChangeListManager">
-    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/VoirUnCourGroupeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/activities/VoirUnCourGroupeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/Modele.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/presentation/modele/Modele.java" afterDir="false" />
->>>>>>> voirCourGroupe
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,11 +54,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-<<<<<<< HEAD
   <component name="ExecutionTargetManager" SELECTED_TARGET="HT84T1A03247" />
-=======
-  <component name="ExecutionTargetManager" SELECTED_TARGET="8d09b262" />
->>>>>>> voirCourGroupe
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -85,30 +70,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-<<<<<<< HEAD
         <option value="Interface" />
         <option value="layoutResourceFile_vertical" />
         <option value="valueResourceFile" />
         <option value="Class" />
         <option value="layoutResourceFile" />
-=======
-        <option value="Enum" />
-        <option value="Interface" />
-        <option value="layoutResourceFile" />
-        <option value="Class" />
->>>>>>> voirCourGroupe
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-<<<<<<< HEAD
-=======
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="MockDAO" />
-      </map>
-    </option>
->>>>>>> voirCourGroupe
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1b0fyOjaa7FLLQoPfPX8LNay2k8" />
@@ -118,16 +88,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-<<<<<<< HEAD
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="HT84T1A03247" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-27T21:56:48.450Z" />
-=======
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="8d09b262" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-27T09:53:45.516Z" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
->>>>>>> voirCourGroupe
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -229,55 +191,17 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-<<<<<<< HEAD
-=======
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
->>>>>>> voirCourGroupe
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-<<<<<<< HEAD
             <State>
               <option name="COLUMN_ORDER" />
             </State>
-=======
-            <State />
->>>>>>> voirCourGroupe
           </value>
         </entry>
       </map>
     </option>
   </component>
-<<<<<<< HEAD
-=======
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Entites CoursGroupe utilisateur(partiel)&#10;Interacteur CoursGroupe" />
-    <MESSAGE value="ajout de MockDAO &#10;(NON TESTE, A UTILISER OU A MODIFIER EN CONSEQUENCE )" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de MockDAO &#10;(NON TESTE, A UTILISER OU A MODIFIER EN CONSEQUENCE )" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="283" y="6" width="1024" height="840" key="#Project_Structure" />
-    <state x="283" y="6" width="1024" height="840" key="#Project_Structure/0.0.1600.860@0.0.1600.860" />
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" />
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" />
-    <state x="100" y="99" width="1400" height="660" key="AVDManager" />
-    <state x="100" y="99" width="1400" height="660" key="AVDManager/0.0.1600.860@0.0.1600.860" />
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" />
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" />
-    <state width="779" height="217" key="GridCell.Tab.0.bottom" />
-    <state width="779" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" />
-    <state width="779" height="217" key="GridCell.Tab.0.center" />
-    <state width="779" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" />
-    <state width="779" height="217" key="GridCell.Tab.0.left" />
-    <state width="779" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" />
-    <state width="779" height="217" key="GridCell.Tab.0.right" />
-    <state width="779" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" />
-    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
-    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" />
-  </component>
->>>>>>> voirCourGroupe
 </project>
