@@ -6,9 +6,23 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
+    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="Merge branch '24-creer-entites-seances-reviewed' of git.dti.crosemont.quebec:glanglois/projet-s into 8-modifier-l-etat-d-une-seance&#10;&#10;# Conflicts:&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/workspace.xml&#10;#&#9;Projet-s.iml&#10;#&#9;local.properties">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Absence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/EtatSeance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Seance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionSeance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/IGestionSeance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUneSeance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUneSeance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/IContratVoirUneSeance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_voir_une_seance.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_une_seance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUnCourGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUnCourGroupe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +50,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
-        <option value="Class" />
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -158,21 +172,22 @@
     <MESSAGE value="ajout de MockDAO &#10;(NON TESTE, A UTILISER OU A MODIFIER EN CONSEQUENCE )" />
     <MESSAGE value="Revision code #24" />
     <MESSAGE value="Revision billet #24 &quot;creer entité seance&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revision billet #24 &quot;creer entité seance&quot;" />
+    <MESSAGE value="Merge branch '24-creer-entites-seances-reviewed' of git.dti.crosemont.quebec:glanglois/projet-s into 8-modifier-l-etat-d-une-seance&#10;&#10;# Conflicts:&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/workspace.xml&#10;#&#9;Projet-s.iml&#10;#&#9;local.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch '24-creer-entites-seances-reviewed' of git.dti.crosemont.quebec:glanglois/projet-s into 8-modifier-l-etat-d-une-seance&#10;&#10;# Conflicts:&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/workspace.xml&#10;#&#9;Projet-s.iml&#10;#&#9;local.properties" />
   </component>
   <component name="WindowStateProjectService">
     <state x="283" y="6" width="1024" height="840" key="#Project_Structure" timestamp="1588292728487" />
     <state x="283" y="6" width="1024" height="840" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1588296870991">
+    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1588355753028">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1588296870991" />
+    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1588355753028" />
     <state x="100" y="99" width="1400" height="660" key="AVDManager" timestamp="1588292728487" />
     <state x="100" y="99" width="1400" height="660" key="AVDManager/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1588297177096">
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1588355701223">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588297177096" />
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588355701223" />
     <state width="779" height="217" key="GridCell.Tab.0.bottom" timestamp="1588292728487" />
     <state width="779" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
     <state width="779" height="217" key="GridCell.Tab.0.center" timestamp="1588292728487" />
