@@ -2,12 +2,14 @@ package dti.g25.projet_s.domaine.interacteurs;
 
 import java.time.LocalDateTime;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
-import dti.g25.projet_s.domaine.entites.Absence;
-import dti.g25.projet_s.domaine.entites.CoursGroupe;
-import dti.g25.projet_s.domaine.entites.Seance;
+import dti.g25.projet_s.domaine.entites.*;
 
 public interface IGestionSeance {
- Seance creerSeance(String statut, CoursGroupe coursGroupe, LinkedList<Absence> listeAbsence, LocalDateTime dateTime) ;
- Seance changerSatutSeance();
+ Seance creerSeance(CoursGroupe coursGroupe, LocalDateTime localDateTime) ;
+ Seance changerSatutSeance(EtatSeance etatSeance, Seance seance);
+ void ajouterAbsence(Utilisateur utilisateur, Seance seance);
 }

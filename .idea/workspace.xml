@@ -7,20 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/EtatSeance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/Sceance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/Seance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionSceance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionSeance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/IGestionSceance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/IGestionSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet-s.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Projet-s.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/Absence.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/Absence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/Seance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entites/Seance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/IGestionSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/IGestionSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -36,17 +41,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="layoutResourceFile" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="24-creer-entite-sceance" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,18 +73,6 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -104,31 +97,8 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Java" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
       <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
@@ -172,13 +142,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Entites CoursGroupe utilisateur(partiel)&#10;Interacteur CoursGroupe" />
@@ -186,23 +155,29 @@
     <option name="LAST_COMMIT_MESSAGE" value="ajout de MockDAO &#10;(NON TESTE, A UTILISER OU A MODIFIER EN CONSEQUENCE )" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="283" y="6" width="1024" height="840" key="#Project_Structure" />
-    <state x="283" y="6" width="1024" height="840" key="#Project_Structure/0.0.1600.860@0.0.1600.860" />
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" />
-    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" />
-    <state x="100" y="99" width="1400" height="660" key="AVDManager" />
-    <state x="100" y="99" width="1400" height="660" key="AVDManager/0.0.1600.860@0.0.1600.860" />
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" />
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" />
-    <state width="779" height="217" key="GridCell.Tab.0.bottom" />
-    <state width="779" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" />
-    <state width="779" height="217" key="GridCell.Tab.0.center" />
-    <state width="779" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" />
-    <state width="779" height="217" key="GridCell.Tab.0.left" />
-    <state width="779" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" />
-    <state width="779" height="217" key="GridCell.Tab.0.right" />
-    <state width="779" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" />
-    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
-    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" />
+    <state x="283" y="6" width="1024" height="840" key="#Project_Structure" timestamp="1588292728487" />
+    <state x="283" y="6" width="1024" height="840" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
+    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1588296870991">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="698" y="120" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1588296870991" />
+    <state x="100" y="99" width="1400" height="660" key="AVDManager" timestamp="1588292728487" />
+    <state x="100" y="99" width="1400" height="660" key="AVDManager/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1588292728487" />
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
+    <state width="779" height="217" key="GridCell.Tab.0.bottom" timestamp="1588292728487" />
+    <state width="779" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
+    <state width="779" height="217" key="GridCell.Tab.0.center" timestamp="1588292728487" />
+    <state width="779" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
+    <state width="779" height="217" key="GridCell.Tab.0.left" timestamp="1588292728487" />
+    <state width="779" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
+    <state width="779" height="217" key="GridCell.Tab.0.right" timestamp="1588292728487" />
+    <state width="779" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
+    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588292728487" />
+    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
+    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1588293402575">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1588293402575" />
   </component>
 </project>

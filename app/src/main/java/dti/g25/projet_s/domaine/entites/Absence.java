@@ -1,4 +1,8 @@
 package dti.g25.projet_s.domaine.entites;
 
-public class Absence {
+public enum Absence{
+    EST_ABSENT,
+    EST_PRESENT,
+    EST_EN_RETARD
+
 }

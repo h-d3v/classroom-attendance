@@ -2,25 +2,35 @@ package dti.g25.projet_s.domaine.interacteurs;
 
 import java.time.LocalDateTime;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
-import dti.g25.projet_s.domaine.entites.Absence;
-import dti.g25.projet_s.domaine.entites.CoursGroupe;
-import dti.g25.projet_s.domaine.entites.Seance;
+import android.os.Build;
+import androidx.annotation.RequiresApi;
+import dti.g25.projet_s.domaine.entites.*;
 
 public class GestionSeance implements IGestionSeance {
 
     @Override
-    public Seance creerSeance(String etat, CoursGroupe coursGroupe, LinkedList<Absence> listeAbsence, LocalDateTime dateTime){
-        Seance sceance=new Seance();
-        sceance.set_etat(etat);
-        sceance.set_coursGroupe(coursGroupe);
-        sceance.set_absenceListe(listeAbsence);
-        sceance.set_dateTime(dateTime);
-        return sceance;
+    public Seance creerSeance(CoursGroupe coursGroupe, LocalDateTime dateTime){
+      return new Seance(coursGroupe,dateTime);
     }
 
+
     @Override
-    public Seance changerSatutSeance() {
-        return null;
+    public Seance changerSatutSeance(EtatSeance etatSeance, Seance seance) {
+        seance.set_etat(etatSeance);
+        return seance;
     }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @Override
+    public void ajouterAbsence(Utilisateur utilisateur, Seance seance) {
+       seance.getUtilisateurAbsenceMap().replace(utilisateur, Absence.EST_ABSENT);
+
+    }
+
+
 }
