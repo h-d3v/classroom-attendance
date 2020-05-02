@@ -1,11 +1,17 @@
 package dti.g25.projet_s.présentation.modèle;
 
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
+import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 
+import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,7 +21,7 @@ public class Modèle {
     private List<CoursGroupe> coursGroupes;
     private DAOFactory daoFactory;
     private Context context;
-
+    private List<Seance> listeSeance;
     List<Utilisateur> utilisateurs;
     Utilisateur utilisateurActuelle;
 
@@ -81,5 +87,27 @@ public class Modèle {
 
     public CoursGroupe getCourGroupeParPos(int position){
         return coursGroupes.get(position);
+    }
+
+    public void ajouterAbsence(boolean présence, Utilisateur unUtilisateur, int positionSeance) {
+        listeSeance.set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
+    }
+
+    public Seance créerSéance(int indexGroupe) {
+        Seance uneSeance = new GestionSeance().creerSeance(getCourGroupeParPos(indexGroupe));
+        listeSeance.add(uneSeance);
+        return uneSeance;
+    }
+
+    public Seance getSeanceParPos(int positionSeance){
+        return listeSeance.get(positionSeance);
+    }
+
+    public int getPostionSeance(Seance seance){
+        return listeSeance.indexOf(seance);
+    }
+
+    public List<Utilisateur> getListUtlisateurParCourGroupe(int positionGroupe){
+        return getCourGroupeParPos(positionGroupe).getParticipants();
     }
 }

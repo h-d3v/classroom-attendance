@@ -7,7 +7,7 @@ import dti.g25.projet_s.domaine.entité.Utilisateur;
 
 import java.util.List;
 
-public class GestionCoursGroupe implements IGestionCoursGroupe{
+public class GestionCoursGroupe implements IGestionCoursGroupe {
 
 
     @Override

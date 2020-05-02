@@ -8,10 +8,6 @@ import dti.g25.projet_s.présentation.modèle.Modèle;
 
 public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPrésenteurConnexion {
 
-    private static final String EXTRA_POSITION = "dti.g25.maitredesbillets.position";
-    private static final String EXTRA_DESCRIPTION_BILLET = "dti.g25.maitredesbillets.descriptionBillet";
-    private static final String EXTRA_TITRE_BILLET = "dti.g25.maitredesbillets.titreBillet";
-
     Modèle modèle;
     Activity activité;
     ContratVuePrésenteurConnexion.IVueConnexion vue;

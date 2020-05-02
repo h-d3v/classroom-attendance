@@ -1,20 +1,18 @@
 package dti.g25.projet_s.domaine.interacteurs;
 
 import java.time.LocalDateTime;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
 
 import android.os.Build;
+
 import androidx.annotation.RequiresApi;
-import dti.g25.projet_s.domaine.entites.*;
+
+import dti.g25.projet_s.domaine.entité.*;
 
 public class GestionSeance implements IGestionSeance {
 
     @Override
-    public Seance creerSeance(CoursGroupe coursGroupe, LocalDateTime dateTime){
-      return new Seance(coursGroupe,dateTime);
+    public Seance creerSeance(CoursGroupe coursGroupe){
+      return new Seance(coursGroupe);
     }
 
 
@@ -25,11 +23,12 @@ public class GestionSeance implements IGestionSeance {
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    @Override
-    public void ajouterAbsence(Utilisateur utilisateur, Seance seance) {
-       seance.getUtilisateurAbsenceMap().replace(utilisateur, Absence.EST_ABSENT);
 
+    @Override
+    public Seance ajouterAbsence(Utilisateur utilisateur, Seance seance, Boolean présence) {
+        seance.getListeAbsence().add(new Absence(utilisateur, présence));
+
+       return seance;
     }
 
 

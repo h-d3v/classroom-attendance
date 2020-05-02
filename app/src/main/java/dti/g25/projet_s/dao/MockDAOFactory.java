@@ -63,12 +63,6 @@ public class MockDAOFactory extends  DAOFactory{
             utilisateurListHashMap.get(listeUtilisateur.get(i)).add(listeCoursGroupe.get(listeCoursGroupe.size()-1));
         }
 
-
-
-
-
-
-
     }
 
     /**

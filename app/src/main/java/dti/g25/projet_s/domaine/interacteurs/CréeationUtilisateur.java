@@ -3,9 +3,9 @@ package dti.g25.projet_s.domaine.interacteurs;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 
-public class CréeationUtilisateur {
+public class CréeationUtilisateur implements ICéeationUtilisateur {
 
-    public static Utilisateur CréerUtilisateur(String unNom, String mdp, Role unRôle) throws Exception {
+    public Utilisateur CréerUtilisateur(String unNom, String mdp, Role unRôle) throws Exception {
 
         if(mdp == "" || mdp.isEmpty())
             throw new Exception("le mdp est vide");
