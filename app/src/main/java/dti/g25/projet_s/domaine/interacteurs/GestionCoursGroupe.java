@@ -17,7 +17,7 @@ public class GestionCoursGroupe implements IGestionCoursGroupe{
 
     @Override
     public void modifierParticipants(List<Utilisateur> participants, CoursGroupe coursGroupe) throws GestionCoursGroupeException {
-        List<Utilisateur> copieParticipants= coursGroupe.getParticipants();
+        List<Utilisateur> copieParticipants= participants;
 
         boolean verifierSiProf=false;
         boolean verifierParticipantUnique=true; //TODO
@@ -40,6 +40,10 @@ public class GestionCoursGroupe implements IGestionCoursGroupe{
         }
 
 
+    }
+
+    public void ajouterParticipant(Utilisateur utilisateur, CoursGroupe coursGroupe){
+        coursGroupe.getParticipants().add(utilisateur); // Nullpointer TODO
     }
 
 }

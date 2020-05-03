@@ -12,11 +12,15 @@
             android:text="TextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/tv_horaire_cours"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tv_est_prevu"/>
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" tools:srcCompat="@tools:sample/avatars" android:id="@+id/imageView"/>
     <Button
-            android:text="@string/modifierStatut"
+            android:text="modifierStatut"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button"/>
+            android:layout_height="wrap_content" android:id="@+id/btnModifierStatut"/>
 </LinearLayout>

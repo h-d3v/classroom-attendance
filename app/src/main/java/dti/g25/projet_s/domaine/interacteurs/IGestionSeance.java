@@ -8,7 +8,7 @@ import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 
 public interface IGestionSeance {
- Seance creerSeance(CoursGroupe coursGroupe, LocalDateTime localDateTime) ;
+ Seance creerSeance(String dateDebut, String dateFin, String journee, int semaine, CoursGroupe coursGroupe) ;
  Seance changerSatutSeance(EtatSeance etatSeance, Seance seance);
  void ajouterAbsence(Utilisateur utilisateur, Seance seance);
 }

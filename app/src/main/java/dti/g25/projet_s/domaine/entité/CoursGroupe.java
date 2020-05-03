@@ -9,6 +9,15 @@ public class CoursGroupe {
     private final LibelleCours libelleCours;
     private final int numeroGroupe;
     private List<Utilisateur> participants;
+    private List<Seance> listeSeances;
+
+    public List<Seance> getListeSeances() {
+        return listeSeances;
+    }
+
+    public void setListeSeances(List<Seance> listeSeances) {
+        this.listeSeances = listeSeances;
+    }
 
     public CoursGroupe(LibelleCours libelleCours, int numeroGroupe) {
         this.libelleCours = libelleCours;

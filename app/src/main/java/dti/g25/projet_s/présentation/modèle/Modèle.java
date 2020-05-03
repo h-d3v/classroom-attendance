@@ -3,6 +3,7 @@ package dti.g25.projet_s.présentation.modèle;
 import android.content.Context;
 
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 
@@ -15,6 +16,7 @@ public class Modèle {
     private List<CoursGroupe> coursGroupes;
     private DAOFactory daoFactory;
     private Context context;
+    private List<Seance> seances;
 
     List<Utilisateur> utilisateurs;
     Utilisateur utilisateurActuelle;
@@ -25,9 +27,10 @@ public class Modèle {
     public Modèle() {};
 
     public Modèle(DAOFactory daoFactory, Utilisateur utilisateur) {
-        this.utilisateur = utilisateur;
+        this.utilisateurActuelle = utilisateur;
         this.daoFactory = daoFactory;
         coursGroupes = chargerCoursGroupeUtilisateur();
+
     }
 
     /**
@@ -81,5 +84,26 @@ public class Modèle {
 
     public CoursGroupe getCourGroupeParPos(int position){
         return coursGroupes.get(position);
+    }
+
+    public Utilisateur getUtilisateurConnecte() {
+        return utilisateurActuelle;
+    }
+
+    public List<Seance> chargerSeancesPaerUtilisateur(int cle){
+        seances=daoFactory.creerListeSeanceParUtilisateur(cle);
+        return daoFactory.creerListeSeanceParUtilisateur(cle);
+    }
+
+    public List<Seance> getSeances(){
+        return seances;
+    }
+
+
+
+    public Seance getSeance(int positionSeance) {
+        if(seances!=null){
+            return seances.get(positionSeance);
+        }else return null;
     }
 }
