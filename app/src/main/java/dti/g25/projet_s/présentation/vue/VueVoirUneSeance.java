@@ -1,6 +1,6 @@
 package dti.g25.projet_s.présentation.vue;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +10,14 @@ import androidx.fragment.app.Fragment;
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.ui.activité.IContratVoirUneSeance;
-import dti.g25.projet_s.ui.activité.VoirSeanceActivity;
 
 public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.IVueVoirUneseance {
    IContratVoirUneSeance.IPresenteurVoirUneSeance _presenteur;
 
    private TextView _tvHoraire;
    private TextView _tvCours;
+
+
 
 
     @Override
@@ -46,6 +47,7 @@ public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.
         }
         else{
             racine.findViewById(R.id.btnModifierStatut).setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View view) {
                     _presenteur.requeteModifierSatatutSeance();
@@ -58,5 +60,7 @@ public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.
         return racine;
 
     }
+
+
 
 }

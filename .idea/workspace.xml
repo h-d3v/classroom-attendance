@@ -10,18 +10,14 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/popUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/pop_up.xml" afterDir="false" />
+    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="modif etat une Seance">
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/Modèle.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/Modèle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUneSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUneSeance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUneSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUneSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_une_seance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_une_seance.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588480222025</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="modif etat une Seance">
+      <created>1588508329264</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588508329264</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,40 +212,44 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="532" y="222" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1588357396933" />
+    <state x="576" y="301" width="448" height="259" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588509471315">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="576" y="301" width="448" height="259" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1588509471315" />
     <state x="100" y="99" width="1400" height="660" key="AVDManager" timestamp="1588292728487" />
     <state x="100" y="99" width="1400" height="660" key="AVDManager/0.0.1600.860@0.0.1600.860" timestamp="1588292728487" />
     <state x="766" y="195" width="824" height="475" key="AndroidCreateResourceFileDialog" timestamp="1588462673946">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="766" y="195" width="824" height="475" key="AndroidCreateResourceFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1588462673946" />
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1588480221664">
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1588508329068">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588480221664" />
-    <state width="757" height="239" key="GridCell.Tab.0.bottom" timestamp="1588471751725">
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588508329068" />
+    <state width="1558" height="193" key="GridCell.Tab.0.bottom" timestamp="1588511719095">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="757" height="239" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1588471751725" />
-    <state width="757" height="239" key="GridCell.Tab.0.center" timestamp="1588471751725">
+    <state width="1558" height="193" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1588511719095" />
+    <state width="1558" height="193" key="GridCell.Tab.0.center" timestamp="1588511719095">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="757" height="239" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1588471751725" />
-    <state width="757" height="239" key="GridCell.Tab.0.left" timestamp="1588471751724">
+    <state width="1558" height="193" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1588511719095" />
+    <state width="1558" height="193" key="GridCell.Tab.0.left" timestamp="1588511719095">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="757" height="239" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1588471751724" />
-    <state width="757" height="239" key="GridCell.Tab.0.right" timestamp="1588471751725">
+    <state width="1558" height="193" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1588511719095" />
+    <state width="1558" height="193" key="GridCell.Tab.0.right" timestamp="1588511719095">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="757" height="239" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1588471751725" />
+    <state width="1558" height="193" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1588511719095" />
     <state x="155" y="70" width="1280" height="713" key="MergeDialog" timestamp="1588352481639">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="155" y="70" width="1280" height="713" key="MergeDialog/0.0.1600.860@0.0.1600.860" timestamp="1588352481639" />
-    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588480166260">
+    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588520671873">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1588480166260" />
+    <state x="598" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1588520671873" />
     <state x="530" y="145" width="530" height="562" key="git4idea.branch.GitSmartOperationDialog" timestamp="1588352458989">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -251,10 +258,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="641" y="189" width="308" height="474" key="refactoring.ChangeSignatureDialog/0.0.1600.860@0.0.1600.860" timestamp="1588460642962" />
-    <state x="464" y="193" key="run.anything.popup" timestamp="1588444845692">
+    <state x="464" y="193" key="run.anything.popup" timestamp="1588518588466">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="464" y="193" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1588444845692" />
+    <state x="464" y="193" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1588518588466" />
     <state x="463" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1588464453271">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

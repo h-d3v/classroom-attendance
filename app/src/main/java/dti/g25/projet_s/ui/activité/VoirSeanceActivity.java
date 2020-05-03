@@ -1,6 +1,5 @@
 package dti.g25.projet_s.ui.activité;
 
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -24,10 +23,12 @@ IContratVoirUneSeance.IPresenteurVoirUneSeance presenteurVoirUneSeance;
         VueVoirUneSeance vueVoirUneSeance=new VueVoirUneSeance();
         presenteurVoirUneSeance=new PresenteurVoirUneSeance(modèle,vueVoirUneSeance, this, 13);
         vueVoirUneSeance.setPresenteur(presenteurVoirUneSeance);
-
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         ft.add(R.id.layout_voir_une_seance, vueVoirUneSeance);
         ft.commit();
+
+
+
     }
 
 
