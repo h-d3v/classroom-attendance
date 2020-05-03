@@ -17,6 +17,7 @@ public interface ContratVuePrésenteurPrendrePrésence {
      */
     public interface IPrésenteurPrendrePrésence {
 
+        public String getNomUtilisteur();
         public void ajouterAbsence(boolean b);
     }
 }

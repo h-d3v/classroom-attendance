@@ -1,6 +1,7 @@
 package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
+import android.util.Log;
 
 import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
 import dti.g25.projet_s.présentation.modèle.Modèle;
@@ -29,24 +30,27 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
         this.vue=vue;
         this.modèle=modèle;
         this.positionGroupe=positionGroupe;
-        nombreEtudiant=modèle.getListUtlisateurParCourGroupe(positionGroupe).size();
+        nombreEtudiant=modèle.getListeEtudiantsParCoursGroupe(positionGroupe).size();
         itérateur = 0;
-        vue.setTxtNomÉtudiant(modèle.getListUtlisateurParCourGroupe(positionGroupe).get(itérateur).getUsername());
+        positionSéeance = modèle.getPostionSeance(modèle.créerSéance(positionGroupe));
     }
 
 
     @Override
+    public String getNomUtilisteur() {
+        return "jaque";
+        //return modèle.getListUtlisateurParCourGroupe(positionGroupe).get(itérateur).getUsername();
+    }
+
+    @Override
     public void ajouterAbsence(boolean présence) {
 
-        if(itérateur == 0)
-            positionSéeance = modèle.getPostionSeance(modèle.créerSéance(positionGroupe));
-
-        modèle.ajouterAbsence(présence, modèle.getListUtlisateurParCourGroupe(positionGroupe).get(itérateur), positionSéeance);
+        modèle.ajouterAbsence(présence, modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur), positionSéeance);
         itérateur +=1;
-        if(modèle.getListUtlisateurParCourGroupe(positionGroupe).size() < itérateur)
+        if(modèle.getListUtlisateurParCourGroupe(positionGroupe).size() -1 == itérateur)
             activité.finish();
         else
-            vue.setTxtNomÉtudiant(modèle.getListUtlisateurParCourGroupe(positionGroupe).get(itérateur).getUsername());
+            vue.setTxtNomÉtudiant(modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
 
     }
 

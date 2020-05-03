@@ -5,6 +5,6 @@ import dti.g25.projet_s.domaine.entité.Utilisateur;
 
 public interface ICéeationUtilisateur {
 
-    Utilisateur CréerUtilisateur(String unNom, String mdp, Role unRôle) throws Exception;
+    Utilisateur CréerUtilisateur(String unNom, Role unRôle) throws Exception;
 
 }

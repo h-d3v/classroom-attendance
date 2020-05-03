@@ -1,6 +1,7 @@
 package dti.g25.projet_s.domaine.entité;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,7 @@ public class Seance {
 
     public Seance(CoursGroupe coursGroupe){
         _coursGroupe=coursGroupe;
+        listeAbsence = new ArrayList<Absence>();
         for (Utilisateur user : _coursGroupe.getParticipants()){
             listeAbsence.add(new Absence(user, true));
         }

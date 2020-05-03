@@ -1,6 +1,7 @@
 package dti.g25.projet_s.présentation.vue;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,11 +40,12 @@ public class VuePrendrePrésence extends Fragment implements ContratVuePrésente
     public View onCreateView (LayoutInflater inflater,
                               ViewGroup container,
                               Bundle savedInstanceState) {
-        View racine = inflater.inflate(R.layout.fragement_connexion, container, false);
+        View racine = inflater.inflate(R.layout.frag_prendre_presence, container, false);
 
-        txtNomÉtudiant=racine.findViewById(R.id.txtUtilisateur);
+        txtNomÉtudiant=racine.findViewById(R.id.txtNomÉtudiant);
         btnAbsent = racine.findViewById(R.id.btnAbsent);
         btnPrésent = racine.findViewById(R.id.btnPrésent);
+        txtNomÉtudiant.setText(présenteur.getNomUtilisteur());
         btnPrésent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

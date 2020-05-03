@@ -5,13 +5,17 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import dti.g25.projet_s.dao.CourGroupeFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
+import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,6 +37,7 @@ public class Modèle {
     public Modèle(DAOFactory daoFactory, Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
         this.daoFactory = daoFactory;
+        listeSeance = new ArrayList<Seance>();
         coursGroupes = chargerCoursGroupeUtilisateur();
     }
 
@@ -64,6 +69,14 @@ public class Modèle {
         return connexion;
     }
 
+    public Utilisateur créerUtilsiateur(String nomUtilisateur, Role role) throws Exception {
+        return new CréeationUtilisateur().CréerUtilisateur(nomUtilisateur, role);
+    }
+
+    /**
+     *
+     * @return
+     */
     public List<CoursGroupe> getCoursGroupes() {
         return coursGroupes;
     }
@@ -82,7 +95,8 @@ public class Modèle {
     }
 
     public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
-        return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
+        return new CourGroupeFactice().ObtenirCourGroupe();
+       // return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
     }
 
     public CoursGroupe getCourGroupeParPos(int position){
@@ -109,5 +123,16 @@ public class Modèle {
 
     public List<Utilisateur> getListUtlisateurParCourGroupe(int positionGroupe){
         return getCourGroupeParPos(positionGroupe).getParticipants();
+    }
+
+    public List<Utilisateur> getListeEtudiantsParCoursGroupe(int positionGroupe){
+        List<Utilisateur> listeEtudiants = new ArrayList<>();
+        List<Utilisateur> listeParticipant = getCourGroupeParPos(positionGroupe).getParticipants();
+        for (Utilisateur unUtilisateur: listeParticipant) {
+            if (unUtilisateur.getRôle() == Role.ÉLÈVE)
+                listeEtudiants.add(unUtilisateur);
+        }
+
+        return listeEtudiants;
     }
 }
