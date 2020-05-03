@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import dti.g25.projet_s.présentation.vue.IContatVuePresenteurVoirCoursGroupe;
+import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 
 public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

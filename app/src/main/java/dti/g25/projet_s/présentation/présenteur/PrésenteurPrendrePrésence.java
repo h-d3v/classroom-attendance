@@ -2,7 +2,6 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 
-import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 
@@ -38,6 +37,7 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
 
     @Override
     public void ajouterAbsence(boolean présence) {
+
         if(itérateur == 0)
             positionSéeance = modèle.getPostionSeance(modèle.créerSéance(positionGroupe));
 
@@ -45,8 +45,9 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
         itérateur +=1;
         if(modèle.getListUtlisateurParCourGroupe(positionGroupe).size() < itérateur)
             activité.finish();
-        else{
+        else
             vue.setTxtNomÉtudiant(modèle.getListUtlisateurParCourGroupe(positionGroupe).get(itérateur).getUsername());
-        }
+
     }
+
 }
