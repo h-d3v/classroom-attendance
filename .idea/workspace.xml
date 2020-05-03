@@ -10,13 +10,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="modif etat une Seance">
+    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUneSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUneSeance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_une_seance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_une_seance.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588508329264</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="modif etat une Seance">
+      <created>1588520790906</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588520790906</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,10 +226,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="766" y="195" width="824" height="475" key="AndroidCreateResourceFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1588462673946" />
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1588508329068">
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1588520790749">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588508329068" />
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588520790749" />
+    <state x="150" y="67" width="1280" height="713" key="DiffContextDialog" timestamp="1588520785776">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="150" y="67" width="1280" height="713" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1588520785776" />
     <state width="1558" height="193" key="GridCell.Tab.0.bottom" timestamp="1588511719095">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
