@@ -119,6 +119,11 @@ public class MockDAOFactory extends  DAOFactory{
     }
 
     @Override
+    public Seance getSeanceUtilisateur(int utilisateurId, int key) {
+        return utilisateurSeancesHashMap.get(listeUtilisateur.get(utilisateurId)).get(key);
+    }
+
+    @Override
     public Utilisateur getUtilisateur(int i) {
         return listeUtilisateur.get(i);
     }

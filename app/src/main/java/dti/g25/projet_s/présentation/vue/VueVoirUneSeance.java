@@ -49,6 +49,7 @@ public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.
                 @Override
                 public void onClick(View view) {
                     _presenteur.requeteModifierSatatutSeance();
+                    tvEstPrevue.setText("Statut: "+ seance.get_etat().toString());
                 }
             });
         }

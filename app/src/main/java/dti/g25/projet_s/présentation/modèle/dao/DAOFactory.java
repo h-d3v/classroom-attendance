@@ -13,4 +13,7 @@ public abstract class DAOFactory {
     public abstract Utilisateur getUtilisateur(int i);
 
     public abstract List<Seance> creerListeSeanceParUtilisateur(int cle);
+
+    public abstract Seance getSeanceUtilisateur(int utilisateurId, int key);
+
 }

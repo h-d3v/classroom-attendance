@@ -3,6 +3,7 @@ package dti.g25.projet_s.présentation.modèle;
 import android.content.Context;
 
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
@@ -105,5 +106,10 @@ public class Modèle {
         if(seances!=null){
             return seances.get(positionSeance);
         }else return null;
+    }
+    public  void setEtatSeance(int posSeance, EtatSeance etatSeance){
+        if(seances!=null){
+            seances.get(posSeance).set_etat(etatSeance);
+        }
     }
 }

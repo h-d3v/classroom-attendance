@@ -52,18 +52,12 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
          *         Intent intent= new Intent(_activite, popUp.class);
          *         _activite.startActivityForResult(intent, REQUEST_CODE_MODIFIER_ETAT);
          */
-        System.out.println("Avant clic");
-        System.out.println(_modele.getSeance(_positionSeance).get_etat());
         if(getSeance().get_etat()==EtatSeance.PREVUE){
-            _modele.getSeance(_positionSeance).set_etat(EtatSeance.ANULLEE);
+            _modele.setEtatSeance(_positionSeance,EtatSeance.ANULLEE);
         }
         else {
-
-            System.out.println(_modele.getSeance(_positionSeance).get_etat());
-            _modele.getSeance(_positionSeance).set_etat(EtatSeance.PREVUE);
+            _modele.setEtatSeance(_positionSeance, EtatSeance.PREVUE);
         }
-        System.out.println("Apres clic");
-        System.out.println(_modele.getSeance(_positionSeance).get_etat());
 
     }
 
