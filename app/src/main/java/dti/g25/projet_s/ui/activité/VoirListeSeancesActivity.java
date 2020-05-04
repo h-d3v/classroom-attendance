@@ -17,6 +17,7 @@ public class VoirListeSeancesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        //TODO finir les classe des vues et le presenteur pour cette activite
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acticity_voir_liste_seances);
         MockDAOFactory mockDAOFactory= new MockDAOFactory();
