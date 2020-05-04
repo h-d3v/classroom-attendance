@@ -70,7 +70,7 @@ public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.
                             .setNegativeButton("Non", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();
-                                    Toast.makeText(_presenteur.get_activite(), "Sceance non modifiee",
+                                    Toast.makeText(_presenteur.get_activite(), "Statut de la seance non modifiee",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             });
