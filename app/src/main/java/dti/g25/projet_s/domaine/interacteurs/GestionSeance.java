@@ -1,14 +1,16 @@
 package dti.g25.projet_s.domaine.interacteurs;
 
 import java.time.LocalDateTime;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+
 
 import android.os.Build;
 import androidx.annotation.RequiresApi;
-import dti.g25.projet_s.domaine.entites.*;
+
+import dti.g25.projet_s.domaine.entité.Absence;
+import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.EtatSeance;
+import dti.g25.projet_s.domaine.entité.Seance;
+import dti.g25.projet_s.domaine.entité.Utilisateur;
 
 public class GestionSeance implements IGestionSeance {
 

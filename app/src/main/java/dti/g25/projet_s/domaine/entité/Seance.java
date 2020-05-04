@@ -1,4 +1,4 @@
-package dti.g25.projet_s.domaine.entites;
+package dti.g25.projet_s.domaine.entité;
 
 import java.time.LocalDateTime;
 import java.util.Map;
