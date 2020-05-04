@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".ui.activité.VoirUnCourGroupeActivity"
             android:parentActivityName=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
+        <activity android:name=".ui.activité.VoirListeSeancesActivity" />
     </application>
 
 </manifest>

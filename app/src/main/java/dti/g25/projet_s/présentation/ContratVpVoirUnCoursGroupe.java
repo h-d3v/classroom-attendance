@@ -1,4 +1,4 @@
-package dti.g25.projet_s;
+package dti.g25.projet_s.présentation;
 
 public interface ContratVpVoirUnCoursGroupe {
     interface IVueVoirCoursGroupe{

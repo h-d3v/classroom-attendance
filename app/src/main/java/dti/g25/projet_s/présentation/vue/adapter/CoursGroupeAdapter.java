@@ -1,4 +1,4 @@
-package dti.g25.projet_s.présentation.vue;
+package dti.g25.projet_s.présentation.vue.adapter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
