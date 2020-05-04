@@ -11,10 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_une_seance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_une_seance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUneSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUneSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUneSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUneSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/IContratVoirUneSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/IContratVoirUneSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +133,7 @@
       <workItem from="1587839833159" duration="380000" />
       <workItem from="1587919613978" duration="22123000" />
       <workItem from="1588352276940" duration="231000" />
+      <workItem from="1588607698418" duration="2094000" />
     </task>
     <task id="LOCAL-00001" summary="Entites CoursGroupe utilisateur(partiel)&#10;Interacteur CoursGroupe">
       <created>1587930708624</created>
@@ -174,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588520790906</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modif etat une Seance">
+      <created>1588521056737</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588521056737</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,30 +236,30 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="766" y="195" width="824" height="475" key="AndroidCreateResourceFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1588462673946" />
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1588520790749">
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2" timestamp="1588521056528">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588520790749" />
+    <state x="339" y="19" width="911" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588521056528" />
     <state x="150" y="67" width="1280" height="713" key="DiffContextDialog" timestamp="1588520785776">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="150" y="67" width="1280" height="713" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1588520785776" />
-    <state width="1558" height="193" key="GridCell.Tab.0.bottom" timestamp="1588511719095">
+    <state width="1558" height="193" key="GridCell.Tab.0.bottom" timestamp="1588521069694">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1558" height="193" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1588511719095" />
-    <state width="1558" height="193" key="GridCell.Tab.0.center" timestamp="1588511719095">
+    <state width="1558" height="193" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1588521069694" />
+    <state width="1558" height="193" key="GridCell.Tab.0.center" timestamp="1588521069693">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1558" height="193" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1588511719095" />
-    <state width="1558" height="193" key="GridCell.Tab.0.left" timestamp="1588511719095">
+    <state width="1558" height="193" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1588521069693" />
+    <state width="1558" height="193" key="GridCell.Tab.0.left" timestamp="1588521069693">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1558" height="193" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1588511719095" />
-    <state width="1558" height="193" key="GridCell.Tab.0.right" timestamp="1588511719095">
+    <state width="1558" height="193" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1588521069693" />
+    <state width="1558" height="193" key="GridCell.Tab.0.right" timestamp="1588521069694">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1558" height="193" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1588511719095" />
+    <state width="1558" height="193" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1588521069694" />
     <state x="155" y="70" width="1280" height="713" key="MergeDialog" timestamp="1588352481639">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

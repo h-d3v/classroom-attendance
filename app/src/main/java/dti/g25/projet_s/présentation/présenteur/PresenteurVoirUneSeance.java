@@ -45,6 +45,11 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
         return _modele.getSeance(_positionSeance);
     }
 
+    @Override
+    public Activity get_activite(){
+        return _activite;
+    }
+
 
     @Override
     public void requeteModifierSatatutSeance() {

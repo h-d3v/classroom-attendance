@@ -1,11 +1,14 @@
 package dti.g25.projet_s.présentation.vue;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.domaine.entité.Seance;
@@ -16,6 +19,7 @@ public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.
 
    private TextView _tvHoraire;
    private TextView _tvCours;
+   private AlertDialog.Builder builder;
 
 
 
@@ -45,15 +49,39 @@ public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.
         if(!_presenteur.estAutoriseAModifierStatutSeance()) {
             racine.findViewById(R.id.btnModifierStatut).setEnabled(false);
         }
-        else{
+        else {
+            builder = new AlertDialog.Builder(_presenteur.get_activite());
+
             racine.findViewById(R.id.btnModifierStatut).setOnClickListener(new View.OnClickListener() {
 
                 @Override
-                public void onClick(View view) {
-                    _presenteur.requeteModifierSatatutSeance();
-                    tvEstPrevue.setText("Statut: "+ seance.get_etat().toString());
+                public void onClick(View v) {
+
+                    builder.setMessage("Souhaitez-vous vraiment modifier l'etat de la seance?")
+                            .setCancelable(false)
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    _presenteur.requeteModifierSatatutSeance();
+                                    tvEstPrevue.setText(_presenteur.getSeance().get_etat().toString());
+                                    Toast.makeText(_presenteur.get_activite(), "Statut de la seance modifiee",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                    Toast.makeText(_presenteur.get_activite(), "Sceance non modifiee",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                    AlertDialog alert = builder.create();
+
+                    alert.setTitle("Modification du statut de la seance");
+                    alert.show();
                 }
             });
+
         }
 
 
