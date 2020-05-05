@@ -3,7 +3,10 @@ package dti.g25.projet_s.présentation.modèle;
 import android.content.Context;
 
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.EtatSeance;
+import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
+import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 
 import java.util.LinkedList;
@@ -13,9 +16,10 @@ public class Modèle {
 
     private Utilisateur utilisateur;
     private List<CoursGroupe> coursGroupes;
+    private List<Seance> seances;
     private DAOFactory daoFactory;
     private Context context;
-
+    private GestionSeance interacteur;
     List<Utilisateur> utilisateurs;
     Utilisateur utilisateurActuelle;
 
@@ -28,15 +32,9 @@ public class Modèle {
         this.utilisateur = utilisateur;
         this.daoFactory = daoFactory;
         coursGroupes = chargerCoursGroupeUtilisateur();
+        seances=daoFactory.getListeSeanceParUtilisateur(utilisateur);
     }
 
-    /**
-     * Constructeur du modele
-     */
-    public Modèle(Context context, DAOFactory daoFactory){
-        this.context=context;
-        this.daoFactory=daoFactory;
-    }
 
     /**
      * permet de chercher un utlisateur par son nom utlisateur et de comparer son mdp et le place en tant qu'utilisateur actuelle
@@ -57,6 +55,8 @@ public class Modèle {
 
         return connexion;
     }
+
+    public List<Seance> getSeances(){return seances;}
 
     public List<CoursGroupe> getCoursGroupes() {
         return coursGroupes;
@@ -79,7 +79,20 @@ public class Modèle {
         return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
     }
 
+    public List<Seance> chargerSeanceUtilisateur(){
+        return daoFactory.getListeSeanceParUtilisateur(this.utilisateur);
+    }
+
+    public Seance getSeanceParPos(int pos){return seances.get(pos);}
+
+    public void changerEtatSeance(int pos,EtatSeance etatSeance){
+        Seance seance=interacteur.changerSatutSeance(etatSeance,seances.get(pos));
+        seances.set(pos,seance);
+    }
+
     public CoursGroupe getCourGroupeParPos(int position){
         return coursGroupes.get(position);
     }
+
+
 }

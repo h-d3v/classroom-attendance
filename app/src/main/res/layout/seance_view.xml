@@ -13,123 +13,109 @@
         android:layout_weight="5">
 
         <TextView
-            android:id="@+id/tvSigleCoursGroupe"
+            android:id="@+id/tvSigleCoursGroupeSeance"
             android:layout_width="108dp"
             android:layout_height="25dp"
             android:layout_marginStart="58dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:text="420-987-YUL"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/tvSigleCoursGroupe2"
+            app:layout_constraintBottom_toTopOf="@+id/jourSeance"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.084"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.39" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/tvEtat"
+            android:id="@+id/tvEtatSeance"
             android:layout_width="204dp"
             android:layout_height="39dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="16dp"
+            android:gravity="center"
             android:text="PRÉVUE"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvHeureDebut" />
+            app:layout_constraintTop_toBottomOf="@+id/tvHeureDebutSe" />
 
         <TextView
-            android:id="@+id/tvSigleCoursGroupe2"
+            android:id="@+id/jourSeance"
             android:layout_width="102dp"
             android:layout_height="29dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="22dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="68dp"
+
             android:autoText="true"
-            android:text="01/07/2020"
+            android:gravity="center"
+            android:text="VENDREDI"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/tvHeureFin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv"
-            app:layout_constraintTop_toBottomOf="@+id/tvSigleCoursGroupe" />
+            app:layout_constraintTop_toBottomOf="@+id/tvSigleCoursGroupeSeance" />
 
         <TextView
-            android:id="@+id/tvHeureDebut"
+            android:id="@+id/tvHeureDebutSe"
             android:layout_width="51dp"
             android:layout_height="25dp"
-            android:layout_marginTop="49dp"
+            android:layout_marginTop="38dp"
             android:autoText="true"
             android:text="15H00"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/tvEtat"
-            app:layout_constraintEnd_toStartOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/tvSigleCoursGroupe2"
-            app:layout_constraintVertical_bias="0.59000003" />
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/jourSeance"
+            tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/tvHeureFin"
+            android:id="@+id/tvHeureFinSe"
             android:layout_width="51dp"
             android:layout_height="25dp"
-            android:layout_marginStart="47dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="26dp"
             android:autoText="true"
             android:text="02H00"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/tvEtat"
+            app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvHeureDebut"
-            app:layout_constraintTop_toBottomOf="@+id/tvSigleCoursGroupe2" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvHeureDebutSe"
+            app:layout_constraintTop_toBottomOf="@+id/jourSeance"
+            app:layout_constraintVertical_bias="0.09" />
 
         <TextView
-            android:id="@+id/tv"
-            android:layout_width="76dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="10dp"
-            android:autoText="true"
-            android:text="Date de la séance:"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/textView9"
-            app:layout_constraintEnd_toStartOf="@+id/tvSigleCoursGroupe2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSigleCoursGroupe" />
-
-        <TextView
-            android:id="@+id/textView9"
             android:layout_width="41dp"
             android:layout_height="26dp"
+            android:layout_marginBottom="16dp"
             android:autoText="true"
             android:text="De:"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/tvEtat"
-            app:layout_constraintEnd_toStartOf="@+id/tvHeureDebut"
-            app:layout_constraintTop_toBottomOf="@+id/tv" />
+            app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
+            app:layout_constraintEnd_toStartOf="@+id/tvHeureDebutSe" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textView"
             android:layout_width="36dp"
             android:layout_height="24dp"
-            android:layout_marginTop="49dp"
+            android:layout_marginTop="39dp"
             android:layout_marginBottom="22dp"
             android:autoText="true"
             android:text="À:"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/tvEtat"
-            app:layout_constraintEnd_toStartOf="@+id/tvHeureFin"
-            app:layout_constraintTop_toBottomOf="@+id/tvSigleCoursGroupe2"
+            app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
+            app:layout_constraintEnd_toStartOf="@+id/tvHeureFinSe"
+            app:layout_constraintTop_toBottomOf="@+id/jourSeance"
             app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="34dp"
-        android:layout_height="205dp"
+        android:layout_height="226dp"
         android:layout_weight="5"
         android:clipToPadding="true"
         android:orientation="vertical"
@@ -147,7 +133,7 @@
             android:id="@+id/btnModifierPrésence"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="#49544A"
             android:paddingTop="10dp"
             android:text="Modifier présences"
@@ -157,7 +143,7 @@
             android:id="@+id/btnChangerStatut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="#49544A"
             android:paddingTop="10dp"
             android:text="Changer le statut"

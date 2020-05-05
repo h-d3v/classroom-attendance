@@ -1,34 +1,33 @@
 package dti.g25.projet_s.domaine.entité;
 
-import java.time.LocalDateTime;
+
 import java.util.Map;
 
 public class Seance {
     private final CoursGroupe _coursGroupe;
     private Map<Utilisateur, Absence> utilisateurAbsenceMap;
     private EtatSeance _etat;
-    private final LocalDateTime _dateTime;
+    private Horaire _horaire;
 
-    public Seance(CoursGroupe coursGroupe, LocalDateTime localDateTime ){
+    public Seance(CoursGroupe coursGroupe ){
         _coursGroupe=coursGroupe;
-        _dateTime=localDateTime;
-        for (Utilisateur user : _coursGroupe.getParticipants()){
+        /*for (Utilisateur user : _coursGroupe.getParticipants()){
             utilisateurAbsenceMap.put(user,Absence.EST_PRESENT);
-        }
+        }*/
         _etat=EtatSeance.PREVUE;
     }
-
-
 
     public CoursGroupe get_coursGroupe() {
         return _coursGroupe;
     }
 
-    public LocalDateTime get_dateTime() {
-        return _dateTime;
+    public Horaire get_horaire() {
+        return _horaire;
     }
 
-
+    public void set_horaire(Horaire _horaire) {
+        this._horaire = _horaire;
+    }
 
     public EtatSeance get_etat() {
         return _etat;

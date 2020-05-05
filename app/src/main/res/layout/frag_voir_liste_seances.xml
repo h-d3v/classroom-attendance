@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#FFFFF"
+        android:background="#FFFFFF"
+        android:paddingStart="10dp"
         android:paddingTop="10dp"
         android:saveEnabled="false"
-        android:paddingStart="10dp"
         tools:ignore="RtlSymmetry" />
 
 </LinearLayout>

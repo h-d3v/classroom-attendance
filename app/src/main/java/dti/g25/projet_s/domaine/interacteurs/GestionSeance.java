@@ -15,8 +15,8 @@ import dti.g25.projet_s.domaine.entité.Utilisateur;
 public class GestionSeance implements IGestionSeance {
 
     @Override
-    public Seance creerSeance(CoursGroupe coursGroupe, LocalDateTime dateTime){
-      return new Seance(coursGroupe,dateTime);
+    public Seance creerSeance(CoursGroupe coursGroupe){
+      return new Seance(coursGroupe);
     }
 
 

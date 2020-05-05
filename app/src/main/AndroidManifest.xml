@@ -13,16 +13,15 @@
         </activity>
         <activity android:name=".ui.activité.ConnexionActivité"/>
         <activity android:name=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
-        <activity android:name=".ui.activité.VoirCoursGroupeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.activité.VoirCoursGroupeActivity"/>
         <activity android:name=".ui.activité.VoirUnCourGroupeActivity"
             android:parentActivityName=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
-        <activity android:name=".ui.activité.VoirListeSeancesActivity" />
+        <activity android:name=".ui.activité.VoirListeSeancesActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
     </application>
 
 </manifest>
