@@ -1,4 +1,4 @@
-package dti.g25.projet_s.présentation.vue;
+package dti.g25.projet_s.présentation;
 
 public interface IContatVuePresenteurVoirCoursGroupe {
 
@@ -8,6 +8,7 @@ public interface IContatVuePresenteurVoirCoursGroupe {
     }
 
     interface IPresenteurVoirCoursGroupe{
+
       int getNombresItems();
       void requeteVoirCoursGroupe(int position);
       String getTitreCoursGroupe(int position);

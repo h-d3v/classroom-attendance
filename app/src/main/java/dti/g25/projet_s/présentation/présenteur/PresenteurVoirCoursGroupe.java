@@ -1,7 +1,7 @@
 package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
-import dti.g25.projet_s.présentation.vue.IContatVuePresenteurVoirCoursGroupe;
+import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 
 public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe {

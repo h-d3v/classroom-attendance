@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import dti.g25.projet_s.R;
-import dti.g25.projet_s.ContratVpVoirUnCoursGroupe;
+import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirUnCourGroupe;
 
 public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCoursGroupe.IVueVoirCoursGroupe {

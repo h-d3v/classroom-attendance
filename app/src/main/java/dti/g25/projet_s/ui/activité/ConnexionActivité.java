@@ -15,7 +15,7 @@ public class ConnexionActivité extends AppCompatActivity {
     PrésenteurConnexion présenteur;
 
     /**
-     * Initialise la vue pour l'activité Créer billet ansi que le présenteur
+     * Initialise la vue pour l'activité Connexion ansi que le présenteur
      * pour la vue
      * @param savedInstanceState
      */

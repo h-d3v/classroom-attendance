@@ -9,8 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import dti.g25.projet_s.R;
-import dti.g25.projet_s.présentation.vue.CoursGroupeAdapter;
-import dti.g25.projet_s.présentation.vue.IContatVuePresenteurVoirCoursGroupe;
+import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 
 public class VueVoirCoursGroupe extends Fragment implements IContatVuePresenteurVoirCoursGroupe.IVueVoirCoursGroupe {
     private RecyclerView rvCoursGroupe;

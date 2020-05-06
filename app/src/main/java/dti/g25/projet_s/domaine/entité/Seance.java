@@ -1,34 +1,27 @@
-package dti.g25.projet_s.domaine.entites;
+package dti.g25.projet_s.domaine.entité;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Seance {
     private final CoursGroupe _coursGroupe;
-    private Map<Utilisateur, Absence> utilisateurAbsenceMap;
+    private List<Absence> listeAbsence;
     private EtatSeance _etat;
-    private final LocalDateTime _dateTime;
 
-    public Seance(CoursGroupe coursGroupe, LocalDateTime localDateTime ){
+    public Seance(CoursGroupe coursGroupe){
         _coursGroupe=coursGroupe;
-        _dateTime=localDateTime;
+        listeAbsence = new ArrayList<Absence>();
         for (Utilisateur user : _coursGroupe.getParticipants()){
-            utilisateurAbsenceMap.put(user,Absence.EST_PRESENT);
+            listeAbsence.add(new Absence(user, true));
         }
         _etat=EtatSeance.PREVUE;
     }
 
-
-
     public CoursGroupe get_coursGroupe() {
         return _coursGroupe;
     }
-
-    public LocalDateTime get_dateTime() {
-        return _dateTime;
-    }
-
-
 
     public EtatSeance get_etat() {
         return _etat;
@@ -38,12 +31,12 @@ public class Seance {
         this._etat = _etat;
     }
 
-    public Map<Utilisateur, Absence> getUtilisateurAbsenceMap() {
-        return utilisateurAbsenceMap;
+    public List<Absence> getListeAbsence() {
+        return listeAbsence;
     }
 
-    public void setUtilisateurAbsenceMap(Map<Utilisateur, Absence> utilisateurAbsenceMap) {
-        this.utilisateurAbsenceMap = utilisateurAbsenceMap;
+    public void setListeAbsence(List<Absence> listeAbsence) {
+        this.listeAbsence = listeAbsence;
     }
 
 }

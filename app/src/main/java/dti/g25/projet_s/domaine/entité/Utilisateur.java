@@ -15,12 +15,10 @@ public class Utilisateur {
     /**
      * Contructeur complet
      * @param nom
-     * @param mdp
      * @param rôle
      */
-    public Utilisateur(String nom, String mdp, Role rôle) {
+    public Utilisateur(String nom , Role rôle) {
         this.nom = nom;
-        this.mdp = mdp;
         this.rôle = rôle;
     }
 

@@ -30,12 +30,12 @@ public class MockDAOFactory extends  DAOFactory{
          */
         //Ajouter prof
         for(int i=0; i<2; i++){
-            listeUtilisateur.add(new Utilisateur("professeur#"+i, "pwd"+i, Role.PROFESSEUR ));
+            listeUtilisateur.add(new Utilisateur("professeur#"+i, Role.PROFESSEUR ));
             utilisateurListHashMap.put(listeUtilisateur.get(i), new LinkedList<CoursGroupe>());
         }
         //Ajouter eleves
         for(int i=2; i<=100; i++){
-            listeUtilisateur.add(new Utilisateur("utilisateur#"+i, "pwd"+i, Role.ÉLÈVE ));
+            listeUtilisateur.add(new Utilisateur("utilisateur#"+i, Role.ÉLÈVE ));
             utilisateurListHashMap.put(listeUtilisateur.get(i), new LinkedList<CoursGroupe>());
         }
 
@@ -62,12 +62,6 @@ public class MockDAOFactory extends  DAOFactory{
         for(int i=50; i<80; i++){
             utilisateurListHashMap.get(listeUtilisateur.get(i)).add(listeCoursGroupe.get(listeCoursGroupe.size()-1));
         }
-
-
-
-
-
-
 
     }
 
