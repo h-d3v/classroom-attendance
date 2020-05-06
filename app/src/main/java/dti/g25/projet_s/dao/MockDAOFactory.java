@@ -1,14 +1,19 @@
 package dti.g25.projet_s.dao;
 
-import dti.g25.projet_s.domaine.entité.*;
-import dti.g25.projet_s.domaine.interacteurs.GestionCoursGroupe;
-import dti.g25.projet_s.domaine.interacteurs.GestionCoursGroupeException;
+import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.EtatSeance;
+import dti.g25.projet_s.domaine.entité.Horaire;
+import dti.g25.projet_s.domaine.entité.LibelleCours;
+import dti.g25.projet_s.domaine.entité.Role;
+import dti.g25.projet_s.domaine.entité.Seance;
+import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MockDAOFactory extends  DAOFactory{
 
@@ -74,7 +79,7 @@ public class MockDAOFactory extends  DAOFactory{
             }
 
         }
-        //Cours 420-1 a deux groupes
+        //Cours 420-i a deux groupes
         listeCoursGroupe.add(new CoursGroupe(new LibelleCours("Titre du 420-"+1, "420-"+1  ), 2));
         utilisateurListHashMap.get(listeUtilisateur.get(0)).add(listeCoursGroupe.get(listeCoursGroupe.size()-1));
 
@@ -113,6 +118,11 @@ public class MockDAOFactory extends  DAOFactory{
     @Override
     public Utilisateur getUtilisateur(int i) {
         return listeUtilisateur.get(i);
+    }
+
+    public boolean changerStatutSeance(int pos, EtatSeance etatSeance){
+        //TODO
+        return false;
     }
 
 }

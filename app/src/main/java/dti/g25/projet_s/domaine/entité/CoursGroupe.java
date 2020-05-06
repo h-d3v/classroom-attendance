@@ -2,8 +2,6 @@ package dti.g25.projet_s.domaine.entité;
 
 import java.util.List;
 
-import dti.g25.projet_s.domaine.entité.LibelleCours;
-
 public class CoursGroupe {
 
     private final LibelleCours libelleCours;

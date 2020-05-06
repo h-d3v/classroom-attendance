@@ -21,6 +21,7 @@ public class Modèle {
 
     private Utilisateur utilisateur;
     private List<CoursGroupe> coursGroupes;
+    private List<Seance> seances;
     private DAOFactory daoFactory;
     private Context context;
     private List<Seance> listeSeance;
@@ -38,13 +39,6 @@ public class Modèle {
         chargerSeanceUtilisateur();
     }
 
-    /**
-     * Constructeur du modele
-     */
-    public Modèle(Context context, DAOFactory daoFactory){
-        this.context=context;
-        this.daoFactory=daoFactory;
-    }
 
 
     public Utilisateur créerUtilsiateur(String nomUtilisateur, Role role) throws Exception {
@@ -75,6 +69,11 @@ public class Modèle {
     public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
         return new CourGroupeFactice().ObtenirCourGroupe();
        // return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
+    }
+
+    public void changerEtatSeance(int pos,EtatSeance etatSeance){
+        Seance seance=new GestionSeance().changerSatutSeance(etatSeance,seances.get(pos));
+        seances.set(pos,seance);
     }
 
     public CoursGroupe getCourGroupeParPos(int position){
@@ -120,6 +119,10 @@ public class Modèle {
 
     public void setEtatSeance(int positionSeance, EtatSeance etatSeance) {
         listeSeance.get(positionSeance).set_etat(etatSeance);
+    }
+
+    public List<Seance> getListeSeance(){
+        return listeSeance;
     }
 
     public void chargerSeanceUtilisateur(){

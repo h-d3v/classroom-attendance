@@ -1,7 +1,6 @@
 package dti.g25.projet_s.dao;
 
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
-import java.util.Map;
 
 public class MockDAOCoursGroupe implements DAO<CoursGroupe> {
 
