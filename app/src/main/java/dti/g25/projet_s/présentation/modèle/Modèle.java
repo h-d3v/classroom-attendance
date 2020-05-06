@@ -17,7 +17,7 @@ public class Modèle {
     private Context context;
 
     List<Utilisateur> utilisateurs;
-    Utilisateur utilisateurActuelle;
+    Utilisateur utilisateurActuel;
 
     /**
      * constructeur vide
@@ -51,7 +51,7 @@ public class Modèle {
         for (Utilisateur utilisateur : utilisateurs) {
             if (nomUtlisateur.equals(motDePasse) && utilisateur.getUsername().equals(nomUtlisateur)) {
                 connexion = true;
-                utilisateurActuelle = utilisateur;
+                utilisateurActuel = utilisateur;
             }
         }
 
@@ -81,5 +81,14 @@ public class Modèle {
 
     public CoursGroupe getCourGroupeParPos(int position){
         return coursGroupes.get(position);
+    }
+
+    public List<Utilisateur> getListeUtilisateur(){
+        return utilisateurs;
+    }
+
+    public Utilisateur getUtilisateurParIndex(int index){
+        List<Utilisateur> tousLesUsers = getListeUtilisateur();
+        return tousLesUsers.get(index);
     }
 }

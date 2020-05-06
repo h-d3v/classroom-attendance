@@ -27,7 +27,7 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
     private int nbHeures=0;
 
 
-    public VueVoirUnEleve(IContratVuePrésenteurVoirUnEleve.IPrésenteurVoirUnEleve présenteur) {
+    public void setPresenteur(IContratVuePrésenteurVoirUnEleve.IPrésenteurVoirUnEleve présenteur) {
         this.présenteur = présenteur;
     }
 
