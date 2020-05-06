@@ -1,12 +1,11 @@
 package dti.g25.projet_s.présentation.modèle;
 
 import android.content.Context;
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 
 import dti.g25.projet_s.dao.CourGroupeFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.EtatSeance;
+import dti.g25.projet_s.domaine.entité.Horaire;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
@@ -14,7 +13,6 @@ import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,8 +24,7 @@ public class Modèle {
     private DAOFactory daoFactory;
     private Context context;
     private List<Seance> listeSeance;
-    List<Utilisateur> utilisateurs;
-    Utilisateur utilisateurActuelle;
+    private Utilisateur utilisateurActuelle;
 
     /**
      * constructeur vide
@@ -35,10 +32,10 @@ public class Modèle {
     public Modèle() {};
 
     public Modèle(DAOFactory daoFactory, Utilisateur utilisateur) {
-        this.utilisateur = utilisateur;
+        this.utilisateurActuelle = utilisateur;
         this.daoFactory = daoFactory;
-        listeSeance = new ArrayList<Seance>();
         coursGroupes = chargerCoursGroupeUtilisateur();
+        chargerSeanceUtilisateur();
     }
 
     /**
@@ -49,25 +46,6 @@ public class Modèle {
         this.daoFactory=daoFactory;
     }
 
-    /**
-     * permet de chercher un utlisateur par son nom utlisateur et de comparer son mdp et le place en tant qu'utilisateur actuelle
-     * @param nomUtlisateur
-     * @param motDePasse
-     * @return connexion Boolean
-     */
-    public Boolean connecterUtilisateur(String nomUtlisateur, String motDePasse) {
-        Boolean connexion = false;
-
-
-        for (Utilisateur utilisateur : utilisateurs) {
-            if (nomUtlisateur.equals(motDePasse) && utilisateur.getUsername().equals(nomUtlisateur)) {
-                connexion = true;
-                utilisateurActuelle = utilisateur;
-            }
-        }
-
-        return connexion;
-    }
 
     public Utilisateur créerUtilsiateur(String nomUtilisateur, Role role) throws Exception {
         return new CréeationUtilisateur().CréerUtilisateur(nomUtilisateur, role);
@@ -107,8 +85,8 @@ public class Modèle {
         listeSeance.set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
     }
 
-    public Seance créerSéance(int indexGroupe) {
-        Seance uneSeance = new GestionSeance().creerSeance(getCourGroupeParPos(indexGroupe));
+    public Seance créerSéance(int indexGroupe, Horaire horaire) {
+        Seance uneSeance = new GestionSeance().creerSeance(getCourGroupeParPos(indexGroupe), horaire);
         listeSeance.add(uneSeance);
         return uneSeance;
     }
@@ -125,14 +103,31 @@ public class Modèle {
         return getCourGroupeParPos(positionGroupe).getParticipants();
     }
 
-    public List<Utilisateur> getListeEtudiantsParCoursGroupe(int positionGroupe){
+    public List<Utilisateur> getListeEtudiantsParCoursGroupe(int positionGroupe) {
         List<Utilisateur> listeEtudiants = new ArrayList<>();
         List<Utilisateur> listeParticipant = getCourGroupeParPos(positionGroupe).getParticipants();
-        for (Utilisateur unUtilisateur: listeParticipant) {
+        for (Utilisateur unUtilisateur : listeParticipant) {
             if (unUtilisateur.getRôle() == Role.ÉLÈVE)
                 listeEtudiants.add(unUtilisateur);
         }
 
         return listeEtudiants;
+    }
+
+    public Utilisateur getUtilisateurConnecte() {
+        return utilisateurActuelle;
+    }
+
+    public void setEtatSeance(int positionSeance, EtatSeance etatSeance) {
+        listeSeance.get(positionSeance).set_etat(etatSeance);
+    }
+
+    public void chargerSeanceUtilisateur(){
+        listeSeance = new ArrayList<>();
+        for(CoursGroupe unCour: coursGroupes ){
+            for(Seance uneSeance :  unCour.getListeSeances()){
+                listeSeance.add(uneSeance);
+            }
+        }
     }
 }

@@ -23,21 +23,20 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
      * @param vue La vue qui est relié au présenteur de la prise de présence
      * @param modèle le modele du MVP
      */
-    public PrésenteurPrendrePrésence(Activity activité, ContratVuePrésenteurPrendrePrésence.IVuePrendrePrésence vue, Modèle modèle, int positionGroupe) {
+    public PrésenteurPrendrePrésence(Activity activité, ContratVuePrésenteurPrendrePrésence.IVuePrendrePrésence vue, Modèle modèle, int positionGroupe, int positionSéeance) {
         this.activité=activité;
         this.vue=vue;
         this.modèle=modèle;
         this.positionGroupe=positionGroupe;
         nombreEtudiant=modèle.getListeEtudiantsParCoursGroupe(positionGroupe).size();
         itérateur = 0;
-        positionSéeance = modèle.getPostionSeance(modèle.créerSéance(positionGroupe));
+        this.positionSéeance = positionSéeance;
     }
 
 
     @Override
     public String getNomUtilisteur() {
-        return "jaque";
-        //return modèle.getListUtlisateurParCourGroupe(positionGroupe).get(itérateur).getUsername();
+        return modèle.getListUtlisateurParCourGroupe(positionGroupe).get(itérateur).getUsername();
     }
 
     @Override

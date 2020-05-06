@@ -20,7 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activité.PrendrePrésenceActivité">
+        <activity android:name=".ui.activité.PrendrePrésenceActivité"/>
+
+        <activity android:name=".ui.activité.VoirSeanceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

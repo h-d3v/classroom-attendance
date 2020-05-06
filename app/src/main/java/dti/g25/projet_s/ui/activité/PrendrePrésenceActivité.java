@@ -49,7 +49,8 @@ public class PrendrePrésenceActivité extends AppCompatActivity {
         VuePrendrePrésence vue=new VuePrendrePrésence();
 
         int positionProjet = getIntent().getIntExtra( "EXTRA_POSITION_GROUPE", 1);
-        présenteur=new PrésenteurPrendrePrésence(this, vue, modèle, positionProjet);
+        int positionSéance = getIntent().getIntExtra( "EXTRA_POSITION_SÉANCE", 1);
+        présenteur=new PrésenteurPrendrePrésence(this, vue, modèle, positionProjet, positionSéance);
         vue.setPrésenteur(présenteur);
 
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
