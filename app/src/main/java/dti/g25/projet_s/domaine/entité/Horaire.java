@@ -21,6 +21,15 @@ public class Horaire {
         return heureDebut;
     }
 
+
+    public String getHeureDebutString() {
+        return convertirDoubleEnHeure(heureDebut);
+    }
+
+    public String getHeureFinString() {
+        return convertirDoubleEnHeure(heureFin);
+    }
+
     public Double getHeureFin() {
         return heureFin;
     }
@@ -28,7 +37,7 @@ public class Horaire {
     public String getJournee() {
         return journee;
     }
-    
+
     public String convertirDoubleEnHeure(Double unDouble){
         String unString = null;
         int heure = 0;
@@ -57,7 +66,7 @@ public class Horaire {
                 unString = heure + ":45";
             }
         }
-        
+
         return unString;
     }
 }

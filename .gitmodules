@@ -1,0 +1,3 @@
+[submodule "app/projet-s_doc"]
+	path = app/projet-s_doc
+	url = https://git.dti.crosemont.quebec/420-g25-ro/projet-s_doc

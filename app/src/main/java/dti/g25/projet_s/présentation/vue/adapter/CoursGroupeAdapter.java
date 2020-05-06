@@ -1,4 +1,4 @@
-package dti.g25.projet_s.présentation.vue;
+package dti.g25.projet_s.présentation.vue.adapter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -44,7 +44,7 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
      */
     @Override
     public int getItemCount() {
-        if(presenteurVoirCoursGroupe==null) {
+            if(presenteurVoirCoursGroupe==null) {
             return 0;
         }
         else {
