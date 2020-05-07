@@ -19,6 +19,7 @@ import java.util.List;
 
 public class Modèle {
 
+
     private Utilisateur utilisateur;
     private List<CoursGroupe> coursGroupes;
     private List<Seance> seances;
@@ -26,6 +27,7 @@ public class Modèle {
     private Context context;
     private List<Seance> listeSeance;
     private Utilisateur utilisateurActuelle;
+    private List<Utilisateur> listeUtilisateur;
 
     /**
      * constructeur vide
@@ -125,12 +127,21 @@ public class Modèle {
         return listeSeance;
     }
 
-    public void chargerSeanceUtilisateur(){
+    public void chargerSeanceUtilisateur() {
         listeSeance = new ArrayList<>();
-        for(CoursGroupe unCour: coursGroupes ){
-            for(Seance uneSeance :  unCour.getListeSeances()){
+        for (CoursGroupe unCour : coursGroupes) {
+            for (Seance uneSeance : unCour.getListeSeances()) {
                 listeSeance.add(uneSeance);
             }
         }
+    }
+
+    public List<Utilisateur> getListeUtilisateur(){
+        return listeUtilisateur;
+    }
+
+    public Utilisateur getUtilisateurParIndex(int index){
+        List<Utilisateur> tousLesUsers = getListeUtilisateur();
+        return tousLesUsers.get(index);
     }
 }
