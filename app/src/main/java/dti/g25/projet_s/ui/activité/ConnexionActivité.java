@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import dti.g25.projet_s.R;
-import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.présenteur.PrésenteurConnexion;
 import dti.g25.projet_s.présentation.vue.VueConnexion;
 

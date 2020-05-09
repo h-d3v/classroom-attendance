@@ -4,7 +4,6 @@ import android.app.Activity;
 
 import dti.g25.projet_s.dao.UtlisateurFactice;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurConnexion;
-import dti.g25.projet_s.présentation.modèle.Modèle;
 
 public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPrésenteurConnexion {
 

@@ -3,7 +3,6 @@ package dti.g25.projet_s.présentation.présenteur;
 import android.app.Activity;
 
 import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.IContratVuePrésenteurVoirUnEleve;
 
 public class PresenteurVoirUnEleve implements IContratVuePrésenteurVoirUnEleve.IPrésenteurVoirUnEleve {

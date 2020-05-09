@@ -2,7 +2,6 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
-import dti.g25.projet_s.présentation.modèle.Modèle;
 
 public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendrePrésence.IPrésenteurPrendrePrésence {
 
