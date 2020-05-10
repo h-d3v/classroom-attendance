@@ -10,12 +10,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import dti.g25.projet_s.R;
+import dti.g25.projet_s.dao.MockDAOFactory;
 import dti.g25.projet_s.domaine.entité.Absence;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.IContratVuePrésenteurVoirUnEleve;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import dti.g25.projet_s.présentation.modèle.dao.Modèle;
 
 public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVoirUnEleve.IVueVoirUnEleve, SingleChoiceDialogHeuresAbsenceFragment.SingleChoiceListener {
 

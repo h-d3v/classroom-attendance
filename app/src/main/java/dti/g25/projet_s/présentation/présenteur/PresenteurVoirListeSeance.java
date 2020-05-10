@@ -5,6 +5,7 @@ import android.app.Activity;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.présentation.ContratVpVoirListeSeances;
+import dti.g25.projet_s.présentation.modèle.dao.Modèle;
 
 public class PresenteurVoirListeSeance implements ContratVpVoirListeSeances.IPresenteurVoirListeSeances {
 

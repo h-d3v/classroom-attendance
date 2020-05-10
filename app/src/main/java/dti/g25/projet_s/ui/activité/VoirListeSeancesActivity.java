@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import dti.g25.projet_s.R;
+import dti.g25.projet_s.dao.MockDAOFactory;
+import dti.g25.projet_s.présentation.modèle.dao.Modèle;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirListeSeance;
 import dti.g25.projet_s.présentation.vue.VueVoirListeSeance;
 

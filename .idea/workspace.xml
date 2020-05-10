@@ -11,23 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/ModèleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactoryV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/présentation/modèle/ModèleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/Modèle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOCoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOCoursGroupe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/MockDAOFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Utilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/Modèle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/CoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/CoursGroupe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Horaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Horaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Seance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Seance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/ModèleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/ModèleDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurBtnVoirListeCoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurBtnVoirListeCoursGroupe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirCoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirCoursGroupe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirListeSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirListeSeance.java" afterDir="false" />
@@ -45,7 +42,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirUnCourGroupeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirUnCourGroupeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirUnEleve.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirUnEleve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/présentation/modèle/ModèleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/présentation/modèle/ModèleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,12 +96,13 @@
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="HT84T1A03247" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-27T21:56:48.450Z" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -122,24 +120,92 @@
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/.idea/modules" />
     </key>
   </component>
-  <component name="RunManager" selected="Android JUnit.ModèleTest.testChargerCoursGroupeUtilisateur">
+  <component name="RunManager" selected="Android JUnit.ModèleTest">
+    <configuration name="ModèleTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
+      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ModèleTest.testChargerCoursGroupeUtilisateur" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.ModèleDAO" />
+          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
       <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
       <option name="METHOD_NAME" value="testChargerCoursGroupeUtilisateur" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModèleTest.testChargerSeanceUtilisateur" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
+      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
+      <option name="METHOD_NAME" value="testChargerSeanceUtilisateur" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModèleTest.testGetSeanceParPos" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
+      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
+      <option name="METHOD_NAME" value="testGetSeanceParPos" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModèleTest.testSetEtatSeance" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
+      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
+      <option name="METHOD_NAME" value="testSetEtatSeance" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -176,13 +242,25 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="dti.g25.projet_s.ui.activité.VoirListeSeancesActivity" />
+      <option name="ACTIVITY_CLASS" value="dti.g25.projet_s.ui.activité.PrendrePrésenceActivité" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Android JUnit.ModèleTest" />
+      <item itemvalue="Android JUnit.ModèleTest.testChargerCoursGroupeUtilisateur" />
+      <item itemvalue="Android JUnit.ModèleTest.testChargerSeanceUtilisateur" />
+      <item itemvalue="Android JUnit.ModèleTest.testGetSeanceParPos" />
+      <item itemvalue="Android JUnit.ModèleTest.testSetEtatSeance" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.ModèleTest" />
+        <item itemvalue="Android JUnit.ModèleTest.testGetSeanceParPos" />
+        <item itemvalue="Android JUnit.ModèleTest.testSetEtatSeance" />
+        <item itemvalue="Android JUnit.ModèleTest.testChargerSeanceUtilisateur" />
         <item itemvalue="Android JUnit.ModèleTest.testChargerCoursGroupeUtilisateur" />
       </list>
     </recent_temporary>
@@ -201,6 +279,8 @@
       <workItem from="1587919613978" duration="22123000" />
       <workItem from="1588352276940" duration="231000" />
       <workItem from="1588607698418" duration="2094000" />
+      <workItem from="1589052460277" duration="18317000" />
+      <workItem from="1589120934141" duration="9386000" />
     </task>
     <task id="LOCAL-00001" summary="Entites CoursGroupe utilisateur(partiel)&#10;Interacteur CoursGroupe">
       <created>1587930708624</created>
@@ -251,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588521056737</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="debut nouvelle version modele avec DAOS">
+      <created>1589044390157</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589044390157</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,11 +356,34 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="debut nouvelle version modele avec DAOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="debut nouvelle version modele avec DAOS" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="497" y="96" width="596" height="660" key="#app" timestamp="1589053032239">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="497" y="96" width="596" height="660" key="#app/0.0.1600.860@0.0.1600.860" timestamp="1589053032239" />
+    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589053359901">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589052095142" />
+    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1589053359901" />
+    <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589057126089">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589045392356" />
+    <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1589057126089" />
     <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1589043572498">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589043572498" />
+    <state x="627" y="242" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589053356498">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="532" y="222" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589052089526" />
+    <state x="627" y="242" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589053356498" />
     <state x="538" y="177" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589044238267">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -282,10 +392,54 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978461357" />
+    <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2" timestamp="1589044389797">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589044389797" />
     <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl" timestamp="1588962764411">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588962764411" />
+    <state width="1558" height="280" key="GridCell.Tab.0.bottom" timestamp="1589132703231">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485331" />
+    <state width="1558" height="280" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
+    <state width="1558" height="280" key="GridCell.Tab.0.center" timestamp="1589132703231">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="217" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
+    <state width="1558" height="280" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
+    <state width="1558" height="280" key="GridCell.Tab.0.left" timestamp="1589132703230">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="217" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
+    <state width="1558" height="280" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589132703230" />
+    <state width="1558" height="280" key="GridCell.Tab.0.right" timestamp="1589132703231">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="217" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
+    <state width="1558" height="280" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
+    <state width="1558" height="269" key="GridCell.Tab.1.bottom" timestamp="1589121400638">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589049980654" />
+    <state width="1558" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589121400638" />
+    <state width="1558" height="269" key="GridCell.Tab.1.center" timestamp="1589121400637">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="269" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589049980654" />
+    <state width="1558" height="269" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1589121400637" />
+    <state width="1558" height="269" key="GridCell.Tab.1.left" timestamp="1589121400637">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="269" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589049980654" />
+    <state width="1558" height="269" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1589121400637" />
+    <state width="1558" height="269" key="GridCell.Tab.1.right" timestamp="1589121400637">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1558" height="269" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589049980654" />
+    <state width="1558" height="269" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1589121400637" />
     <state x="155" y="70" width="1280" height="713" key="MergeDialog" timestamp="1588966349141">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -298,6 +452,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="596" y="207" width="629" height="515" key="chooseDestDirectoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978518235" />
+    <state x="410" y="42" width="770" height="768" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589126696629">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="410" y="42" width="770" height="768" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1600.860@0.0.1600.860" timestamp="1589126696629" />
     <state x="540" y="116" width="510" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1588978518294">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
