@@ -346,7 +346,5 @@ public class ModèleTest extends TestCase {
     }
 
 
-    public void testGetUtilisateurParIndex() {
 
-    }
 }
