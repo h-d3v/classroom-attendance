@@ -1,5 +1,6 @@
 package dti.g25.projet_s.ui.activité;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,4 +32,6 @@ public class VoirUnCourGroupeActivity extends AppCompatActivity {
         ft.add(R.id.layout_voir_un_courgroupe, vue);
         ft.commit();
     }
+
+
 }

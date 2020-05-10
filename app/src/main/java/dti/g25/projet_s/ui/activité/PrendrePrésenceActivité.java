@@ -37,7 +37,7 @@ public class PrendrePrésenceActivité extends AppCompatActivity {
 
         Modèle modèle= null;
         try {
-            modèle = new Modèle(new MockDAOFactory(), new Modèle().créerUtilsiateur("Jaque", Role.PROFESSEUR));
+            modèle = new Modèle(new MockDAOFactory());
         } catch (Exception e) {
             Context context = getApplicationContext();
             int duration = Toast.LENGTH_SHORT;

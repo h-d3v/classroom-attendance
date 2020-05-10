@@ -1,12 +1,15 @@
 package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
+import android.content.Intent;
 
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.ContratVpVoirListeSeances;
 import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.ui.activité.ConnexionActivité;
+import dti.g25.projet_s.ui.activité.VoirListeSeancesActivity;
 
 public class PresenteurVoirListeSeance implements ContratVpVoirListeSeances.IPresenteurVoirListeSeances {
 
@@ -56,4 +59,7 @@ public class PresenteurVoirListeSeance implements ContratVpVoirListeSeances.IPre
         }
         return 0;
     }
+
+
+
 }

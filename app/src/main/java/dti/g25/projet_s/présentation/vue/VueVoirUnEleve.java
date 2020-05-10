@@ -39,7 +39,7 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
         View racine = inflater.inflate(R.layout.frag_voir_eleve_absent, container, false);
 
         MockDAOFactory mockDAOFactory = new MockDAOFactory();
-        Modèle modèle = new Modèle(mockDAOFactory, mockDAOFactory.getUtilisateur(0));
+        Modèle modèle = new Modèle(mockDAOFactory);
         final Utilisateur leUser = mockDAOFactory.getUtilisateur(0);
 
         tvNomEleve = racine.findViewById(R.id.tvNomEleve);

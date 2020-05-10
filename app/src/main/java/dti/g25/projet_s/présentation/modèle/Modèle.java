@@ -2,7 +2,7 @@ package dti.g25.projet_s.présentation.modèle;
 
 import android.content.Context;
 
-import dti.g25.projet_s.dao.CourGroupeFactice;
+import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Horaire;
@@ -19,7 +19,7 @@ import java.util.List;
 
 public class Modèle {
 
-
+    private String cléUtilisateur;
     private Utilisateur utilisateur;
     private List<CoursGroupe> coursGroupes;
     private List<Seance> seances;
@@ -34,17 +34,20 @@ public class Modèle {
      */
     public Modèle() {};
 
-    public Modèle(DAOFactory daoFactory, Utilisateur utilisateur) {
-        this.utilisateurActuelle = utilisateur;
+    public Modèle(DAOFactory daoFactory) {
         this.daoFactory = daoFactory;
         coursGroupes = chargerCoursGroupeUtilisateur();
         chargerSeanceUtilisateur();
     }
 
-
-
-    public Utilisateur créerUtilsiateur(String nomUtilisateur, Role role) throws Exception {
-        return new CréeationUtilisateur().CréerUtilisateur(nomUtilisateur, role);
+    /**
+     * Crée un modèle a partir d'une clé d'utilisateur
+     * @param uneClé
+     */
+    public Modèle(String uneClé) {
+        cléUtilisateur = uneClé;
+        coursGroupes = chargerCoursGroupeUtilisateur();
+        chargerSeanceUtilisateur();
     }
 
     /**
@@ -69,8 +72,15 @@ public class Modèle {
     }
 
     public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
-        return new CourGroupeFactice().ObtenirCourGroupe();
+            return new ServeurFactice().ObtenirCourGroupe(cléUtilisateur);
        // return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
+    }
+
+    /**
+     * charge les info de l'utilasateur
+     */
+    public void chargerInfoUtilisateur() throws Exception {
+        utilisateurActuelle =  new ServeurFactice().chargerInfoUtilisateur(cléUtilisateur);
     }
 
     public void changerEtatSeance(int pos,EtatSeance etatSeance){
@@ -129,9 +139,11 @@ public class Modèle {
 
     public void chargerSeanceUtilisateur() {
         listeSeance = new ArrayList<>();
-        for (CoursGroupe unCour : coursGroupes) {
-            for (Seance uneSeance : unCour.getListeSeances()) {
-                listeSeance.add(uneSeance);
+        if(coursGroupes != null) {
+            for (CoursGroupe unCour : coursGroupes) {
+                for (Seance uneSeance : unCour.getListeSeances()) {
+                    listeSeance.add(uneSeance);
+                }
             }
         }
     }
@@ -144,4 +156,18 @@ public class Modèle {
         List<Utilisateur> tousLesUsers = getListeUtilisateur();
         return tousLesUsers.get(index);
     }
+
+    /**
+     * rafrachi les donné du modèle
+     */
+    public void rafraîchir() throws Exception {
+        coursGroupes = chargerCoursGroupeUtilisateur();
+        chargerSeanceUtilisateur();
+        chargerInfoUtilisateur();
+    }
+
+    public void setCléUtilisateur(String uneClé) {
+        cléUtilisateur = uneClé;
+    }
+
 }

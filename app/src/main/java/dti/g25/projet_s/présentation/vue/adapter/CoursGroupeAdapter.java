@@ -16,6 +16,7 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public CoursGroupeAdapter(IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe presenteurVoirCoursGroupe){
         this.presenteurVoirCoursGroupe=presenteurVoirCoursGroupe;
     }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,

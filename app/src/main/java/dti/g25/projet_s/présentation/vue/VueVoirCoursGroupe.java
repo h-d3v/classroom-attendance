@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,13 +15,10 @@ import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.vue.adapter.CoursGroupeAdapter;
 
 public class VueVoirCoursGroupe extends Fragment implements IContatVuePresenteurVoirCoursGroupe.IVueVoirCoursGroupe {
+
     private RecyclerView rvCoursGroupe;
     private CoursGroupeAdapter coursGroupeAdapter;
     private IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe _presenteur;
-
-    public VueVoirCoursGroupe(IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe presenteur){
-        _presenteur=presenteur;
-    }
 
     public VueVoirCoursGroupe() {
 
@@ -34,7 +33,7 @@ public class VueVoirCoursGroupe extends Fragment implements IContatVuePresenteur
     public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.activity_voir_cours_groupe, container, false);
         rvCoursGroupe=view.findViewById(R.id.rvVoirCoursGroupe);
-        coursGroupeAdapter= new CoursGroupeAdapter(_presenteur);
+        coursGroupeAdapter = new CoursGroupeAdapter(_presenteur);
         rvCoursGroupe.setAdapter(coursGroupeAdapter);
         rvCoursGroupe.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
@@ -42,6 +41,7 @@ public class VueVoirCoursGroupe extends Fragment implements IContatVuePresenteur
 
     @Override
     public void rafraichir() {
-        //TODO
+        if(coursGroupeAdapter!=null)
+            coursGroupeAdapter.notifyDataSetChanged();
     }
 }

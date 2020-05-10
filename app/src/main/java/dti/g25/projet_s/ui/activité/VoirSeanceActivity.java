@@ -23,7 +23,7 @@ IContratVoirUneSeance.IPresenteurVoirUneSeance presenteurVoirUneSeance;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_une_seance);
         MockDAOFactory mockDAOFactory= new MockDAOFactory();
-        Modèle modèle = new Modèle(mockDAOFactory,mockDAOFactory.getUtilisateur(0));
+        Modèle modèle = new Modèle(mockDAOFactory);
         modèle.chargerCoursGroupeUtilisateur();
         VueVoirUneSeance vueVoirUneSeance=new VueVoirUneSeance();
         presenteurVoirUneSeance=new PresenteurVoirUneSeance(modèle,vueVoirUneSeance, this, 0);

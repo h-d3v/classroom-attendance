@@ -47,6 +47,7 @@ public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCour
         setRetainInstance(true);
         return racine;
     }
+
 }
 
 
