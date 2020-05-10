@@ -6,10 +6,13 @@
     <string name="erreur_onnexion">Mauvais nom utilisateur / mot de passe</string>
     <string name="présent">Présent</string>
     <string name="absent">Absent</string>
+    <string name="coursGroupe">Vos Cours et Groupes</string>
+    <string name="voirDétails">Voir Détails</string>
     <string-array name="choix_heures_absences">
         <item>1 Heure</item>
         <item>2 Heures</item>
         <item>3 Heures</item>
         <item>4 Heures</item>
     </string-array>
+
 </resources>

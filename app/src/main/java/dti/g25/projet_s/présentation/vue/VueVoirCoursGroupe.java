@@ -1,6 +1,7 @@
 package dti.g25.projet_s.présentation.vue;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,7 @@ public class VueVoirCoursGroupe extends Fragment implements IContatVuePresenteur
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.activity_voir_cours_groupe, container, false);
+        View view= inflater.inflate(R.layout.frag_voir_coursgroupes, container, false);
         rvCoursGroupe=view.findViewById(R.id.rvVoirCoursGroupe);
         coursGroupeAdapter = new CoursGroupeAdapter(_presenteur);
         rvCoursGroupe.setAdapter(coursGroupeAdapter);
@@ -42,6 +43,7 @@ public class VueVoirCoursGroupe extends Fragment implements IContatVuePresenteur
     @Override
     public void rafraichir() {
         if(coursGroupeAdapter!=null)
+            Log.d("data", "as changed");
             coursGroupeAdapter.notifyDataSetChanged();
     }
 }

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Debug;
 import android.util.Log;
 
 import androidx.fragment.app.FragmentTransaction;
@@ -15,7 +14,7 @@ import dti.g25.projet_s.présentation.présenteur.PresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.vue.VueVoirCoursGroupe;
 
 public class VoirCoursGroupeActivity extends AppCompatActivity {
-    public static final String EXTRA_POSITION="dti.g25.nombres.position";
+    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.position";
 
     PresenteurVoirCoursGroupe presenteurVoirCoursGroupe;
     @Override
@@ -32,7 +31,7 @@ public class VoirCoursGroupeActivity extends AppCompatActivity {
         presenteurVoirCoursGroupe=new PresenteurVoirCoursGroupe(vueVoirCoursGroupe, modèle,this);
         vueVoirCoursGroupe.set_presenteur(presenteurVoirCoursGroupe);
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.layout_principal,vueVoirCoursGroupe);
+        fragmentTransaction.add(R.id.layout_VoirCoursGroupes,vueVoirCoursGroupe);
         fragmentTransaction.commit();
     }
 
@@ -43,7 +42,7 @@ public class VoirCoursGroupeActivity extends AppCompatActivity {
         try {
             presenteurVoirCoursGroupe.onActivityResult(requestCode, resultCode, data);
         } catch (Exception e) {
-            Log.e("Erruer: ", String.valueOf(e));
+            Log.e("Erreur", String.valueOf(e));
         }
     }
 }

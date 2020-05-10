@@ -19,25 +19,25 @@ public class ServeurFactice {
     public List<CoursGroupe> ObtenirCourGroupe(String uneClé) {
         List<CoursGroupe> listeCourGroupe = new ArrayList<>();
         List<Utilisateur> listeParticipant = new ArrayList<>();
+        if(uneClé != null){
+            if(uneClé.equals("uneCléProf") || uneClé.equals("uneCléÉlèves")) {
 
-        if(uneClé == "uneCléProf" || uneClé == "uneCléÉlèves") {
-
-            List<Seance> listeSeance;
-            listeParticipant.add(new Utilisateur("Jacke", Role.ÉLÈVE));
-            listeParticipant.add(new Utilisateur("Bob", Role.ÉLÈVE));
-            listeParticipant.add(new Utilisateur("Gustave", Role.ÉLÈVE));
-            listeParticipant.add(new Utilisateur("Sakurai", Role.ÉLÈVE));
-            listeParticipant.add(new Utilisateur("ReanuKeeves", Role.PROFESSEUR));
+                List<Seance> listeSeance;
+                listeParticipant.add(new Utilisateur("Jacke", Role.ÉLÈVE));
+                listeParticipant.add(new Utilisateur("Bob", Role.ÉLÈVE));
+                listeParticipant.add(new Utilisateur("Gustave", Role.ÉLÈVE));
+                listeParticipant.add(new Utilisateur("Sakurai", Role.ÉLÈVE));
+                listeParticipant.add(new Utilisateur("ReanuKeeves", Role.PROFESSEUR));
 
 
-            for (int i = 0; i < 3; i++) {
-                listeSeance = new ArrayList<>();
-                listeCourGroupe.add(new CoursGroupe(new LibelleCours("ART DRAMATIQUE", "BC" + i), i));
-                listeCourGroupe.get(i).setParticipants(listeParticipant);
-                listeSeance.add(new Seance(listeCourGroupe.get(i), new Horaire(00.0, 5.5, "Mercredi")));
-                listeCourGroupe.get(i).setListeSeances(listeSeance);
+                for (int i = 0; i < 3; i++) {
+                    listeSeance = new ArrayList<>();
+                    listeCourGroupe.add(new CoursGroupe(new LibelleCours("ART DRAMATIQUE", "BC" + i), i));
+                    listeCourGroupe.get(i).setParticipants(listeParticipant);
+                    listeSeance.add(new Seance(listeCourGroupe.get(i), new Horaire(00.0, 5.5, "Mercredi")));
+                    listeCourGroupe.get(i).setListeSeances(listeSeance);
+                }
             }
-
         }
 
         return listeCourGroupe;

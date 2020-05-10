@@ -13,6 +13,7 @@ import dti.g25.projet_s.ui.activité.ConnexionActivité;
 public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe {
     private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.position";
     private static final int REQUEST_CODE_CONEXION= 55;
+    private String cléConnexion;
 
     private IContatVuePresenteurVoirCoursGroupe.IVueVoirCoursGroupe vueVoirCoursGroupe;
     private Modèle modèle;
@@ -47,10 +48,11 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) throws Exception {
         if (requestCode == REQUEST_CODE_CONEXION && resultCode == Activity.RESULT_OK) {
-            String cléConnexion=data.getStringExtra(EXTRA_CLÉ_CONNEXION);
+            cléConnexion=data.getStringExtra(EXTRA_CLÉ_CONNEXION);
             Log.d("clé utilisateur", cléConnexion);
             modèle.setCléUtilisateur(cléConnexion);
             modèle.rafraîchir();
+            Log.d("cour", modèle.getCourGroupeParPos(0).toString());
             vueVoirCoursGroupe.rafraichir();
         }
     }
