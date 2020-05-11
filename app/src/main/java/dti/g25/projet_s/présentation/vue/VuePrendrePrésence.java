@@ -44,7 +44,6 @@ public class VuePrendrePrésence extends Fragment implements ContratVuePrésente
         txtNomÉtudiant=racine.findViewById(R.id.txtNomÉtudiant);
         btnAbsent = racine.findViewById(R.id.btnAbsent);
         btnPrésent = racine.findViewById(R.id.btnPrésent);
-        txtNomÉtudiant.setText(présenteur.getNomUtilisteur());
         btnPrésent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

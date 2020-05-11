@@ -15,20 +15,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionSeance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/ContratVuePrésenteurVoirListeÉlèves.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/ContratVuePrésenteurVoirListeÉlèves.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/IContratVuePrésenteurVoirUnEleve.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/IContratVuePrésenteurVoirUnEleve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/Modèle.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/Modèle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/ContratVuePrésenteurPrendrePrésence.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/ContratVuePrésenteurPrendrePrésence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUnCourGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUnCourGroupe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUnEleve.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUnEleve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurVoirListeÉlèvesPrésence.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurVoirListeÉlèvesPrésence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUnEleve.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUnEleve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/adapter/SeanceAdapterUnCourGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/adapter/SeanceAdapterUnCourGroupe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirListeÉlevesPrésenceActivité.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirListeÉlevesPrésenceActivité.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirUnEleve.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirUnEleve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/eleves_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/eleves_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/seance_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/seance_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/seance_view_cour_groupe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/seance_view_cour_groupe.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUneSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUneSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurPrendrePrésence.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurPrendrePrésence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VuePrendrePrésence.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VuePrendrePrésence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUnCourGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUnCourGroupe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUneSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirUneSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/IContratVoirUneSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/IContratVoirUneSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/PrendrePrésenceActivité.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/PrendrePrésenceActivité.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/frag_prendre_presence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_prendre_presence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_eleve_absent.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/frag_voir_eleve_absent.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +34,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="HT84T1A03247" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel2_NoobTIme" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -76,7 +74,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="HT84T1A03247" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-27T21:56:48.450Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-11T10:09:40.475Z" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />

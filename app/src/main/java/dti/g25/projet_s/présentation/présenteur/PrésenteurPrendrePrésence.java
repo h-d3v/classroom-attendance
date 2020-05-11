@@ -1,16 +1,18 @@
 package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
+import android.util.Log;
+
 import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 
 public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendrePrésence.IPrésenteurPrendrePrésence {
 
     private static final String EXTRA_POSITION_SEANCE= "dti.g25.projet_s.positionSécance";
-    private final int positionGroupe;
-    private final int nombreEtudiant;
-    private int itérateur;
+    private int positionGroupe;
+    private int itérateur = 0;
     private int positionSéeance;
+    private String cléUtilisateur;
 
     Modèle modèle;
     Activity activité;
@@ -23,26 +25,34 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
      * @param vue La vue qui est relié au présenteur de la prise de présence
      * @param modèle le modele du MVP
      */
-    public PrésenteurPrendrePrésence(Activity activité, ContratVuePrésenteurPrendrePrésence.IVuePrendrePrésence vue, Modèle modèle, int positionGroupe, int positionSéeance) {
+    public PrésenteurPrendrePrésence(Activity activité, ContratVuePrésenteurPrendrePrésence.IVuePrendrePrésence vue, Modèle modèle) {
         this.activité=activité;
         this.vue=vue;
         this.modèle=modèle;
-        this.positionGroupe=positionGroupe;
-        nombreEtudiant=modèle.getListeEtudiantsParCoursGroupe(positionGroupe).size();
-        itérateur = 0;
-        this.positionSéeance = positionSéeance;
     }
 
 
     @Override
     public String getNomUtilisteur() {
-        return modèle.getListUtlisateurParCourGroupe(positionGroupe).get(itérateur).getUsername();
+        return modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername();
+    }
+
+    @Override
+    public void commencerPrendrePrésence(int positionSéeance, int positionGroupe, String cléUtilisateur) throws Exception {
+        this.positionSéeance = positionSéeance;
+        this.positionGroupe = positionGroupe;
+        this.cléUtilisateur = cléUtilisateur;
+
+        modèle.setCléUtilisateur(cléUtilisateur);
+        modèle.rafraîchir();
+        Log.d("nomUtilisateur", modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
+        vue.setTxtNomÉtudiant(modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
     }
 
     @Override
     public void ajouterAbsence(boolean présence) {
 
-        modèle.ajouterAbsence(présence, modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur), positionSéeance);
+        modèle.ajouterAbsenceParCourGroupe(présence, modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur), positionSéeance, positionGroupe);
         itérateur +=1;
         if(modèle.getListUtlisateurParCourGroupe(positionGroupe).size() -1 == itérateur)
             activité.finish();

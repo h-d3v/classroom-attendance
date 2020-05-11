@@ -77,7 +77,6 @@ public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCour
 
     @Override
     public void rafraichir() {
-        Log.d("VoirBouton", valueOf(_presenteur.getUtilisateurUilisateurBouton()));
         if(seanceAdapter!=null) {
             seanceAdapter.notifyDataSetChanged();
         }

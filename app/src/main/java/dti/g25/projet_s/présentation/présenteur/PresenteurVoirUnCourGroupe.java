@@ -11,12 +11,14 @@ import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.ui.activité.PrendrePrésenceActivité;
 import dti.g25.projet_s.ui.activité.VoirListeÉlevesPrésenceActivité;
+import dti.g25.projet_s.ui.activité.VoirSeanceActivity;
 
 public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IPrensenteurVoirCourGroupe {
     private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
     private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
     private static final String EXTRA_POSITION_SEANCE = "dti.g25.projet_s.positionSeance";
     private static final int RESQUEST_CODE_VOIR_ELEVES = 33;
+    private static final int RESQUEST_CODE_VOIR_SEANCE = 22;
 
     private Modèle _modele;
     private ContratVpVoirUnCoursGroupe.IVueVoirCoursGroupe _vue;
@@ -62,7 +64,6 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
         _vue.afficherSigleCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getTitreAbrégé());
         _vue.afficherNombreÉlèvesInscrit(_modele.getListeEtudiantsParCoursGroupe(_positionCoursGroupe).size());
         _vue.rafraichir();
-        _vue.rafraichir();
     }
 
     @Override
@@ -84,7 +85,11 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
 
     @Override
     public void requeteVoirSeance(int position) {
-
+        Intent intentVoirSéance = new Intent(_activite, VoirSeanceActivity.class);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _cléUtilisateur);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
+        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, position);
+        _activite.startActivityForResult(intentVoirSéance, RESQUEST_CODE_VOIR_SEANCE);
     }
 
     @Override
@@ -115,6 +120,5 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
             return View.VISIBLE;
         return View.INVISIBLE;
     }
-
 
 }
