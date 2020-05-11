@@ -1,6 +1,7 @@
 package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 
 import dti.g25.projet_s.domaine.entité.LibelleCours;
@@ -8,8 +9,12 @@ import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.ui.activité.VoirListeÉlevesPrésenceActivité;
 
 public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IPrensenteurVoirCourGroupe {
+    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
+    private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
+    private static final String EXTRA_POSITION_SEANCE = "dti.g25.projet_s.positionSeance";
 
     private Modèle _modele;
     private ContratVpVoirUnCoursGroupe.IVueVoirCoursGroupe _vue;
@@ -76,17 +81,21 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
     }
 
     @Override
-    public void requeteVoirSeance() {
+    public void requeteVoirSeance(int position) {
 
     }
 
     @Override
-    public void requetePrendrePrésence() {
-
+    public void requetePrendrePrésence(int positionSeance) {
+        Intent intentVoirSéance = new Intent(_activite, VoirListeÉlevesPrésenceActivité.class);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _cléUtilisateur);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
+        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, positionSeance);
+        _activite.startActivity(intentVoirSéance);
     }
 
     @Override
-    public void requeteModifierPrésence() {
+    public void requeteModifierPrésence(int position) {
 
     }
 

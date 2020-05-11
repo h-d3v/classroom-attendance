@@ -14,7 +14,7 @@ import dti.g25.projet_s.présentation.présenteur.PresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.vue.VueVoirCoursGroupe;
 
 public class VoirCoursGroupeActivity extends AppCompatActivity {
-    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.position";
+    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
 
     PresenteurVoirCoursGroupe presenteurVoirCoursGroupe;
     @Override
@@ -23,7 +23,6 @@ public class VoirCoursGroupeActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_cours_groupe);
-        MockDAOFactory mockDAOFactory= new MockDAOFactory();
         //A ajuster TODO
         Modèle modèle = new Modèle();
         modèle.chargerCoursGroupeUtilisateur();

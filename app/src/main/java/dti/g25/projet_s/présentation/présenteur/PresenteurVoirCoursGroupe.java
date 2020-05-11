@@ -14,7 +14,7 @@ import dti.g25.projet_s.ui.activité.VoirUnCourGroupeActivity;
 
 public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe {
     private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
-    private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.position";
+    private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
     private static final int REQUEST_CODE_CONEXION= 55;
     private String cléConnexion;
 

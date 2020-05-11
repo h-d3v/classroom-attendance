@@ -1,6 +1,5 @@
 package dti.g25.projet_s.présentation.vue.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import dti.g25.projet_s.R;
-import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 
@@ -38,7 +36,7 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
 
         Seance seance=_presenteur.getSeanceParPos(position);
         btnModifierPrésence =  ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence));
@@ -59,21 +57,21 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
         ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View bouton) {
-                _presenteur.requeteModifierPrésence();
+                _presenteur.requetePrendrePrésence(position);
             }
         });
 
         ((Button)holder.itemView.findViewById(R.id.btnModifierPrendrePrésence)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View bouton) {
-                _presenteur.requetePrendrePrésence();
+                _presenteur.requeteModifierPrésence(position);
             }
         });
 
         ((Button)holder.itemView.findViewById(R.id.btnVoirDétails)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View bouton) {
-                _presenteur.requeteVoirSeance(); }
+                _presenteur.requeteVoirSeance(position); }
         });
     }
 

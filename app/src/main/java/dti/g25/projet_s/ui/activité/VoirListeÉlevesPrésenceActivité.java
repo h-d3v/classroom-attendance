@@ -7,25 +7,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import dti.g25.projet_s.R;
+import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirUnCourGroupe;
+import dti.g25.projet_s.présentation.présenteur.PrésenteurVoirListeÉlèvesPrésence;
+import dti.g25.projet_s.présentation.vue.VueVoirListeÉlèvesPrésence;
 import dti.g25.projet_s.présentation.vue.VueVoirUnCourGroupe;
 
 import static java.lang.String.valueOf;
 
-public class VoirUnCourGroupeActivity extends AppCompatActivity {
+public class VoirListeÉlevesPrésenceActivité  extends AppCompatActivity {
+
     private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
     private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
+    private static final String EXTRA_POSITION_SEANCE = "dti.g25.projet_s.positionSeance";
 
-    PresenteurVoirUnCourGroupe _presenteur;
+    PrésenteurVoirListeÉlèvesPrésence présenteur;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_un_courgroupe);
-        Modèle modele=new Modèle(this);
-        VueVoirUnCourGroupe vue=new VueVoirUnCourGroupe();
-        _presenteur= new PresenteurVoirUnCourGroupe(this, vue, modele);
-        vue.setPresenteur(_presenteur);
+        Modèle modèle=new Modèle(this);
+        VueVoirListeÉlèvesPrésence vue=new VueVoirListeÉlèvesPrésence();
+        présenteur= new PrésenteurVoirListeÉlèvesPrésence(this, vue, modèle);
+        vue.set_presenteur(présenteur);
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         ft.add(R.id.layout_voir_un_courgroupe, vue);
         ft.commit();
@@ -35,13 +40,13 @@ public class VoirUnCourGroupeActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        int position = getIntent().getIntExtra(EXTRA_POSITION_GROUPE, -1);
+        int positionGroupe = getIntent().getIntExtra(EXTRA_POSITION_GROUPE, -1);
+        int positionSeance = getIntent().getIntExtra(EXTRA_POSITION_SEANCE, -1);
         String cléUtilisateur = getIntent().getStringExtra(EXTRA_CLÉ_CONNEXION);
         try {
-            _presenteur.commencerVoirCourGroupe(position, cléUtilisateur);
+            présenteur.commencerListeÉlèvesPrésence(positionSeance, positionGroupe, cléUtilisateur);
         } catch (Exception e) {
-            Log.e("ErreurVoirCourGroupe", valueOf(e));
+            Log.e("ErreurVoirListeÉlèvesP", valueOf(e));
         }
     }
-
 }

@@ -25,11 +25,11 @@ public interface ContratVpVoirUnCoursGroupe {
 
         boolean getUtilisateurUilisateurBouton();
 
-        void requeteVoirSeance();
+        void requeteVoirSeance(int position);
 
-        void requetePrendrePrésence();
+        void requetePrendrePrésence(int positionSeance);
 
-        void requeteModifierPrésence();
+        void requeteModifierPrésence(int position);
 
         int getVisibilteBouton();
     }
