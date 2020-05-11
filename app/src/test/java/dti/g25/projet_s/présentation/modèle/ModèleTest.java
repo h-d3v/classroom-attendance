@@ -9,6 +9,7 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
@@ -215,6 +216,8 @@ public class ModèleTest extends TestCase {
         daoLinkedList.add(mockCoursGroupe2);
         when(mockDAOFactory.chargerListeCoursGroupeParUtilisateur(mockProf0)).thenReturn(daoLinkedList);
         ModèleDAO modèleDAO = new ModèleDAO(mockDAOFactory, mockProf0);
+        verify(mockDAOFactory).chargerListeCoursGroupeParUtilisateur(mockProf0);
+
         assertEquals(2, modèleDAO.getCoursGroupes().size());
     }
     @Test
@@ -223,6 +226,7 @@ public class ModèleTest extends TestCase {
         modèleDAO.setUtilisateur(mockEleve0);
         assertEquals(mockEleve0, modèleDAO.getUtilisateurConnecte());
         assertNotSame(mockEleve1,modèleDAO.getUtilisateurConnecte());
+        verify(mockEleve0, atLeastOnce()).lire();
 
     }
     @Test
@@ -234,9 +238,12 @@ public class ModèleTest extends TestCase {
         when(mockCoursGroupe1.lire()).thenReturn(new CoursGroupe(new LibelleCours("INFO", "420"), 1));
         when(mockCoursGroupe2.lire()).thenReturn(new CoursGroupe(new LibelleCours("INFO", "420"), 2));
         ModèleDAO modèle= new ModèleDAO(mockDAOFactory, mockProf0);
+        verify(mockDAOFactory).chargerListeCoursGroupeParUtilisateur(mockProf0);
         assertEquals(2, modèle.chargerCoursGroupeUtilisateur().size());
         assertEquals(mockCoursGroupe1.lire(),modèle.chargerCoursGroupeUtilisateur().get(0).lire());
         assertEquals(mockCoursGroupe2.lire(),modèle.chargerCoursGroupeUtilisateur().get(1).lire());
+        verify(mockCoursGroupe1, atLeastOnce()).lire();
+        verify(mockCoursGroupe2,atLeastOnce()).lire();
 
     }
     @Test
@@ -252,6 +259,7 @@ public class ModèleTest extends TestCase {
         assertEquals(mockCoursGroupe1, modèle.getCourGroupeParPos(0));
         assertEquals(mockCoursGroupe2, modèle.getCourGroupeParPos(1));
         assertNull(modèle.getCourGroupeParPos(3));
+        verify(mockDAOFactory).chargerListeCoursGroupeParUtilisateur(mockEleve0);
     }
 
 
@@ -262,7 +270,9 @@ public class ModèleTest extends TestCase {
         modèleDAO.chargerSeanceUtilisateur();
         for(int i= 0;i<seances.size();i++){
             assertEquals(seances.get(i).lire(), modèleDAO.getSeanceParPos(i).lire());
+            verify(seances.get(i), atLeast(1)).lire();
         }
+        verify(mockDAOFactory).chargerListeSeanceParUtilisateur(mockProf0);
 
     }
 
@@ -284,11 +294,16 @@ public class ModèleTest extends TestCase {
         assertEquals(listeUtilisateur, modèleDAO.getListDAOUtlisateurParCourGroupe(0));
         for(int i=0; i<listeUtilisateur.size();i++){
             assertEquals(listeUtilisateur.get(i), modèleDAO.getListDAOUtlisateurParCourGroupe(0).get(i));
+            verify(listeUtilisateur.get(i),atLeastOnce()).lire();
         }
         assertEquals(listeUtilisateur1, modèleDAO.getListDAOUtlisateurParCourGroupe(1));
         for(int i=0; i<listeUtilisateur1.size();i++){
             assertEquals(listeUtilisateur1.get(i), modèleDAO.getListDAOUtlisateurParCourGroupe(1).get(i));
+            verify(listeUtilisateur1.get(i),atLeastOnce()).lire();
         }
+        verify(mockDAOFactory,atLeastOnce()).chargerListeCoursGroupeParUtilisateur(mockProf0);
+        verify(mockDAOFactory, atLeastOnce()).chargerListeUtilisateurParCoursGroupe(mockCoursGroupe1);
+        verify(mockDAOFactory, atLeastOnce()).chargerListeUtilisateurParCoursGroupe(mockCoursGroupe2);
     }
     @Test
     public void testGetListeEtudiantsParCoursGroupe(){
@@ -310,7 +325,10 @@ public class ModèleTest extends TestCase {
             assertEquals(listeUtilisateur.get(i).lire().getRôle(), Role.ÉLÈVE);
             assertEquals(modèleDAO.getListDAOUtlisateurParCourGroupe(0).get(i).lire().getRôle(), Role.ÉLÈVE);
             assertTrue(modèleDAO.getListeEtudiantsParCoursGroupe(0).contains(listeUtilisateur.get(i)));
+            verify(listeUtilisateur.get(i), atLeastOnce()).lire();
         }
+        verify(mockDAOFactory,atLeastOnce()).chargerListeCoursGroupeParUtilisateur(mockProf0);
+        verify(mockDAOFactory, atLeastOnce()).chargerListeUtilisateurParCoursGroupe(mockCoursGroupe1);
 
 
     }
@@ -332,7 +350,7 @@ public class ModèleTest extends TestCase {
         modèleDAO.chargerSeanceUtilisateur();
         modèleDAO.setEtatSeance(0, EtatSeance.ANULLEE);
         assertEquals(modèleDAO.getSeanceParPos(0).lire().get_etat(), EtatSeance.ANULLEE );
-
+        verify(mockDAOFactory).chargerListeSeanceParUtilisateur(mockProf0);
 
     }
 
@@ -341,7 +359,9 @@ public class ModèleTest extends TestCase {
         when(mockDAOFactory.chargerListeSeanceParUtilisateur(mockProf0)).thenReturn(seances);
         ModèleDAO modèleDAO= new ModèleDAO(mockDAOFactory, mockProf0);
         modèleDAO.chargerSeanceUtilisateur();
+        assertNotNull(modèleDAO.getListeSeance());
         assertEquals(seances, modèleDAO.getListeSeance());
+        verify(mockDAOFactory).chargerListeSeanceParUtilisateur(mockProf0);
 
     }
 
