@@ -2,6 +2,7 @@ package dti.g25.projet_s.domaine.interacteurs;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import android.os.Build;
@@ -35,13 +36,15 @@ public class GestionSeance implements IGestionSeance {
     @Override
     public Seance ajouterAbsence(Utilisateur utilisateur, Seance seance, Boolean présence) {
         List<Absence> listeAbsence = seance.getListeAbsence();
-        for(int i = 0 ; i < listeAbsence.size(); i++){
-            if(listeAbsence.get(i).getUtilisateur().equals(utilisateur)){
-                listeAbsence.set(i, new Absence(utilisateur, présence));
-            }  else {
+        if(listeAbsence==null) listeAbsence= new LinkedList<Absence>();
+
+        //for(int i = 0 ; i < listeAbsence.size(); i++){
+            //if(listeAbsence.get(i).getUtilisateur().equals(utilisateur)){
+                listeAbsence.add( new Absence(utilisateur, présence));
+            //}  else {
                 seance.getListeAbsence().add(new Absence(utilisateur, présence));
-            }
-        }
+           // }
+        //}
         seance.setListeAbsence(listeAbsence);
         return seance;
     }

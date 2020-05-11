@@ -11,7 +11,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/domaine/entité/AbsenceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/domaine/entité/TestCoursGroupe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/domaine/entité/TestHoraire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/domaine/entité/TestSeance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/domaine/entité/TestUtilisateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/domaine/interacteur/TestCreationUtilisateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/domaine/interacteur/TestGestionCoursGroupe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s/domaine/interacteur/TestGestionSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/EtatSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/EtatSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Seance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Seance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/CréeationUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/CréeationUtilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionCoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionCoursGroupe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/GestionSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +116,92 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android JUnit.TestGestionSeance.ajouterAbsn">
+    <configuration name="TestGestionCoursGroupe.ajouterPrtcipant" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dti.g25.projet_s.domaine.interacteur.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dti.g25.projet_s.domaine.interacteur" />
+      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.domaine.interacteur.TestGestionCoursGroupe" />
+      <option name="METHOD_NAME" value="ajouterPrtcipant" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGestionCoursGroupe.modifPrticipant" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dti.g25.projet_s.domaine.interacteur.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dti.g25.projet_s.domaine.interacteur" />
+      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.domaine.interacteur.TestGestionCoursGroupe" />
+      <option name="METHOD_NAME" value="modifPrticipant" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGestionSeance.ajouterAbsn" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dti.g25.projet_s.domaine.interacteur.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dti.g25.projet_s.domaine.interacteur" />
+      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.domaine.interacteur.TestGestionSeance" />
+      <option name="METHOD_NAME" value="ajouterAbsn" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGestionSeance.changerStatut" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dti.g25.projet_s.domaine.interacteur.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dti.g25.projet_s.domaine.interacteur" />
+      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.domaine.interacteur.TestGestionSeance" />
+      <option name="METHOD_NAME" value="changerStatut" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGestionSeance.creerSeance" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dti.g25.projet_s.domaine.interacteur.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dti.g25.projet_s.domaine.interacteur" />
+      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.domaine.interacteur.TestGestionSeance" />
+      <option name="METHOD_NAME" value="creerSeance" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -156,6 +260,15 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android JUnit.TestGestionSeance.ajouterAbsn" />
+        <item itemvalue="Android JUnit.TestGestionSeance.changerStatut" />
+        <item itemvalue="Android JUnit.TestGestionSeance.creerSeance" />
+        <item itemvalue="Android JUnit.TestGestionCoursGroupe.modifPrticipant" />
+        <item itemvalue="Android JUnit.TestGestionCoursGroupe.ajouterPrtcipant" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
