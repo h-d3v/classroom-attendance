@@ -1,6 +1,7 @@
 package dti.g25.projet_s.dao;
 
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.présentation.modèle.dao.DAO;
 
 public class MockDAOCoursGroupe implements DAO<CoursGroupe> {
 

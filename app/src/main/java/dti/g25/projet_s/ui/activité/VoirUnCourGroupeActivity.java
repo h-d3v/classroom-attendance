@@ -9,7 +9,7 @@ import dti.g25.projet_s.R;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.LibelleCours;
 import dti.g25.projet_s.domaine.interacteurs.GestionCoursGroupe;
-import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.présentation.modèle.dao.Modèle;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirUnCourGroupe;
 import dti.g25.projet_s.présentation.vue.VueVoirUnCourGroupe;
 

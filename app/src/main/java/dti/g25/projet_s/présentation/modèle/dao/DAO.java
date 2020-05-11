@@ -1,4 +1,4 @@
-package dti.g25.projet_s.dao;
+package dti.g25.projet_s.présentation.modèle.dao;
 
 public interface DAO<T> {
 

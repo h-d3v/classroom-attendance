@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import dti.g25.projet_s.domaine.entité.LibelleCours;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
-import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.présentation.modèle.dao.Modèle;
 
 public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IPrensenteurVoirCourGroupe {
 
