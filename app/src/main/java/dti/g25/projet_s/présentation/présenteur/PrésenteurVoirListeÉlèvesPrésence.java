@@ -1,17 +1,24 @@
 package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.util.Log;
 
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
 import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.ui.activité.VoirListeÉlevesPrésenceActivité;
+import dti.g25.projet_s.ui.activité.VoirUnEleve;
 
 public class PrésenteurVoirListeÉlèvesPrésence implements ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves {
     private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
     private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
     private static final String EXTRA_POSITION_SEANCE = "dti.g25.projet_s.positionSeance";
+    private static final String EXTRA_POSITION_ÉLÈVES = "dti.g25.projet_s.positionÉlèves";
+    private static final String EXTRA_POSITION_PRÉSENCE = "dti.g25.projet_s.présence";
+    private static final int RESQUEST_CODE_VOIR_ELEVES = 33;
 
 
     private Modèle modèle;
@@ -46,7 +53,12 @@ public class PrésenteurVoirListeÉlèvesPrésence implements ContratVuePrésent
 
     @Override
     public void requeteVoirÉlèves(int position) {
-
+        Intent intentVoirSéance = new Intent(activité, VoirUnEleve.class);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, cléUtilisateur);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, positionCoursGroupe);
+        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, positionSeance);
+        intentVoirSéance.putExtra(EXTRA_POSITION_ÉLÈVES, position);
+        activité.startActivityForResult(intentVoirSéance, RESQUEST_CODE_VOIR_ELEVES);
     }
 
     @Override
@@ -57,6 +69,20 @@ public class PrésenteurVoirListeÉlèvesPrésence implements ContratVuePrésent
         modèle.setCléUtilisateur(this.cléUtilisateur);
         modèle.rafraîchir();
         vue.rafraichir();
+    }
+
+    @Override
+    public  void onActivityResult(int requestCode, int resultCode, Intent data) throws Exception {
+        if (requestCode == RESQUEST_CODE_VOIR_ELEVES && resultCode == Activity.RESULT_OK) {
+           boolean présence =  data.getBooleanExtra(EXTRA_POSITION_PRÉSENCE, true);
+           int positionÉlèves = data.getIntExtra(EXTRA_POSITION_ÉLÈVES, -1);
+
+           if(positionÉlèves > -1)
+                modèle.ajouterAbsenceParCourGroupe(présence, getUtilisateurParPosition(positionÉlèves), positionSeance, positionCoursGroupe);
+
+           vue.rafraichir();
+        }
+
     }
 
 }

@@ -1,5 +1,6 @@
 package dti.g25.projet_s.ui.activité;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -47,6 +48,17 @@ public class VoirListeÉlevesPrésenceActivité  extends AppCompatActivity {
             présenteur.commencerListeÉlèvesPrésence(positionSeance, positionGroupe, cléUtilisateur);
         } catch (Exception e) {
             Log.e("ErreurVoirListeÉlèvesP", valueOf(e));
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d("uneActivité", "Terminer");
+        try {
+            présenteur.onActivityResult(requestCode, resultCode, data);
+        } catch (Exception e) {
+            Log.e("Erreur", String.valueOf(e));
         }
     }
 }

@@ -40,7 +40,7 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
 
         Seance seance=_presenteur.getSeanceParPos(position);
         btnModifierPrésence =  ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence));
-        btnModifierPrendrePrésence = ((Button)holder.itemView.findViewById(R.id.btnModifierPrendrePrésence));
+        btnModifierPrendrePrésence = ((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence));
         btnVoirDétails = ((Button)holder.itemView.findViewById(R.id.btnVoirDétails));
 
 
@@ -51,20 +51,20 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
 
         ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setVisibility(_presenteur.getVisibilteBouton());
         ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setEnabled(_presenteur.getUtilisateurUilisateurBouton());
-        ((Button)holder.itemView.findViewById(R.id.btnModifierPrendrePrésence)).setVisibility(_presenteur.getVisibilteBouton());
-        ((Button)holder.itemView.findViewById(R.id.btnModifierPrendrePrésence)).setEnabled(_presenteur.getUtilisateurUilisateurBouton());
+        ((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence)).setVisibility(_presenteur.getVisibilteBouton());
+        ((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence)).setEnabled(_presenteur.getUtilisateurUilisateurBouton());
 
         ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View bouton) {
-                _presenteur.requetePrendrePrésence(position);
+                _presenteur.requeteModifierPrésence(position);
             }
         });
 
-        ((Button)holder.itemView.findViewById(R.id.btnModifierPrendrePrésence)).setOnClickListener(new View.OnClickListener() {
+        ((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View bouton) {
-                _presenteur.requeteModifierPrésence(position);
+                _presenteur.requetePrendrePrésence(position);
             }
         });
 

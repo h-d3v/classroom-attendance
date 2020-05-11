@@ -52,12 +52,11 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
         btnAbsence.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment singleChoiceDialog = new SingleChoiceDialogHeuresAbsenceFragment();
-                singleChoiceDialog.setCancelable(false);
-                singleChoiceDialog.show(getFragmentManager(), "Faire un choix");
+//                DialogFragment singleChoiceDialog = new SingleChoiceDialogHeuresAbsenceFragment();
+//                singleChoiceDialog.setCancelable(false);
+//                singleChoiceDialog.show(getFragmentManager(), "Faire un choix");
                 try {
-                    Absence uneAbsence = new Absence(leUser, false);
-                    uneAbsence.setRetard(nbHeures);
+                    présenteur.requêteAjouterAbsence(false);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -69,8 +68,7 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
                 DialogFragment singleChoiceDialog = new SingleChoiceDialogHeuresAbsenceFragment();
                 singleChoiceDialog.setCancelable(false);
                 try {
-                    Absence uneAbsence = new Absence(leUser, true);
-                    uneAbsence.setRetard(nbHeures);
+                    présenteur.requêteAjouterAbsence(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -84,6 +82,10 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
         return null;
     }
 
+    @Override
+    public void setNomUtilisateur(String unString) {
+        tvNomEleve.setText(unString);
+    }
     @Override
     public void onClickPositif(String[] list, int position) {
         nbHeures = Integer.parseInt(list[position]);
