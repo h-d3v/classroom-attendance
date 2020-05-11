@@ -10,7 +10,7 @@ import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.ui.activité.VoirListeSeancesActivity;
 
 public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPrésenteurConnexion {
-    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.position";
+    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
 
     Modèle modèle;
     Activity activité;

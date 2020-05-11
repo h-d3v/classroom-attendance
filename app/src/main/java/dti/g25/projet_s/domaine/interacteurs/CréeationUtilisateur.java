@@ -8,7 +8,7 @@ public class CréeationUtilisateur implements ICéeationUtilisateur {
     public Utilisateur CréerUtilisateur(String unNom, Role unRôle) throws Exception {
 
 
-        if(unNom == "" || unNom.isEmpty())
+        if(unNom.equals("") || unNom.isEmpty())
             throw new Exception("l'utilisateur n'a pas de nom est vide");
         if(unRôle == null)
             throw new Exception("l'utilisateur n'a pas de rôle");

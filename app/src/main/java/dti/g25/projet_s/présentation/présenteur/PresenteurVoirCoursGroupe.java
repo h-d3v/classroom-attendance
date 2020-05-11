@@ -5,13 +5,16 @@ import android.content.Intent;
 import android.os.Debug;
 import android.util.Log;
 
+import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.vue.VueVoirCoursGroupe;
 import dti.g25.projet_s.ui.activité.ConnexionActivité;
+import dti.g25.projet_s.ui.activité.VoirUnCourGroupeActivity;
 
 public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe {
-    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.position";
+    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
+    private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.position";
     private static final int REQUEST_CODE_CONEXION= 55;
     private String cléConnexion;
 
@@ -38,7 +41,10 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
 
     @Override
     public void requeteVoirCoursGroupe(int position) {
-        // TODO
+        Intent intentVoirSéance = new Intent(activity, VoirUnCourGroupeActivity.class);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, cléConnexion);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, position);
+        activity.startActivity(intentVoirSéance);
     }
 
     @Override
@@ -49,7 +55,6 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
     public void onActivityResult(int requestCode, int resultCode, Intent data) throws Exception {
         if (requestCode == REQUEST_CODE_CONEXION && resultCode == Activity.RESULT_OK) {
             cléConnexion=data.getStringExtra(EXTRA_CLÉ_CONNEXION);
-            Log.d("clé utilisateur", cléConnexion);
             modèle.setCléUtilisateur(cléConnexion);
             modèle.rafraîchir();
             Log.d("cour", modèle.getCourGroupeParPos(0).toString());

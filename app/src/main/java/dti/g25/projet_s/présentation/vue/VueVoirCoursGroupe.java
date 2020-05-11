@@ -40,10 +40,12 @@ public class VueVoirCoursGroupe extends Fragment implements IContatVuePresenteur
         return view;
     }
 
+    /**
+     * rafrachie la vue
+     */
     @Override
     public void rafraichir() {
         if(coursGroupeAdapter!=null)
-            Log.d("data", "as changed");
             coursGroupeAdapter.notifyDataSetChanged();
     }
 }

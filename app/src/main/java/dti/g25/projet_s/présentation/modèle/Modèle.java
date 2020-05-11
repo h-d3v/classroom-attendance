@@ -14,7 +14,6 @@ import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Modèle {
@@ -26,6 +25,7 @@ public class Modèle {
     private DAOFactory daoFactory;
     private Context context;
     private List<Seance> listeSeance;
+    private List<Seance> listeSeanceCourGroupe;
     private Utilisateur utilisateurActuelle;
     private List<Utilisateur> listeUtilisateur;
 
@@ -60,7 +60,7 @@ public class Modèle {
 
     public Modèle(Context context){
         this.context=context;
-        coursGroupes=new LinkedList<>();
+        coursGroupes=new ArrayList<>();
     }
 
     public void addCoursGroupe(CoursGroupe courGroupe){
@@ -92,6 +92,12 @@ public class Modèle {
         return coursGroupes.get(position);
     }
 
+    /**
+     * Ajoute un absence selon un élèves
+     * @param présence
+     * @param unUtilisateur
+     * @param positionSeance
+     */
     public void ajouterAbsence(boolean présence, Utilisateur unUtilisateur, int positionSeance) {
         listeSeance.set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
     }
@@ -114,6 +120,11 @@ public class Modèle {
         return getCourGroupeParPos(positionGroupe).getParticipants();
     }
 
+    /**
+     * retourn la lsite des ETUDIANTS d'un cour
+     * @param positionGroupe
+     * @return
+     */
     public List<Utilisateur> getListeEtudiantsParCoursGroupe(int positionGroupe) {
         List<Utilisateur> listeEtudiants = new ArrayList<>();
         List<Utilisateur> listeParticipant = getCourGroupeParPos(positionGroupe).getParticipants();
@@ -137,6 +148,14 @@ public class Modèle {
         return listeSeance;
     }
 
+    public List<Seance> getListeSeanceParCourGroupe(int position) {
+        return getCourGroupeParPos(position).getListeSeances();
+    }
+
+
+    /**
+     * charge les utilsiateur de une seance
+     */
     public void chargerSeanceUtilisateur() {
         listeSeance = new ArrayList<>();
         if(coursGroupes != null) {
@@ -148,10 +167,22 @@ public class Modèle {
         }
     }
 
+    public Role getRoleUtilsaiteurConnecté() {
+        if (utilisateurActuelle != null)
+            return utilisateurActuelle.getRôle();
+        return Role.ÉLÈVE;
+    }
+
+
     public List<Utilisateur> getListeUtilisateur(){
         return listeUtilisateur;
     }
 
+    /**
+     * retourne un utilsaiteur
+     * @param index
+     * @return
+     */
     public Utilisateur getUtilisateurParIndex(int index){
         List<Utilisateur> tousLesUsers = getListeUtilisateur();
         return tousLesUsers.get(index);
@@ -166,8 +197,20 @@ public class Modèle {
         chargerInfoUtilisateur();
     }
 
+    /**
+     * permet de mettre la clé d'utliateur
+     * @param uneClé
+     */
     public void setCléUtilisateur(String uneClé) {
         cléUtilisateur = uneClé;
     }
 
+    /**
+     * Retourne un seance selon sa postion dans un cour groupe
+     * @param positionCoursGroupe
+     * @param position
+     */
+    public Seance getSeanceParCourGroupe(int positionCoursGroupe, int position) {
+        return getListeSeanceParCourGroupe(positionCoursGroupe).get(position);
+    }
 }

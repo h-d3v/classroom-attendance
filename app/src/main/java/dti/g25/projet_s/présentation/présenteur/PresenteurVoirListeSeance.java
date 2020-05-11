@@ -31,6 +31,10 @@ public class PresenteurVoirListeSeance implements ContratVpVoirListeSeances.IPre
         _vue=vue;
     }
 
+    public void commencerVoirListeSeance(String cléUtilisateur, int position){
+
+    }
+
     @Override
     public void requeteConsulterCoursGroupe(int position) {
 

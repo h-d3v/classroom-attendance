@@ -8,6 +8,11 @@
     <string name="absent">Absent</string>
     <string name="coursGroupe">Vos Cours et Groupes</string>
     <string name="voirDétails">Voir Détails</string>
+    <string name="scéance">Seance cour:</string>
+    <string name="nomCour">Nom du cours: </string>
+    <string name="nbÉlèvesInscrit">Nombre d\'élève inscrits: </string>
+    <string name="prendrePrésence">Prendre Présence </string>
+    <string name="modifierPrésence">Modifier Présence </string>
     <string-array name="choix_heures_absences">
         <item>1 Heure</item>
         <item>2 Heures</item>
