@@ -68,6 +68,7 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
         _vue.afficherEstPrévue("Statut: "+ getSeance().get_etat().toString());
         _vue.afficherHoraire("Debut:"+getSeance().get_horaires().getHeureDebutString()+" Fin:"+ getSeance().get_horaires().getHeureFinString()+" Journee:"+getSeance().get_horaires().getJournee());
         _vue.afficherLibelle(getSeance().get_coursGroupe().toString());
+        _vue.autoriserProf(_modele.getRoleUtilsaiteurConnecté().equals(Role.PROFESSEUR));
     }
 
 
@@ -91,4 +92,5 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
             _modele.getSeanceParPos(_positionSeance).set_etat(EtatSeance.valueOf(data.getStringExtra(EXTRA_ETAT_SEANCE)));
         }
     }
+    
 }
