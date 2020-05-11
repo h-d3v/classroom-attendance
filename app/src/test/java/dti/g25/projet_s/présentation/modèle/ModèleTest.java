@@ -2,6 +2,7 @@ package dti.g25.projet_s.présentation.modèle;
 
 import android.webkit.URLUtil;
 import dti.g25.projet_s.domaine.entité.*;
+import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.modèle.dao.DAO;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactoryV1;
 import dti.g25.projet_s.présentation.modèle.dao.Modèle;
@@ -351,6 +352,7 @@ public class ModèleTest extends TestCase {
         modèleDAO.setEtatSeance(0, EtatSeance.ANULLEE);
         assertEquals(modèleDAO.getSeanceParPos(0).lire().get_etat(), EtatSeance.ANULLEE );
         verify(mockDAOFactory).chargerListeSeanceParUtilisateur(mockProf0);
+        verify(seances.get(0), atLeastOnce()).modifier(mockSeance0.lire());
 
     }
 
