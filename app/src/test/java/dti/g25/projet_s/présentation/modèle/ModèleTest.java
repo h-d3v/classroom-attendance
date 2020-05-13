@@ -1,21 +1,18 @@
 package dti.g25.projet_s.présentation.modèle;
 
-import android.webkit.URLUtil;
 import dti.g25.projet_s.domaine.entité.*;
-import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.modèle.dao.DAO;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactoryV1;
-import dti.g25.projet_s.présentation.modèle.dao.Modèle;
+import dti.g25.projet_s.présentation.modèle.dao.ModèleDAO;
+
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 import static org.mockito.Mockito.*;
 

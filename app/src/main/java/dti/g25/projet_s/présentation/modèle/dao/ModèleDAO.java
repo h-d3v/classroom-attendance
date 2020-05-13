@@ -1,8 +1,7 @@
-package dti.g25.projet_s.présentation.modèle;
+package dti.g25.projet_s.présentation.modèle.dao;
 
 import android.content.Context;
 
-import dti.g25.projet_s.dao.CourGroupeFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Horaire;
