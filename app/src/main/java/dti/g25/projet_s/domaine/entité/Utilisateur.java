@@ -13,7 +13,7 @@ public class Utilisateur {
     }
 
     /**
-     * Contructeur complet
+     * Contructeur complet sans mot de passe
      * @param nom
      * @param rôle
      */
@@ -21,6 +21,17 @@ public class Utilisateur {
         this.nom = nom;
         this.rôle = rôle;
     }
+    /**
+     * Contructeur complet avec mot de passe
+     * @param nom
+     * @param rôle
+     */
+    public Utilisateur(String nom , Role rôle, String mdp) {
+        this.nom = nom;
+        this.rôle = rôle;
+        this.mdp=mdp;
+    }
+
 
     public String getUsername() {
         return nom;
@@ -45,5 +56,18 @@ public class Utilisateur {
     public void setRôle (Role rôle) {
         this.rôle = rôle;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Utilisateur that = (Utilisateur) o;
+
+        if (nom != null ? !nom.equals(that.nom) : that.nom != null) return false;
+        if (mdp != null ? !mdp.equals(that.mdp) : that.mdp != null) return false;
+        return rôle == that.rôle;
+    }
+
 
 }

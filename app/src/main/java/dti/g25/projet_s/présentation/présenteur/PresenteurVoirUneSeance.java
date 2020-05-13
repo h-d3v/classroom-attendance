@@ -92,5 +92,5 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
             _modele.getSeanceParPos(_positionSeance).set_etat(EtatSeance.valueOf(data.getStringExtra(EXTRA_ETAT_SEANCE)));
         }
     }
-    
+
 }

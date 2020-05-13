@@ -52,4 +52,17 @@ public class CoursGroupe {
         return libelleCours +
                 " Groupe: " + numeroGroupe;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        CoursGroupe that = (CoursGroupe) o;
+
+        if (numeroGroupe != that.numeroGroupe) return false;
+        return libelleCours != null ? libelleCours.equals(that.libelleCours) : that.libelleCours == null;
+    }
+
+
 }

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.util.Log;
 
 import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
-import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.présentation.modèle.dao.Modèle;
 
 public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendrePrésence.IPrésenteurPrendrePrésence {
 
