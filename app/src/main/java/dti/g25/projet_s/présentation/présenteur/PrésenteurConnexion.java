@@ -1,12 +1,16 @@
 package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
+import android.content.Intent;
 
+import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.dao.UtlisateurFactice;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurConnexion;
 import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.ui.activité.VoirListeSeancesActivity;
 
 public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPrésenteurConnexion {
+    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
 
     Modèle modèle;
     Activity activité;
@@ -25,10 +29,17 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
     }
 
     @Override
-    public Boolean tenterConnexion(String nomUtilasiteur, String motDePasse) {
+    public Boolean tenterConnexion(String nomUtilisateur, String motDePasse) {
+        String cléConnexion = new ServeurFactice().tenterConnexion(nomUtilisateur, motDePasse);
+        if (cléConnexion != null) {
+            Intent donnéesRetour=new Intent();
+            donnéesRetour.putExtra(EXTRA_CLÉ_CONNEXION, cléConnexion);
+            activité.setResult(activité.RESULT_OK, donnéesRetour);
+            activité.finish();
+            return true;
+        }
 
-        return new UtlisateurFactice().tenterConnexion(nomUtilasiteur, motDePasse);
-
+        return false;
     }
 
 }

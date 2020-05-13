@@ -13,9 +13,11 @@ import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe presenteurVoirCoursGroupe;
+
     public CoursGroupeAdapter(IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe presenteurVoirCoursGroupe){
         this.presenteurVoirCoursGroupe=presenteurVoirCoursGroupe;
     }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,
@@ -44,11 +46,8 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
      */
     @Override
     public int getItemCount() {
-            if(presenteurVoirCoursGroupe==null) {
-            return 0;
-        }
-        else {
-            return presenteurVoirCoursGroupe.getNombresItems();
-        }
+        if(presenteurVoirCoursGroupe==null) return 0;
+
+        return presenteurVoirCoursGroupe.getNombresItems();
     }
 }

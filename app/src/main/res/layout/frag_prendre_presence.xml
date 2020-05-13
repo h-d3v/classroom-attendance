@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/txtNomÉtudiant"
         android:layout_width="match_parent"
-        android:layout_height="408dp"
+        android:layout_height="170dp"
         android:layout_weight="1" />
 
     <LinearLayout

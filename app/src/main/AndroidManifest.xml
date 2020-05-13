@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.activité.VoirListeSeancesActivity">
-        </activity>
+        <activity android:name=".ui.activité.VoirListeSeancesActivity"/>
         <activity android:name=".ui.activité.MainActivity">
         </activity>
-        <activity android:name=".ui.activité.ConnexionActivité"/>
+        <activity android:name=".ui.activité.ConnexionActivité">
+        </activity>
         <activity android:name=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
         <activity android:name=".ui.activité.VoirCoursGroupeActivity">
             <intent-filter>
@@ -25,14 +25,10 @@
         <activity android:name=".ui.activité.PrendrePrésenceActivité"/>
         <activity android:name=".ui.activité.VoirSeanceActivity"/>
         <activity android:name=".ui.activité.VoirUnEleve">
-            <intent-filter>
-                <action android:name="android.intent.action" />
-
-                <category android:name="android.intent.category" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.activité.VoirUnCourGroupeActivity"
             android:parentActivityName=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
+        <activity android:name=".ui.activité.VoirListeÉlevesPrésenceActivité"/>
     </application>
 
 </manifest>

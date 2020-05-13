@@ -1,17 +1,30 @@
 package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.view.View;
 
 import dti.g25.projet_s.domaine.entité.LibelleCours;
+import dti.g25.projet_s.domaine.entité.Role;
+import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.ui.activité.PrendrePrésenceActivité;
+import dti.g25.projet_s.ui.activité.VoirListeÉlevesPrésenceActivité;
+import dti.g25.projet_s.ui.activité.VoirSeanceActivity;
 
 public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IPrensenteurVoirCourGroupe {
+    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
+    private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
+    private static final String EXTRA_POSITION_SEANCE = "dti.g25.projet_s.positionSeance";
+    private static final int RESQUEST_CODE_VOIR_ELEVES = 33;
+    private static final int RESQUEST_CODE_VOIR_SEANCE = 22;
 
     private Modèle _modele;
     private ContratVpVoirUnCoursGroupe.IVueVoirCoursGroupe _vue;
     private Activity _activite;
     private int _positionCoursGroupe;
+    private String _cléUtilisateur;
 
 
     /**
@@ -20,11 +33,10 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
      * @param vue La vue qui est relié au présenteur, qui sera la vue principale
      * @param modele le modele du MVP
      */
-    public PresenteurVoirUnCourGroupe(Activity activite, ContratVpVoirUnCoursGroupe.IVueVoirCoursGroupe vue, Modèle modele, int positionCoursGroupe) {
+    public PresenteurVoirUnCourGroupe(Activity activite, ContratVpVoirUnCoursGroupe.IVueVoirCoursGroupe vue, Modèle modele) {
         _activite=activite;
         _modele=modele;
         _vue=vue;
-        _positionCoursGroupe=positionCoursGroupe;
     }
 
 
@@ -37,16 +49,76 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
         return _modele.getCourGroupeParPos(_positionCoursGroupe).getNumeroGroupe();
     }
 
-
-    @Override
-    public void requeteVoirUnSeance() {
-        //TODO
-    }
-
     @Override
     public void requeteVoirListeEleves() {
         //TODO
     }
 
+    @Override
+    public void commencerVoirCourGroupe(int position, String cléUtilisateur) throws Exception {
+        _positionCoursGroupe = position;
+        _cléUtilisateur = cléUtilisateur;
+        _modele.setCléUtilisateur(_cléUtilisateur);
+        _modele.rafraîchir();
+        _vue.afficherNomCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getTITRE());
+        _vue.afficherSigleCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getTitreAbrégé());
+        _vue.afficherNombreÉlèvesInscrit(_modele.getListeEtudiantsParCoursGroupe(_positionCoursGroupe).size());
+        _vue.rafraichir();
+    }
+
+    @Override
+    public int getNbSeancesModele() {
+        if(_modele.getListeSeance() == null)
+            return 0;
+        return _modele.getListeSeanceParCourGroupe(_positionCoursGroupe).size();
+    }
+
+    @Override
+    public Seance getSeanceParPos(int position) {
+        return _modele.getSeanceParCourGroupe(_positionCoursGroupe, position);
+    }
+
+    @Override
+    public boolean getUtilisateurUilisateurBouton() {
+        return _modele.getRoleUtilsaiteurConnecté().equals(Role.PROFESSEUR);
+    }
+
+    @Override
+    public void requeteVoirSeance(int position) {
+        Intent intentVoirSéance = new Intent(_activite, VoirSeanceActivity.class);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _cléUtilisateur);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
+        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, position);
+        _activite.startActivityForResult(intentVoirSéance, RESQUEST_CODE_VOIR_SEANCE);
+    }
+
+    @Override
+    public void requetePrendrePrésence(int positionSeance) {
+        Intent intentVoirSéance = new Intent(_activite, PrendrePrésenceActivité.class);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _cléUtilisateur);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
+        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, positionSeance);
+        _activite.startActivity(intentVoirSéance);
+    }
+
+    @Override
+    public void requeteModifierPrésence(int position) {
+        Intent intentVoirSéance = new Intent(_activite, VoirListeÉlevesPrésenceActivité.class);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _cléUtilisateur);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
+        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, position);
+        _activite.startActivityForResult(intentVoirSéance, RESQUEST_CODE_VOIR_ELEVES);
+    }
+
+    /**
+     * permet de savoir si les bouton doivent être vue ou non
+     * @return
+     */
+    @Override
+    public int getVisibilteBouton() {
+        if(getUtilisateurUilisateurBouton())
+            return View.VISIBLE;
+        return View.INVISIBLE;
+    }
 
 }

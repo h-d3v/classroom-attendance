@@ -1,6 +1,7 @@
 package dti.g25.projet_s.présentation.vue;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,19 +9,26 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import dti.g25.projet_s.R;
+import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirUnCourGroupe;
+import dti.g25.projet_s.présentation.vue.adapter.SeanceAdapterUnCourGroupe;
+
+import static java.lang.String.valueOf;
 
 public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCoursGroupe.IVueVoirCoursGroupe {
 
-    private PresenteurVoirUnCourGroupe _presenteur;
+    private ContratVpVoirUnCoursGroupe.IPrensenteurVoirCourGroupe _presenteur;
     private TextView tvSigleDuCours;
     private TextView tvNomDuCours;
     private TextView tvNbElevesInscrits;
     private Button btnVoirListeEleves;
-    private Button btnVoirSeances;
+    private RecyclerView rvListeSeance;
+    private SeanceAdapterUnCourGroupe seanceAdapter;
 
     public void setPresenteur(PresenteurVoirUnCourGroupe _presenteur) {
         this._presenteur = _presenteur;
@@ -37,16 +45,43 @@ public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCour
                               Bundle savedInstanceState){
         View racine=inflater.inflate(R.layout.frag_voir_un_courgroupe, container, false);
         btnVoirListeEleves=racine.findViewById(R.id.btnVoirListeEleves);
-        btnVoirSeances=racine.findViewById(R.id.btnVoirSeanceCour);
         tvSigleDuCours=racine.findViewById(R.id.tvSigleCours);
+        tvNbElevesInscrits= racine.findViewById(R.id.tvNbEleves);
         tvNomDuCours=racine.findViewById(R.id.tvNomCour);
-        tvNbElevesInscrits=racine.findViewById(R.id.tvNbEleves);
-        tvNbElevesInscrits.setText("23");
-        tvNomDuCours.setText(_presenteur.getLibelleCours().getTITRE());
-        tvSigleDuCours.setText(_presenteur.getLibelleCours().getCODE());
+        seanceAdapter = new SeanceAdapterUnCourGroupe(_presenteur);
+        rvListeSeance = racine.findViewById(R.id.rvListeSeance);
+        rvListeSeance.setAdapter(seanceAdapter);
+        rvListeSeance.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        btnVoirListeEleves.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View bouton){
+
+            }
+        });
         setRetainInstance(true);
         return racine;
     }
+
+    public void afficherNomCour(String titre) {
+        tvNomDuCours.setText(titre);
+    }
+
+    public void afficherSigleCour(String sigle) {
+        tvSigleDuCours.setText(sigle);
+    }
+
+    public void afficherNombreÉlèvesInscrit(int unNombre) {
+        tvNbElevesInscrits.setText(String.valueOf(unNombre));
+    }
+
+    @Override
+    public void rafraichir() {
+        if(seanceAdapter!=null) {
+            seanceAdapter.notifyDataSetChanged();
+        }
+    }
+
 }
 
 

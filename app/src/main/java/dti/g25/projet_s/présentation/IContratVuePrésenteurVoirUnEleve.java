@@ -7,12 +7,15 @@ public interface IContratVuePrésenteurVoirUnEleve {
      */
     interface IPrésenteurVoirUnEleve {
 
-        String getNomUtilisateur();
+        void requêteAjouterAbsence(boolean b);
+
+        void commencerVoirUnÉlèves(int positionSeance, int positionGroupe, int positionÉlèves, String cléUtilisateur) throws Exception;
     }
 
     interface  IVueVoirUnEleve {
-      void onClickPositif(String[] list, int position);
-      void onClickNegatif();
-      String getNomUtilisateur();
+        void setNomUtilisateur(String unString);
+        void onClickPositif(String[] list, int position);
+        void onClickNegatif();
+        String getNomUtilisateur();
     }
 }

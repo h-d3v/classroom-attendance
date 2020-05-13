@@ -18,6 +18,9 @@ public interface ContratVuePrésenteurPrendrePrésence {
     public interface IPrésenteurPrendrePrésence {
 
         public String getNomUtilisteur();
+
+        void commencerPrendrePrésence(int positionSéeance, int positionGroupe, String cléUtilisateur) throws Exception;
+
         public void ajouterAbsence(boolean b);
     }
 }

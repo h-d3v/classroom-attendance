@@ -36,7 +36,7 @@ public class GestionSeance implements IGestionSeance {
     public Seance ajouterAbsence(Utilisateur utilisateur, Seance seance, Boolean présence) {
         List<Absence> listeAbsence = seance.getListeAbsence();
         for(int i = 0 ; i < listeAbsence.size(); i++){
-            if(listeAbsence.get(i).getUtilisateur().equals(utilisateur)){
+            if(listeAbsence.get(i).getUtilisateur().getUsername().equals(utilisateur.getUsername())){
                 listeAbsence.set(i, new Absence(utilisateur, présence));
             }  else {
                 seance.getListeAbsence().add(new Absence(utilisateur, présence));

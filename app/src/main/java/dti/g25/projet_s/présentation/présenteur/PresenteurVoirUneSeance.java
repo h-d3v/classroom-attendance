@@ -2,11 +2,13 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
+
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.présentation.modèle.Modèle;
-import dti.g25.projet_s.ui.activité.IContratVoirUneSeance;
+import dti.g25.projet_s.présentation.IContratVoirUneSeance;
 
 public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteurVoirUneSeance {
     private static final int REQUEST_CODE_MODIFIER_ETAT=284;
@@ -15,6 +17,8 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
     private IContratVoirUneSeance.IVueVoirUneseance _vue;
     private Activity _activite;
     private int _positionSeance;
+    private int _positionGroupe;
+    private String _cléUtilisateur;
 
     /**
      * Constructeur du presenteur
@@ -42,12 +46,29 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
 
     @Override
     public Seance getSeance() {
-        return _modele.getSeanceParPos(_positionSeance);
+        if(_positionGroupe == -1)
+            return _modele.getSeanceParPos(_positionSeance);
+        return _modele.getSeanceParCourGroupe(_positionGroupe, _positionSeance);
     }
 
     @Override
     public Activity get_activite(){
         return _activite;
+    }
+
+    @Override
+    public void commencerVoirSéance(int positionGroupe, int positionSéance, String cléUtilisateur) throws Exception {
+        _positionSeance = positionSéance;
+        _positionGroupe = positionGroupe;
+        _cléUtilisateur = cléUtilisateur;
+
+        _modele.setCléUtilisateur(_cléUtilisateur);
+        _modele.rafraîchir();
+
+        _vue.afficherEstPrévue("Statut: "+ getSeance().get_etat().toString());
+        _vue.afficherHoraire("Debut:"+getSeance().get_horaires().getHeureDebutString()+" Fin:"+ getSeance().get_horaires().getHeureFinString()+" Journee:"+getSeance().get_horaires().getJournee());
+        _vue.afficherLibelle(getSeance().get_coursGroupe().toString());
+        _vue.autoriserProf(_modele.getRoleUtilsaiteurConnecté().equals(Role.PROFESSEUR));
     }
 
 
@@ -71,4 +92,5 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
             _modele.getSeanceParPos(_positionSeance).set_etat(EtatSeance.valueOf(data.getStringExtra(EXTRA_ETAT_SEANCE)));
         }
     }
+    
 }
