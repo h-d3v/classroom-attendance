@@ -1,6 +1,6 @@
 package dti.g25.projet_s.domaine.entité;
 
-import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -62,5 +62,19 @@ public class Seance {
     public void setListeAbsence(List<Absence> listeAbsence) {
         this._listeAbsence = listeAbsence;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Seance seance = (Seance) o;
+
+        if (_coursGroupe != null ? !_coursGroupe.equals(seance._coursGroupe) : seance._coursGroupe != null)
+            return false;
+        if (_etat != seance._etat) return false;
+        return _horaires != null ? _horaires.equals(seance._horaires) : seance._horaires == null;
+    }
+
 
 }

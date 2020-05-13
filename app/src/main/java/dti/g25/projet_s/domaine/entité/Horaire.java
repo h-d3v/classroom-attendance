@@ -69,4 +69,18 @@ public class Horaire {
 
         return unString;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Horaire horaire = (Horaire) o;
+
+        if (heureDebut != null ? !heureDebut.equals(horaire.heureDebut) : horaire.heureDebut != null) return false;
+        if (heureFin != null ? !heureFin.equals(horaire.heureFin) : horaire.heureFin != null) return false;
+        return journee != null ? journee.equals(horaire.journee) : horaire.journee == null;
+    }
+
+
 }

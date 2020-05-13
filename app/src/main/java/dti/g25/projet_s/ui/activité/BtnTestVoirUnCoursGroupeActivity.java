@@ -5,9 +5,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import dti.g25.projet_s.R;
+import dti.g25.projet_s.présentation.modèle.dao.Modèle;
 import dti.g25.projet_s.présentation.présenteur.PresenteurBtnVoirListeCoursGroupe;
 import dti.g25.projet_s.présentation.vue.VueVoirBtnListeCoursGroupes;
-import dti.g25.projet_s.présentation.modèle.Modèle;
 
 public class BtnTestVoirUnCoursGroupeActivity extends AppCompatActivity {
 
