@@ -11,6 +11,6 @@ public enum EtatSeance {
         } else {
             return "Seance prevue";
         }
-
     }
+
 }

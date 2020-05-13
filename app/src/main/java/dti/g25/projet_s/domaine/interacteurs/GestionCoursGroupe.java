@@ -22,12 +22,13 @@ public class GestionCoursGroupe implements IGestionCoursGroupe {
         boolean verifierSiProf=false;
         boolean verifierParticipantUnique=true; //TODO
         for(Utilisateur utilisateur : copieParticipants){
+
             if (utilisateur.getRôle()== Role.PROFESSEUR){
                 verifierSiProf=true;
                 copieParticipants.add(utilisateur);
             }
-
         }
+
         if(!verifierSiProf){
             throw new GestionCoursGroupeException("Le cours doit posseder au moins un enseignant");
         }
@@ -39,11 +40,10 @@ public class GestionCoursGroupe implements IGestionCoursGroupe {
             coursGroupe.setParticipants(copieParticipants);
         }
 
-
     }
 
     public void ajouterParticipant(Utilisateur utilisateur, CoursGroupe coursGroupe){
-        coursGroupe.getParticipants().add(utilisateur); // Nullpointer TODO
+        coursGroupe.getParticipants().add(utilisateur); // Nullpointer, verifier unique TODO
     }
 
 }

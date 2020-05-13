@@ -17,14 +17,12 @@ public class Seance {
         _listeAbsence = new ArrayList<Absence>();
         _horaires = horaires;
 
-        for (Utilisateur user : _coursGroupe.getParticipants()){
-            _listeAbsence.add(new Absence(user, true));
+        if(coursGroupe.getParticipants()!=null){
+            for (Utilisateur user : _coursGroupe.getParticipants()) {
+                _listeAbsence.add(new Absence(user, true));
+            }
         }
         _etat=EtatSeance.PREVUE;
-    }
-
-    public List<Absence> get_listeAbsence() {
-        return _listeAbsence;
     }
 
     public void set_listeAbsence(List<Absence> _listeAbsence) {

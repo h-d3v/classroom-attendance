@@ -2,6 +2,7 @@ package dti.g25.projet_s.domaine.interacteurs;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import android.os.Build;
