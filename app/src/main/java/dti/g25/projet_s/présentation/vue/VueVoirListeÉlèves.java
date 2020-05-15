@@ -15,7 +15,7 @@ import dti.g25.projet_s.présentation.présenteur.PresenteurVoirListeSeance;
 import dti.g25.projet_s.présentation.vue.adapter.SeanceAdapter;
 import dti.g25.projet_s.présentation.vue.adapter.ÉlèvesPrésenceAdapter;
 
-public class VueVoirListeÉlèvesPrésence  extends Fragment implements ContratVuePrésenteurVoirListeÉlèves.IVueVoirListeÉlèves {
+public class VueVoirListeÉlèves extends Fragment implements ContratVuePrésenteurVoirListeÉlèves.IVueVoirListeÉlèves {
 
     private ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves présenteur;
     private RecyclerView rvVoirÉlèves;
@@ -54,5 +54,10 @@ public class VueVoirListeÉlèvesPrésence  extends Fragment implements ContratV
     public void rafraichir() {
         if(élèvesPrésenceAdapter!=null)
             élèvesPrésenceAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void setBoutonPrésence(boolean b) {
+
     }
 }
