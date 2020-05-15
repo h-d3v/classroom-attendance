@@ -1,5 +1,6 @@
 package dti.g25.projet_s.présentation.vue;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -7,8 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.*;
 
 import androidx.fragment.app.Fragment;
 
@@ -23,6 +23,9 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
     private TextView txtMotDePasse;
     private TextView txtMessageErreur;
     private Button btnConnexion;
+    private CheckBox cbSeSouvenir;
+
+
 
     /**
      * Permet d'associer le présenteur a la vue
@@ -49,17 +52,28 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
         txtMotDePasse=racine.findViewById(R.id.txtMotDePasse);
         btnConnexion = racine.findViewById(R.id.btnConnexion);
         txtMessageErreur = racine.findViewById(R.id.txtMessageErreur);
-        btnConnexion.setEnabled(false);
+        cbSeSouvenir = racine.findViewById(R.id.checkBoxSeSouvenir);
+        if(!"".equals(présenteur.getNomUtilisateurSauvegarde()) && !"".equals(présenteur.getMotPasseUtilisateurSauvegarde()) ) {
+            cbSeSouvenir.setChecked(true);
+        }
+        txtUtilisateur.setText(présenteur.getNomUtilisateurSauvegarde());
+        txtMotDePasse.setText(présenteur.getMotPasseUtilisateurSauvegarde());
+
         txtUtilisateur.addTextChangedListener(connexionTextWatcher);
         txtMotDePasse.addTextChangedListener(connexionTextWatcher);
         btnConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    if(présenteur.tenterConnexion(getNomUtilisateur(), getMotDePasseUtilisateur()))
-                        txtMessageErreur.setText("vous êtes bien connecter");
-                    else
-                        txtMessageErreur.setText("erreur dans la connexion");
+                    if(présenteur.tenterConnexion(getNomUtilisateur(), getMotDePasseUtilisateur())) {
+                        txtMessageErreur.setText("Vous êtes bien connecté(e)");
+                        if (cbSeSouvenir.isChecked()){
+                            présenteur.sauvegarderIdentifiants(getNomUtilisateur(), getMotDePasseUtilisateur());
+                        } else {
+                            présenteur.supprimerIdentifiants(getNomUtilisateur(), getMotDePasseUtilisateur());
+                        }
+                    }
+                       // else txtMessageErreur.setText("Erreur dans la connexion");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -73,6 +87,12 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            if(getMotDePasseUtilisateur().trim().isEmpty())
+                btnConnexion.setEnabled(false);
+            else if (getNomUtilisateur().trim().isEmpty())
+                btnConnexion.setEnabled(false);
+            else
+                btnConnexion.setEnabled(true);
         }
 
         @Override

@@ -1,8 +1,10 @@
 package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.dao.UtlisateurFactice;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurConnexion;
@@ -15,6 +17,7 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
     Modèle modèle;
     Activity activité;
     ContratVuePrésenteurConnexion.IVueConnexion vue;
+    SharedPreferences sharedPreferences;
 
     /**
      * Constructeur du presenteur pour la connexion
@@ -26,6 +29,7 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
         this.activité=activité;
         this.vue=vue;
         this.modèle=modèle;
+        sharedPreferences = activité.getSharedPreferences("infosLogin", Context.MODE_PRIVATE);
     }
 
     @Override
@@ -40,6 +44,29 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
         }
 
         return false;
+    }
+
+    @Override
+    public void sauvegarderIdentifiants(String nomUtilisateur, String motDePasseUtilisateur) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("nomUtilisateur",nomUtilisateur);
+        editor.putString("motDePasse", motDePasseUtilisateur);
+        editor.apply();
+    }
+
+    @Override
+    public String getNomUtilisateurSauvegarde() {
+        return sharedPreferences.getString("nomUtilisateur", "");
+    }
+
+    @Override
+    public String getMotPasseUtilisateurSauvegarde() {
+        return sharedPreferences.getString("motDePasse", "");
+    }
+
+    @Override
+    public void supprimerIdentifiants(String nomUtilisateur, String motDePasseUtilisateur) {
+        sharedPreferences.edit().clear().apply();
     }
 
 }

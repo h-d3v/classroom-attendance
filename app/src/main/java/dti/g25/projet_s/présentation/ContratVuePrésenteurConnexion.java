@@ -15,6 +15,14 @@ public interface ContratVuePrésenteurConnexion {
      */
     public interface IPrésenteurConnexion {
         public Boolean tenterConnexion(String nomUtilisateur, String motDePasse) throws Exception;
+
+        void sauvegarderIdentifiants(String nomUtilisateur, String motDePasseUtilisateur);
+
+        String getNomUtilisateurSauvegarde();
+
+        String  getMotPasseUtilisateurSauvegarde();
+
+        void supprimerIdentifiants(String nomUtilisateur, String motDePasseUtilisateur);
     }
 
 }
