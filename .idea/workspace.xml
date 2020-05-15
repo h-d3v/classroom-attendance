@@ -11,10 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOFactoryRESTAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOUtilisateurRESTAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOLectureSeule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/LibelleCours.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/LibelleCours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactoryV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactoryV1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589044390157</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="debut nouvelle version modele avec DAOS">
+      <created>1589567990907</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589567990907</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,27 +359,30 @@
     </state>
     <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589045392356" />
     <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1589057126089" />
-    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1589043572498">
+    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1589572353131">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589043572498" />
+    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1589572353131" />
     <state x="627" y="242" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589053356498">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="532" y="222" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589052089526" />
     <state x="627" y="242" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589053356498" />
-    <state x="538" y="177" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589044238267">
+    <state x="538" y="177" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589572323958">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="538" y="177" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589044238267" />
+    <state x="538" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1589572323958" />
     <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1588978461357">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978461357" />
-    <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2" timestamp="1589044389797">
+    <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2" timestamp="1589567990796">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589044389797" />
+    <state x="103" y="18" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1589567990796" />
     <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl" timestamp="1588962764411">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

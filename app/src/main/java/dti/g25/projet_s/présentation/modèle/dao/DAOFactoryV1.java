@@ -17,5 +17,6 @@ public abstract class DAOFactoryV1 {
     public abstract List<DAO<Utilisateur>> chargerListeUtilisateurParSeance(DAO<Seance> seanceDAO);
     public abstract List<DAO<Horaire>> chargerHoraireParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO);
     public abstract List<DAO<CoursGroupe>> chargerCoursGroupeParHoaire(DAO<Horaire> horaireDAO);
+    public abstract DAO<Utilisateur> tenterConnection(String nomUtilisateur, String motDePasse);
     //To be concluded !! WIP
 }
