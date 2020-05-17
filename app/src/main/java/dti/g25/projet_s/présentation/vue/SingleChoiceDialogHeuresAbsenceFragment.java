@@ -29,7 +29,7 @@ public class SingleChoiceDialogHeuresAbsenceFragment extends DialogFragment {
         try {
             mListener= (SingleChoiceListener) context;
         } catch (Exception e) {
-          throw new ClassCastException(getActivity().toString() + "SingleChoiceListener doit etre implémentée");
+          throw new ClassCastException(getActivity().toString() + " - SingleChoiceListener doit etre implémentée");
         }
     }
 
