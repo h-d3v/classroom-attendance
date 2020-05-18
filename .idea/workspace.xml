@@ -10,14 +10,31 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="" />
+    <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/round_arrow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragement_connexion_v0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueConnexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueConnexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/ConnexionActivité.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/ConnexionActivité.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragement_connexion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragement_connexion.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="HT84T1A03247" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -40,10 +57,11 @@
       <list>
         <option value="layoutResourceFile_vertical" />
         <option value="valueResourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Interface" />
         <option value="JUnit3 Test Class" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -54,6 +72,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1b0fyOjaa7FLLQoPfPX8LNay2k8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -62,8 +81,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="HT84T1A03247" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-27T21:56:48.450Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_29" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-18T07:22:56.075Z" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -365,116 +384,66 @@
     <option name="LAST_COMMIT_MESSAGE" value="debut nouvelle version modele avec DAOS" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="497" y="96" width="596" height="660" key="#app" timestamp="1589053032239">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="497" y="96" width="596" height="660" key="#app/0.0.1600.860@0.0.1600.860" timestamp="1589053032239" />
-    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589053359901">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589052095142" />
-    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1589053359901" />
-    <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589057126089">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589045392356" />
-    <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1589057126089" />
-    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1589043572498">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589043572498" />
-    <state x="627" y="242" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589053356498">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="532" y="222" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589052089526" />
-    <state x="627" y="242" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589053356498" />
-    <state x="538" y="177" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589044238267">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="538" y="177" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589044238267" />
-    <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1588978461357">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978461357" />
-    <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2" timestamp="1589044389797">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589044389797" />
-    <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl" timestamp="1588962764411">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588962764411" />
-    <state width="1558" height="280" key="GridCell.Tab.0.bottom" timestamp="1589132703231">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1558" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485331" />
-    <state width="1558" height="280" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
-    <state width="1558" height="280" key="GridCell.Tab.0.center" timestamp="1589132703231">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1558" height="217" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
-    <state width="1558" height="280" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
-    <state width="1558" height="280" key="GridCell.Tab.0.left" timestamp="1589132703230">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1558" height="217" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
-    <state width="1558" height="280" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589132703230" />
-    <state width="1558" height="280" key="GridCell.Tab.0.right" timestamp="1589132703231">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1558" height="217" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
-    <state width="1558" height="280" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
-    <state width="1558" height="269" key="GridCell.Tab.1.bottom" timestamp="1589121400638">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1558" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589049980654" />
-    <state width="1558" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589121400638" />
-    <state width="1558" height="269" key="GridCell.Tab.1.center" timestamp="1589121400637">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1558" height="269" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589049980654" />
-    <state width="1558" height="269" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1589121400637" />
-    <state width="1558" height="269" key="GridCell.Tab.1.left" timestamp="1589121400637">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1558" height="269" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589049980654" />
-    <state width="1558" height="269" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1589121400637" />
-    <state width="1558" height="269" key="GridCell.Tab.1.right" timestamp="1589121400637">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1558" height="269" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589049980654" />
-    <state width="1558" height="269" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1589121400637" />
-    <state x="155" y="70" width="1280" height="713" key="MergeDialog" timestamp="1588966349141">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="155" y="70" width="1280" height="713" key="MergeDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588966349141" />
-    <state x="313" y="32" key="SettingsEditor" timestamp="1589039093495">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="313" y="32" key="SettingsEditor/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589039093495" />
-    <state x="596" y="207" width="629" height="515" key="chooseDestDirectoryDialog" timestamp="1588978518235">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="596" y="207" width="629" height="515" key="chooseDestDirectoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978518235" />
-    <state x="410" y="42" width="770" height="768" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589126696629">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="410" y="42" width="770" height="768" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1600.860@0.0.1600.860" timestamp="1589126696629" />
-    <state x="540" y="116" width="510" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1588978518294">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="540" y="116" width="510" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978518294" />
-    <state x="527" y="145" width="536" height="562" key="git4idea.branch.GitSmartOperationDialog" timestamp="1588966331404">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="527" y="145" width="536" height="562" key="git4idea.branch.GitSmartOperationDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588966331404" />
-    <state x="469" y="192" key="run.anything.popup" timestamp="1589038278428">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="469" y="192" key="run.anything.popup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589038278428" />
-    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1589041378749">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589041378749" />
+    <state x="497" y="96" width="596" height="660" key="#app" />
+    <state x="497" y="96" width="596" height="660" key="#app/0.0.1600.860@0.0.1600.860" />
+    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" />
+    <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" />
+    <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" />
+    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser" />
+    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="627" y="242" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog" />
+    <state x="532" y="222" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="627" y="242" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" />
+    <state x="538" y="177" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" />
+    <state x="538" y="177" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" />
+    <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2" />
+    <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl" />
+    <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state width="1558" height="280" key="GridCell.Tab.0.bottom" />
+    <state width="1558" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state width="1558" height="280" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" />
+    <state width="1558" height="280" key="GridCell.Tab.0.center" />
+    <state width="1558" height="217" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state width="1558" height="280" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" />
+    <state width="1558" height="280" key="GridCell.Tab.0.left" />
+    <state width="1558" height="217" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state width="1558" height="280" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" />
+    <state width="1558" height="280" key="GridCell.Tab.0.right" />
+    <state width="1558" height="217" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state width="1558" height="280" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" />
+    <state width="1558" height="269" key="GridCell.Tab.1.bottom" />
+    <state width="1558" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state width="1558" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" />
+    <state width="1558" height="269" key="GridCell.Tab.1.center" />
+    <state width="1558" height="269" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state width="1558" height="269" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" />
+    <state width="1558" height="269" key="GridCell.Tab.1.left" />
+    <state width="1558" height="269" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state width="1558" height="269" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" />
+    <state width="1558" height="269" key="GridCell.Tab.1.right" />
+    <state width="1558" height="269" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state width="1558" height="269" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" />
+    <state x="155" y="70" width="1280" height="713" key="MergeDialog" />
+    <state x="155" y="70" width="1280" height="713" key="MergeDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="313" y="32" key="SettingsEditor" />
+    <state x="313" y="32" key="SettingsEditor/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="596" y="207" width="629" height="515" key="chooseDestDirectoryDialog" />
+    <state x="596" y="207" width="629" height="515" key="chooseDestDirectoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="410" y="42" width="770" height="768" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" />
+    <state x="410" y="42" width="770" height="768" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1600.860@0.0.1600.860" />
+    <state x="540" y="116" width="510" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog" />
+    <state x="540" y="116" width="510" height="621" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="527" y="145" width="536" height="562" key="git4idea.branch.GitSmartOperationDialog" />
+    <state x="527" y="145" width="536" height="562" key="git4idea.branch.GitSmartOperationDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="469" y="192" key="run.anything.popup" />
+    <state x="469" y="192" key="run.anything.popup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
+    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup" />
+    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" />
   </component>
 </project>

@@ -13,6 +13,12 @@
     <string name="nbÉlèvesInscrit">Nombre d\'élève inscrits: </string>
     <string name="prendrePrésence">Prendre Présence </string>
     <string name="modifierPrésence">Modifier Présence </string>
+    <string name="mdp_oublie">Oublié votre mot de passe?</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="bienvenue">Bienvenue</string>
+    <string name="mot_de_passe_hint">Mot de passe</string>
+    <string name="nom_d_utilisateur">Nom d\'utilisateur</string>
+    <string name="desc_background_sigin_in">Backgound sigin in</string>
     <string-array name="choix_heures_absences">
         <item>1 Heure</item>
         <item>2 Heures</item>

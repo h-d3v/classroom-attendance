@@ -10,23 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".ui.activité.ConnexionActivité">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.activité.VoirListeSeancesActivity"/>
         <activity android:name=".ui.activité.MainActivity">
-        </activity>
-        <activity android:name=".ui.activité.ConnexionActivité">
         </activity>
         <activity android:name=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
         <activity android:name=".ui.activité.VoirCoursGroupeActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
         <activity android:name=".ui.activité.PrendrePrésenceActivité">
-            <intent-filter>
+            <!--intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter-->
         </activity>
         <activity android:name=".ui.activité.VoirSeanceActivity"/>
         <activity android:name=".ui.activité.VoirUnEleve">
