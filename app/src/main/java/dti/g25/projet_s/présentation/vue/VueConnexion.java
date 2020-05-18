@@ -46,6 +46,7 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
     public View onCreateView (LayoutInflater inflater,
                               ViewGroup container,
                               Bundle savedInstanceState) {
+        présenteur.tenterConnectionAutomatique();
         View racine = inflater.inflate(R.layout.fragement_connexion, container, false);
 
         txtUtilisateur=racine.findViewById(R.id.txtUtilisateur);
@@ -70,10 +71,10 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
                         if (cbSeSouvenir.isChecked()){
                             présenteur.sauvegarderIdentifiants(getNomUtilisateur(), getMotDePasseUtilisateur());
                         } else {
-                            présenteur.supprimerIdentifiants(getNomUtilisateur(), getMotDePasseUtilisateur());
+                            présenteur.supprimerIdentifiants();
                         }
                     }
-                       // else txtMessageErreur.setText("Erreur dans la connexion");
+                        else txtMessageErreur.setText("Erreur dans la connexion");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -120,5 +121,9 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
     public String getMotDePasseUtilisateur() {
         return txtMotDePasse.getText().toString();
     }
+
+
+
+
 
 }

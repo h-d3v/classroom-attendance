@@ -2,6 +2,12 @@ package dti.g25.projet_s.présentation.modèle.dao;
 
 import android.content.Context;
 
+import android.util.Log;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import dti.g25.projet_s.dao.Singleton;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Horaire;
@@ -13,6 +19,9 @@ import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.modèle.dao.DAO;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactoryV1;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -26,6 +35,8 @@ public class ModèleDAO {
     private List<DAO<Seance>> listeSeance;
     private DAO<Utilisateur> utilisateurActuel;
     private List<DAO<Utilisateur>> listeUtilisateur;
+    private String cle;
+    private final String URL="https://projet-s.dti.crosemont.quebec/api/v0/utilisateurs";
 
     /**
      * constructeur vide
@@ -34,10 +45,10 @@ public class ModèleDAO {
     }
 
 
-    // A Supprimmer ?
-    public ModèleDAO(Context context) {
+    public ModèleDAO(Context context, DAOFactoryV1 daoFactoryV1) {
         this.context = context;
-        coursGroupes = new LinkedList<>();
+        this.daoFactory=daoFactoryV1;
+
     }
 
     /**
@@ -155,6 +166,9 @@ public class ModèleDAO {
         listeSeance=daoFactory.chargerListeSeanceParUtilisateur(utilisateurActuel);
 
     }
+
+
+
 
     //TODO ? non utilisee
     public int getPostionSeance(Seance seance) {

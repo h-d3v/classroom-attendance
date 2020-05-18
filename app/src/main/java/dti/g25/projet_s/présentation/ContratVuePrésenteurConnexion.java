@@ -8,6 +8,7 @@ public interface ContratVuePrésenteurConnexion {
     public interface IVueConnexion{
         public String getNomUtilisateur();
         public String getMotDePasseUtilisateur();
+
     }
 
     /**
@@ -16,13 +17,15 @@ public interface ContratVuePrésenteurConnexion {
     public interface IPrésenteurConnexion {
         public Boolean tenterConnexion(String nomUtilisateur, String motDePasse) throws Exception;
 
+        public void tenterConnectionAutomatique();
+
         void sauvegarderIdentifiants(String nomUtilisateur, String motDePasseUtilisateur);
 
         String getNomUtilisateurSauvegarde();
 
         String  getMotPasseUtilisateurSauvegarde();
 
-        void supprimerIdentifiants(String nomUtilisateur, String motDePasseUtilisateur);
+        void supprimerIdentifiants();
     }
 
 }

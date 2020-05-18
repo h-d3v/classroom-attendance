@@ -8,6 +8,7 @@ import dti.g25.projet_s.domaine.entité.Utilisateur;
 import java.util.List;
 
 public abstract class DAOFactoryV1 {
+
     public abstract List<DAO<CoursGroupe>> chargerListeCoursGroupeParUtilisateur(DAO<Utilisateur> utilisateurDAO);
     public abstract List<DAO<Utilisateur>> chargerListeUtilisateursParCoursGroupe(DAO<CoursGroupe>coursGroupeDAO);
     public abstract List<DAO<Seance>> chargerListeSeanceParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO);
@@ -17,6 +18,9 @@ public abstract class DAOFactoryV1 {
     public abstract List<DAO<Utilisateur>> chargerListeUtilisateurParSeance(DAO<Seance> seanceDAO);
     public abstract List<DAO<Horaire>> chargerHoraireParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO);
     public abstract List<DAO<CoursGroupe>> chargerCoursGroupeParHoaire(DAO<Horaire> horaireDAO);
-    public abstract DAO<Utilisateur> tenterConnection(String nomUtilisateur, String motDePasse);
+    public abstract String tenterConnection(String nomUtilisateur, String motDePasse);
+
+    public abstract String getCle();
+
     //To be concluded !! WIP
 }
