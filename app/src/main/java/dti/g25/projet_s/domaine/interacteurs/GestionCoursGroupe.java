@@ -30,10 +30,10 @@ public class GestionCoursGroupe implements IGestionCoursGroupe {
         }
 
         if(!verifierSiProf){
-            throw new GestionCoursGroupeException("Le cours doit posseder au moins un enseignant");
+            throw new GestionCoursGroupeException("Le cours doit posséder au moins un enseignant");
         }
         else if(!verifierParticipantUnique){
-            throw new GestionCoursGroupeException("Le cours doit posseder une liste de participant sans duplicate");
+            throw new GestionCoursGroupeException("Le cours doit posséder une liste de participants sans duplicate");
         }
 
         else{

@@ -46,27 +46,27 @@ public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.
 
                 @Override
                 public void onClick(View v) {
-                    builder.setMessage("Souhaitez-vous vraiment modifier l'etat de la seance?")
+                    builder.setMessage("Souhaitez-vous vraiment modifier l'État de la séance?")
                             .setCancelable(false)
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     _presenteur.requeteModifierSatatutSeance();
                                     _tvEstPrevue.setText(_presenteur.getSeance().get_etat().toString());
-                                    Toast.makeText(_presenteur.get_activite(), "Statut de la seance modifiee",
+                                    Toast.makeText(_presenteur.get_activite(), "Statut de la séance modifiée",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             })
                             .setNegativeButton("Non", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();
-                                    Toast.makeText(_presenteur.get_activite(), "Statut de la seance non modifiee",
+                                    Toast.makeText(_presenteur.get_activite(), "Statut de la séance modifiée",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             });
 
                     AlertDialog alert = builder.create();
 
-                    alert.setTitle("Modification du statut de la seance");
+                    alert.setTitle("Modification du statut de la séance");
                     alert.show();
                 }
             });
