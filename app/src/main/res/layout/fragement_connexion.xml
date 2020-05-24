@@ -15,7 +15,6 @@
         android:src="@drawable/background_signin"
         android:contentDescription="@string/desc_background_sigin_in" />
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
