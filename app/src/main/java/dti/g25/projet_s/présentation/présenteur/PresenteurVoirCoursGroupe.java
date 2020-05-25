@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.Debug;
 import android.util.Log;
 
+import dti.g25.projet_s.dao.DAOUtilisateurRESTAPI;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.présentation.modèle.dao.ModèleDAO;
 import dti.g25.projet_s.présentation.vue.VueVoirCoursGroupe;
 import dti.g25.projet_s.ui.activité.ConnexionActivité;
 import dti.g25.projet_s.ui.activité.VoirUnCourGroupeActivity;
@@ -19,11 +21,11 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
     private String cléConnexion;
 
     private IContatVuePresenteurVoirCoursGroupe.IVueVoirCoursGroupe vueVoirCoursGroupe;
-    private Modèle modèle;
+    private ModèleDAO modèle;
     private Activity activity;
     private int positionCoursGroupe;
 
-    public PresenteurVoirCoursGroupe(IContatVuePresenteurVoirCoursGroupe.IVueVoirCoursGroupe vueVoirCoursGroupe, Modèle modèle, Activity activity) {
+    public PresenteurVoirCoursGroupe(IContatVuePresenteurVoirCoursGroupe.IVueVoirCoursGroupe vueVoirCoursGroupe, ModèleDAO modèle, Activity activity) {
         this.vueVoirCoursGroupe = vueVoirCoursGroupe;
         this.modèle = modèle;
         this.activity = activity;
@@ -56,7 +58,13 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
         if (requestCode == REQUEST_CODE_CONEXION && resultCode == Activity.RESULT_OK) {
             cléConnexion=data.getStringExtra(EXTRA_CLÉ_CONNEXION);
             modèle.setCléUtilisateur(cléConnexion);
-            modèle.rafraîchir();
+            DAOUtilisateurRESTAPI daoUtilisateurRESTAPI = new DAOUtilisateurRESTAPI(cléConnexion, activity);
+            daoUtilisateurRESTAPI.chargerParCleConnexion(cléConnexion);
+            modèle.setUtilisateur(daoUtilisateurRESTAPI);
+            Log.i("TAG", cléConnexion );
+            modèle.setUtilisateur(new DAOUtilisateurRESTAPI(12, cléConnexion, null,activity));
+            modèle.chargerCoursGroupeUtilisateur();
+            //modèle.rafraîchir();
             Log.d("cour", modèle.getCourGroupeParPos(0).toString());
             vueVoirCoursGroupe.rafraichir();
         }

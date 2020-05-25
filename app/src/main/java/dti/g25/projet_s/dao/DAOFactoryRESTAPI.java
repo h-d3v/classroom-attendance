@@ -9,6 +9,7 @@ import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.Horaire;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
+import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
 import dti.g25.projet_s.présentation.modèle.dao.DAO;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactoryV1;
 import org.json.JSONArray;
@@ -16,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -27,9 +29,12 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     private static final String URL = "https://projet-s.dti.crosemont.quebec/api/v0/utilisateurs";
     private static final String URL_CONNECT = "https://projet-s.dti.crosemont.quebec/";
     private static final String POINT_ENTREE_UTILISATEURS = "utilisateurs";
+    private static final String TAG = "DAOFactoryRESTAPI" ;
+    private static final String CNX_GET_POINT_ENTREE = "https://projet-s.dti.crosemont.quebec/api/v1/" ;
     private  Context context;
     private  String cle;
     private Response.Listener<JSONObject> response;
+    private static List<DAO<CoursGroupe>>  daoCoursGroupes;
 
 
     public DAOFactoryRESTAPI(Context context) {
@@ -38,7 +43,42 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     }
 
     @Override
-    public List<DAO<CoursGroupe>> chargerListeCoursGroupeParUtilisateur(DAO<Utilisateur> utilisateurDAO) {
+    public  List<DAO<CoursGroupe>> chargerListeCoursGroupeParUtilisateur(DAO<Utilisateur> utilisateurDAO) {
+        if(!(utilisateurDAO instanceof DAOUtilisateurRESTAPI)){return null;}
+        final DAOUtilisateurRESTAPI utilisateurREST= (DAOUtilisateurRESTAPI)  utilisateurDAO;
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET_POINT_ENTREE+"utilisateur/"+utilisateurREST.getId()+"/groupes", null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    Iterator<String> iterator = response.keys();
+                    while (iterator.hasNext()){
+                        JSONObject jsonObject =response.getJSONObject(iterator.next());
+                        int id = jsonObject.getInt("id");
+                        String titre = jsonObject.getString("titre");
+                        String sigle = jsonObject.getString("sigle");
+                        Log.i(TAG, titre);
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+utilisateurREST.getCle());
+                return params;
+            }
+        };
+
+        Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
         return null;
     }
 
@@ -48,7 +88,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     }
 
     @Override
-    public List<DAO<Seance>> chargerListeSeanceParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO) {
+    public  List<DAO<Seance>> chargerListeSeanceParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO) {
         return null;
     }
 
@@ -83,7 +123,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     }
 
     @Override
-    public String tenterConnection(final String nomUtilisateur, final String motDePasse) {
+    public  String tenterConnection(final String nomUtilisateur, final String motDePasse) {
         final String CNX_GET="https://projet-s.dti.crosemont.quebec/api/v1/auth_token";
         ;
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET, null, response, new Response.ErrorListener() {

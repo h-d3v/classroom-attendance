@@ -195,6 +195,10 @@ public class ModèleDAO {
 
     }
 
+    public void setCléUtilisateur(String cléConnexion) {
+        cle=cléConnexion;
+    }
+
 /** //TODO? supprimer fonction puisque l'app ne cree pas d'utilisateur
  *
  * @param

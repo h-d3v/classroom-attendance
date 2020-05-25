@@ -76,10 +76,12 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
 
     @Override
     public void tenterConnectionAutomatique() {
+        /**Lisser comment tant que pas de deconnection
         if(!sharedPreferences.getString("nomUtilisateur", "").isEmpty() &&
             !sharedPreferences.getString("motDePasse", "").isEmpty()){
             tenterConnexion(getNomUtilisateurSauvegarde(), getMotPasseUtilisateurSauvegarde());
         }
+         */
     }
 
     @Override

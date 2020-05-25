@@ -11,24 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="sauvegarde du mot de passe et nom utilisateur">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/Singleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOFactoryRESTAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOFactoryRESTAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/ContratVuePrésenteurConnexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/ContratVuePrésenteurConnexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOUtilisateurRESTAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOUtilisateurRESTAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Utilisateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactoryV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactoryV1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/ModèleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/ModèleDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirCoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirCoursGroupe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurConnexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurConnexion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueConnexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueConnexion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/ConnexionActivité.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/ConnexionActivité.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirCoursGroupeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirCoursGroupeActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +64,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="39-voir-liste-d-leves-d-un-cour" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1b0fyOjaa7FLLQoPfPX8LNay2k8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -99,6 +96,9 @@
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="dti.g25.projet_s.présentation.modèle" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dti.g25.projet_s.dao" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="dti.g25.projet_s" />
@@ -336,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589579127488</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Identification avec API V1">
+      <created>1590436923857</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1590436923857</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +364,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="debut nouvelle version modele avec DAOS" />
     <MESSAGE value="sauvegarde du mot de passe et nom utilisateur" />
-    <option name="LAST_COMMIT_MESSAGE" value="sauvegarde du mot de passe et nom utilisateur" />
+    <MESSAGE value="Identification avec API V1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Identification avec API V1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="497" y="96" width="596" height="660" key="#app" timestamp="1589053032239">
@@ -374,11 +382,11 @@
     </state>
     <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589045392356" />
     <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1589057126089" />
-    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1589828894322">
+    <state x="613" y="137" width="484" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1590444047462">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589043572498" />
-    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1589828894322" />
+    <state x="613" y="137" width="484" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1590444047462" />
     <state x="627" y="242" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589053356498">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -392,35 +400,35 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978461357" />
-    <state x="103" y="18" width="903" height="814" key="CommitChangelistDialog2" timestamp="1589667358307">
+    <state x="411" y="46" width="903" height="814" key="CommitChangelistDialog2" timestamp="1590436923582">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589044389797" />
-    <state x="103" y="18" width="903" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1589667358307" />
+    <state x="411" y="46" width="903" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1590436923582" />
     <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl" timestamp="1588962764411">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588962764411" />
-    <state width="1558" height="192" key="GridCell.Tab.0.bottom" timestamp="1589828766548">
+    <state width="1558" height="180" key="GridCell.Tab.0.bottom" timestamp="1590436941164">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485331" />
-    <state width="1558" height="192" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589828766548" />
-    <state width="1558" height="192" key="GridCell.Tab.0.center" timestamp="1589828766547">
+    <state width="1558" height="180" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590436941164" />
+    <state width="1558" height="180" key="GridCell.Tab.0.center" timestamp="1590436941162">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
-    <state width="1558" height="192" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589828766547" />
-    <state width="1558" height="192" key="GridCell.Tab.0.left" timestamp="1589828766547">
+    <state width="1558" height="180" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1590436941162" />
+    <state width="1558" height="180" key="GridCell.Tab.0.left" timestamp="1590436941162">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
-    <state width="1558" height="192" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589828766547" />
-    <state width="1558" height="192" key="GridCell.Tab.0.right" timestamp="1589828766548">
+    <state width="1558" height="180" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1590436941162" />
+    <state width="1558" height="180" key="GridCell.Tab.0.right" timestamp="1590436941163">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
-    <state width="1558" height="192" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589828766548" />
+    <state width="1558" height="180" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1590436941163" />
     <state width="1558" height="269" key="GridCell.Tab.1.bottom" timestamp="1589121400638">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -471,10 +479,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="469" y="192" key="run.anything.popup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589038278428" />
-    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1589657450287">
+    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1590442134377">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="463" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589041378749" />
-    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1589657450287" />
+    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1590442134377" />
   </component>
 </project>
