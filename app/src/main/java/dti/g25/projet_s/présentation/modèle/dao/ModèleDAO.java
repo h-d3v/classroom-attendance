@@ -3,25 +3,16 @@ package dti.g25.projet_s.présentation.modèle.dao;
 import android.content.Context;
 
 import android.util.Log;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import dti.g25.projet_s.dao.Singleton;
+
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Horaire;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
+
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
-import dti.g25.projet_s.présentation.modèle.dao.DAO;
-import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
-import dti.g25.projet_s.présentation.modèle.dao.DAOFactoryV1;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -95,6 +86,7 @@ public class ModèleDAO {
      */
     public DAO<CoursGroupe> getCourGroupeParPos(int position) {
         if (coursGroupes == null || coursGroupes.size() == 0 || coursGroupes.size() < position) {
+            Log.i("Object null","Le DAO cours groupe a lapos demander est null");
             return null;
         }
         return coursGroupes.get(position);

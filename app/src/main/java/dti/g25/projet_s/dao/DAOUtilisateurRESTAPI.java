@@ -24,9 +24,9 @@ public class DAOUtilisateurRESTAPI implements DAO<Utilisateur> {
     private static final String TAG = "DAOUtilisateurRESTAPI";
     private static Role[] roles={Role.ADMINISTRATEUR, Role.ÉLÈVE, Role.PROFESSEUR };
     int id;
-     String cle;
-     Context context;
-     Utilisateur utilisateur;
+    String cle;
+    Context context;
+    Utilisateur utilisateur;
 
     public DAOUtilisateurRESTAPI (int id, Context context){
         this.id=id;
@@ -41,7 +41,6 @@ public class DAOUtilisateurRESTAPI implements DAO<Utilisateur> {
         this.cle=cle;
         this.utilisateur= utilisateur;
         this.context=context;
-
     }
 
 

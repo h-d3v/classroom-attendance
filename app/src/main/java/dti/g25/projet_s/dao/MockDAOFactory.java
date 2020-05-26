@@ -53,7 +53,7 @@ public class MockDAOFactory extends  DAOFactory{
 
         //Ajouter cours et groupes et seances
         for(int i=0;i<=15;i++){
-            listeCoursGroupe.add(new CoursGroupe(new LibelleCours("Titre du 420-"+i, "420-"+i, "aa"  ), 1));
+            listeCoursGroupe.add(new CoursGroupe(new LibelleCours("Titre du 420-"+i, "420-"+i  ), 1));
 
 
 
@@ -80,7 +80,7 @@ public class MockDAOFactory extends  DAOFactory{
 
         }
         //Cours 420-i a deux groupes
-        listeCoursGroupe.add(new CoursGroupe(new LibelleCours("Titre du 420-"+1, "420-"+1 , "aa" ), 2));
+        listeCoursGroupe.add(new CoursGroupe(new LibelleCours("Titre du 420-"+1, "420-"+1  ), 2));
         utilisateurListHashMap.get(listeUtilisateur.get(0)).add(listeCoursGroupe.get(listeCoursGroupe.size()-1));
 
         for(int i=2;i<50;i++){

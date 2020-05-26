@@ -4,25 +4,29 @@ import android.util.Base64;
 import android.util.Log;
 import com.android.volley.*;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.Horaire;
+import dti.g25.projet_s.domaine.entité.LibelleCours;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
+import dti.g25.projet_s.domaine.interacteurs.GestionCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.dao.DAO;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactoryV1;
-import org.json.JSONArray;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 
-public class DAOFactoryRESTAPI extends DAOFactoryV1 {
+public class
+DAOFactoryRESTAPI extends DAOFactoryV1 {
     private static final String TOKEN = "";
     private static final String NOM_UTILISATEUR = "username";
     private static final String MOT_PASSE = "password";
@@ -34,7 +38,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     private  Context context;
     private  String cle;
     private Response.Listener<JSONObject> response;
-    private static List<DAO<CoursGroupe>>  daoCoursGroupes;
+    private static List<DAO<CoursGroupe>> coursGroupes;
 
 
     public DAOFactoryRESTAPI(Context context) {
@@ -43,9 +47,12 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     }
 
     @Override
-    public  List<DAO<CoursGroupe>> chargerListeCoursGroupeParUtilisateur(DAO<Utilisateur> utilisateurDAO) {
+    public List<DAO<CoursGroupe>> chargerListeCoursGroupeParUtilisateur(final DAO<Utilisateur> utilisateurDAO) {
+        coursGroupes= new ArrayList<>();
         if(!(utilisateurDAO instanceof DAOUtilisateurRESTAPI)){return null;}
+        System.out.println("ALLLLOOOOOOOOOOOOOOOOOOOOOOOOOOO");
         final DAOUtilisateurRESTAPI utilisateurREST= (DAOUtilisateurRESTAPI)  utilisateurDAO;
+        RequestQueue queue= Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET_POINT_ENTREE+"utilisateur/"+utilisateurREST.getId()+"/groupes", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -53,12 +60,15 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
                     Iterator<String> iterator = response.keys();
                     while (iterator.hasNext()){
                         JSONObject jsonObject =response.getJSONObject(iterator.next());
-                        int id = jsonObject.getInt("id");
+                        int idCg = jsonObject.getInt("id");
                         String titre = jsonObject.getString("titre");
                         String sigle = jsonObject.getString("sigle");
+                        System.out.println(titre);
+                        int num = jsonObject.getInt("num\u00e9ro");
+                        CoursGroupe cG = new GestionCoursGroupe().creerCoursGroupe( new LibelleCours(titre,sigle), num);
+                        coursGroupes.add(new DAOCoursGroupeRESTAPI(idCg,utilisateurREST.getCle(),cG, context));
                         Log.i(TAG, titre);
                     }
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -79,7 +89,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
         };
 
         Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
-        return null;
+        return coursGroupes;
     }
 
     @Override

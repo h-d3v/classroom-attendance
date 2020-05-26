@@ -66,15 +66,21 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
             @Override
             public void onClick(View v) {
                 try {
-                    if(présenteur.tenterConnexion(getNomUtilisateur(), getMotDePasseUtilisateur())) {
-                        txtMessageErreur.setText("Vous êtes bien connecté(e)");
-                        if (cbSeSouvenir.isChecked()){
-                            présenteur.sauvegarderIdentifiants(getNomUtilisateur(), getMotDePasseUtilisateur());
-                        } else {
-                            présenteur.supprimerIdentifiants();
-                        }
+                    boolean cnx=présenteur.tenterConnexion(getNomUtilisateur(), getMotDePasseUtilisateur()) ;
+                    Thread.sleep(2500);
+
+                    if (!cnx){
+                        txtMessageErreur.setText("Erreur dans la connexion");
                     }
-                        else txtMessageErreur.setText("Erreur dans la connexion");
+                    if (cbSeSouvenir.isChecked()){
+                        présenteur.sauvegarderIdentifiants(getNomUtilisateur(), getMotDePasseUtilisateur());
+                    } else {
+                        présenteur.supprimerIdentifiants();
+                    }
+
+
+
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
