@@ -34,7 +34,7 @@ public class ServeurFactice {
                     listeSeance = new ArrayList<>();
                     listeCourGroupe.add(new CoursGroupe(new LibelleCours("ART DRAMATIQUE", "BC" + i, "AD"), i));
                     listeCourGroupe.get(i).setParticipants(listeParticipant);
-                    listeSeance.add(new Seance(listeCourGroupe.get(i), new Horaire(00.0, 5.5, "Mercredi")));
+                    listeSeance.add(new Seance(listeCourGroupe.get(i), new Horaire(00.0f, 5.5f, "Mercredi")));
                     listeCourGroupe.get(i).setListeSeances(listeSeance);
                 }
             }

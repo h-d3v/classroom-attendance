@@ -26,8 +26,8 @@ public class GestionSeance implements IGestionSeance {
     }
 
     @Override
-    public Seance creerSeance(CoursGroupe coursGroupe, Horaire horaires, Date date, int id) {
-        return new Seance (coursGroupe, horaires, date, id);
+    public Seance creerSeance(CoursGroupe coursGroupe, Horaire horaires, int id) {
+        return new Seance (coursGroupe, horaires, id);
     }
 
 

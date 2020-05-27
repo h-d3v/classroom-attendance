@@ -11,7 +11,7 @@ import dti.g25.projet_s.domaine.entité.Utilisateur;
 
 public interface IGestionSeance {
  Seance creerSeance(CoursGroupe coursGroupe, Horaire horaires);
- Seance creerSeance(CoursGroupe coursGroupe, Horaire horaires, Date date, int id);
+ Seance creerSeance(CoursGroupe coursGroupe, Horaire horaires, int id);
  Seance changerSatutSeance(EtatSeance etatSeance, Seance seance);
  Seance ajouterAbsence(Utilisateur utilisateur, Seance seance, Boolean présence);
 

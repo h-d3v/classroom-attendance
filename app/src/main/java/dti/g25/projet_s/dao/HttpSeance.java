@@ -28,82 +28,12 @@ import java.util.Date;
 import java.util.List;
 
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.Horaire;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.interacteurs.GestionHoraire;
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 
 public class HttpSeance {
-    private final static String lienUrl = "https://projet-s.dti.crosemont.quebec/api/v0/groupe/";
-    URL url=null;
-    String résultat="";
-
-    public HttpSeance() {
-
-    }
-
-
-//    public List<Seance> getSeancesParCourGroupe(CoursGroupe courGroupe) throws Exception {
-//
-//        RequestQueue requestQueue;
-//
-//     //   RequestQueue queue = Volley.newRequestQueue();
-//
-//            // Préparation de la requête
-//        String url=lienUrl + courGroupe.getId() + "/seances";
-//        JsonObjectRequest requête = new JsonObjectRequest(Request.Method.GET,
-//                url,
-//                null,
-//                //Méthode exécutée dans le fil principal
-//                //lorsque la réponse arrive
-//                new Response.Listener<JSONObject>() {
-//                    @Override
-//                    public void onResponse(JSONObject réponse) {
-//                        //Faire quelque chose avec la réponse
-//                    }
-//
-//                },
-//
-//                //Méthode exécutée dans le fil principal
-//                //en cas d'erreur
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        //Afficher un message d'erreur
-//                    }
-//                });
-//
-//
-//        //Instancie l'URL
-//        url= new String(lienUrl + courGroupe.getId() + "/seances");
-//
-//        List<Seance> seances = new ArrayList<>();
-//        HttpURLConnection connexion =
-//                (HttpURLConnection) url.openConnection();
-//
-//        connexion.setRequestMethod("GET");
-//
-//        //Vérifions le résultat de la requête
-//        InputStream responseBody = new BufferedInputStream(connexion.getInputStream());
-//
-//
-//
-//        InputStreamReader responseBodyReader = new InputStreamReader(responseBody, "UTF-8");
-//
-//        BufferedReader stringReader = new BufferedReader(responseBodyReader);
-//
-//        String ligne;
-//        do{
-//            ligne=stringReader.readLine();
-//            if(ligne!=null) résultat+=ligne;
-//        }while(ligne!=null);
-//
-//        seances = décoderJsonSéeances(ligne, courGroupe);
-//
-//        connexion.disconnect();
-//
-//
-//        return seances;
-//    }
 
     public List<Seance> décoderJsonSéeances(JSONObject résultat, CoursGroupe coursGroupe) throws JSONException {
         List<Seance> seances = new ArrayList<>();
@@ -118,28 +48,29 @@ public class HttpSeance {
 
             Log.d("une seance", String.valueOf(objectAcuel));
 
-            Double heureDébut = obtenirHeureEnDouble(objectAcuel.getString("début"));
-            Double heureFin = obtenirHeureEnDouble(objectAcuel.getString("fin"));
+            float heureDébut = obtenirHeureEnDouble(objectAcuel.getString("début"));
+            Log.d("heureDébut", String.valueOf(heureDébut));
+            float heureFin = obtenirHeureEnDouble(objectAcuel.getString("fin"));
             int id = objectAcuel.getInt("id");
-            Date date = obtenirStringEnDate(objectAcuel.getString("date"));
-            seances.add(new GestionSeance().creerSeance(coursGroupe, new GestionHoraire().créerHoraire(heureDébut, heureFin), date, id));
+            Log.d("date: ", objectAcuel.getString("date"));
+            Log.d("date: ", String.valueOf(heureFin));
+            Horaire horaire = new Horaire(heureDébut, heureFin, objectAcuel.getString("date"));
+
+            Log.d("date: ", String.valueOf(horaire.getHeureFin()));
+            Seance unSeance = new GestionSeance().creerSeance(coursGroupe, horaire, id);
+            //Log.d("horaire: ", unSeance.get_horaires().getDate());
+            seances.add(unSeance);
         }
 
         return seances;
     }
 
-    private Date obtenirStringEnDate(String uneDate) {
-        String[] partie = uneDate.split("-");
 
-        Date date = new Date(Integer.parseInt(partie[0]), Integer.parseInt(partie[1]), Integer.parseInt(partie[2]));
-        return date;
-    }
-
-    private Double obtenirHeureEnDouble(String heureString) {
-        Double temp;
+    private float obtenirHeureEnDouble(String heureString) {
+        float temp;
         String[] partie = heureString.split(":");
 
-        temp = Double.parseDouble(partie[0]);
+        temp = Float.parseFloat(partie[0]);
 
         if (Double.parseDouble(partie[1]) > 30) {
             temp += 0.75;

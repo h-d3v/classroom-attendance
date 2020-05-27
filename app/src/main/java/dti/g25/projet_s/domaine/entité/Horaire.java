@@ -3,26 +3,24 @@ package dti.g25.projet_s.domaine.entité;
 
 import androidx.annotation.NonNull;
 
+import java.util.Objects;
+
 import static java.lang.String.valueOf;
 
 public class Horaire {
 
-    private Double heureDebut;
-    private Double heureFin;
+    private float heureDebut;
+    private float heureFin;
+    private String date;
     private String journee;
 
-    public Horaire(Double heureDebut, Double heureFin, String journee) {
-        this.heureDebut = heureDebut;
-        this.heureFin = heureFin;
-        this.journee = journee;
-    }
-
-    public Horaire(double heureDébut, double heureFin) {
+    public Horaire(float heureDébut, float heureFin, String date) {
         this.heureDebut = heureDébut;
         this.heureFin = heureFin;
+        this.date = date;
     }
 
-    public Double getHeureDebut() {
+    public float getHeureDebut() {
         return heureDebut;
     }
 
@@ -35,7 +33,7 @@ public class Horaire {
         return convertirDoubleEnHeure(heureFin);
     }
 
-    public Double getHeureFin() {
+    public float getHeureFin() {
         return heureFin;
     }
 
@@ -43,10 +41,12 @@ public class Horaire {
         return journee;
     }
 
-    public String convertirDoubleEnHeure(Double unDouble){
-        String unString = null;
+    public String getDate() { return date;}
+
+    public String convertirDoubleEnHeure(float unDouble){
+        String unString = "";
         int heure = 0;
-        while(unDouble > 1){
+        while(unDouble >= 1){
             unDouble -= 1;
             heure +=1;
         }
@@ -82,8 +82,8 @@ public class Horaire {
 
         Horaire horaire = (Horaire) o;
 
-        if (heureDebut != null ? !heureDebut.equals(horaire.heureDebut) : horaire.heureDebut != null) return false;
-        if (heureFin != null ? !heureFin.equals(horaire.heureFin) : horaire.heureFin != null) return false;
+        if (!Objects.equals(heureDebut, horaire.heureDebut)) return false;
+        if (!Objects.equals(heureFin, horaire.heureFin)) return false;
         return journee != null ? journee.equals(horaire.journee) : horaire.journee == null;
     }
 

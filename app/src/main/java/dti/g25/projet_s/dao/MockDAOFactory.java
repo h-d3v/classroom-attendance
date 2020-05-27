@@ -68,7 +68,7 @@ public class MockDAOFactory extends  DAOFactory{
 
 
                 for(int j=0;j<=15;j++){
-                    utilisateurSeancesHashMap.get(listeUtilisateur.get(0)).add(new Seance(coursGroupe, new Horaire( Double.valueOf(i), Double.valueOf(j), "lundi")));
+                    utilisateurSeancesHashMap.get(listeUtilisateur.get(0)).add(new Seance(coursGroupe, new Horaire( Float.valueOf(i), Float.valueOf(j), "lundi")));
 
                     System.out.println( utilisateurSeancesHashMap.get(listeUtilisateur.get(0)).get(j).get_horaires().getHeureDebut());
 

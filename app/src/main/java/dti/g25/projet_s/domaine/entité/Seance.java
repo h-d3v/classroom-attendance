@@ -28,11 +28,10 @@ public class Seance {
         _etat=EtatSeance.PREVUE;
     }
 
-    public Seance(CoursGroupe coursGroupe, Horaire horaires, Date date, int id){
+    public Seance(CoursGroupe coursGroupe, Horaire horaires, int id) {
         _coursGroupe=coursGroupe;
         _listeAbsence = new ArrayList<Absence>();
         _horaires = horaires;
-        _date = date;
         this.id = id;
 
         if(coursGroupe.getParticipants()!=null){
