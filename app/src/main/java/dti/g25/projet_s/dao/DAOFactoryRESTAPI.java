@@ -35,6 +35,7 @@ DAOFactoryRESTAPI extends DAOFactoryV1 {
     private static final String POINT_ENTREE_UTILISATEURS = "utilisateurs";
     private static final String TAG = "DAOFactoryRESTAPI" ;
     private static final String CNX_GET_POINT_ENTREE = "https://projet-s.dti.crosemont.quebec/api/v1/" ;
+    private int idUserConnect=0;
     private  Context context;
     private  String cle;
     private Response.Listener<JSONObject> response;
@@ -50,7 +51,7 @@ DAOFactoryRESTAPI extends DAOFactoryV1 {
     public List<DAO<CoursGroupe>> chargerListeCoursGroupeParUtilisateur(final DAO<Utilisateur> utilisateurDAO) {
         coursGroupes= new ArrayList<>();
         if(!(utilisateurDAO instanceof DAOUtilisateurRESTAPI)){return null;}
-        System.out.println("ALLLLOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+        System.out.println("Chargement des cours groupes....");
         final DAOUtilisateurRESTAPI utilisateurREST= (DAOUtilisateurRESTAPI)  utilisateurDAO;
         RequestQueue queue= Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET_POINT_ENTREE+"utilisateur/"+utilisateurREST.getId()+"/groupes", null, new Response.Listener<JSONObject>() {

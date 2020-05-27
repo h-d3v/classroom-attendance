@@ -1,7 +1,6 @@
 package dti.g25.projet_s.dao;
 
 import android.content.Context;
-import android.util.Base64;
 import android.util.Log;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -11,7 +10,6 @@ import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
 import dti.g25.projet_s.présentation.modèle.dao.DAO;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -23,7 +21,7 @@ public class DAOUtilisateurRESTAPI implements DAO<Utilisateur> {
     private static final String CNX_GET_POINT_ENTREE ="https://projet-s.dti.crosemont.quebec/api/v1/" ;
     private static final String TAG = "DAOUtilisateurRESTAPI";
     private static Role[] roles={Role.ADMINISTRATEUR, Role.ÉLÈVE, Role.PROFESSEUR };
-    int id;
+    private int id;
     String cle;
     Context context;
     Utilisateur utilisateur;
@@ -32,9 +30,10 @@ public class DAOUtilisateurRESTAPI implements DAO<Utilisateur> {
         this.id=id;
         this.context=context;
     }
-    public DAOUtilisateurRESTAPI(String cle,  Context context){
+    public DAOUtilisateurRESTAPI(String cle,  Context context) throws InterruptedException {
         this.cle=cle;
         this.context=context;
+        this.chargerParCleConnexion(cle);
     }
     public DAOUtilisateurRESTAPI(int id, String cle, Utilisateur utilisateur,  Context context){
         this.id=id;
@@ -48,26 +47,27 @@ public class DAOUtilisateurRESTAPI implements DAO<Utilisateur> {
     /***
      *
      */
-    public DAO<Utilisateur> chargerParCleConnexion(final String cle){
+    public int chargerParCleConnexion(final String cle) throws InterruptedException {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET_POINT_ENTREE, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
                     id=response.getInt("id");
+                    Log.i("ID UTILISATEUR", Integer.toString(id));
                     String nom = response.getString("nom");
                     int role = response.getInt("rôle");
                     utilisateur =new CréeationUtilisateur().CréerUtilisateur(nom,roles[role]);
                     Log.i(TAG, utilisateur.toString());
+                } catch (Exception e) {
+                    Log.e("ChargerUtilisteurParCle","Erreur dans la lecture du json");
+                    e.printStackTrace();
+                }//TODO exception avec creationUtilisateur
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (Exception e) { //TODO exception avec creationUtilisateur
-                    e.printStackTrace();
-                }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Log.e("ChargerUtilisteurParCle","N'arrive pas a le charger");
                 error.printStackTrace();
             }
         }) {
@@ -80,8 +80,8 @@ public class DAOUtilisateurRESTAPI implements DAO<Utilisateur> {
         };
 
         Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
-        return null;
-
+        //Thread.sleep(6000);
+        return id;
     }
 
     /***

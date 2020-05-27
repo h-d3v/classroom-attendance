@@ -4,6 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
+import com.android.volley.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.dao.DAOUtilisateurRESTAPI;
 import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.dao.ModèleDAO;
@@ -31,7 +37,6 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
 
     public void telechargerCoursGroupeUtilisateur(final Intent data){
 
-        modèle.chargerCoursGroupeUtilisateur();
         //C'est ici qu'on lance le traitement sur le fil esclave
         Thread esclave = new Thread(
                 new Runnable(){
@@ -42,12 +47,11 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
                             cléConnexion=data.getStringExtra(EXTRA_CLÉ_CONNEXION);
                             modèle.setCléUtilisateur(cléConnexion);
                             DAOUtilisateurRESTAPI daoUtilisateurRESTAPI = new DAOUtilisateurRESTAPI(cléConnexion, activity);
-                            daoUtilisateurRESTAPI.chargerParCleConnexion(cléConnexion);
-                            System.out.println(daoUtilisateurRESTAPI.getId());
-                            modèle.setUtilisateur(daoUtilisateurRESTAPI);
-                            System.out.println("ID DE USER ="+daoUtilisateurRESTAPI.getId());
-                            Log.i("TAG", cléConnexion );
-                            modèle.setUtilisateur(new DAOUtilisateurRESTAPI(2, cléConnexion, null,activity));
+                            //daoUtilisateurRESTAPI.chargerParCleConnexion(cléConnexion);
+                            //System.out.println("IDDDDDDD"+daoUtilisateurRESTAPI.getId());
+                            //Log.i("TAG", cléConnexion);
+                            Log.i("Id utilisateurDAO", Integer.toString(daoUtilisateurRESTAPI.getId()));
+                            modèle.setUtilisateur(new DAOUtilisateurRESTAPI(1, cléConnexion, null,activity));
                             modèle.chargerCoursGroupeUtilisateur();
                             //Lancera exception si le cours groupe est null
                             //Lorsqu'il a terminé, il lance une tâche sur le fil principal (UI)
@@ -56,11 +60,11 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
                                         //Ce Runnable s'exécute dans le fil principal (UI)
                                         public void run(){
                                             try{
-
+                                                vueVoirCoursGroupe.rafraichir();
                                             } catch ( Exception e){
                                                 Log.e("CoursGroupe", "Erreur d'écriture");
                                             }
-                                            vueVoirCoursGroupe.rafraichir();
+
                                         }
                                     });
                         }
@@ -79,6 +83,7 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
 
         //Finalement, tout est prêt à être lancé
         esclave.start();
+
 
     }
 
@@ -117,7 +122,7 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
             //modèle.rafraîchir();
             Log.d("Affichage du coursGroup","Regarder le prochain log, il peut lancer une exception");
             Log.d("cour", modèle.getCourGroupeParPos(0).toString());
-            vueVoirCoursGroupe.rafraichir();
+            vueVoirCoursGroupe.rafraichir(); 
         }
     }*/
 }

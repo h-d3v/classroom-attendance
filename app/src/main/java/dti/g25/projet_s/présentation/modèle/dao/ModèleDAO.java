@@ -4,6 +4,7 @@ import android.content.Context;
 
 import android.util.Log;
 
+import dti.g25.projet_s.dao.DAOUtilisateurRESTAPI;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Horaire;
@@ -24,7 +25,7 @@ public class ModèleDAO {
     private DAOFactoryV1 daoFactory;
     private Context context;
     private List<DAO<Seance>> listeSeance;
-    private DAO<Utilisateur> utilisateurActuel;
+    private DAOUtilisateurRESTAPI utilisateurActuel;
     private List<DAO<Utilisateur>> listeUtilisateur;
     private String cle;
     private final String URL="https://projet-s.dti.crosemont.quebec/api/v0/utilisateurs";
@@ -46,10 +47,9 @@ public class ModèleDAO {
      * @param daoFactory  : la factory dao source d'acces aux donnees
      * @param utilisateur : l'utilisateur connecte de l'application
      */
-    public ModèleDAO(DAOFactoryV1 daoFactory, DAO<Utilisateur> utilisateur) {
+    public ModèleDAO(DAOFactoryV1 daoFactory, DAOUtilisateurRESTAPI utilisateur) {
         this.utilisateurActuel = utilisateur;
         this.daoFactory = daoFactory;
-        this.coursGroupes = daoFactory.chargerListeCoursGroupeParUtilisateur(utilisateur);
     }
 
 
@@ -69,7 +69,7 @@ public class ModèleDAO {
     /**
      * @param utilisateur l'utilisateur connecte
      */
-    public void setUtilisateur(DAO<Utilisateur> utilisateur) {
+    public void setUtilisateur(DAOUtilisateurRESTAPI utilisateur) {
         this.utilisateurActuel = utilisateur;
     }
 
@@ -78,7 +78,7 @@ public class ModèleDAO {
         return coursGroupes;
     }
 
-
+    public void chargerUserActuel() throws InterruptedException {utilisateurActuel.chargerParCleConnexion(cle);}
 
     /**
      * @param position: la position du coursGroupe dans la liste coursGroupe du modele
@@ -146,6 +146,8 @@ public class ModèleDAO {
         listeSeance.get(positionSeance).modifier(seanceDAOModifiee);
     }
 
+
+
     public void changerEtatSeance(int posSeance, EtatSeance etatSeance) {
         // TODO ? Pas utilise listeSeance.get(pos).modifier(new Seance(null, null)); REDONDANT voir ci dessus
     }
@@ -187,8 +189,9 @@ public class ModèleDAO {
 
     }
 
-    public void setCléUtilisateur(String cléConnexion) {
+    public void setCléUtilisateur(String cléConnexion) throws InterruptedException {
         cle=cléConnexion;
+
     }
 
 /** //TODO? supprimer fonction puisque l'app ne cree pas d'utilisateur
@@ -204,6 +207,8 @@ return new CréeationUtilisateur().CréerUtilisateur(nomUtilisateur, role);
 
 
 */
+
+
 
 
 }
