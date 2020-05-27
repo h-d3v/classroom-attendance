@@ -48,7 +48,11 @@ public class VuePrendrePrésence extends Fragment implements ContratVuePrésente
             @Override
             public void onClick(View v) {
 
+                try {
                     présenteur.ajouterAbsence(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
         });
@@ -56,7 +60,11 @@ public class VuePrendrePrésence extends Fragment implements ContratVuePrésente
             @Override
             public void onClick(View v) {
 
-                présenteur.ajouterAbsence(false);
+                try {
+                    présenteur.ajouterAbsence(false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
         });

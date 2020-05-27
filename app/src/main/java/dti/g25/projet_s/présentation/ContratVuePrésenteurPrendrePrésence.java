@@ -21,6 +21,6 @@ public interface ContratVuePrésenteurPrendrePrésence {
 
         void commencerPrendrePrésence(int positionSéeance, int positionGroupe, String cléUtilisateur) throws Exception;
 
-        public void ajouterAbsence(boolean b);
+        public void ajouterAbsence(boolean b) throws Exception;
     }
 }

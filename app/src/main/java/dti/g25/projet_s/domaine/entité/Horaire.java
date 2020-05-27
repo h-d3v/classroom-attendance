@@ -17,6 +17,11 @@ public class Horaire {
         this.journee = journee;
     }
 
+    public Horaire(double heureDébut, double heureFin) {
+        this.heureDebut = heureDébut;
+        this.heureFin = heureFin;
+    }
+
     public Double getHeureDebut() {
         return heureDebut;
     }

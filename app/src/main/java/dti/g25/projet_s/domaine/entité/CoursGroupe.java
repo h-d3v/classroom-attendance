@@ -6,6 +6,7 @@ public class CoursGroupe {
 
     private final LibelleCours libelleCours;
     private final int numeroGroupe;
+    private int id;
     private List<Utilisateur> participants;
     private List<Seance> listeSeances;
     private List<Horaire> listeHoraire;
@@ -21,6 +22,12 @@ public class CoursGroupe {
     public CoursGroupe(LibelleCours libelleCours, int numeroGroupe) {
         this.libelleCours = libelleCours;
         this.numeroGroupe = numeroGroupe;
+    }
+
+    public CoursGroupe(LibelleCours libelleCours, int numeroGroupe, int id) {
+        this.libelleCours = libelleCours;
+        this.numeroGroupe = numeroGroupe;
+        this.id = id;
     }
 
     public int getNumeroGroupe() {
@@ -51,6 +58,14 @@ public class CoursGroupe {
     public String toString() {
         return libelleCours +
                 " Groupe: " + numeroGroupe;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

@@ -2,6 +2,7 @@ package dti.g25.projet_s.domaine.interacteurs;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,14 +25,17 @@ public class GestionSeance implements IGestionSeance {
       return new Seance(coursGroupe, horaires);
     }
 
+    @Override
+    public Seance creerSeance(CoursGroupe coursGroupe, Horaire horaires, Date date, int id) {
+        return new Seance (coursGroupe, horaires, date, id);
+    }
+
 
     @Override
     public Seance changerSatutSeance(EtatSeance etatSeance, Seance seance) {
         seance.set_etat(etatSeance);
         return seance;
     }
-
-
 
     @Override
     public Seance ajouterAbsence(Utilisateur utilisateur, Seance seance, Boolean présence) {
@@ -46,6 +50,5 @@ public class GestionSeance implements IGestionSeance {
         seance.setListeAbsence(listeAbsence);
         return seance;
     }
-
 
 }

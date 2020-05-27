@@ -34,8 +34,12 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         ((TextView)holder.itemView.findViewById(R.id.txtNomÉlèves)).setText(présenteur.getUtilisateurParPosition(position).getUsername());
-        ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
-            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
+        try {
+            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View bouton) {
                     présenteur.requeteVoirÉlèves(position);

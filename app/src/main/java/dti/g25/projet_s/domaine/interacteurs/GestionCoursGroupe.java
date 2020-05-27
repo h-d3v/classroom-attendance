@@ -16,6 +16,11 @@ public class GestionCoursGroupe implements IGestionCoursGroupe {
     }
 
     @Override
+    public CoursGroupe creerCoursGroupe(LibelleCours libelleCours, int numeroGroupe, int id) {
+        return new CoursGroupe(libelleCours, numeroGroupe, id);
+    }
+
+    @Override
     public void modifierParticipants(List<Utilisateur> participants, CoursGroupe coursGroupe) throws GestionCoursGroupeException {
         List<Utilisateur> copieParticipants= participants;
 

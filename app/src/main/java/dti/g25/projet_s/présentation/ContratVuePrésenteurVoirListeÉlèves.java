@@ -13,7 +13,7 @@ public interface ContratVuePrésenteurVoirListeÉlèves {
 
         Utilisateur getUtilisateurParPosition(int position);
 
-        String getPrésenceUtilisateurParPos(int position);
+        String getPrésenceUtilisateurParPos(int position) throws Exception;
 
         void requeteVoirÉlèves(int position);
 

@@ -26,6 +26,7 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 .inflate(R.layout.cours_groupe_view, parent, false);
 
         return new RecyclerView.ViewHolder(racine) {
+
         };
     }
     @Override
