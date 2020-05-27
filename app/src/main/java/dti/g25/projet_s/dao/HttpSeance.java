@@ -52,13 +52,10 @@ public class HttpSeance {
             Log.d("heureDébut", String.valueOf(heureDébut));
             float heureFin = obtenirHeureEnDouble(objectAcuel.getString("fin"));
             int id = objectAcuel.getInt("id");
-            Log.d("date: ", objectAcuel.getString("date"));
-            Log.d("date: ", String.valueOf(heureFin));
             Horaire horaire = new Horaire(heureDébut, heureFin, objectAcuel.getString("date"));
 
             Log.d("date: ", String.valueOf(horaire.getHeureFin()));
             Seance unSeance = new GestionSeance().creerSeance(coursGroupe, horaire, id);
-            //Log.d("horaire: ", unSeance.get_horaires().getDate());
             seances.add(unSeance);
         }
 
