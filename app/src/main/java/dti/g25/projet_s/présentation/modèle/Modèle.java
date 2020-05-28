@@ -1,15 +1,14 @@
 package dti.g25.projet_s.présentation.modèle;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.android.volley.Response;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import dti.g25.projet_s.dao.ConvertisseurJsonSeance;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
-import dti.g25.projet_s.dao.HttpSeance;
 import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
@@ -233,8 +232,8 @@ public class Modèle {
         return getListeSeanceParCourGroupe(positionCoursGroupe).get(position);
     }
 
-    public void setListeSeance(List<Seance> seances) {
-        listeSeanceCourGroupe = seances;
+    public void setJSONSeances(JSONObject réponse, int numeroGroupe, int idGroupe) throws JSONException {
+        listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, new CoursGroupe(new LibelleCours("ok", "ok", "ok"), numeroGroupe, idGroupe));
     }
 
     public void requeteHttpSeanceCourGroupe(int position, Response.Listener<JSONObject> réponse) {

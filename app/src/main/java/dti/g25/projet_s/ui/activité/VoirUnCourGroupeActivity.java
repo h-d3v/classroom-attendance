@@ -12,9 +12,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import dti.g25.projet_s.R;
-import dti.g25.projet_s.dao.HttpSeance;
-import dti.g25.projet_s.domaine.entité.CoursGroupe;
-import dti.g25.projet_s.domaine.entité.LibelleCours;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirUnCourGroupe;
 import dti.g25.projet_s.présentation.vue.VueVoirUnCourGroupe;
@@ -26,14 +23,14 @@ public class VoirUnCourGroupeActivity extends AppCompatActivity {
     private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
 
     PresenteurVoirUnCourGroupe _presenteur;
-    Modèle modele;
+    Modèle _modele;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_un_courgroupe);
-        modele=new Modèle(this);
+        _modele=new Modèle(this);
         VueVoirUnCourGroupe vue=new VueVoirUnCourGroupe();
-        _presenteur= new PresenteurVoirUnCourGroupe(this, vue, modele);
+        _presenteur= new PresenteurVoirUnCourGroupe(this, vue, _modele);
         vue.setPresenteur(_presenteur);
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         ft.add(R.id.layout_voir_un_courgroupe, vue);
@@ -51,14 +48,14 @@ public class VoirUnCourGroupeActivity extends AppCompatActivity {
             public void onResponse(JSONObject réponse) {
                 try {
                     Log.d("Schéma", "ca passe ici");
-                     modele.setListeSeance(new HttpSeance().décoderJsonSéeances(réponse, new CoursGroupe(new LibelleCours("ok", "ok", "ok"), 1, 1)));
+                    _modele.setJSONSeances(réponse, 1, 1);
                      _presenteur.rafraîchir();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         };
-        modele.requeteHttpSeanceCourGroupe(position, réponse);
+        _modele.requeteHttpSeanceCourGroupe(position, réponse);
         try {
             _presenteur.commencerVoirCourGroupe(position, cléUtilisateur);
         } catch (Exception e) {

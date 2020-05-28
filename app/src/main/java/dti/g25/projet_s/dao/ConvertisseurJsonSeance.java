@@ -33,7 +33,7 @@ import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.interacteurs.GestionHoraire;
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 
-public class HttpSeance {
+public class ConvertisseurJsonSeance {
 
     public List<Seance> décoderJsonSéeances(JSONObject résultat, CoursGroupe coursGroupe) throws JSONException {
         List<Seance> seances = new ArrayList<>();
@@ -52,7 +52,7 @@ public class HttpSeance {
             Log.d("heureDébut", String.valueOf(heureDébut));
             float heureFin = obtenirHeureEnDouble(objectAcuel.getString("fin"));
             int id = objectAcuel.getInt("id");
-            Horaire horaire = new Horaire(heureDébut, heureFin, objectAcuel.getString("date"));
+            Horaire horaire = new GestionHoraire().créerHoraire(heureDébut, heureFin, objectAcuel.getString("date"));
 
             Log.d("date: ", String.valueOf(horaire.getHeureFin()));
             Seance unSeance = new GestionSeance().creerSeance(coursGroupe, horaire, id);
