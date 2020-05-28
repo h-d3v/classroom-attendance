@@ -28,7 +28,7 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
         this.modèle = modèle;
         this.activity = activity;
         if(modèle.getUtilisateurConnecte() == null)
-            activity.startActivityForResult(new Intent(new Intent(activity, ConnexionActivité.class)), REQUEST_CODE_CONEXION);
+            activity.startActivityForResult(new Intent(activity, ConnexionActivité.class), REQUEST_CODE_CONEXION);
     }
 
     @Override
