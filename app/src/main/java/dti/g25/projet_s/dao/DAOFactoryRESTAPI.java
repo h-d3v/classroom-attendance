@@ -113,9 +113,8 @@ import java.util.Map;
             return cle;
         }
 
-        public void getSeancesParCourGroupe(Response.Listener<JSONObject> response, CoursGroupe courGroupe){
-            List<Seance> listSeance = new ArrayList<>();
-            //seanceparGroupeGet + courGroupe.getId() + "?embed=true"
+        @Override
+        public void getSeancesParCourGroupe(Response.Listener<JSONObject> response, CoursGroupe courGroupe) {
 
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,"https://projet-s.dti.crosemont.quebec/api/v1/groupe/1?embed=true" , null, response
                 , new Response.ErrorListener() {
@@ -132,6 +131,40 @@ import java.util.Map;
                 }
             };
             Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        }
+
+        @Override
+        public void prendrePrésence() {
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,"https://projet-s.dti.crosemont.quebec/api/v1/groupe/1?embed=true" , null, response
+                    , new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                }
+            }){
+                @Override
+                public Map<String, String> getHeaders() {
+                    HashMap headers = new HashMap();
+                    headers.put("Authorization:", "Bearer "+cle);
+                    return headers;
+                }
+            };
+            Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+
+        }
+
+        @Override
+        public void obtenirPrésence() {
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,"https://projet-s.dti.crosemont.quebec/api/v1/groupe/1?embed=true" , null, response
+                    , new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                }
+            });
+
+            Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+
         }
 
         @Override
