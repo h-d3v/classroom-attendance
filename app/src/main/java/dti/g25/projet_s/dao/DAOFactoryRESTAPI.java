@@ -15,6 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.xml.transform.ErrorListener;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +31,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     private  Context context;
     private  String cle;
     private Response.Listener<JSONObject> response;
+    private Response.ErrorListener errorListener;
 
 
     public DAOFactoryRESTAPI(Context context) {
@@ -86,12 +88,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     public String tenterConnection(final String nomUtilisateur, final String motDePasse) {
         final String CNX_GET="https://projet-s.dti.crosemont.quebec/api/v1/auth_token";
         ;
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET, null, response, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        }) {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET, null, response, errorListener) {
             @Override
             public Map<String, String> getHeaders() {
                 Map<String, String> params = new HashMap<String, String>();
@@ -116,5 +113,9 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
 
     public void setResponse(Response.Listener<JSONObject> response) {
         this.response = response;
+    }
+
+    public void setErrorListener(Response.ErrorListener listener) {
+        this.errorListener=listener;
     }
 }

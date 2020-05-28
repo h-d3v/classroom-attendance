@@ -13,25 +13,37 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.activité.VoirListeSeancesActivity"/>
-        <activity android:name=".ui.activité.MainActivity">
-        </activity>
-        <activity android:name=".ui.activité.ConnexionActivité">
-        </activity>
-        <activity android:name=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
-        <activity android:name=".ui.activité.VoirCoursGroupeActivity">
+        <activity android:label="lsSeances" android:name=".ui.activité.VoirListeSeancesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activité.MainActivity">
+        </activity>
+        <activity android:label="connect" android:name=".ui.activité.ConnexionActivité">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
+        <activity android:label="vCoursGroupe" android:name=".ui.activité.VoirCoursGroupeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
         <activity android:name=".ui.activité.PrendrePrésenceActivité">
+
+        </activity>
+        <activity android:label="vSeance" android:name=".ui.activité.VoirSeanceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activité.VoirSeanceActivity"/>
         <activity android:name=".ui.activité.VoirUnEleve">
         </activity>
         <activity android:name=".ui.activité.VoirUnCourGroupeActivity"

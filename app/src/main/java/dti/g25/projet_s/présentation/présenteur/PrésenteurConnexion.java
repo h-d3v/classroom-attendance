@@ -6,7 +6,9 @@ import android.content.Intent;
 
 import android.content.SharedPreferences;
 import android.util.Log;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.dao.UtlisateurFactice;
@@ -52,8 +54,13 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
                         Log.i("Cle de connection", cléConnexion[0]);
                         estReussi[0] = true;
                         sauvegarderIdentifiants(nomUtilisateur, motDePasse);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("aut_token", cléConnexion[0]);
                         Intent donnéesRetour=new Intent();
                         donnéesRetour.putExtra(EXTRA_CLÉ_CONNEXION, cléConnexion[0]);
+                        if(!vue.getCbSeSouvenir()){
+                            supprimerIdentifiants();
+                        }
                         activité.setResult(activité.RESULT_OK, donnéesRetour);
                         activité.finish();
 
@@ -65,6 +72,20 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
                 }
             }
         });
+        daoFactoryRESTAPI.setErrorListener(new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if(error.networkResponse.statusCode==401) {
+                    vue.setMessageErreur("Le mot de passe ou le nom d'utilisateur n'est pas valide");
+                }
+                else if(error.networkResponse.statusCode==500){
+                    vue.setMessageErreur("Le serveur est en panne, veuillz contavter votre administrateur");
+                }else {
+                    vue.setMessageErreur("Erreur :"+error.networkResponse.statusCode);
+                }
+            }
+        });
+
         daoFactoryRESTAPI.tenterConnection(nomUtilisateur, motDePasse);
 
 
@@ -76,10 +97,15 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
 
     @Override
     public void tenterConnectionAutomatique() {
+        /**
+         * En commentaire tant que la deconnection n'est pas mise en oeuvre
+
         if(!sharedPreferences.getString("nomUtilisateur", "").isEmpty() &&
             !sharedPreferences.getString("motDePasse", "").isEmpty()){
             tenterConnexion(getNomUtilisateurSauvegarde(), getMotPasseUtilisateurSauvegarde());
+
         }
+         */
     }
 
     @Override
@@ -102,7 +128,8 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
 
     @Override
     public void supprimerIdentifiants() {
-        sharedPreferences.edit().clear().apply();
+           sharedPreferences.edit().clear().apply();
+
     }
 
 

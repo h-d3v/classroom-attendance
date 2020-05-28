@@ -8,7 +8,9 @@ public interface ContratVuePrésenteurConnexion {
     public interface IVueConnexion{
         public String getNomUtilisateur();
         public String getMotDePasseUtilisateur();
+        void setMessageErreur(String s);
 
+        boolean getCbSeSouvenir();
     }
 
     /**

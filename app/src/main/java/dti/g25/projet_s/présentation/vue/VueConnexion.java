@@ -27,6 +27,7 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
 
 
 
+
     /**
      * Permet d'associer le présenteur a la vue
      * @param présenteur
@@ -67,14 +68,14 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
             public void onClick(View v) {
                 try {
                     if(présenteur.tenterConnexion(getNomUtilisateur(), getMotDePasseUtilisateur())) {
-                        txtMessageErreur.setText("Vous êtes bien connecté(e)");
+
                         if (cbSeSouvenir.isChecked()){
                             présenteur.sauvegarderIdentifiants(getNomUtilisateur(), getMotDePasseUtilisateur());
                         } else {
                             présenteur.supprimerIdentifiants();
                         }
                     }
-                        else txtMessageErreur.setText("Erreur dans la connexion");
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -122,8 +123,16 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
         return txtMotDePasse.getText().toString();
     }
 
+    @Override
+    public void setMessageErreur(String s) {
+        txtMessageErreur.setText(s);
+    }
 
+    @Override
+    public boolean getCbSeSouvenir() {
+        return cbSeSouvenir.isChecked();
 
+    }
 
 
 }
