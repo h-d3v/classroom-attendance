@@ -16,7 +16,7 @@
             android:layout_width="108dp"
             android:layout_height="25dp"
             android:layout_marginStart="58dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:text="420-987-YUL"
             app:layout_constraintBottom_toTopOf="@+id/jourSeance"
@@ -30,37 +30,45 @@
             android:id="@+id/tvEtatSeance"
             android:layout_width="204dp"
             android:layout_height="39dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="18dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
             android:text="PRÉVUE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvHeureDebutSe" />
 
         <TextView
             android:id="@+id/jourSeance"
             android:layout_width="102dp"
             android:layout_height="29dp"
+            android:layout_marginStart="66dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="68dp"
 
+            android:layout_marginEnd="68dp"
+            android:layout_marginBottom="16dp"
             android:autoText="true"
             android:gravity="center"
             android:text="VENDREDI"
             android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/tvHeureDebutSe"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSigleCoursGroupeSeance" />
 
         <TextView
             android:id="@+id/tvHeureDebutSe"
             android:layout_width="51dp"
             android:layout_height="25dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="17dp"
             android:autoText="true"
             android:text="15H00"
+            app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
             app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@+id/jourSeance"
             tools:ignore="MissingConstraints" />
 
@@ -69,7 +77,7 @@
             android:layout_width="51dp"
             android:layout_height="25dp"
             android:layout_marginStart="27dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="26dp"
             android:autoText="true"
@@ -82,20 +90,25 @@
             app:layout_constraintVertical_bias="0.09" />
 
         <TextView
+            android:id="@+id/textView8"
             android:layout_width="41dp"
             android:layout_height="26dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="125dp"
             android:layout_marginBottom="16dp"
             android:autoText="true"
             android:text="De:"
             app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
-            app:layout_constraintEnd_toStartOf="@+id/tvHeureDebutSe" />
+            app:layout_constraintEnd_toStartOf="@+id/tvHeureDebutSe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="36dp"
             android:layout_height="24dp"
-            android:layout_marginTop="39dp"
-            android:layout_marginBottom="22dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
             android:autoText="true"
             android:text="À:"
             app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
@@ -116,9 +129,12 @@
         <Button
             android:id="@+id/btnVoirDétails"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginTop="20dp"
             android:background="#49544A"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center"
             android:paddingTop="10dp"
             android:text="@string/voirDétails"
             tools:ignore="VectorDrawableCompat" />

@@ -39,8 +39,6 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
         _vue=vue;
     }
 
-
-
     public LibelleCours getLibelleCours(){
         return _modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours();
     }
@@ -120,5 +118,6 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
             return View.VISIBLE;
         return View.INVISIBLE;
     }
+
 
 }

@@ -37,6 +37,10 @@
         <activity android:name=".ui.activité.VoirUnCourGroupeActivity"
             android:parentActivityName=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
         <activity android:name=".ui.activité.VoirListeÉlevesPrésenceActivité"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
