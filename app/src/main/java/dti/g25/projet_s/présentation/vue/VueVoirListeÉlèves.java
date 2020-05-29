@@ -1,6 +1,7 @@
 package dti.g25.projet_s.présentation.vue;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,9 +53,11 @@ public class VueVoirListeÉlèves extends Fragment implements ContratVuePrésent
 
     @Override
     public void rafraichir() {
-        if(élèvesPrésenceAdapter!=null)
+        if(élèvesPrésenceAdapter!=null) {
             élèvesPrésenceAdapter.notifyDataSetChanged();
+        }
     }
+
 
     @Override
     public void setBoutonPrésence(boolean b) {

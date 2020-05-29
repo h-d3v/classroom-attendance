@@ -189,19 +189,14 @@ public class Modèle {
     }
 
 
-    public List<Utilisateur> getListeUtilisateur(){
+    /**
+     * retorune la lsite de sutilsaiteur visible acutelement
+     * @return
+     */
+    public List<Utilisateur> getListeUtilisateurs(){
         return listeUtilisateurs;
     }
 
-    /**
-     * retourne un utilsaiteur
-     * @param index
-     * @return
-     */
-    public Utilisateur getUtilisateurParIndex(int index){
-        List<Utilisateur> tousLesUsers = getListeUtilisateur();
-        return tousLesUsers.get(index);
-    }
 
     /**
      * rafrachi les donné du modèle
@@ -246,7 +241,7 @@ public class Modèle {
         Log.d("id : ", String.valueOf(coursGroupeActuelle.getId()));
     }
     
-    public void setJsonUtilsaiteurs(JSONObject réponse) throws Exception {
+    public void setJsonUtilisateurs(JSONObject réponse) throws Exception {
         listeUtilisateurs = new ConvertisseurJsonUtilisateur().obtenirListeUtilisateurs(réponse);
     }
     public void addUtilisateurCoursGroupe(Utilisateur utilisateur) {

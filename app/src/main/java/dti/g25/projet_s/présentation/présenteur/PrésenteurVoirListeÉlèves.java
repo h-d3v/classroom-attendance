@@ -2,6 +2,7 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
@@ -33,12 +34,14 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
 
     @Override
     public int getNombresItems() {
-        return modèle.getListeEtudiantsParCoursGroupe(positionCoursGroupe).size();
+        if(modèle.getListeUtilisateurs() == null) return 0;
+        return modèle.getListeUtilisateurs().size();
     }
 
     @Override
     public Utilisateur getUtilisateurParPosition(int position) {
-        return modèle.getListeEtudiantsParCoursGroupe(positionCoursGroupe).get(position);
+        Log.d("username: ", modèle.getListeUtilisateurs().get(position).getUsername());
+        return modèle.getListeUtilisateurs().get(position);
     }
 
     @Override
@@ -63,12 +66,9 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
         this.positionSeance = positionSeance;
         this.positionCoursGroupe = positionCoursGroupe;
         this.cléUtilisateur = cléUtilisateur;
-        modèle.setCléConnexion(this.cléUtilisateur);
-        modèle.rafraîchir();
         if (positionSeance == -1) {
             peutPrendrePrésence = false;
         }
-        vue.rafraichir();
     }
 
     @Override

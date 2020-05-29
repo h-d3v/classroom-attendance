@@ -132,7 +132,6 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
 
     @Override
     public void rafraîchir() {
-        Log.d("passe", "présenteur");
         _vue.afficherNomCour(_modele.getCoursGroupeActuelle().getLibelleCours().getTITRE());
         _vue.afficherSigleCour(_modele.getCoursGroupeActuelle().getLibelleCours().getSigle());
         _vue.afficherNombreÉlèvesInscrit(_modele.getCoursGroupeActuelle().getParticipants().size());

@@ -12,7 +12,11 @@ import com.android.volley.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
+
 import dti.g25.projet_s.R;
+import dti.g25.projet_s.dao.DAOCoursGroupeRESTAPI;
+import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.présenteur.PrésenteurVoirListeÉlèves;
 import dti.g25.projet_s.présentation.vue.VueVoirListeÉlèves;
@@ -34,6 +38,7 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
         modèle=new Modèle(this);
         VueVoirListeÉlèves vue=new VueVoirListeÉlèves();
         présenteur= new PrésenteurVoirListeÉlèves(this, vue, modèle);
+        vue.set_presenteur(présenteur);
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         ft.add(R.id.layout_voir_un_courgroupe, vue);
         ft.commit();
@@ -69,19 +74,38 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
     }
 
     private void importerDonné(int idGroupe) {
-
+        final DAOFactoryRESTAPI daoFactoryRESTAPI = new DAOFactoryRESTAPI(this);
+        daoFactoryRESTAPI.setCle(modèle.getCléConnexion());
 
         Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
             @Override
-            public void onResponse(JSONObject réponse) {
+            public void onResponse(JSONObject response) {
+                Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject résultat) {
+                        try {
+                            modèle.setJsonUtilisateurs(résultat);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        présenteur.rafraîchir();
+                    }
+                };
+
                 try {
-                    Log.d("Schéma", "ca passe ici");
-                    modèle.setJsonUtilsaiteurs(réponse);
-                    présenteur.rafraîchir();
+                    modèle.setJsonGroupeActuelle(response);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, modèle.getCoursGroupeActuelle());
             }
         };
+
+        daoFactoryRESTAPI.chargerUnCourGroupeParId(réponse, idGroupe);
+
+
+
     }
 }

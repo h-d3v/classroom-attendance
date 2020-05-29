@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -15,22 +15,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonGroupe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonSeance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonUtilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOFactoryRESTAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOFactoryRESTAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/CoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/CoursGroupe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/CréeationUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/interacteurs/CréeationUtilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/IContatVuePresenteurVoirCoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/IContatVuePresenteurVoirCoursGroupe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/Modèle.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/Modèle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactoryV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/DAOFactoryV1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirCoursGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirCoursGroupe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUnCourGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUnCourGroupe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurVoirListeÉlèves.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurVoirListeÉlèves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurVoirListeÉlèves.java~37-interaction-serveur-presence" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirListeÉlèves.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirListeÉlèves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/adapter/SeanceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/adapter/SeanceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/adapter/ÉlèvesPrésenceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/adapter/ÉlèvesPrésenceAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirCoursGroupeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirCoursGroupeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirListeSeancesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirListeSeancesActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirListeÉlevesActivité.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirListeÉlevesActivité.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirSeanceActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirUnCourGroupeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/VoirUnCourGroupeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/eleves_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/eleves_view.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
