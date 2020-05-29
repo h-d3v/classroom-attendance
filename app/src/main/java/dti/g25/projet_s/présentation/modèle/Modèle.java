@@ -218,4 +218,9 @@ public class Modèle {
     public Seance getSeanceParCourGroupe(int positionCoursGroupe, int position) {
         return getListeSeanceParCourGroupe(positionCoursGroupe).get(position);
     }
+
+    //Requête Http
+    public getUtilisateursHttp() {
+
+    }
 }

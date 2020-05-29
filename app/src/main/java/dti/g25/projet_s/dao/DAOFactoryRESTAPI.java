@@ -126,7 +126,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
             @Override
             public Map<String, String> getHeaders() {
                 HashMap headers = new HashMap();
-                headers.put("Authorization:", "Bearer "+cle);
+                headers.put("Authorization", "Bearer "+cle);
                 return headers;
             }
         };
@@ -135,7 +135,9 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
 
     @Override
     public void getListeÉlèvesCour(Response.Listener<JSONObject> response, CoursGroupe courGroupe){
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,"https://projet-s.dti.crosemont.quebec/api/v1/groupe/1?embed=true" , null, response
+        String url = "https://projet-s.dti.crosemont.quebec/api/v1/groupe/1?embed=true";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url , null, response
                 , new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -145,7 +147,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
             @Override
             public Map<String, String> getHeaders() {
                 HashMap headers = new HashMap();
-                headers.put("Authorization:", "Bearer "+cle);
+                headers.put("Authorization", "Bearer "+cle);
                 return headers;
             }
         };
