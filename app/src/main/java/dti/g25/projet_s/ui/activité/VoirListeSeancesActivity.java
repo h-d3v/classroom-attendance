@@ -33,5 +33,6 @@ public class VoirListeSeancesActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.layout_voir_liste_seances,_vue);
         fragmentTransaction.commit();
+
     }
 }

@@ -42,7 +42,7 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
     }
 
     @Override
-    public String getPrésenceUtilisateurParPos(int position) {
+    public String getPrésenceUtilisateurParPos(int position) throws Exception {
         if(modèle.getSeanceParCourGroupe(positionCoursGroupe, positionSeance).getListeAbsence().get(position).getPrésence())
             return "présent";
         return "absent";

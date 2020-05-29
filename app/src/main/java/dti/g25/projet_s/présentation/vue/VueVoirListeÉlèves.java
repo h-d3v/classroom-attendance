@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirListeSeance;
@@ -41,6 +44,7 @@ public class VueVoirListeÉlèves extends Fragment implements ContratVuePrésent
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+
         View vue = inflater.inflate(R.layout.frag_voir_liste_eleves, container, false);
         rvVoirÉlèves = vue.findViewById(R.id.rvVoirÉlèves);
         élèvesPrésenceAdapter = new ÉlèvesPrésenceAdapter(présenteur);

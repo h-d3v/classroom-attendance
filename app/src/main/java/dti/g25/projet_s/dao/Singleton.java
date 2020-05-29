@@ -10,7 +10,7 @@ public class Singleton {
 
     private static Singleton instance;
     private RequestQueue requestQueue;
-    private  Context ctx;
+    private Context ctx;
 
     private Singleton(Context context) {
         ctx = context;

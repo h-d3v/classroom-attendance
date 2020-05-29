@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
@@ -38,14 +41,19 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
 
-        Seance seance=_presenteur.getSeanceParPos(position);
+        Seance seance= null;
+        try {
+            seance = _presenteur.getSeanceParPos(position);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         btnModifierPrésence =  ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence));
         btnModifierPrendrePrésence = ((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence));
         btnVoirDétails = ((Button)holder.itemView.findViewById(R.id.btnVoirDétails));
 
-
         ((TextView)holder.itemView.findViewById(R.id.tvSigleCoursGroupeSeance)).setText(seance.get_coursGroupe().getLibelleCours().getCODE());
         ((TextView)holder.itemView.findViewById(R.id.tvHeureDebutSe)).setText(seance.get_horaires().getHeureDebutString());
+        ((TextView)holder.itemView.findViewById(R.id.jourSeance)).setText(seance.get_horaires().getDate());
         ((TextView)holder.itemView.findViewById(R.id.tvHeureFinSe)).setText(seance.get_horaires().getHeureFinString());
         ((TextView)holder.itemView.findViewById(R.id.tvEtatSeance)).setText(seance.get_etat().name());
 
@@ -79,6 +87,11 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
     public int getItemCount() {
         if(_presenteur==null)
             return 0;
-        return _presenteur.getNbSeancesModele();
+        try {
+            return _presenteur.getNbSeancesModele();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
