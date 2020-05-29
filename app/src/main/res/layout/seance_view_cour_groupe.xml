@@ -97,7 +97,7 @@
             android:layout_marginTop="39dp"
             android:layout_marginBottom="22dp"
             android:autoText="true"
-            android:text="À:"
+            android:text="jdjdjd"
             app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
             app:layout_constraintEnd_toStartOf="@+id/tvHeureFinSe"
             app:layout_constraintTop_toBottomOf="@+id/jourSeance"
