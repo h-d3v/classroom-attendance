@@ -34,7 +34,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         Seance seance=_presenteur.getSeanceParPos(position);
 
-        ((TextView)holder.itemView.findViewById(R.id.tvSigleCoursGroupeSeance)).setText(seance.get_coursGroupe().getLibelleCours().getCODE());
+        ((TextView)holder.itemView.findViewById(R.id.tvSigleCoursGroupeSeance)).setText(seance.get_coursGroupe().getLibelleCours().getSigle());
         ((TextView)holder.itemView.findViewById(R.id.tvHeureDebutSe)).setText(seance.get_horaires().getHeureDebutString());
         ((TextView)holder.itemView.findViewById(R.id.tvHeureFinSe)).setText(seance.get_horaires().getHeureFinString());
         ((TextView)holder.itemView.findViewById(R.id.tvEtatSeance)).setText(seance.get_etat().name());

@@ -32,7 +32,7 @@ public class ServeurFactice {
 
                 for (int i = 0; i < 3; i++) {
                     listeSeance = new ArrayList<>();
-                    listeCourGroupe.add(new CoursGroupe(new LibelleCours("ART DRAMATIQUE", "BC" + i, "AD"), i));
+                    listeCourGroupe.add(new CoursGroupe(new LibelleCours("ART DRAMATIQUE", "BC" + i), i));
                     listeCourGroupe.get(i).setParticipants(listeParticipant);
                     listeSeance.add(new Seance(listeCourGroupe.get(i), new Horaire(00.0f, 5.5f, "Mercredi")));
                     listeCourGroupe.get(i).setListeSeances(listeSeance);

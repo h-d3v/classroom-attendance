@@ -50,8 +50,8 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
         btnModifierPrésence =  ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence));
         btnModifierPrendrePrésence = ((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence));
         btnVoirDétails = ((Button)holder.itemView.findViewById(R.id.btnVoirDétails));
-
         ((TextView)holder.itemView.findViewById(R.id.tvSigleCoursGroupeSeance)).setText(seance.get_coursGroupe().getLibelleCours().getCODE());
+
         ((TextView)holder.itemView.findViewById(R.id.tvHeureDebutSe)).setText(seance.get_horaires().getHeureDebutString());
         ((TextView)holder.itemView.findViewById(R.id.jourSeance)).setText(seance.get_horaires().getDate());
         ((TextView)holder.itemView.findViewById(R.id.tvHeureFinSe)).setText(seance.get_horaires().getHeureFinString());

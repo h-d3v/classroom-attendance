@@ -10,17 +10,14 @@ import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
-import dti.g25.projet_s.dao.ServeurFactice;
-import dti.g25.projet_s.dao.UtlisateurFactice;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurConnexion;
-import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.modèle.dao.ModèleDAO;
-import dti.g25.projet_s.ui.activité.VoirListeSeancesActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPrésenteurConnexion {
     private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
+    private static final String ID_USER_CONNECT = "dti.g25.projet_s.idUserConnect";
 
     ModèleDAO modèle;
     Activity activité;
@@ -57,14 +54,13 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("aut_token", cléConnexion[0]);
                         Intent donnéesRetour=new Intent();
+
                         donnéesRetour.putExtra(EXTRA_CLÉ_CONNEXION, cléConnexion[0]);
                         if(!vue.getCbSeSouvenir()){
                             supprimerIdentifiants();
                         }
                         activité.setResult(activité.RESULT_OK, donnéesRetour);
                         activité.finish();
-
-
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -88,24 +84,11 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
 
         daoFactoryRESTAPI.tenterConnection(nomUtilisateur, motDePasse);
 
-
-
-
-
         return estReussi[0];
     }
 
     @Override
     public void tenterConnectionAutomatique() {
-        /**
-         * En commentaire tant que la deconnection n'est pas mise en oeuvre
-
-        if(!sharedPreferences.getString("nomUtilisateur", "").isEmpty() &&
-            !sharedPreferences.getString("motDePasse", "").isEmpty()){
-            tenterConnexion(getNomUtilisateurSauvegarde(), getMotPasseUtilisateurSauvegarde());
-
-        }
-         */
     }
 
     @Override

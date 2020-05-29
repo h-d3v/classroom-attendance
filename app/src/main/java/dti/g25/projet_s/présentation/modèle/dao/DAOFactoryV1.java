@@ -12,9 +12,7 @@ import dti.g25.projet_s.domaine.entité.Utilisateur;
 
 import java.util.List;
 
-
-
-public abstract class DAOFactoryV1 {
+public  abstract class DAOFactoryV1 {
 
     public abstract List<DAO<CoursGroupe>> chargerListeCoursGroupeParUtilisateur(DAO<Utilisateur> utilisateurDAO);
 
