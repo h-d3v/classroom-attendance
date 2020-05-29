@@ -9,26 +9,21 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
-
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
-import dti.g25.projet_s.présentation.présenteur.PresenteurVoirListeSeance;
-import dti.g25.projet_s.présentation.vue.adapter.SeanceAdapter;
 import dti.g25.projet_s.présentation.vue.adapter.ÉlèvesPrésenceAdapter;
 
 public class VueVoirListeÉlèves extends Fragment implements ContratVuePrésenteurVoirListeÉlèves.IVueVoirListeÉlèves {
 
-    private ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves présenteur;
+    private ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves présenteur;
     private RecyclerView rvVoirÉlèves;
     private ÉlèvesPrésenceAdapter élèvesPrésenceAdapter;
 
-    public void set_presenteur(ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves presenteur) {
+    public void set_presenteur(ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves presenteur) {
         this.présenteur = presenteur;
     }
 
-    public ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves get_presenteur() {
+    public ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves get_presenteur() {
         return présenteur;
     }
 

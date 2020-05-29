@@ -8,7 +8,7 @@ import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.ui.activité.VoirUnEleve;
 
-public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves {
+public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves {
     private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
     private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
     private static final String EXTRA_POSITION_SEANCE = "dti.g25.projet_s.positionSeance";

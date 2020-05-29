@@ -28,7 +28,7 @@ import java.util.List;
 
 public class Modèle {
 
-    private String cléUtilisateur;
+    private String cléConnexion;
     private Utilisateur utilisateur;
     private List<CoursGroupe> coursGroupes;
     private List<Seance> seances;
@@ -37,14 +37,14 @@ public class Modèle {
     private List<Seance> listeSeance;
     private List<Seance> listeSeanceCourGroupe;
     private Utilisateur utilisateurActuelle;
-    private List<Utilisateur> listeUtilisateur;
+    private List<Utilisateur> listeUtilisateurs;
     private DAOFactoryRESTAPI daoFactoryRESTAPI;
 
     /**
      * constructeur vide
      */
     public Modèle() {
-        listeUtilisateur = new ArrayList<>();
+        listeUtilisateurs = new ArrayList<>();
     };
 
     public Modèle(DAOFactory daoFactory) {
@@ -53,12 +53,18 @@ public class Modèle {
         chargerSeanceUtilisateur();
     }
 
+    public Modèle(Context context){
+        this.context=context;
+        daoFactoryRESTAPI = new DAOFactoryRESTAPI(context);
+        coursGroupes=new ArrayList<>();
+    }
+
     /**
      * Crée un modèle a partir d'une clé d'utilisateur
      * @param uneClé
      */
     public Modèle(String uneClé) {
-        cléUtilisateur = uneClé;
+        cléConnexion = uneClé;
         coursGroupes = chargerCoursGroupeUtilisateur();
         chargerSeanceUtilisateur();
     }
@@ -71,11 +77,7 @@ public class Modèle {
         return coursGroupes;
     }
 
-    public Modèle(Context context){
-        this.context=context;
-        daoFactoryRESTAPI = new DAOFactoryRESTAPI(context);
-        coursGroupes=new ArrayList<>();
-    }
+
 
     public void addCoursGroupe(CoursGroupe courGroupe){
         coursGroupes.add(courGroupe);
@@ -86,7 +88,7 @@ public class Modèle {
     }
 
     public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
-            return new ServeurFactice().ObtenirCourGroupe(cléUtilisateur);
+            return new ServeurFactice().ObtenirCourGroupe(cléConnexion);
        // return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
     }
 
@@ -94,7 +96,7 @@ public class Modèle {
      * charge les info de l'utilasateur
      */
     public void chargerInfoUtilisateur() throws Exception {
-        utilisateurActuelle =  new ServeurFactice().chargerInfoUtilisateur(cléUtilisateur);
+        utilisateurActuelle =  new ServeurFactice().chargerInfoUtilisateur(cléConnexion);
     }
 
     public void changerEtatSeance(int pos,EtatSeance etatSeance){
@@ -222,8 +224,8 @@ public class Modèle {
      * permet de mettre la clé d'utliateur
      * @param uneClé
      */
-    public void setCléUtilisateur(String uneClé) {
-        cléUtilisateur = uneClé;
+    public void setCléConnexion(String uneClé) {
+        cléConnexion = uneClé;
     }
 
     /**
@@ -236,22 +238,22 @@ public class Modèle {
     }
 
     public void setJSONSeances(JSONObject réponse, int numeroGroupe, int idGroupe) throws JSONException {
-        listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, new CoursGroupe(new LibelleCours("ok", "ok", "ok"), numeroGroupe, idGroupe));
+        listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, getCourGroupeParPos(idGroupe));
     }
 
     //Requête Http
-    public void requeteHttpSeanceCourGroupe(int position, Response.Listener<JSONObject> réponse) {
-        daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, new CoursGroupe(new LibelleCours("ok", "ok", "ok"), 1, 1));
+    public void requeteHttpSeanceCourGroupe(int idGroupe, Response.Listener<JSONObject> réponse) {
+        daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, getCourGroupeParPos(idGroupe));
     }
     
     public void setJsonUtilsaiteurs(JSONObject réponse) throws Exception {
         listeUtilisateurs = new ConvertisseurJsonUtilisateur().obtenirListeUtilisateurs(réponse);
     }
     public void addUtilisateurCoursGroupe(Utilisateur utilisateur) {
-        listeUtilisateur.add(utilisateur);
+        listeUtilisateurs.add(utilisateur);
     }
 
-    public String getCléUtilisateur() {
-        return cléUtilisateur;
+    public String getCléConnexion() {
+        return cléConnexion;
     }
 }

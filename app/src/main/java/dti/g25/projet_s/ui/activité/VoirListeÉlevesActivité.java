@@ -25,16 +25,15 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
     private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
     private static final String EXTRA_POSITION_SEANCE = "dti.g25.projet_s.positionSeance";
 
-    private PrésenteurVoirListeÉlèvesPrésence présenteur;
+    private PrésenteurVoirListeÉlèves présenteur;
     private Modèle modèle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_un_courgroupe);
         modèle=new Modèle(this);
-        VueVoirListeÉlèvesPrésence vue=new VueVoirListeÉlèvesPrésence();
-        présenteur= new PrésenteurVoirListeÉlèvesPrésence(this, vue, modèle);
-        vue.set_presenteur(présenteur);
+        VueVoirListeÉlèves vue=new VueVoirListeÉlèves();
+        présenteur= new PrésenteurVoirListeÉlèves(this, vue, modèle);
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         ft.add(R.id.layout_voir_un_courgroupe, vue);
         ft.commit();

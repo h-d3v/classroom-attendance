@@ -48,6 +48,4 @@ public  abstract class DAOFactoryV1 {
 
     public abstract void obtenirPrésence();
 
-    public abstract String getCle();
-
 }

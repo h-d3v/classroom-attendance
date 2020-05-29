@@ -13,6 +13,17 @@ public class CréeationUtilisateur implements ICéeationUtilisateur {
         if(unRôle == null)
             throw new Exception("l'utilisateur n'a pas de rôle");
 
+        return new Utilisateur(id, unNom, unRôle);
+    }
+
+    public Utilisateur CréerUtilisateur(String unNom, Role unRôle) throws Exception {
+
+
+        if(unNom.equals("") || unNom.isEmpty())
+            throw new Exception("l'utilisateur n'a pas de nom est vide");
+        if(unRôle == null)
+            throw new Exception("l'utilisateur n'a pas de rôle");
+
         return new Utilisateur(unNom, unRôle);
     }
 

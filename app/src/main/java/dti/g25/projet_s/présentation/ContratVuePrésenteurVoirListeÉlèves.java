@@ -7,7 +7,7 @@ import dti.g25.projet_s.domaine.entité.Utilisateur;
 
 public interface ContratVuePrésenteurVoirListeÉlèves {
 
-    public interface IPésenteurVoirListeÉlèves {
+    public interface IPrésenteurVoirListeÉlèves {
 
         int getNombresItems();
 

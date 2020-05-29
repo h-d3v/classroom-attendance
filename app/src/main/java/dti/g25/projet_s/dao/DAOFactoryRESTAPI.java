@@ -41,10 +41,6 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     private  String cle;
     private Response.Listener<JSONObject> response;
     private static List<DAO<CoursGroupe>> coursGroupes;
-    private final static String seanceparGroupeGet = "https://projet-s.dti.crosemont.quebec/api/v0/groupe/";
-    private  Context context;
-    private  String cle;
-    private Response.Listener<JSONObject> response;
 
 
     public DAOFactoryRESTAPI(Context context) {
@@ -138,17 +134,17 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
         return null;
     }
 
+    @Override
+    public String tenterConnection(String nomUtilisateur, String motDePasse) {
+        return null;
+    }
+
 
     @Override
-    public String tenterConnection(final String nomUtilisateur, final String motDePasse) {
+    public String tenterConnection(final String nomUtilisateur, final String motDePasse, Response.ErrorListener errorResponse) {
         final String CNX_GET="https://projet-s.dti.crosemont.quebec/api/v1/auth_token";
         ;
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET, null, response, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        }) {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET, null, response, errorResponse) {
             @Override
             public Map<String, String> getHeaders() {
                 Map<String, String> params = new HashMap<String, String>();
@@ -246,10 +242,6 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
         return cle;
     }
 
-    public void setCle(String clé) { cle = clé;}
-    public void setResponse(Response.Listener<JSONObject> response) {
-        this.response = response;
-    }
 
 
     public void setResponse(Response.Listener<JSONObject> response) {

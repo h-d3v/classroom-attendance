@@ -1,9 +1,17 @@
 package dti.g25.projet_s.ui.activité;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.android.volley.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
@@ -26,7 +34,7 @@ public class ConnexionActivité extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connexion_activite);
 
-        ModèleDAO modèle= new ModèleDAO(this, new DAOFactoryRESTAPI(this));
+        Modèle modèle= new Modèle(this);
         VueConnexion vue=new VueConnexion();
 
         présenteur=new PrésenteurConnexion(this, vue, modèle);
@@ -35,6 +43,18 @@ public class ConnexionActivité extends AppCompatActivity {
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         ft.add(R.id.layout_connexion, vue);
         ft.commit();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        daoFactoryRESTAPI.setResponse(new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+            }
+        });
     }
 
 }

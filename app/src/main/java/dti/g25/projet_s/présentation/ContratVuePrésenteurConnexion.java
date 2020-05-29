@@ -21,13 +21,15 @@ public interface ContratVuePrésenteurConnexion {
 
         public void tenterConnectionAutomatique();
 
-        void sauvegarderIdentifiants(String nomUtilisateur, String motDePasseUtilisateur);
+        void sauvegarderIdentifiants();
 
         String getNomUtilisateurSauvegarde();
 
         String  getMotPasseUtilisateurSauvegarde();
 
         void supprimerIdentifiants();
+
+        void terminerConnexion();
     }
 
 }

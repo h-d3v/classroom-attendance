@@ -15,9 +15,9 @@ import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
 
 public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves  présenteur;
+    private ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves présenteur;
 
-    public ÉlèvesPrésenceAdapter(ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves présenteur){
+    public ÉlèvesPrésenceAdapter(ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves présenteur){
         this.présenteur=présenteur;
     }
 
@@ -39,14 +39,19 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
+        if(présenteur.getpeutPrendrePrésence()) {
+            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View bouton) {
                     présenteur.requeteVoirÉlèves(position);
                 }
             });
             ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setVisibility(View.VISIBLE);
-            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+            try {
+                ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
             ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setVisibility(View.INVISIBLE);
             ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setText("Voir Élève");

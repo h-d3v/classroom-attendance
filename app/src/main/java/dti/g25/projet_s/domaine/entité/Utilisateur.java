@@ -6,7 +6,6 @@ public class Utilisateur {
     private String nom;
     private String mdp;
     private Role rôle;
-    private int id;
 
     /**
      * contructeur vide

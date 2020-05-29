@@ -70,7 +70,7 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
     }
 
     @Override
-    public void ajouterAbsence(boolean absence) {
+    public void ajouterAbsence(boolean absence) throws Exception {
         modèle.setCléUtilisateur(sharedPreferences.getString("auth_token", ""));
         if(!absence){//On envoie la requete de presence au serveur
 
