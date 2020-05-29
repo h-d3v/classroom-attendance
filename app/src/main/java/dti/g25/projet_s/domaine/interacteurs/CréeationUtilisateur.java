@@ -5,7 +5,7 @@ import dti.g25.projet_s.domaine.entité.Utilisateur;
 
 public class CréeationUtilisateur implements ICéeationUtilisateur {
 
-    public Utilisateur CréerUtilisateur(String unNom, Role unRôle) throws Exception {
+    public Utilisateur CréerUtilisateur(int id, String unNom, Role unRôle) throws Exception {
 
 
         if(unNom.equals("") || unNom.isEmpty())

@@ -26,8 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class
-DAOFactoryRESTAPI extends DAOFactoryV1 {
+public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     private static final String TOKEN = "";
     private static final String NOM_UTILISATEUR = "username";
     private static final String MOT_PASSE = "password";
@@ -42,6 +41,10 @@ DAOFactoryRESTAPI extends DAOFactoryV1 {
     private  String cle;
     private Response.Listener<JSONObject> response;
     private static List<DAO<CoursGroupe>> coursGroupes;
+    private final static String seanceparGroupeGet = "https://projet-s.dti.crosemont.quebec/api/v0/groupe/";
+    private  Context context;
+    private  String cle;
+    private Response.Listener<JSONObject> response;
 
 
     public DAOFactoryRESTAPI(Context context) {
@@ -135,6 +138,32 @@ DAOFactoryRESTAPI extends DAOFactoryV1 {
         return null;
     }
 
+
+    @Override
+    public String tenterConnection(final String nomUtilisateur, final String motDePasse) {
+        final String CNX_GET="https://projet-s.dti.crosemont.quebec/api/v1/auth_token";
+        ;
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET, null, response, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization",
+                        String.format("Basic %s", Base64.encodeToString(
+                                String.format("%s:%s", nomUtilisateur, motDePasse).getBytes(), Base64.DEFAULT)));
+                return params;
+            }
+        };
+
+        Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+        return cle;
+    }
+
+    @Override
     public void getSeancesParCourGroupe(Response.Listener<JSONObject> response, CoursGroupe courGroupe){
         List<Seance> listSeance = new ArrayList<>();
         String url = seanceparGroupeGet + courGroupe.getId() + "?embed=true";
@@ -158,29 +187,24 @@ DAOFactoryRESTAPI extends DAOFactoryV1 {
     }
 
     @Override
-    public  String tenterConnection(final String nomUtilisateur, final String motDePasse) {
-        final String CNX_GET="https://projet-s.dti.crosemont.quebec/api/v1/auth_token";
-        ;
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET, null, response, new Response.ErrorListener() {
+    public void getListeÉlèvesCour(Response.Listener<JSONObject> response, CoursGroupe courGroupe){
+        String url = "https://projet-s.dti.crosemont.quebec/api/v1/groupe/1?embed=true";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url , null, response
+                , new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
             }
-        }) {
+        }){
             @Override
             public Map<String, String> getHeaders() {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization",
-                        String.format("Basic %s", Base64.encodeToString(
-                                String.format("%s:%s", nomUtilisateur, motDePasse).getBytes(), Base64.DEFAULT)));
-                return params;
+                HashMap headers = new HashMap();
+                headers.put("Authorization", "Bearer "+cle);
+                return headers;
             }
         };
-
-        Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
-        return cle;
     }
-
 
 
     @Override

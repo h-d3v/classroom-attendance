@@ -89,5 +89,10 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
     public Boolean getpeutPrendrePrésence() {
         return peutPrendrePrésence;
     }
+    
+    @Override
+    public void rafraîchir() {
+        vue.rafraichir();
+    }
 
 }

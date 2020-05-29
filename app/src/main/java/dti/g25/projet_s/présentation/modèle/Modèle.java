@@ -8,6 +8,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import dti.g25.projet_s.dao.ConvertisseurJsonSeance;
+import org.json.JSONObject;
+
+import dti.g25.projet_s.dao.ConvertisseurJsonUtilisateur;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
@@ -193,7 +196,7 @@ public class Modèle {
 
 
     public List<Utilisateur> getListeUtilisateur(){
-        return listeUtilisateur;
+        return listeUtilisateurs;
     }
 
     /**
@@ -238,5 +241,8 @@ public class Modèle {
 
     public void requeteHttpSeanceCourGroupe(int position, Response.Listener<JSONObject> réponse) {
         daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, new CoursGroupe(new LibelleCours("ok", "ok", "ok"), 1, 1));
+    //Requête Http
+    public void setJsonUtilsaiteurs(JSONObject réponse) throws Exception {
+        listeUtilisateurs = new ConvertisseurJsonUtilisateur().obtenirListeUtilisateurs(réponse);
     }
 }

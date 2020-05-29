@@ -47,9 +47,9 @@ public class ServeurFactice {
         Utilisateur unUtilisateur = null;
         if(uneClé != null) {
             if (uneClé.equals("uneCléÉlèves"))
-                unUtilisateur = new CréeationUtilisateur().CréerUtilisateur("Sakurai", Role.ÉLÈVE);
+                unUtilisateur = new CréeationUtilisateur().CréerUtilisateur(1, "Sakurai", Role.ÉLÈVE);
             if (uneClé.equals("uneCléProf"))
-                unUtilisateur = new CréeationUtilisateur().CréerUtilisateur("ReanuKeeves", Role.PROFESSEUR);
+                unUtilisateur = new CréeationUtilisateur().CréerUtilisateur(2,"ReanuKeeves", Role.PROFESSEUR);
         }
         return unUtilisateur;
     }
