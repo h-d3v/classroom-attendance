@@ -255,3 +255,4 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     public void setResponse(Response.Listener<JSONObject> response) {
         this.response = response;
     }
+}

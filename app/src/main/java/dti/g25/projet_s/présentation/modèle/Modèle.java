@@ -44,8 +44,8 @@ public class Modèle {
      * constructeur vide
      */
     public Modèle() {
+        listeUtilisateur = new ArrayList<>();
     };
-
 
     public Modèle(DAOFactory daoFactory) {
         this.daoFactory = daoFactory;
@@ -239,10 +239,19 @@ public class Modèle {
         listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, new CoursGroupe(new LibelleCours("ok", "ok", "ok"), numeroGroupe, idGroupe));
     }
 
+    //Requête Http
     public void requeteHttpSeanceCourGroupe(int position, Response.Listener<JSONObject> réponse) {
         daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, new CoursGroupe(new LibelleCours("ok", "ok", "ok"), 1, 1));
-    //Requête Http
+    }
+    
     public void setJsonUtilsaiteurs(JSONObject réponse) throws Exception {
         listeUtilisateurs = new ConvertisseurJsonUtilisateur().obtenirListeUtilisateurs(réponse);
+    }
+    public void addUtilisateurCoursGroupe(Utilisateur utilisateur) {
+        listeUtilisateur.add(utilisateur);
+    }
+
+    public String getCléUtilisateur() {
+        return cléUtilisateur;
     }
 }

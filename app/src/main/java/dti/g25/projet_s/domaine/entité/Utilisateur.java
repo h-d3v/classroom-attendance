@@ -6,6 +6,7 @@ public class Utilisateur {
     private String nom;
     private String mdp;
     private Role rôle;
+    private int id;
 
     /**
      * contructeur vide
@@ -39,6 +40,13 @@ public class Utilisateur {
         this.id=id;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return nom;
@@ -62,14 +70,6 @@ public class Utilisateur {
 
     public void setRôle (Role rôle) {
         this.rôle = rôle;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     @Override

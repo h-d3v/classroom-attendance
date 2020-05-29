@@ -12,7 +12,6 @@ public class Seance {
     private List<Absence> _listeAbsence;
     private EtatSeance _etat;
     private Horaire _horaires;
-    private Date _date;
     private int id;
 
     public Seance(CoursGroupe coursGroupe, Horaire horaires){
@@ -76,14 +75,6 @@ public class Seance {
 
     public void setListeAbsence(List<Absence> listeAbsence) {
         this._listeAbsence = listeAbsence;
-    }
-
-    public void setDate(Date date) {
-        _date = date;
-    }
-
-    public Date getDate() {
-        return _date;
     }
 
     public int getId() {

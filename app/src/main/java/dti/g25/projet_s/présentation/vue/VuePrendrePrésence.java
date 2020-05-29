@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
 
+
 public class VuePrendrePrésence extends Fragment implements ContratVuePrésenteurPrendrePrésence.IVuePrendrePrésence {
 
     private ContratVuePrésenteurPrendrePrésence.IPrésenteurPrendrePrésence présenteur;
@@ -19,6 +20,7 @@ public class VuePrendrePrésence extends Fragment implements ContratVuePrésente
     private TextView txtNomÉtudiant;
     private Button btnPrésent;
     private Button btnAbsent;
+
 
     /**
      * Permet d'associer le présenteur a la vue
