@@ -12,7 +12,10 @@ public interface IContatVuePresenteurVoirCoursGroupe {
         void rafraîchir();
 
         int getNombresItems();
-      void requeteVoirCoursGroupe(int position);
+
+        void commencerVoirCourGroupe(String cléConnexion);
+
+        void requeteVoirCoursGroupe(int position);
       String getTitreCoursGroupe(int position);
 
     }

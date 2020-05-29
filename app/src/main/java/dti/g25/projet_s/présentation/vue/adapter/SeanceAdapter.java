@@ -26,7 +26,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LinearLayout racine = (LinearLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.seance_view, parent, false);
+                .inflate(R.layout.seance_view_cour_groupe_eleves, parent, false);
 
         return new RecyclerView.ViewHolder(racine){};
     }
@@ -46,6 +46,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public int getItemCount() {
+        Log.d("adapter", String.valueOf(_presenteur.getNbSeancesModele()));
         if(_presenteur==null) return 0;
         return _presenteur.getNbSeancesModele();
     }

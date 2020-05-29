@@ -21,7 +21,8 @@ public class Seance {
 
         if(coursGroupe.getParticipants()!=null){
             for (Utilisateur user : _coursGroupe.getParticipants()) {
-                _listeAbsence.add(new Absence(user, true));
+                if(user.getRôle().equals(Role.ÉLÈVE))
+                    _listeAbsence.add(new Absence(user, false));
             }
         }
         _etat=EtatSeance.PREVUE;
@@ -35,7 +36,8 @@ public class Seance {
 
         if(coursGroupe.getParticipants()!=null){
             for (Utilisateur user : _coursGroupe.getParticipants()) {
-                _listeAbsence.add(new Absence(user, true));
+                if(user.getRôle().equals(Role.ÉLÈVE))
+                    _listeAbsence.add(new Absence(user, false));
             }
         }
         _etat=EtatSeance.PREVUE;

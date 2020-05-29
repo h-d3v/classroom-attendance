@@ -20,17 +20,17 @@ public class ConvertisseurJsonUtilisateur {
 
     public List<Utilisateur> obtenirListeUtilisateurs(JSONObject résultat) throws Exception {
         List<Utilisateur> utilisateurs= new ArrayList<>();
-
-        résultat = (JSONObject) résultat.get("_embedded");
-        résultat = (JSONObject) résultat.get("membres");
-        JSONArray listeSeance = résultat.names();
+        JSONObject résultatZoomé;
+        résultatZoomé = (JSONObject) résultat.get("_embedded");
+        résultatZoomé = (JSONObject) résultatZoomé.get("membres");
+        JSONArray listeSeance = résultatZoomé.names();
 
         for(int i = 0; i < listeSeance.length(); i++) {
-            JSONObject objectAcuel = (JSONObject) résultat.get(listeSeance.getString(i));
+            JSONObject objectAcuel = (JSONObject) résultatZoomé.get(listeSeance.getString(i));
 
             Log.d("une seance", String.valueOf(objectAcuel));
 
-            Utilisateur utilisateur = new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("id")));
+            Utilisateur utilisateur = new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("r\u00f4le")));
 
             utilisateurs.add(utilisateur);
         }
@@ -39,7 +39,7 @@ public class ConvertisseurJsonUtilisateur {
     }
 
     public Utilisateur décoderUtilisateur(JSONObject objectAcuel) throws Exception {
-        return new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("id")));
+        return new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("r\u00f4le")));
 
     }
 

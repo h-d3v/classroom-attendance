@@ -44,4 +44,5 @@ public class ConnexionActivité extends AppCompatActivity {
         ft.add(R.id.layout_connexion, vue);
         ft.commit();
     }
+
 }

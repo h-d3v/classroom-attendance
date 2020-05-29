@@ -1,5 +1,6 @@
 package dti.g25.projet_s.présentation.vue.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +73,6 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public int getItemCount() {
         if(présenteur==null) return 0;
-
-        return présenteur.getNombresItems();
+            return présenteur.getNombresItems();
     }
 }

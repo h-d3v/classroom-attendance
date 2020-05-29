@@ -45,7 +45,7 @@ public class PresenteurVoirUnEleve implements IContratVuePrésenteurVoirUnEleve.
         }
         modèle.setCléConnexion(this.cléUtilisateur);
         modèle.rafraîchir();
-        vue.setNomUtilisateur(modèle.getListeEtudiantsParCoursGroupe(this.positionGroupe).get(positionÉlèves).getUsername());
+        vue.setNomUtilisateur(modèle.getListeEtudiantsParCoursGroupe().get(positionÉlèves).getUsername());
     }
 
 }

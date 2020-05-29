@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+    <com.beardedhen.androidbootstrap.BootstrapLabel
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/coursGroupe" />
+        android:paddingEnd="5dp"
+        android:text="@string/vos_cours_et_groupes"
+        android:textColor="@color/bootstrap_gray_dark"
+        app:bootstrapBrand="primary"
+        app:bootstrapHeading="h1"
+        tools:ignore="RtlSymmetry" />
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvVoirCoursGroupe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1" />
 
 </LinearLayout>

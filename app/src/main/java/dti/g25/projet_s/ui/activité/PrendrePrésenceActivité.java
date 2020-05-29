@@ -13,8 +13,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import dti.g25.projet_s.R;
+import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.dao.Singleton;
 
+import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 
 import dti.g25.projet_s.présentation.modèle.Modèle;
@@ -34,7 +36,7 @@ public class PrendrePrésenceActivité extends AppCompatActivity {
     SharedPreferences sharedPreferences;
 
     PrésenteurPrendrePrésence présenteur;
-
+    Modèle modèle;
     /**
      * Initialise la vue pour l'activité prendre présence ansi que le présenteur
      * pour la vue
@@ -45,81 +47,87 @@ public class PrendrePrésenceActivité extends AppCompatActivity {
         int positionCoursGroupe = getIntent().getIntExtra( EXTRA_POSITION_GROUPE, -1);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prendre_presence);
-        final Activity activity =this;
-
-        final Modèle  modèle = new Modèle();
-        modèle.setCléConnexion(this.getSharedPreferences("infosLogin", Context.MODE_PRIVATE).getString("auth_token",""));
-        //Pour test a supprimmer
-        modèle.setCléConnexion("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10"
-);          //Pour testremplacer le 1 par l'id du coursGroupr groupe/1/membres"
-        JsonObjectRequest request =  new JsonObjectRequest(Request.Method.GET,"https://projet-s.dti.crosemont.quebec/api/v1/groupe/1/membres", null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                int i=0;
-
-
-                while (true){
-                    try {
-                        if(!response.has(String.valueOf(i))){
-                            break;
-                        }
-                        JSONObject jsonObject= response.getJSONObject(String.valueOf(i));
-                        int id = jsonObject.getInt("id");
-                        String nom = jsonObject.getString("nom");
-                        Utilisateur utilisateur = new Utilisateur();
-                        utilisateur.setNom(nom);
-                        utilisateur.setId(id);
-                        modèle.addUtilisateurCoursGroupe(utilisateur);
-                        Log.i("cc", utilisateur.getUsername());
-                        i++;
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-
-                    VuePrendrePrésence vue=new VuePrendrePrésence();
-
-                    présenteur=new PrésenteurPrendrePrésence(activity, vue, modèle);
-                    vue.setPrésenteur(présenteur);
-
-                    FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
-                    ft.add(R.id.layout_prendre_présence, vue);
-                    ft.commit();
-                }
-            }}, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error){
-
-            }
-
-        }
-
-        ) {
-            @Override
-            public Map<String,String > getHeaders()  {
-                HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Authorization", "Bearer "+ modèle.getCléConnexion());
-                return headers;
-            }
-        };
-        Singleton.getInstance(this).addToRequestQueue(request);
-
-
+        VuePrendrePrésence vue = new VuePrendrePrésence();
+        modèle = new Modèle();
+        modèle= new Modèle(this);
+        présenteur = new PrésenteurPrendrePrésence(this, vue, modèle);
+        vue.setPrésenteur(présenteur);
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.layout_prendre_présence,vue);
+        fragmentTransaction.commit();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        int positionProjet = getIntent().getIntExtra( EXTRA_POSITION_GROUPE, -1);
+        int positionGroupe = getIntent().getIntExtra( EXTRA_POSITION_GROUPE, -1);
         int positionSéance = getIntent().getIntExtra( EXTRA_POSITION_SEANCE, -1);
         String cléUtilisateur = getIntent().getStringExtra(EXTRA_CLÉ_CONNEXION);
-        try {
+        modèle.setCléConnexion(cléUtilisateur);
+        chargerDonnée(positionGroupe, positionSéance);
+    }
 
-            présenteur.commencerPrendrePrésence(positionProjet, positionSéance, cléUtilisateur);
-        } catch (Exception e) {
-            Log.e("ErreurPrendrePrésence", String.valueOf(e));
-        }
+    protected void chargerDonnée(final int idGroupe, final int idSéance){
+        final DAOFactoryRESTAPI daoFactoryRESTAPI = new DAOFactoryRESTAPI(this);
+        daoFactoryRESTAPI.setCle(modèle.getCléConnexion());
+
+        Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(final JSONObject response) {
+                final Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject résultat) {
+                        try {
+                            modèle.setJsonUtilisateurs(résultat);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            modèle.setJSONSeances(résultat, modèle.getCoursGroupeActuelle());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if(idSéance > -1) {
+                            final Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
+
+                                @Override
+                                public void onResponse(JSONObject résultat) {
+                                    try {
+                                        modèle.setJsonPrésenceSeance(résultat, idSéance);
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                    try {
+                                        présenteur.commencerPrendrePrésence(idGroupe, idSéance, modèle.getCléConnexion());
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            };
+                            daoFactoryRESTAPI.obtenirPrésence(réponse, idSéance);
+
+                        } else {
+                            try {
+                                présenteur.commencerPrendrePrésence(idGroupe, idSéance, modèle.getCléConnexion());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                };
+
+                try {
+                    modèle.setJsonGroupeActuelle(response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, modèle.getCoursGroupeActuelle());
+            }
+        };
+
+        daoFactoryRESTAPI.chargerUnCourGroupeParId(réponse, idGroupe);
     }
 
 }

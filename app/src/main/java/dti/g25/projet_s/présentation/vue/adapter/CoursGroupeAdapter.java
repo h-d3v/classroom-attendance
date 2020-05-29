@@ -31,7 +31,7 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
-        ((Button)holder.itemView.findViewById(R.id.btnVoirCoursGroupe)).setOnClickListener(new View.OnClickListener(){
+        holder.itemView.findViewById(R.id.btnVoirCoursGroupe).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View bouton){
                 presenteurVoirCoursGroupe.requeteVoirCoursGroupe(position);

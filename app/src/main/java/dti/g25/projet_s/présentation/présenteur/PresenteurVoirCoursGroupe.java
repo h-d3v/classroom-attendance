@@ -40,56 +40,6 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
         vueVoirCoursGroupe.rafraichir();
     }
 
-//    public void telechargerCoursGroupeUtilisateur(final Intent data){
-//
-//        //C'est ici qu'on lance le traitement sur le fil esclave
-//        Thread esclave = new Thread(
-//                new Runnable(){
-//                    // Ce Runnable s'exécute dans le fil esclave
-//                    public void run(){
-//                        try{
-//                            //L'interacteur fait la requête à l'API
-//                            cléConnexion=data.getStringExtra(EXTRA_CLÉ_CONNEXION);
-//                            modèle.setCléConnexion(cléConnexion);
-//                            DAOUtilisateurRESTAPI daoUtilisateurRESTAPI = new DAOUtilisateurRESTAPI(cléConnexion, activity);
-//                            Log.i("Id utilisateurDAO", Integer.toString(daoUtilisateurRESTAPI.getId()));
-//                            modèle.setUtilisateur(new DAOUtilisateurRESTAPI(1, cléConnexion, null,activity));
-//                            modèle.chargerCoursGroupeUtilisateur();
-//                            //Lancera exception si le cours groupe est null
-//                            //Lorsqu'il a terminé, il lance une tâche sur le fil principal (UI)
-//                            activity.runOnUiThread(
-//                                    new Runnable(){
-//                                        //Ce Runnable s'exécute dans le fil principal (UI)
-//                                        public void run(){
-//                                            try{
-//                                                Log.d("Présenteur", "rafraichit vue");
-//                                                vueVoirCoursGroupe.rafraichir();
-//                                            } catch ( Exception e) {
-//                                                Log.e("CoursGroupe", "Erreur d'écriture");
-//                                            }
-//
-//                                        }
-//                                    });
-//                        }
-//                        catch(final Exception e){
-//                            //Si un problème est survenu, on envoit l'erreur au IReceveurDeDonnées
-//                            activity.runOnUiThread(new Runnable(){
-//                                //Ce Runnable s'exécute dans le fil principal (UI)
-//                                public void run(){
-//                                    Log.e("nombres", "Erreur d'accès à l'API", e);
-//                                }
-//                            });
-//                        }
-//
-//                    }
-//                });
-//
-//        //Finalement, tout est prêt à être lancé
-//        esclave.start();
-//
-//    }
-
-
     @Override
     public int getNombresItems() {
         if(modèle.getCoursGroupes() != null) {
@@ -99,10 +49,15 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
     }
 
     @Override
+    public void commencerVoirCourGroupe(String cléConnexion) {
+        this.cléConnexion = cléConnexion;
+    }
+
+    @Override
     public void requeteVoirCoursGroupe(int position) {
         Intent intentVoirSéance = new Intent(activity, VoirUnCourGroupeActivity.class);
         intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, cléConnexion);
-        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, position);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, modèle.getCourGroupeParPos(position).getId());
         activity.startActivity(intentVoirSéance);
     }
 

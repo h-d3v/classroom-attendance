@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
+
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
@@ -26,7 +28,7 @@ public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCour
     private TextView tvSigleDuCours;
     private TextView tvNomDuCours;
     private TextView tvNbElevesInscrits;
-    private Button btnVoirListeEleves;
+    private BootstrapButton btnVoirListeEleves;
     private RecyclerView rvListeSeance;
     private SeanceAdapterUnCourGroupe seanceAdapter;
 
