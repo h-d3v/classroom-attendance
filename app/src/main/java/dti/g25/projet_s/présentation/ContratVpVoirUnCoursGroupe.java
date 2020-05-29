@@ -19,9 +19,9 @@ public interface ContratVpVoirUnCoursGroupe {
         void requeteVoirListeEleves();
         void commencerVoirCourGroupe(int position, String cléUtilisateur) throws Exception;
 
-        int getNbSeancesModele();
+        int getNbSeancesModele() throws Exception;
 
-        Seance getSeanceParPos(int position);
+        Seance getSeanceParPos(int position) throws Exception;
 
         boolean getUtilisateurUilisateurBouton();
 
@@ -32,6 +32,8 @@ public interface ContratVpVoirUnCoursGroupe {
         void requeteModifierPrésence(int position);
 
         int getVisibilteBouton();
+
+        void rafraîchir();
     }
 
 

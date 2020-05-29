@@ -2,14 +2,21 @@ package dti.g25.projet_s.présentation.modèle;
 
 import android.content.Context;
 
+import com.android.volley.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import dti.g25.projet_s.dao.ConvertisseurJsonSeance;
+import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Horaire;
+import dti.g25.projet_s.domaine.entité.LibelleCours;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 
@@ -28,11 +35,14 @@ public class Modèle {
     private List<Seance> listeSeanceCourGroupe;
     private Utilisateur utilisateurActuelle;
     private List<Utilisateur> listeUtilisateur;
+    private DAOFactoryRESTAPI daoFactoryRESTAPI;
 
     /**
      * constructeur vide
      */
-    public Modèle() {};
+    public Modèle() {
+    };
+
 
     public Modèle(DAOFactory daoFactory) {
         this.daoFactory = daoFactory;
@@ -60,6 +70,7 @@ public class Modèle {
 
     public Modèle(Context context){
         this.context=context;
+        daoFactoryRESTAPI = new DAOFactoryRESTAPI(context);
         coursGroupes=new ArrayList<>();
     }
 
@@ -103,7 +114,8 @@ public class Modèle {
     }
 
 
-    public void ajouterAbsenceParCourGroupe(boolean présence, Utilisateur unUtilisateur, int positionSeance, int postionCourGroupe) {
+    public void ajouterAbsenceParCourGroupe(boolean présence, Utilisateur unUtilisateur, int positionSeance, int postionCourGroupe) throws Exception {
+
         getListeSeanceParCourGroupe(postionCourGroupe).set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
     }
 
@@ -153,8 +165,9 @@ public class Modèle {
         return listeSeance;
     }
 
-    public List<Seance> getListeSeanceParCourGroupe(int position) {
-        return getCourGroupeParPos(position).getListeSeances();
+    public List<Seance> getListeSeanceParCourGroupe(final int position) {
+
+        return listeSeanceCourGroupe;
     }
 
 
@@ -215,7 +228,15 @@ public class Modèle {
      * @param positionCoursGroupe
      * @param position
      */
-    public Seance getSeanceParCourGroupe(int positionCoursGroupe, int position) {
+    public Seance getSeanceParCourGroupe(int positionCoursGroupe, int position) throws Exception {
         return getListeSeanceParCourGroupe(positionCoursGroupe).get(position);
+    }
+
+    public void setJSONSeances(JSONObject réponse, int numeroGroupe, int idGroupe) throws JSONException {
+        listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, new CoursGroupe(new LibelleCours("ok", "ok", "ok"), numeroGroupe, idGroupe));
+    }
+
+    public void requeteHttpSeanceCourGroupe(int position, Response.Listener<JSONObject> réponse) {
+        daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, new CoursGroupe(new LibelleCours("ok", "ok", "ok"), 1, 1));
     }
 }

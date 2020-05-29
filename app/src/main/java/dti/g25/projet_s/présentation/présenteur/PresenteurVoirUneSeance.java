@@ -45,7 +45,7 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
     }
 
     @Override
-    public Seance getSeance() {
+    public Seance getSeance() throws Exception {
         if(_positionGroupe == -1)
             return _modele.getSeanceParPos(_positionSeance);
         return _modele.getSeanceParCourGroupe(_positionGroupe, _positionSeance);
@@ -73,7 +73,7 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
 
 
     @Override
-    public void requeteModifierSatatutSeance() {
+    public void requeteModifierSatatutSeance() throws Exception {
         /**
          *         Intent intent= new Intent(_activite, popUp.class);
          *         _activite.startActivityForResult(intent, REQUEST_CODE_MODIFIER_ETAT);

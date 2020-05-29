@@ -50,7 +50,7 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
     }
 
     @Override
-    public void ajouterAbsence(boolean présence) {
+    public void ajouterAbsence(boolean présence) throws Exception {
 
         modèle.ajouterAbsenceParCourGroupe(présence, modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur), positionSéeance, positionGroupe);
         itérateur +=1;

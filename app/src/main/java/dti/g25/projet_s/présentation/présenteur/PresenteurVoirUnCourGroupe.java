@@ -2,7 +2,12 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
+
+import com.android.volley.Response;
+
+import org.json.JSONObject;
 
 import dti.g25.projet_s.domaine.entité.LibelleCours;
 import dti.g25.projet_s.domaine.entité.Role;
@@ -59,6 +64,8 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
 
     @Override
     public void commencerVoirCourGroupe(int position, String cléUtilisateur) throws Exception {
+
+        _modele.getListeSeanceParCourGroupe(position);
         _positionCoursGroupe = position;
         _cléUtilisateur = cléUtilisateur;
         _modele.setCléUtilisateur(_cléUtilisateur);
@@ -70,14 +77,14 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
     }
 
     @Override
-    public int getNbSeancesModele() {
-        if(_modele.getListeSeance() == null)
+    public int getNbSeancesModele() throws Exception {
+        if(_modele.getListeSeanceParCourGroupe(_positionCoursGroupe) == null)
             return 0;
         return _modele.getListeSeanceParCourGroupe(_positionCoursGroupe).size();
     }
 
     @Override
-    public Seance getSeanceParPos(int position) {
+    public Seance getSeanceParPos(int position) throws Exception {
         return _modele.getSeanceParCourGroupe(_positionCoursGroupe, position);
     }
 
@@ -122,6 +129,15 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
         if(getUtilisateurUilisateurBouton())
             return View.VISIBLE;
         return View.INVISIBLE;
+    }
+
+    @Override
+    public void rafraîchir() {
+        Log.d("passe", "présenteur");
+        _vue.afficherNomCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getTITRE());
+        _vue.afficherSigleCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getTitreAbrégé());
+        _vue.afficherNombreÉlèvesInscrit(_modele.getListeEtudiantsParCoursGroupe(_positionCoursGroupe).size());
+        _vue.rafraichir();
     }
 
 }

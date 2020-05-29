@@ -10,6 +10,7 @@ import java.util.List;
 public interface IGestionCoursGroupe  {
 
     CoursGroupe creerCoursGroupe(LibelleCours libelleCours, int numeroGroupe);
+    CoursGroupe creerCoursGroupe(LibelleCours libelleCours, int numeroGroupe, int id);
     void modifierParticipants(List<Utilisateur> participant, CoursGroupe coursGroupe) throws GestionCoursGroupeException;
     void ajouterParticipant(Utilisateur utilisateur, CoursGroupe coursGroupe);
 }

@@ -50,8 +50,16 @@ public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.
                             .setCancelable(false)
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
-                                    _presenteur.requeteModifierSatatutSeance();
-                                    _tvEstPrevue.setText(_presenteur.getSeance().get_etat().toString());
+                                    try {
+                                        _presenteur.requeteModifierSatatutSeance();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                    try {
+                                        _tvEstPrevue.setText(_presenteur.getSeance().get_etat().toString());
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
                                     Toast.makeText(_presenteur.get_activite(), "Statut de la seance modifiee",
                                             Toast.LENGTH_SHORT).show();
                                 }
