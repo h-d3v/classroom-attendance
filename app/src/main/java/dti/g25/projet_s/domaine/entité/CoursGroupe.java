@@ -1,5 +1,6 @@
 package dti.g25.projet_s.domaine.entité;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CoursGroupe {
@@ -28,6 +29,7 @@ public class CoursGroupe {
         this.libelleCours = libelleCours;
         this.numeroGroupe = numeroGroupe;
         this.id = id;
+        participants = new ArrayList<>();
     }
 
     public int getNumeroGroupe() {

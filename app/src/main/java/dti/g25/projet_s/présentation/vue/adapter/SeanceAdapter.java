@@ -46,6 +46,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public int getItemCount() {
+        Log.d("adapter", String.valueOf(_presenteur.getNbSeancesModele()));
         if(_presenteur==null) return 0;
         return _presenteur.getNbSeancesModele();
     }

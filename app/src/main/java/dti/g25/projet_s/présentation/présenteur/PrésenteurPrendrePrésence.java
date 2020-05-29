@@ -54,7 +54,7 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
 
     @Override
     public String getNomUtilisteur() {
-        return modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername();
+        return modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getUsername();
     }
 
     @Override
@@ -63,30 +63,53 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
         this.positionGroupe = positionGroupe;
         this.cléUtilisateur = cléUtilisateur;
 
-        modèle.setCléConnexion(sharedPreferences.getString("auth_token", ""));
+        itérateur = 0;
         modèle.rafraîchir();
-        Log.d("nomUtilisateur", modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
-        vue.setTxtNomÉtudiant(modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
+        vue.setTxtNomÉtudiant(modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getUsername());
     }
 
     @Override
-    public void ajouterAbsence(boolean absence) throws Exception {
-        modèle.setCléConnexion(sharedPreferences.getString("auth_token", ""));
-        if(!absence){//On envoie la requete de presence au serveur
+    public void ajouterAbsence(boolean absence){
+        if(absence){//On envoie la requete de presence au serveur
 
             // url a modifier 29 par  l'id de la seance 23 par l'id de l'utilisateur
-            JsonObjectRequest request =  new JsonObjectRequest(Request.Method.PUT,"https://projet-s.dti.crosemont.quebec/api/v1/seance/29/present/23", null, new Response.Listener<JSONObject>() {
+            JsonObjectRequest request =  new JsonObjectRequest(Request.Method.PUT,"https://projet-s.dti.crosemont.quebec/api/v1/seance/" + positionSéeance +"/present/" + modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getId(), null, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
-                    Toast toast = Toast.makeText(activité, "absence enregistrée", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(activité, "absences enregistrées!", Toast.LENGTH_SHORT);
                     toast.show();
-
-
 
                 }}, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error){
-                    Toast toast = Toast.makeText(activité, "Erreur de connection", Toast.LENGTH_SHORT);
+
+                    Toast toast = Toast.makeText(activité, "Erreur de serveur", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+
+            }
+
+            ) {
+                @Override
+                public Map<String,String > getHeaders()  {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer "+ modèle.getCléConnexion());
+                    return headers;
+                }
+            };
+            Singleton.getInstance(activité).addToRequestQueue(request);
+        } else {
+            JsonObjectRequest request =  new JsonObjectRequest(Request.Method.DELETE,"https://projet-s.dti.crosemont.quebec/api/v1/seance/" + positionSéeance +"/present/" + modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getId(), null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    Toast toast = Toast.makeText(activité, "absences enregistrées!", Toast.LENGTH_SHORT);
+                    toast.show();
+
+                }}, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error){
+
+                    Toast toast = Toast.makeText(activité, "Erreur de serveur", Toast.LENGTH_SHORT);
                     toast.show();
                 }
 
@@ -102,12 +125,11 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
             };
             Singleton.getInstance(activité).addToRequestQueue(request);
         }
-        modèle.ajouterAbsenceParCourGroupe(absence, modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur), positionSéeance, positionGroupe);
         itérateur +=1;
-        if(modèle.getListUtlisateurParCourGroupe(positionGroupe).size() -1 == itérateur)
+        if(modèle.getListeEtudiantsParCoursGroupe().size() -1 == itérateur)
             activité.finish();
         else
-            vue.setTxtNomÉtudiant(modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
+            vue.setTxtNomÉtudiant(modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getUsername());
 
     }
 

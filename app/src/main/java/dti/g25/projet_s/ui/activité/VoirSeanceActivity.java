@@ -25,7 +25,7 @@ public class VoirSeanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_une_seance);
         MockDAOFactory mockDAOFactory= new MockDAOFactory();
-        Modèle modèle = new Modèle(mockDAOFactory);
+        Modèle modèle = new Modèle();
         modèle.chargerCoursGroupeUtilisateur();
         VueVoirUneSeance vueVoirUneSeance=new VueVoirUneSeance();
         presenteurVoirUneSeance=new PresenteurVoirUneSeance(modèle,vueVoirUneSeance, this, 0);

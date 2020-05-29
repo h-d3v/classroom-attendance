@@ -12,7 +12,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import dti.g25.projet_s.R;
+import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirUnCourGroupe;
 import dti.g25.projet_s.présentation.vue.VueVoirUnCourGroupe;
 
@@ -43,18 +45,11 @@ public class VoirUnCourGroupeActivity extends AppCompatActivity {
 
         int position = getIntent().getIntExtra(EXTRA_POSITION_GROUPE, -1);
         String cléUtilisateur = getIntent().getStringExtra(EXTRA_CLÉ_CONNEXION);
-        Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject réponse) {
-                try {
-                    Log.d("Schéma", "ca passe ici");
-                    _modele.setJSONSeances(réponse, 1, 1);
-                     _presenteur.rafraîchir();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
+
+        Log.d("clé", cléUtilisateur);
+        _modele.setCléConnexion(cléUtilisateur);
+        chargerDonné(position);
+
         try {
             _presenteur.commencerVoirCourGroupe(position, cléUtilisateur);
         } catch (Exception e) {
@@ -62,4 +57,54 @@ public class VoirUnCourGroupeActivity extends AppCompatActivity {
         }
     }
 
+
+    private void chargerDonné(final int idGroupe) {
+        final DAOFactoryRESTAPI daoFactoryRESTAPI = new DAOFactoryRESTAPI(this);
+
+        Log.d("clé", _modele.getCléConnexion());
+        daoFactoryRESTAPI.setCle(_modele.getCléConnexion());
+
+        Response.Listener<JSONObject> onResponse = new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject réponse) {
+
+                try {
+                    _modele.setJsonUtilisateurActuelle(réponse);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                Response.Listener<JSONObject> onResponse2 = new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            _modele.setJsonGroupeActuelle(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        Log.d("Schéma", "ca passe ici");
+                        Response.Listener<JSONObject> onResponse3 = new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject réponse) {
+                                try {
+                                    _modele.setJSONSeances(réponse, _modele.getCoursGroupeActuelle());
+                                    _presenteur.rafraîchir();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        };
+                        daoFactoryRESTAPI.getSeancesParCourGroupe(onResponse3, _modele.getCoursGroupeActuelle());
+                    }
+                };
+
+                daoFactoryRESTAPI.chargerUnCourGroupeParId(onResponse2, idGroupe);
+            }
+        };
+
+        daoFactoryRESTAPI.chargerUtilisateurActuel(onResponse);
+    }
 }

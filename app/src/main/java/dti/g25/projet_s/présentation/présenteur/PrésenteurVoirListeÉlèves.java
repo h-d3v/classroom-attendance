@@ -2,6 +2,7 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
@@ -33,17 +34,18 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
 
     @Override
     public int getNombresItems() {
-        return modèle.getListeEtudiantsParCoursGroupe(positionCoursGroupe).size();
+        if(modèle.getListeUtilisateurs() == null) return 0;
+        return modèle.getListeUtilisateurs().size();
     }
 
     @Override
     public Utilisateur getUtilisateurParPosition(int position) {
-        return modèle.getListeEtudiantsParCoursGroupe(positionCoursGroupe).get(position);
+        return modèle.getListeEtudiantsParCoursGroupe().get(position);
     }
 
     @Override
     public String getPrésenceUtilisateurParPos(int position) throws Exception {
-        if(modèle.getSeanceParCourGroupe(positionCoursGroupe, positionSeance).getListeAbsence().get(position).getPrésence())
+        if(modèle.getSeanceParCourGroupe(positionSeance).getListeAbsence().get(position).getPrésence())
             return "présent";
         return "absent";
     }
@@ -63,12 +65,9 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
         this.positionSeance = positionSeance;
         this.positionCoursGroupe = positionCoursGroupe;
         this.cléUtilisateur = cléUtilisateur;
-        modèle.setCléConnexion(this.cléUtilisateur);
-        modèle.rafraîchir();
         if (positionSeance == -1) {
             peutPrendrePrésence = false;
         }
-        vue.rafraichir();
     }
 
     @Override
@@ -76,9 +75,6 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
         if (requestCode == RESQUEST_CODE_VOIR_ELEVES && resultCode == Activity.RESULT_OK) {
            boolean présence =  data.getBooleanExtra(EXTRA_POSITION_PRÉSENCE, true);
            int positionÉlèves = data.getIntExtra(EXTRA_POSITION_ÉLÈVES, -1);
-
-           if(positionÉlèves > -1)
-                modèle.ajouterAbsenceParCourGroupe(présence, getUtilisateurParPosition(positionÉlèves), positionSeance, positionCoursGroupe);
 
            vue.rafraichir();
         }
