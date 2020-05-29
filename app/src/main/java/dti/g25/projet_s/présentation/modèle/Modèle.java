@@ -6,6 +6,7 @@ import com.android.volley.Response;
 
 import org.json.JSONObject;
 
+import dti.g25.projet_s.dao.ConvertisseurJsonUtilisateur;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
@@ -32,7 +33,7 @@ public class Modèle {
     private List<Seance> listeSeance;
     private List<Seance> listeSeanceCourGroupe;
     private Utilisateur utilisateurActuelle;
-    private List<Utilisateur> listeUtilisateur;
+    private List<Utilisateur> listeUtilisateurs;
 
     /**
      * constructeur vide
@@ -185,7 +186,7 @@ public class Modèle {
 
 
     public List<Utilisateur> getListeUtilisateur(){
-        return listeUtilisateur;
+        return listeUtilisateurs;
     }
 
     /**
@@ -225,7 +226,7 @@ public class Modèle {
     }
 
     //Requête Http
-    public getUtilisateursHttp(int positionGroupe, Response.Listener<JSONObject> réponse) {
-        new DAOFactoryRESTAPI()
+    public void setJsonUtilsaiteurs(JSONObject réponse) throws Exception {
+        listeUtilisateurs = new ConvertisseurJsonUtilisateur().obtenirListeUtilisateurs(réponse);
     }
 }

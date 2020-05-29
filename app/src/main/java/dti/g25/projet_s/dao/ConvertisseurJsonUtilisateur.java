@@ -40,7 +40,7 @@ public class ConvertisseurJsonUtilisateur {
     }
 
 
-    public Role obtenirRôle(int i) {
+    private Role obtenirRôle(int i) {
         if(i == 2) {
             return Role.PROFESSEUR;
         } else if( i == 3) {

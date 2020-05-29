@@ -44,6 +44,7 @@ public class VoirListeÉlevesPrésenceActivité  extends AppCompatActivity {
         int positionGroupe = getIntent().getIntExtra(EXTRA_POSITION_GROUPE, -1);
         int positionSeance = getIntent().getIntExtra(EXTRA_POSITION_SEANCE, -1);
         String cléUtilisateur = getIntent().getStringExtra(EXTRA_CLÉ_CONNEXION);
+        
         try {
             présenteur.commencerListeÉlèvesPrésence(positionSeance, positionGroupe, cléUtilisateur);
         } catch (Exception e) {

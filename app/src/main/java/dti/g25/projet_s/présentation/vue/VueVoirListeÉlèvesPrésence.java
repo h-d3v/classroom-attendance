@@ -50,6 +50,7 @@ public class VueVoirListeÉlèvesPrésence  extends Fragment implements ContratV
 
     }
 
+
     @Override
     public void rafraichir() {
         if(élèvesPrésenceAdapter!=null)
