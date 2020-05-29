@@ -1233,7 +1233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590691569691</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="prise de presence">
+      <created>1590714183195</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1590714183195</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1254,7 +1261,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="debut nouvelle version modele avec DAOS" />
     <MESSAGE value="init&#10;&#10;# Conflicts:&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.bin&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/workspace.xml&#10;#&#9;local.properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="init&#10;&#10;# Conflicts:&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.bin&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/workspace.xml&#10;#&#9;local.properties" />
+    <MESSAGE value="prise de presence" />
+    <option name="LAST_COMMIT_MESSAGE" value="prise de presence" />
   </component>
   <component name="WindowStateProjectService">
     <state x="497" y="96" width="596" height="660" key="#app" timestamp="1589053032239">
@@ -1291,11 +1299,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978461357" />
-    <state x="1024" y="377" width="1393" height="814" key="CommitChangelistDialog2" timestamp="1590691569459">
+    <state x="1024" y="377" width="1197" height="908" key="CommitChangelistDialog2" timestamp="1590714182913">
       <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589044389797" />
-    <state x="1024" y="377" key="CommitChangelistDialog2/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590691569458" />
+    <state x="1024" y="377" width="1197" height="908" key="CommitChangelistDialog2/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590714182913" />
     <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl" timestamp="1588962764411">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

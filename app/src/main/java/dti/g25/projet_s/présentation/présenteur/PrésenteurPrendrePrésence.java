@@ -63,7 +63,7 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
         this.positionGroupe = positionGroupe;
         this.cléUtilisateur = cléUtilisateur;
 
-        modèle.setCléUtilisateur(sharedPreferences.getString("aut_token", ""));
+        modèle.setCléUtilisateur(sharedPreferences.getString("auth_token", ""));
         modèle.rafraîchir();
         Log.d("nomUtilisateur", modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
         vue.setTxtNomÉtudiant(modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
