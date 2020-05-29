@@ -55,7 +55,6 @@ public class VoirUnCourGroupeActivity extends AppCompatActivity {
                 }
             }
         };
-        _modele.requeteHttpSeanceCourGroupe(position, réponse);
         try {
             _presenteur.commencerVoirCourGroupe(position, cléUtilisateur);
         } catch (Exception e) {

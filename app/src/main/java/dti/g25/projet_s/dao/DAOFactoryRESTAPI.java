@@ -29,7 +29,7 @@ import java.util.Map;
         private static final String URL = "https://projet-s.dti.crosemont.quebec/api/v0/utilisateurs";
         private static final String URL_CONNECT = "https://projet-s.dti.crosemont.quebec/";
         private static final String POINT_ENTREE_UTILISATEURS = "utilisateurs";
-        private final static String seanceparGroupeGet = "https://projet-s.dti.crosemont.quebec/api/v0/groupe/";
+        private final static String seanceparGroupeGet = "https://projet-s.dti.crosemont.quebec/api/v1/groupe/";
         private  Context context;
         private  String cle;
         private Response.Listener<JSONObject> response;
@@ -115,9 +115,10 @@ import java.util.Map;
 
         public void getSeancesParCourGroupe(Response.Listener<JSONObject> response, CoursGroupe courGroupe){
             List<Seance> listSeance = new ArrayList<>();
-            //seanceparGroupeGet + courGroupe.getId() + "?embed=true"
+            String url = seanceparGroupeGet + courGroupe.getId() + "?embed=true";
 
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,"https://projet-s.dti.crosemont.quebec/api/v1/groupe/1?embed=true" , null, response
+            JSONObject jsonn = new JSONObject();
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url , jsonn, response
                 , new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
@@ -125,9 +126,9 @@ import java.util.Map;
                 }
             }){
                 @Override
-                public Map<String, String> getHeaders() {
+                public Map getHeaders() throws AuthFailureError {
                     HashMap headers = new HashMap();
-                    headers.put("Authorization:", "Bearer "+cle);
+                    headers.put("Authorization", "Bearer "+cle);
                     return headers;
                 }
             };
