@@ -3,25 +3,17 @@ package dti.g25.projet_s.présentation.modèle.dao;
 import android.content.Context;
 
 import android.util.Log;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import dti.g25.projet_s.dao.Singleton;
+
+import dti.g25.projet_s.dao.DAOUtilisateurRESTAPI;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Horaire;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
+
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
-import dti.g25.projet_s.présentation.modèle.dao.DAO;
-import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
-import dti.g25.projet_s.présentation.modèle.dao.DAOFactoryV1;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -33,7 +25,7 @@ public class ModèleDAO {
     private DAOFactoryV1 daoFactory;
     private Context context;
     private List<DAO<Seance>> listeSeance;
-    private DAO<Utilisateur> utilisateurActuel;
+    private DAOUtilisateurRESTAPI utilisateurActuel;
     private List<DAO<Utilisateur>> listeUtilisateur;
     private String cle;
     private final String URL="https://projet-s.dti.crosemont.quebec/api/v0/utilisateurs";
@@ -55,10 +47,9 @@ public class ModèleDAO {
      * @param daoFactory  : la factory dao source d'acces aux donnees
      * @param utilisateur : l'utilisateur connecte de l'application
      */
-    public ModèleDAO(DAOFactoryV1 daoFactory, DAO<Utilisateur> utilisateur) {
+    public ModèleDAO(DAOFactoryV1 daoFactory, DAOUtilisateurRESTAPI utilisateur) {
         this.utilisateurActuel = utilisateur;
         this.daoFactory = daoFactory;
-        this.coursGroupes = daoFactory.chargerListeCoursGroupeParUtilisateur(utilisateur);
     }
 
 
@@ -78,7 +69,7 @@ public class ModèleDAO {
     /**
      * @param utilisateur l'utilisateur connecte
      */
-    public void setUtilisateur(DAO<Utilisateur> utilisateur) {
+    public void setUtilisateur(DAOUtilisateurRESTAPI utilisateur) {
         this.utilisateurActuel = utilisateur;
     }
 
@@ -87,7 +78,7 @@ public class ModèleDAO {
         return coursGroupes;
     }
 
-
+    public void chargerUserActuel() throws InterruptedException {utilisateurActuel.chargerParCleConnexion(cle);}
 
     /**
      * @param position: la position du coursGroupe dans la liste coursGroupe du modele
@@ -95,6 +86,7 @@ public class ModèleDAO {
      */
     public DAO<CoursGroupe> getCourGroupeParPos(int position) {
         if (coursGroupes == null || coursGroupes.size() == 0 || coursGroupes.size() < position) {
+            Log.i("Object null","Le DAO cours groupe a lapos demander est null");
             return null;
         }
         return coursGroupes.get(position);
@@ -154,6 +146,8 @@ public class ModèleDAO {
         listeSeance.get(positionSeance).modifier(seanceDAOModifiee);
     }
 
+
+
     public void changerEtatSeance(int posSeance, EtatSeance etatSeance) {
         // TODO ? Pas utilise listeSeance.get(pos).modifier(new Seance(null, null)); REDONDANT voir ci dessus
     }
@@ -195,6 +189,11 @@ public class ModèleDAO {
 
     }
 
+    public void setCléUtilisateur(String cléConnexion) throws InterruptedException {
+        cle=cléConnexion;
+
+    }
+
 /** //TODO? supprimer fonction puisque l'app ne cree pas d'utilisateur
  *
  * @param
@@ -208,6 +207,8 @@ return new CréeationUtilisateur().CréerUtilisateur(nomUtilisateur, role);
 
 
 */
+
+
 
 
 }

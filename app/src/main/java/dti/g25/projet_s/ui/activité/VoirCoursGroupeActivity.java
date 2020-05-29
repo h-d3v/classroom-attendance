@@ -8,7 +8,8 @@ import android.util.Log;
 
 import androidx.fragment.app.FragmentTransaction;
 import dti.g25.projet_s.R;
-import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
+import dti.g25.projet_s.présentation.modèle.dao.ModèleDAO;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.vue.VueVoirCoursGroupe;
 
@@ -23,10 +24,10 @@ public class VoirCoursGroupeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_cours_groupe);
         //A ajuster TODO
-        Modèle modèle = new Modèle();
-        modèle.chargerCoursGroupeUtilisateur();
         VueVoirCoursGroupe vueVoirCoursGroupe= new VueVoirCoursGroupe();
+        ModèleDAO modèle = new ModèleDAO(this,new  DAOFactoryRESTAPI(this));
         presenteurVoirCoursGroupe=new PresenteurVoirCoursGroupe(vueVoirCoursGroupe, modèle,this);
+        modèle.chargerCoursGroupeUtilisateur();
         vueVoirCoursGroupe.set_presenteur(presenteurVoirCoursGroupe);
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.layout_VoirCoursGroupes,vueVoirCoursGroupe);
@@ -34,11 +35,21 @@ public class VoirCoursGroupeActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        try {
+         // presenteurVoirCoursGroupe.telechargerCoursGroupeUtilisateur(Intent data);
+        } catch (Exception e) {
+          Log.e("Erreur", String.valueOf(e));
+        }
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d("uneActivité", "Terminer");
         try {
-            presenteurVoirCoursGroupe.onActivityResult(requestCode, resultCode, data);
+            presenteurVoirCoursGroupe.telechargerCoursGroupeUtilisateur(data);
         } catch (Exception e) {
             Log.e("Erreur", String.valueOf(e));
         }

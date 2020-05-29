@@ -37,6 +37,7 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 presenteurVoirCoursGroupe.requeteVoirCoursGroupe(position);
             }
         });
+        System.out.println("Ou rien");
         ((TextView)holder.itemView.findViewById(R.id.tv_textCoursGroupe)).setText(presenteurVoirCoursGroupe.getTitreCoursGroupe(position));
     }
 
