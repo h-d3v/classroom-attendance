@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import dti.g25.projet_s.R;
+import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.présentation.modèle.Modèle;
+import dti.g25.projet_s.présentation.modèle.dao.ModèleDAO;
 import dti.g25.projet_s.présentation.présenteur.PrésenteurConnexion;
 import dti.g25.projet_s.présentation.vue.VueConnexion;
 
@@ -24,7 +26,7 @@ public class ConnexionActivité extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connexion_activite);
 
-        Modèle modèle= new Modèle();
+        ModèleDAO modèle= new ModèleDAO(this, new DAOFactoryRESTAPI(this));
         VueConnexion vue=new VueConnexion();
 
         présenteur=new PrésenteurConnexion(this, vue, modèle);

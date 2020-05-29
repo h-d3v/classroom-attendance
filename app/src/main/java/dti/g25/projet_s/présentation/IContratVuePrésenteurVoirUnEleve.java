@@ -17,5 +17,7 @@ public interface IContratVuePrésenteurVoirUnEleve {
         void onClickPositif(String[] list, int position);
         void onClickNegatif();
         String getNomUtilisateur();
+
+        void setVisibilitéPrésence(boolean b);
     }
 }

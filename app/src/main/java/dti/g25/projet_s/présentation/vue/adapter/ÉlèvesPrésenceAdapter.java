@@ -34,13 +34,26 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         ((TextView)holder.itemView.findViewById(R.id.txtNomÉlèves)).setText(présenteur.getUtilisateurParPosition(position).getUsername());
-        ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+        if(présenteur.getpeutPrendrePrésence()) {
+            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setVisibility(View.VISIBLE);
             ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View bouton) {
                     présenteur.requeteVoirÉlèves(position);
                 }
             });
+            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setVisibility(View.VISIBLE);
+            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+        } else {
+            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setVisibility(View.INVISIBLE);
+            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setText("Voir Élève");
+            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View bouton) {
+                    présenteur.requeteVoirÉlèves(position);
+                }
+            });
+        }
     }
 
     /**

@@ -40,9 +40,11 @@ public class PresenteurVoirUnEleve implements IContratVuePrésenteurVoirUnEleve.
         this.positionGroupe = positionGroupe;
         this.positionÉlèves = positionÉlèves;
         this.cléUtilisateur = cléUtilisateur;
-
+        if(positionSeance == -1) {
+            vue.setVisibilitéPrésence(false);
+        }
         modèle.setCléUtilisateur(this.cléUtilisateur);
         modèle.rafraîchir();
-        vue.setNomUtilisateur(modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(positionÉlèves).getUsername());
+        vue.setNomUtilisateur(modèle.getListeEtudiantsParCoursGroupe(this.positionGroupe).get(positionÉlèves).getUsername());
     }
 }
