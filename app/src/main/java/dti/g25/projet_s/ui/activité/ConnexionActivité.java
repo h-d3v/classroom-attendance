@@ -44,17 +44,4 @@ public class ConnexionActivité extends AppCompatActivity {
         ft.add(R.id.layout_connexion, vue);
         ft.commit();
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        daoFactoryRESTAPI.setResponse(new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-
-            }
-        });
-    }
-
 }

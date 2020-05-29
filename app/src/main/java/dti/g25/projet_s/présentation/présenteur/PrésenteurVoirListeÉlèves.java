@@ -63,7 +63,7 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
         this.positionSeance = positionSeance;
         this.positionCoursGroupe = positionCoursGroupe;
         this.cléUtilisateur = cléUtilisateur;
-        modèle.setCléUtilisateur(this.cléUtilisateur);
+        modèle.setCléConnexion(this.cléUtilisateur);
         modèle.rafraîchir();
         if (positionSeance == -1) {
             peutPrendrePrésence = false;

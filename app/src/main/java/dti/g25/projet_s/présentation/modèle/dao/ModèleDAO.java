@@ -75,10 +75,6 @@ public class ModèleDAO {
         this.utilisateurActuel = utilisateur;
     }
 
-    public List<DAO<CoursGroupe>> chargerCoursGroupeUtilisateur() {
-        coursGroupes = daoFactory.chargerListeCoursGroupeParUtilisateur(this.utilisateurActuel);
-        return coursGroupes;
-    }
 
     public void chargerUserActuel() throws InterruptedException {utilisateurActuel.chargerParCleConnexion(cle);}
 

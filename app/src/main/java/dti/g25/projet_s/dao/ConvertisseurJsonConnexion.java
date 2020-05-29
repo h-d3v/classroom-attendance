@@ -10,9 +10,6 @@ public class ConvertisseurJsonConnexion {
 
     public String Authentifier(JSONObject response) throws JSONException {
         String cléConnexion =    response.getString("auth_token");
-        if (!cléConnexion.equals(null)) {
-            Log.i("Cle de connection", cléConnexion[0]);
-        }
 
         return cléConnexion;
     }

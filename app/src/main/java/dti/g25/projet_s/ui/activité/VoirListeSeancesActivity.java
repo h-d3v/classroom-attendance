@@ -24,7 +24,7 @@ public class VoirListeSeancesActivity extends AppCompatActivity {
         // TODO peupler le row mapper a l'aide du data mock
 
         Modèle modèle = new Modèle(mockDAOFactory);
-        modèle.setUtilisateur(mockDAOFactory.getUtilisateur(0));
+        //modèle.setUtilisateur(mockDAOFactory.getUtilisateur(0));
         modèle.chargerSeanceUtilisateur();
         modèle.chargerCoursGroupeUtilisateur();
         VueVoirListeSeance _vue= new VueVoirListeSeance();

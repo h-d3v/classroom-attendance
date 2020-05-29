@@ -18,7 +18,7 @@ import java.util.List;
 
 public  abstract class DAOFactoryV1 {
 
-    public abstract List<DAO<CoursGroupe>> chargerListeCoursGroupeParUtilisateur(DAO<Utilisateur> utilisateurDAO);
+    public abstract void chargerUtilisateurActuel(Response.Listener onResponse);
 
     public abstract List<DAO<Utilisateur>> chargerListeUtilisateursParCoursGroupe(DAO<CoursGroupe>coursGroupeDAO);
 
@@ -36,9 +36,9 @@ public  abstract class DAOFactoryV1 {
 
     public abstract List<DAO<CoursGroupe>> chargerCoursGroupeParHoaire(DAO<Horaire> horaireDAO);
 
-    public abstract String tenterConnection(String nomUtilisateur, String motDePasse);
-
     public abstract String getCle();
+
+    public abstract String tenterConnection(String nomUtilisateur, String motDePasse, Response.ErrorListener errorResponse);
 
     public abstract void getSeancesParCourGroupe(Response.Listener<JSONObject> response, CoursGroupe courGroupe);
 
@@ -48,4 +48,7 @@ public  abstract class DAOFactoryV1 {
 
     public abstract void obtenirPrésence();
 
+    public abstract void setCle(String cle);
+
+    public abstract void chargerListeCoursGroupeParUtilisateur(Utilisateur utilisateurConnecte, Response.Listener onResponse);
 }

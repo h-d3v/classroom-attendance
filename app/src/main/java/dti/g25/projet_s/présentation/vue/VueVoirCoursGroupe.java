@@ -45,6 +45,7 @@ public class VueVoirCoursGroupe extends Fragment implements IContatVuePresenteur
      */
     @Override
     public void rafraichir() {
+        Log.d("Presenteur", "rafraichit vue");
         if(coursGroupeAdapter!=null)
             coursGroupeAdapter.notifyDataSetChanged();
     }

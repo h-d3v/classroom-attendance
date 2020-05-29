@@ -41,8 +41,6 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
 
     @Override
     public Boolean tenterConnexion(final String nomUtilisateur, final String motDePasse) {
-        final String[] cléConnexion = new String[1];
-        final boolean[] estReussi = new boolean[1];
         DAOFactoryRESTAPI daoFactoryRESTAPI= new  DAOFactoryRESTAPI(activité);
         daoFactoryRESTAPI.setResponse(new Response.Listener<JSONObject>(){
                                           @Override
@@ -52,10 +50,10 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
                                               } catch (JSONException e) {
                                                   e.printStackTrace();
                                               }
-                                              SharedPreferences.Editor editor = sharedPreferences.edit();
-                                              editor.putString("aut_token", modèle.getCléConnexion());
-                                              sauvegarderIdentifiants(nomUtilisateur, motDePasse);
-                                              terminerConnexion();
+                                              if(!modèle.getCléConnexion().equals(null)) {
+                                                  sauvegarderIdentifiants(nomUtilisateur, motDePasse);
+                                                  terminerConnexion();
+                                              }
                                           }
                                         });
 
@@ -64,22 +62,25 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
             public void onErrorResponse(VolleyError error) {
                 String message = null;
                 if(error.networkResponse.statusCode==401) {
-                    message ="Le mot de passe ou le nom d'utilisateur n'est pas valide";
+                    vue.setMessageErreur("Le mot de passe ou le nom d'utilisateur n'est pas valide");
                 }
                 else if(error.networkResponse.statusCode==500){
-                    message = "Le serveur est en panne, veuillz contavter votre administrateur";
+                    vue.setMessageErreur("Le serveur est en panne, veuillz contavter votre administrateur");
                 }else {
-                    message = "Erreur :"+error.networkResponse.statusCode;
+                    vue.setMessageErreur("Erreur :"+error.networkResponse.statusCode);
                 }
             }
         };
 
-        daoFactoryRESTAPI.tenterConnection(nomUtilisateur, motDePasse);
+        daoFactoryRESTAPI.tenterConnection(nomUtilisateur, motDePasse, errorListener);
+
+        return true;
     }
 
     @Override
     public void tenterConnectionAutomatique() {
     }
+
 
     @Override
     public void sauvegarderIdentifiants(String nomUtilisateur, String motDePasseUtilisateur) {
@@ -102,7 +103,6 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
     @Override
     public void supprimerIdentifiants() {
            sharedPreferences.edit().clear().apply();
-
     }
 
     @Override

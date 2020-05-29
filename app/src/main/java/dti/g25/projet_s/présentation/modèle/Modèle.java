@@ -7,6 +7,8 @@ import com.android.volley.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import dti.g25.projet_s.dao.ConvertisseurJsonConnexion;
+import dti.g25.projet_s.dao.ConvertisseurJsonGroupe;
 import dti.g25.projet_s.dao.ConvertisseurJsonSeance;
 import org.json.JSONObject;
 
@@ -29,7 +31,6 @@ import java.util.List;
 public class Modèle {
 
     private String cléConnexion;
-    private Utilisateur utilisateur;
     private List<CoursGroupe> coursGroupes;
     private List<Seance> seances;
     private DAOFactory daoFactory;
@@ -83,8 +84,8 @@ public class Modèle {
         coursGroupes.add(courGroupe);
     }
 
-    public void setUtilisateur(Utilisateur utilisateur){
-        this.utilisateur=utilisateur;
+    public void setUtilisateurActuelle(Utilisateur utilisateur){
+        this.utilisateurActuelle=utilisateur;
     }
 
     public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
@@ -92,12 +93,6 @@ public class Modèle {
        // return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
     }
 
-    /**
-     * charge les info de l'utilasateur
-     */
-    public void chargerInfoUtilisateur() throws Exception {
-        utilisateurActuelle =  new ServeurFactice().chargerInfoUtilisateur(cléConnexion);
-    }
 
     public void changerEtatSeance(int pos,EtatSeance etatSeance){
         Seance seance=new GestionSeance().changerSatutSeance(etatSeance,seances.get(pos));
@@ -217,7 +212,6 @@ public class Modèle {
     public void rafraîchir() throws Exception {
         coursGroupes = chargerCoursGroupeUtilisateur();
         chargerSeanceUtilisateur();
-        chargerInfoUtilisateur();
     }
 
     /**
@@ -244,6 +238,10 @@ public class Modèle {
     //Requête Http
     public void requeteHttpSeanceCourGroupe(int idGroupe, Response.Listener<JSONObject> réponse) {
         daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, getCourGroupeParPos(idGroupe));
+    }
+
+    public void setJsonGroupes(JSONObject réponse) {
+        coursGroupes = new ConvertisseurJsonGroupe().décoderJsonGroupe(réponse);
     }
     
     public void setJsonUtilsaiteurs(JSONObject réponse) throws Exception {

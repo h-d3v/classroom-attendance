@@ -22,7 +22,6 @@ public class ConvertisseurJsonUtilisateur {
         List<Utilisateur> utilisateurs= new ArrayList<>();
 
         résultat = (JSONObject) résultat.get("_embedded");
-        Log.d("embedded", String.valueOf(résultat));
         résultat = (JSONObject) résultat.get("membres");
         JSONArray listeSeance = résultat.names();
 
@@ -37,6 +36,11 @@ public class ConvertisseurJsonUtilisateur {
         }
 
         return utilisateurs;
+    }
+
+    public Utilisateur décoderUtilisateur(JSONObject objectAcuel) throws Exception {
+        return new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("id")));
+
     }
 
 

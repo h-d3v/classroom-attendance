@@ -49,7 +49,6 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public int getItemCount() {
         if(presenteurVoirCoursGroupe==null) return 0;
-
         return presenteurVoirCoursGroupe.getNombresItems();
     }
 }

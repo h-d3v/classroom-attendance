@@ -62,7 +62,7 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
         _positionGroupe = positionGroupe;
         _cléUtilisateur = cléUtilisateur;
 
-        _modele.setCléUtilisateur(_cléUtilisateur);
+        _modele.setCléConnexion(_cléUtilisateur);
         _modele.rafraîchir();
 
         _vue.afficherEstPrévue("Statut: "+ getSeance().get_etat().toString());

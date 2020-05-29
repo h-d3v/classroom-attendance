@@ -21,7 +21,7 @@ public interface ContratVuePrésenteurConnexion {
 
         public void tenterConnectionAutomatique();
 
-        void sauvegarderIdentifiants();
+        void sauvegarderIdentifiants(String nomUtilisateur, String motDePasseUtilisateur);
 
         String getNomUtilisateurSauvegarde();
 

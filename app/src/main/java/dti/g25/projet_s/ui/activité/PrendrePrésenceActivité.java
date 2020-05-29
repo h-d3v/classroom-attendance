@@ -48,9 +48,9 @@ public class PrendrePrésenceActivité extends AppCompatActivity {
         final Activity activity =this;
 
         final Modèle  modèle = new Modèle();
-        modèle.setCléUtilisateur(this.getSharedPreferences("infosLogin", Context.MODE_PRIVATE).getString("auth_token",""));
+        modèle.setCléConnexion(this.getSharedPreferences("infosLogin", Context.MODE_PRIVATE).getString("auth_token",""));
         //Pour test a supprimmer
-        modèle.setCléUtilisateur("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10"
+        modèle.setCléConnexion("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10"
 );          //Pour testremplacer le 1 par l'id du coursGroupr groupe/1/membres"
         JsonObjectRequest request =  new JsonObjectRequest(Request.Method.GET,"https://projet-s.dti.crosemont.quebec/api/v1/groupe/1/membres", null, new Response.Listener<JSONObject>() {
             @Override
@@ -99,7 +99,7 @@ public class PrendrePrésenceActivité extends AppCompatActivity {
             @Override
             public Map<String,String > getHeaders()  {
                 HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Authorization", "Bearer "+ modèle.getCléUtilisateur());
+                headers.put("Authorization", "Bearer "+ modèle.getCléConnexion());
                 return headers;
             }
         };

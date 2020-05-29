@@ -9,7 +9,9 @@ public interface IContatVuePresenteurVoirCoursGroupe {
 
     interface IPresenteurVoirCoursGroupe{
 
-      int getNombresItems();
+        void rafraîchir();
+
+        int getNombresItems();
       void requeteVoirCoursGroupe(int position);
       String getTitreCoursGroupe(int position);
 

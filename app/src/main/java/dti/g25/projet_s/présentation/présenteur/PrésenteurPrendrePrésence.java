@@ -63,7 +63,7 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
         this.positionGroupe = positionGroupe;
         this.cléUtilisateur = cléUtilisateur;
 
-        modèle.setCléUtilisateur(sharedPreferences.getString("auth_token", ""));
+        modèle.setCléConnexion(sharedPreferences.getString("auth_token", ""));
         modèle.rafraîchir();
         Log.d("nomUtilisateur", modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
         vue.setTxtNomÉtudiant(modèle.getListeEtudiantsParCoursGroupe(positionGroupe).get(itérateur).getUsername());
@@ -71,7 +71,7 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
 
     @Override
     public void ajouterAbsence(boolean absence) throws Exception {
-        modèle.setCléUtilisateur(sharedPreferences.getString("auth_token", ""));
+        modèle.setCléConnexion(sharedPreferences.getString("auth_token", ""));
         if(!absence){//On envoie la requete de presence au serveur
 
             // url a modifier 29 par  l'id de la seance 23 par l'id de l'utilisateur
@@ -96,7 +96,7 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
                 @Override
                 public Map<String,String > getHeaders()  {
                     HashMap<String, String> headers = new HashMap<String, String>();
-                    headers.put("Authorization", "Bearer "+ modèle.getCléUtilisateur());
+                    headers.put("Authorization", "Bearer "+ modèle.getCléConnexion());
                     return headers;
                 }
             };
