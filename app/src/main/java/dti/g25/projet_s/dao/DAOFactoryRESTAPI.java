@@ -206,6 +206,40 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
         };
     }
 
+    @Override
+    public void prendrePrésence() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,"https://projet-s.dti.crosemont.quebec/api/v1/groupe/1?embed=true" , null, response
+                , new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() {
+                HashMap headers = new HashMap();
+                headers.put("Authorization:", "Bearer "+cle);
+                return headers;
+            }
+        };
+        Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+
+    }
+
+    @Override
+    public void obtenirPrésence() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,"https://projet-s.dti.crosemont.quebec/api/v1/groupe/1?embed=true" , null, response
+                , new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+
+    }
+
 
     @Override
     public String getCle() {

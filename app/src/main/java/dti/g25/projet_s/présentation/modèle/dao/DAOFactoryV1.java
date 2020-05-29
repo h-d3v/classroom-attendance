@@ -44,5 +44,9 @@ public  abstract class DAOFactoryV1 {
 
     public abstract void getListeÉlèvesCour(Response.Listener<JSONObject> response, CoursGroupe courGroupe);
 
+    public abstract void prendrePrésence();
+
+    public abstract void obtenirPrésence();
+
 
 }
