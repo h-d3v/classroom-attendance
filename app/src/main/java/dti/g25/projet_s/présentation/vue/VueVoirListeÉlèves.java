@@ -54,6 +54,7 @@ public class VueVoirListeÉlèves extends Fragment implements ContratVuePrésent
 
     }
 
+
     @Override
     public void rafraichir() {
         if(élèvesPrésenceAdapter!=null)
