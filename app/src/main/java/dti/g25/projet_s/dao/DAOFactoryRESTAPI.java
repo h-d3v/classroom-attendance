@@ -1,5 +1,8 @@
 package dti.g25.projet_s.dao;
+<<<<<<< HEAD
 
+=======
+>>>>>>> d082e1b3154b5d13fff85180baaed031ed38b1fe
 import android.content.Context;
 import android.util.Base64;
 import android.util.Log;
@@ -17,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import javax.xml.transform.ErrorListener;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -178,3 +182,4 @@ import java.util.Map;
         }
 
     }
+}

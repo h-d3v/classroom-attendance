@@ -11,6 +11,7 @@ public class Seance {
     private List<Absence> _listeAbsence;
     private EtatSeance _etat;
     private Horaire _horaires;
+    private int id;
 
     public Seance(CoursGroupe coursGroupe, Horaire horaires){
         _coursGroupe=coursGroupe;
@@ -59,6 +60,14 @@ public class Seance {
 
     public void setListeAbsence(List<Absence> listeAbsence) {
         this._listeAbsence = listeAbsence;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

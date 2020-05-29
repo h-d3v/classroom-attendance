@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dti.g25.projet_s">
 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,25 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.activité.VoirListeSeancesActivity"/>
+        <activity  android:name=".ui.activité.VoirListeSeancesActivity">
+
+        </activity>
         <activity android:name=".ui.activité.MainActivity">
         </activity>
-        <activity android:name=".ui.activité.ConnexionActivité">
+        <activity  android:name=".ui.activité.ConnexionActivité">
+
         </activity>
         <activity android:name=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
-        <activity android:name=".ui.activité.VoirCoursGroupeActivity">
+        <activity  android:name=".ui.activité.VoirCoursGroupeActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:label="presence" android:name=".ui.activité.PrendrePrésenceActivité">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".ui.activité.PrendrePrésenceActivité">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:label="vSeance" android:name=".ui.activité.VoirSeanceActivity">
+
         </activity>
-        <activity android:name=".ui.activité.VoirSeanceActivity"/>
         <activity android:name=".ui.activité.VoirUnEleve">
         </activity>
         <activity android:name=".ui.activité.VoirUnCourGroupeActivity"

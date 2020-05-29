@@ -51,8 +51,5 @@ public class MockDAOCoursGroupe implements DAO<CoursGroupe> {
      *
      * @return la cle primaire de l'objet dans la base de donnee
      */
-    @Override
-    public long getPK() {
-        throw new  UnsupportedOperationException();
-    }
+
 }
