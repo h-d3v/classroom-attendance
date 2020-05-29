@@ -38,14 +38,13 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
 
     public boolean estAutoriseAModifierStatutSeance(){
         if(_modele.getUtilisateurConnecte()!=null && _modele.getUtilisateurConnecte().getRôle()== Role.PROFESSEUR){
-
             return true;
         }else
         return false;
     }
 
     @Override
-    public Seance getSeance() throws Exception {
+    public Seance getSeance(){
         if(_positionGroupe == -1)
             return _modele.getSeanceParPos(_positionSeance);
         return _modele.getSeanceParCourGroupe(_positionSeance);
