@@ -2,6 +2,7 @@ package dti.g25.projet_s.présentation.modèle.dao;
 
 import android.content.Context;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -37,6 +38,7 @@ public class ModèleDAO {
     private List<DAO<Utilisateur>> listeUtilisateur;
     private String cle;
     private final String URL="https://projet-s.dti.crosemont.quebec/api/v0/utilisateurs";
+    private SharedPreferences sharedPreferences;
 
     /**
      * constructeur vide
@@ -59,6 +61,7 @@ public class ModèleDAO {
         this.utilisateurActuel = utilisateur;
         this.daoFactory = daoFactory;
         this.coursGroupes = daoFactory.chargerListeCoursGroupeParUtilisateur(utilisateur);
+
     }
 
 
@@ -154,9 +157,7 @@ public class ModèleDAO {
         listeSeance.get(positionSeance).modifier(seanceDAOModifiee);
     }
 
-    public void changerEtatSeance(int posSeance, EtatSeance etatSeance) {
-        // TODO ? Pas utilise listeSeance.get(pos).modifier(new Seance(null, null)); REDONDANT voir ci dessus
-    }
+
 
     public List<DAO<Seance>> getListeSeance() {
         return listeSeance;
@@ -164,13 +165,12 @@ public class ModèleDAO {
 
     public void chargerSeanceUtilisateur() {
         listeSeance=daoFactory.chargerListeSeanceParUtilisateur(utilisateurActuel);
-
     }
 
 
 
 
-    //TODO ? non utilisee
+
     public int getPostionSeance(Seance seance) {
         return listeSeance.indexOf(seance);
     }
@@ -186,28 +186,9 @@ public class ModèleDAO {
         return listeUtilisateur.get(index);
     }
 
-    //TODO ??? Jamais utilisee
-    public Seance créerSéance(int indexGroupe, Horaire horaire) {
-        /**Seance uneSeance = new GestionSeance().creerSeance(getCourGroupeParPos(indexGroupe), horaire);
-         listeSeance.add(uneSeance);
-         return uneSeance;*/
-        throw new UnsupportedOperationException();
-
-    }
-
-/** //TODO? supprimer fonction puisque l'app ne cree pas d'utilisateur
- *
- * @param
- * @param
- * @return
- * @throws Exception
-
-public Utilisateur créerUtilsiateur(String nomUtilisateur, Role role) throws Exception {
-return new CréeationUtilisateur().CréerUtilisateur(nomUtilisateur, role);
-}
 
 
-*/
+
 
 
 }

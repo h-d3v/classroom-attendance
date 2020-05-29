@@ -11,9 +11,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOFactoryRESTAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/DAOFactoryRESTAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Seance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Seance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/domaine/entité/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/Modèle.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/Modèle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/ModèleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao/ModèleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurPrendrePrésence.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurPrendrePrésence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VuePrendrePrésence.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VuePrendrePrésence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/PrendrePrésenceActivité.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/PrendrePrésenceActivité.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragement_connexion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragement_connexion.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +60,7 @@
         <option value="Interface" />
         <option value="JUnit3 Test Class" />
         <option value="Class" />
+        <option value="HTTP Request" />
       </list>
     </option>
   </component>
@@ -98,91 +112,979 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://xmagnan:password@projet-s.dti.crosemont.quebec/api/v1/auth_token" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/present/23" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/present/232" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/present/23" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/present/44" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/groupe/1/membres" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/x-www-form-urlencoded" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/groupe/1/membres" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/groupe/1/membres" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/utilisateur/2/groupe/1" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDU1NDQsIm5iZiI6MTU5MDcwNTU0NCwianRpIjoiYzc3ZGI2YTYtZGJhNS00ZGJjLWI4MzAtY2Q2MjJjZTE5NGM1IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.ewilzSDadEDmYqWc6jsZhhGre7eUecy45jkJKD38S10" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/groupe/1/membres" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA3MDQ4MzUsIm5iZiI6MTU5MDcwNDgzNSwianRpIjoiZmExMzU0NGYtMTVjNi00NmMxLWJjODMtYTNkMGExNzI1NzRjIiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.o7JKHz46SGCpQfLFoJcFHRTsEmn5sM1wCXuqVJprIhs" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/groupe/1/membres" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="links" />
+                <option name="value" value="true" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/present/23" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;utilisateur&quot;:&#10;{&#10;&quot;id&quot;: 23,&#10;&quot;nom&quot;: &quot;adavis&quot;,&#10;&quot;rôle&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;utilisateur&quot;:&#10;{&#10;&quot;id&quot;: 23,&#10;&quot;nom&quot;: &quot;adavis&quot;,&#10;&quot;rôle&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;utilisateur&quot;:&#10;{&#10;&quot;id&quot;: 23,&#10;&quot;nom&quot;: &quot;adavis&quot;,&#10;&quot;r\u00f4le&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/groupe/1/seances" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;&quot;id&quot;: 23,&#10;&quot;nom&quot;: &quot;adavis&quot;,&#10;&quot;r\u00f4le&quot;: 1&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;0&quot;:&#10;{&#10;&quot;id&quot;: 23,&#10;&quot;nom&quot;: &quot;adavis&quot;,&#10;&quot;r\u00f4le&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;22&quot;:&#10;{&#10;&quot;id&quot;: 23,&#10;&quot;nom&quot;: &quot;adavis&quot;,&#10;&quot;r\u00f4le&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/29/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="&quot;22&quot;" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/groupe/1" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="links" />
+                <option name="value" value="true" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/groupe/1" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/utilisateur/2/groupe/1" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/utilisateur/12/groupes" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;utilisateur&quot;:&#10;{&#10;&quot;ifhd&quot;: 14,&#10;&quot;nom&quot;: &quot;eahmed&quot;,&#10;&quot;rôle&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;utilisateur&quot;:&#10;{&#10;&quot;id&quot;: 14,&#10;&quot;nom&quot;: &quot;eahmed&quot;,&#10;&quot;rôle&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;utilisateur&quot;:&#10;{&#10;&quot;id&quot;: 5,&#10;&quot;nom&quot;: &quot;mprince&quot;,&#10;&quot;rôle&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PATCH" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;utilisateur&quot;:&#10;{&#10;&quot;id&quot;: 4,&#10;&quot;nom&quot;: &quot;gguy&quot;,&#10;&quot;rôle&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;utilisateur&quot;:&#10;{&#10;&quot;id&quot;: 4,&#10;&quot;nom&quot;: &quot;gguy&quot;,&#10;&quot;rôle&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;0&quot;:&#10;{&#10;&quot;id&quot;: 4,&#10;&quot;nom&quot;: &quot;gguy&quot;,&#10;&quot;rôle&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;0&quot;:&#10;{&#10;&quot;id&quot;: 4,&#10;&quot;nom&quot;: &quot;gguy&quot;,&#10;&quot;r\u00f4le&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;utilisateur&quot;:&#10;{&#10;&quot;id&quot;: 4,&#10;&quot;nom&quot;: &quot;gguy&quot;,&#10;&quot;r\u00f4le&quot;: 1&#10;}&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{&quot;utilisateur&quot;" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="&quot;id&quot;" />
+                <option name="value" value="4," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="&quot;nom&quot;" />
+                <option name="value" value="&quot;gguy&quot;," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="&quot;r\u00f4le&quot;" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{&quot;utilisateur&quot;" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="&quot;id&quot;" />
+                <option name="value" value="4," />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="&quot;nom&quot;" />
+                <option name="value" value="&quot;gguy&quot;" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{&quot;0&quot;" />
+                <option name="value" value="{&quot;id&quot;: 4, &quot;nom&quot;: &quot;gguy&quot;, &quot;r\u00f4le&quot;: 1}}" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{&quot;guy&quot;" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{" />
+                <option name="value" value="" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="&quot;id&quot;" />
+                <option name="value" value="4, &quot;nom&quot;: &quot;gguy&quot;, &quot;r\u00f4le&quot;: 1" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="}" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{&quot;id&quot;" />
+                <option name="value" value="4, &quot;nom&quot;: &quot;gguy&quot;, &quot;r\u00f4le&quot;: 1}" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="{&quot;id&quot;" />
+                <option name="value" value="4, &quot;nom&quot;: &quot;gguy&quot;, &quot;r\u00f4le&quot;: 1}" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="links" />
+                <option name="value" value="true" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/44" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/19" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/1" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seances" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/16" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/16/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/164/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://projet-s.dti.crosemont.quebec/api/v1/seance/1/presents" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTA2OTI5OTgsIm5iZiI6MTU5MDY5Mjk5OCwianRpIjoiMDdhYTg3MTktM2FiNi00OWJlLTllOTQtNjM4MTNiNjE0NWU0IiwiaWRlbnRpdHkiOjIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.Tu2-7i9DzbDbDgGOwsaJsdnXW6pU7UdagObyqB5gfwc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Android App.app">
-    <configuration name="ModèleTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
-      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ModèleTest.testChargerCoursGroupeUtilisateur" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
-      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
-      <option name="METHOD_NAME" value="testChargerCoursGroupeUtilisateur" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ModèleTest.testChargerSeanceUtilisateur" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
-      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
-      <option name="METHOD_NAME" value="testChargerSeanceUtilisateur" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ModèleTest.testGetSeanceParPos" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
-      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
-      <option name="METHOD_NAME" value="testGetSeanceParPos" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ModèleTest.testSetEtatSeance" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dti.g25.projet_s.présentation.modèle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dti.g25.projet_s.présentation.modèle" />
-      <option name="MAIN_CLASS_NAME" value="dti.g25.projet_s.présentation.modèle.ModèleTest" />
-      <option name="METHOD_NAME" value="testSetEtatSeance" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -213,26 +1115,41 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="dti.g25.projet_s.ui.activité.VoirCoursGroupeActivity" />
+      <option name="ACTIVITY_CLASS" value="dti.g25.projet_s.ui.activité.PrendrePrésenceActivité" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="requetes#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/requetes.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="requetes#10" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/requetes.http" index="10" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="requetes#11" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/requetes.http" index="11" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="requetes#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/requetes.http" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="requetes#5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/requetes.http" index="5" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Android App.app" />
-      <item itemvalue="Android JUnit.ModèleTest" />
-      <item itemvalue="Android JUnit.ModèleTest.testChargerCoursGroupeUtilisateur" />
-      <item itemvalue="Android JUnit.ModèleTest.testChargerSeanceUtilisateur" />
-      <item itemvalue="Android JUnit.ModèleTest.testGetSeanceParPos" />
-      <item itemvalue="Android JUnit.ModèleTest.testSetEtatSeance" />
+      <item itemvalue="HTTP Request.requetes#5" />
+      <item itemvalue="HTTP Request.requetes#1" />
+      <item itemvalue="HTTP Request.requetes#4" />
+      <item itemvalue="HTTP Request.requetes#10" />
+      <item itemvalue="HTTP Request.requetes#11" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Android JUnit.ModèleTest" />
-        <item itemvalue="Android JUnit.ModèleTest.testGetSeanceParPos" />
-        <item itemvalue="Android JUnit.ModèleTest.testSetEtatSeance" />
-        <item itemvalue="Android JUnit.ModèleTest.testChargerSeanceUtilisateur" />
-        <item itemvalue="Android JUnit.ModèleTest.testChargerCoursGroupeUtilisateur" />
+        <item itemvalue="HTTP Request.requetes#1" />
+        <item itemvalue="HTTP Request.requetes#11" />
+        <item itemvalue="HTTP Request.requetes#10" />
+        <item itemvalue="HTTP Request.requetes#5" />
+        <item itemvalue="HTTP Request.requetes#4" />
       </list>
     </recent_temporary>
   </component>
@@ -309,7 +1226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589044390157</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="init&#10;&#10;# Conflicts:&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.bin&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/workspace.xml&#10;#&#9;local.properties">
+      <created>1590691569691</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590691569691</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,32 +1253,36 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="debut nouvelle version modele avec DAOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="debut nouvelle version modele avec DAOS" />
+    <MESSAGE value="init&#10;&#10;# Conflicts:&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.bin&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/workspace.xml&#10;#&#9;local.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="init&#10;&#10;# Conflicts:&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.bin&#10;#&#9;.gradle/5.6.4/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/workspace.xml&#10;#&#9;local.properties" />
   </component>
   <component name="WindowStateProjectService">
     <state x="497" y="96" width="596" height="660" key="#app" timestamp="1589053032239">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="497" y="96" width="596" height="660" key="#app/0.0.1600.860@0.0.1600.860" timestamp="1589053032239" />
-    <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589053359901">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="1210" y="469" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590704239052">
+      <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589052095142" />
     <state x="258" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1589053359901" />
+    <state x="1210" y="469" key="#com.intellij.execution.impl.EditConfigurationsDialog/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590704239052" />
     <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589057126089">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589045392356" />
     <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1589057126089" />
-    <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1589043572498">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="1636" y="532" width="374" height="621" key="#com.intellij.ide.util.MemberChooser" timestamp="1590701162729">
+      <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589043572498" />
-    <state x="627" y="242" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589053356498">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="1636" y="532" width="374" height="621" key="#com.intellij.ide.util.MemberChooser/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590701162729" />
+    <state x="1652" y="664" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590691695071">
+      <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state x="532" y="222" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589052089526" />
     <state x="627" y="242" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1589053356498" />
+    <state x="1652" y="664" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590691695071" />
     <state x="538" y="177" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589044238267">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -363,34 +1291,39 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="520" y="266" width="571" height="325" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978461357" />
-    <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2" timestamp="1589044389797">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="1024" y="377" width="1393" height="814" key="CommitChangelistDialog2" timestamp="1590691569459">
+      <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state x="103" y="18" width="1393" height="814" key="CommitChangelistDialog2/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589044389797" />
+    <state x="1024" y="377" key="CommitChangelistDialog2/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590691569458" />
     <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl" timestamp="1588962764411">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588962764411" />
-    <state width="1558" height="280" key="GridCell.Tab.0.bottom" timestamp="1589132703231">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1878" height="211" key="GridCell.Tab.0.bottom" timestamp="1590712765384">
+      <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485331" />
     <state width="1558" height="280" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
-    <state width="1558" height="280" key="GridCell.Tab.0.center" timestamp="1589132703231">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1878" height="211" key="GridCell.Tab.0.bottom/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590712765384" />
+    <state width="1878" height="211" key="GridCell.Tab.0.center" timestamp="1590712765384">
+      <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
     <state width="1558" height="280" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
-    <state width="1558" height="280" key="GridCell.Tab.0.left" timestamp="1589132703230">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1878" height="211" key="GridCell.Tab.0.center/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590712765384" />
+    <state width="1878" height="211" key="GridCell.Tab.0.left" timestamp="1590712765384">
+      <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
     <state width="1558" height="280" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589132703230" />
-    <state width="1558" height="280" key="GridCell.Tab.0.right" timestamp="1589132703231">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1878" height="211" key="GridCell.Tab.0.left/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590712765384" />
+    <state width="1878" height="211" key="GridCell.Tab.0.right" timestamp="1590712765384">
+      <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
     <state width="1558" height="280" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
+    <state width="1878" height="211" key="GridCell.Tab.0.right/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590712765384" />
     <state width="1558" height="269" key="GridCell.Tab.1.bottom" timestamp="1589121400638">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

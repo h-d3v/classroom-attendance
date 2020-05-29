@@ -25,7 +25,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     private static final String TOKEN = "";
     private static final String NOM_UTILISATEUR = "username";
     private static final String MOT_PASSE = "password";
-    private static final String URL = "https://projet-s.dti.crosemont.quebec/api/v0/utilisateurs";
+    private static final String URL = "https://projet-s.dti.crosemont.quebec/api/v1/";
     private static final String URL_CONNECT = "https://projet-s.dti.crosemont.quebec/";
     private static final String POINT_ENTREE_UTILISATEURS = "utilisateurs";
     private  Context context;
@@ -71,6 +71,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
 
     @Override
     public List<DAO<Utilisateur>> chargerListeUtilisateurParSeance(DAO<Seance> seanceDAO) {
+        final String CNX_GET=URL;
         return null;
     }
 

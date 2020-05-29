@@ -5,6 +5,7 @@ public class Utilisateur {
     private String nom;
     private String mdp;
     private Role rôle;
+    private int id;
 
     /**
      * contructeur vide
@@ -32,6 +33,13 @@ public class Utilisateur {
         this.mdp=mdp;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return nom;

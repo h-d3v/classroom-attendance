@@ -32,7 +32,9 @@ public class Modèle {
     /**
      * constructeur vide
      */
-    public Modèle() {};
+    public Modèle() {
+        listeUtilisateur = new ArrayList<>();
+    };
 
     public Modèle(DAOFactory daoFactory) {
         this.daoFactory = daoFactory;
@@ -217,5 +219,13 @@ public class Modèle {
      */
     public Seance getSeanceParCourGroupe(int positionCoursGroupe, int position) {
         return getListeSeanceParCourGroupe(positionCoursGroupe).get(position);
+    }
+
+    public void addUtilisateurCoursGroupe(Utilisateur utilisateur) {
+        listeUtilisateur.add(utilisateur);
+    }
+
+    public String getCléUtilisateur() {
+        return cléUtilisateur;
     }
 }
