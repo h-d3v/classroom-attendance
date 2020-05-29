@@ -4,13 +4,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurConnexion;
@@ -22,11 +23,8 @@ public class VueConnexion extends Fragment implements ContratVuePrésenteurConne
     private TextView txtUtilisateur;
     private TextView txtMotDePasse;
     private TextView txtMessageErreur;
-    private Button btnConnexion;
+    private FloatingActionButton btnConnexion;
     private CheckBox cbSeSouvenir;
-
-
-
 
     /**
      * Permet d'associer le présenteur a la vue
