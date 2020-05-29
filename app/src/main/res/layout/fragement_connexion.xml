@@ -1,64 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- ui inspiré de https://www.monstertechnocodes.com/2019/06/1-sign-in-sign-up-ui-2019-the-best-ui-design-using-android-studio-full-tutorial-with-source-code-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_signin"
+        android:contentDescription="@string/desc_background_sigin_in" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="252dp"
-        android:layout_weight="1"
-        android:paddingLeft="145dp"
-        android:paddingTop="50dp"
-        android:text="@string/app_name"
-        android:textColor="@color/colorAccent"
-        android:textSize="36sp" />
-
-    <TextView
-        android:id="@+id/txtMessageErreur"
-        android:layout_width="match_parent"
-        android:layout_height="178dp"
-        android:layout_weight="1"
-        android:textColor="#F30404" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/bienvenue"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="294dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:padding="10px">
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/txtUtilisateur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/nom_utilisateur"
-            android:inputType="textPersonName" />
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="@string/nom_d_utilisateur"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#797979"
+            android:autofillHints="" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="30dp"
+            android:background="#999999" />
 
         <EditText
             android:id="@+id/txtMotDePasse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/mot_de_passe"
-            android:inputType="textPassword" />
-    </LinearLayout>
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="@string/mot_de_passe_hint"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#797979"
+            android:autofillHints="" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="370dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btnConnexion"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="129dp"
-            android:layout_weight="1"
-            android:text="@string/connexion" />
+            android:layout_height="1dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="30dp"
+            android:background="#999999" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnConnexion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/round_arrow"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:tint="@android:color/white"
+                android:layout_marginBottom="20dp"
+                android:elevation="0dp"
+                app:elevation="0dp"
+                android:backgroundTint="#4E525B"
+                app:fabCustomSize="80dp"
+                tools:ignore="RelativeOverlap" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="30dp"
+                android:text="@string/se_connecter"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:padding="15dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBoxSeSouvenir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/garderConnexion" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="30dp"
+                android:padding="15dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="30dp"
+                android:padding="15dp"
+                android:textColor="#FFFFFF"
+                android:text="@string/mdp_oublie"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package dti.g25.projet_s.domaine.entité;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import dti.g25.projet_s.domaine.entité.Horaire;
@@ -11,6 +12,7 @@ public class Seance {
     private List<Absence> _listeAbsence;
     private EtatSeance _etat;
     private Horaire _horaires;
+    private int id;
 
     public Seance(CoursGroupe coursGroupe, Horaire horaires){
         _coursGroupe=coursGroupe;
@@ -19,7 +21,23 @@ public class Seance {
 
         if(coursGroupe.getParticipants()!=null){
             for (Utilisateur user : _coursGroupe.getParticipants()) {
-                _listeAbsence.add(new Absence(user, true));
+                if(user.getRôle().equals(Role.ÉLÈVE))
+                    _listeAbsence.add(new Absence(user, false));
+            }
+        }
+        _etat=EtatSeance.PREVUE;
+    }
+
+    public Seance(CoursGroupe coursGroupe, Horaire horaires, int id) {
+        _coursGroupe=coursGroupe;
+        _listeAbsence = new ArrayList<Absence>();
+        _horaires = horaires;
+        this.id = id;
+
+        if(coursGroupe.getParticipants()!=null){
+            for (Utilisateur user : _coursGroupe.getParticipants()) {
+                if(user.getRôle().equals(Role.ÉLÈVE))
+                    _listeAbsence.add(new Absence(user, false));
             }
         }
         _etat=EtatSeance.PREVUE;
@@ -61,6 +79,14 @@ public class Seance {
         this._listeAbsence = listeAbsence;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -70,9 +96,10 @@ public class Seance {
 
         if (_coursGroupe != null ? !_coursGroupe.equals(seance._coursGroupe) : seance._coursGroupe != null)
             return false;
-        if (_etat != seance._etat) return false;
+        if (_etat != seance._etat)
+            return false;
+
         return _horaires != null ? _horaires.equals(seance._horaires) : seance._horaires == null;
     }
-
 
 }

@@ -2,6 +2,7 @@ package dti.g25.projet_s.domaine.entité;
 
 public class Utilisateur {
 
+    private int id;
     private String nom;
     private String mdp;
     private Role rôle;
@@ -32,6 +33,19 @@ public class Utilisateur {
         this.mdp=mdp;
     }
 
+    public Utilisateur(int id, String nom , Role rôle) {
+        this.nom = nom;
+        this.rôle = rôle;
+        this.id=id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return nom;
@@ -55,6 +69,14 @@ public class Utilisateur {
 
     public void setRôle (Role rôle) {
         this.rôle = rôle;
+    }
+
+    @Override
+    public String toString() {
+        return "Utilisateur{" +
+                "nom='" + nom + '\'' +
+                ", rôle=" + rôle +
+                '}';
     }
 
     @Override

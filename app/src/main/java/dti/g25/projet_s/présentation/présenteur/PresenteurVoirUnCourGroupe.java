@@ -2,15 +2,24 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Debug;
+import android.util.Log;
 import android.view.View;
+
+import com.android.volley.Response;
+
+import org.json.JSONObject;
+
+import java.util.List;
 
 import dti.g25.projet_s.domaine.entité.LibelleCours;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
+import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.ui.activité.PrendrePrésenceActivité;
-import dti.g25.projet_s.ui.activité.VoirListeÉlevesPrésenceActivité;
+import dti.g25.projet_s.ui.activité.VoirListeÉlevesActivité;
 import dti.g25.projet_s.ui.activité.VoirSeanceActivity;
 
 public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IPrensenteurVoirCourGroupe {
@@ -39,8 +48,6 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
         _vue=vue;
     }
 
-
-
     public LibelleCours getLibelleCours(){
         return _modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours();
     }
@@ -51,31 +58,35 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
 
     @Override
     public void requeteVoirListeEleves() {
-        //TODO
+        Intent intentVoirSéance = new Intent(_activite, VoirListeÉlevesActivité.class);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _cléUtilisateur);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
+        _activite.startActivityForResult(intentVoirSéance, RESQUEST_CODE_VOIR_SEANCE);
     }
 
     @Override
     public void commencerVoirCourGroupe(int position, String cléUtilisateur) throws Exception {
+        _modele.getListeSeanceParCourGroupe();
         _positionCoursGroupe = position;
         _cléUtilisateur = cléUtilisateur;
-        _modele.setCléUtilisateur(_cléUtilisateur);
+        _modele.setCléConnexion(_cléUtilisateur);
         _modele.rafraîchir();
         _vue.afficherNomCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getTITRE());
-        _vue.afficherSigleCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getTitreAbrégé());
-        _vue.afficherNombreÉlèvesInscrit(_modele.getListeEtudiantsParCoursGroupe(_positionCoursGroupe).size());
+        _vue.afficherSigleCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getSigle());
+        _vue.afficherNombreÉlèvesInscrit(_modele.getListeEtudiantsParCoursGroupe().size());
         _vue.rafraichir();
     }
 
     @Override
-    public int getNbSeancesModele() {
-        if(_modele.getListeSeance() == null)
+    public int getNbSeancesModele() throws Exception {
+        if(_modele.getListeSeanceParCourGroupe() == null)
             return 0;
-        return _modele.getListeSeanceParCourGroupe(_positionCoursGroupe).size();
+        return _modele.getListeSeanceParCourGroupe().size();
     }
 
     @Override
-    public Seance getSeanceParPos(int position) {
-        return _modele.getSeanceParCourGroupe(_positionCoursGroupe, position);
+    public Seance getSeanceParPos(int position) throws Exception {
+        return _modele.getSeanceParCourGroupe( position);
     }
 
     @Override
@@ -95,18 +106,18 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
     @Override
     public void requetePrendrePrésence(int positionSeance) {
         Intent intentVoirSéance = new Intent(_activite, PrendrePrésenceActivité.class);
-        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _cléUtilisateur);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _modele.getCléConnexion());
         intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
-        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, positionSeance);
+        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, _modele.getListeSeanceParCourGroupe().get(positionSeance).getId());
         _activite.startActivity(intentVoirSéance);
     }
 
     @Override
     public void requeteModifierPrésence(int position) {
-        Intent intentVoirSéance = new Intent(_activite, VoirListeÉlevesPrésenceActivité.class);
-        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _cléUtilisateur);
+        Intent intentVoirSéance = new Intent(_activite, VoirListeÉlevesActivité.class);
+        intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _modele.getCléConnexion());
         intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
-        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, position);
+        intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, _modele.getListeSeanceParCourGroupe().get(position).getId());
         _activite.startActivityForResult(intentVoirSéance, RESQUEST_CODE_VOIR_ELEVES);
     }
 
@@ -120,5 +131,14 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
             return View.VISIBLE;
         return View.INVISIBLE;
     }
+
+    @Override
+    public void rafraîchir() {
+        _vue.afficherNomCour(_modele.getCoursGroupeActuelle().getLibelleCours().getTITRE());
+        _vue.afficherSigleCour(_modele.getCoursGroupeActuelle().getLibelleCours().getSigle());
+        _vue.afficherNombreÉlèvesInscrit(_modele.getListeEtudiantsParCoursGroupe().size());
+        _vue.rafraichir();
+    }
+
 
 }

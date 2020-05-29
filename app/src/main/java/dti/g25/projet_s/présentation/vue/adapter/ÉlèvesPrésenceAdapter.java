@@ -1,5 +1,6 @@
 package dti.g25.projet_s.présentation.vue.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +16,9 @@ import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
 
 public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves  présenteur;
+    private ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves présenteur;
 
-    public ÉlèvesPrésenceAdapter(ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves présenteur){
+    public ÉlèvesPrésenceAdapter(ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves présenteur){
         this.présenteur=présenteur;
     }
 
@@ -34,13 +35,34 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         ((TextView)holder.itemView.findViewById(R.id.txtNomÉlèves)).setText(présenteur.getUtilisateurParPosition(position).getUsername());
-        ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+        try {
+            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if(présenteur.getpeutPrendrePrésence()) {
             ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View bouton) {
                     présenteur.requeteVoirÉlèves(position);
                 }
             });
+            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setVisibility(View.VISIBLE);
+            try {
+                ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setVisibility(View.INVISIBLE);
+            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setText("Voir Élève");
+            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View bouton) {
+                    présenteur.requeteVoirÉlèves(position);
+                }
+            });
+        }
     }
 
     /**
@@ -51,7 +73,6 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public int getItemCount() {
         if(présenteur==null) return 0;
-
-        return présenteur.getNombresItems();
+            return présenteur.getNombresItems();
     }
 }

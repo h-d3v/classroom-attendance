@@ -18,9 +18,9 @@ public interface IContratVoirUneSeance {
     }
 
     interface IPresenteurVoirUneSeance{
-        void requeteModifierSatatutSeance();
+        void requeteModifierSatatutSeance() throws Exception;
         boolean estAutoriseAModifierStatutSeance();
-        Seance getSeance();
+        Seance getSeance() throws Exception;
         Activity get_activite();
 
         void commencerVoirSéance(int positionProjet, int positionSéance, String cléUtilisateur) throws Exception;

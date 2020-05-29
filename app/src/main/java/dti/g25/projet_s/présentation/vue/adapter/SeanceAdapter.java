@@ -1,5 +1,7 @@
 package dti.g25.projet_s.présentation.vue.adapter;
 
+import android.os.Debug;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -24,7 +26,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LinearLayout racine = (LinearLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.seance_view, parent, false);
+                .inflate(R.layout.seance_view_cour_groupe_eleves, parent, false);
 
         return new RecyclerView.ViewHolder(racine){};
     }
@@ -33,8 +35,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         Seance seance=_presenteur.getSeanceParPos(position);
-
-        ((TextView)holder.itemView.findViewById(R.id.tvSigleCoursGroupeSeance)).setText(seance.get_coursGroupe().getLibelleCours().getCODE());
+        ((TextView)holder.itemView.findViewById(R.id.tvSigleCoursGroupeSeance)).setText(seance.get_coursGroupe().getLibelleCours().getSigle());
         ((TextView)holder.itemView.findViewById(R.id.tvHeureDebutSe)).setText(seance.get_horaires().getHeureDebutString());
         ((TextView)holder.itemView.findViewById(R.id.tvHeureFinSe)).setText(seance.get_horaires().getHeureFinString());
         ((TextView)holder.itemView.findViewById(R.id.tvEtatSeance)).setText(seance.get_etat().name());
@@ -45,6 +46,7 @@ public class SeanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public int getItemCount() {
+        Log.d("adapter", String.valueOf(_presenteur.getNbSeancesModele()));
         if(_presenteur==null) return 0;
         return _presenteur.getNbSeancesModele();
     }

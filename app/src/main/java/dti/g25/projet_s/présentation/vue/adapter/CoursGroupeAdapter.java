@@ -26,16 +26,18 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 .inflate(R.layout.cours_groupe_view, parent, false);
 
         return new RecyclerView.ViewHolder(racine) {
+
         };
     }
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
-        ((Button)holder.itemView.findViewById(R.id.btnVoirCoursGroupe)).setOnClickListener(new View.OnClickListener(){
+        holder.itemView.findViewById(R.id.btnVoirCoursGroupe).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View bouton){
                 presenteurVoirCoursGroupe.requeteVoirCoursGroupe(position);
             }
         });
+        System.out.println("Ou rien");
         ((TextView)holder.itemView.findViewById(R.id.tv_textCoursGroupe)).setText(presenteurVoirCoursGroupe.getTitreCoursGroupe(position));
     }
 
@@ -47,7 +49,6 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public int getItemCount() {
         if(presenteurVoirCoursGroupe==null) return 0;
-
         return presenteurVoirCoursGroupe.getNombresItems();
     }
 }

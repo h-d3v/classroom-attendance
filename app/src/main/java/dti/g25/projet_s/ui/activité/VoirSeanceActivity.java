@@ -25,7 +25,7 @@ public class VoirSeanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_une_seance);
         MockDAOFactory mockDAOFactory= new MockDAOFactory();
-        Modèle modèle = new Modèle(mockDAOFactory);
+        Modèle modèle = new Modèle();
         modèle.chargerCoursGroupeUtilisateur();
         VueVoirUneSeance vueVoirUneSeance=new VueVoirUneSeance();
         presenteurVoirUneSeance=new PresenteurVoirUneSeance(modèle,vueVoirUneSeance, this, 0);
@@ -42,6 +42,7 @@ public class VoirSeanceActivity extends AppCompatActivity {
         int positionGroupe = getIntent().getIntExtra( EXTRA_POSITION_GROUPE, -1);
         int positionSéance = getIntent().getIntExtra( EXTRA_POSITION_SEANCE, -1);
         String cléUtilisateur = getIntent().getStringExtra(EXTRA_CLÉ_CONNEXION);
+
         try {
             presenteurVoirUneSeance.commencerVoirSéance(positionGroupe, positionSéance, cléUtilisateur);
         } catch (Exception e) {

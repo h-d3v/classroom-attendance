@@ -29,10 +29,6 @@ public interface DAO<T> {
          */
         boolean supprimer();
 
-        /***
-         *
-         * @return la cle primaire de l'objet dans la base de donnee
-         */
-        long getPK();
+
 
 }

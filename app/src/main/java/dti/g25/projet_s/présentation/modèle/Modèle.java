@@ -1,7 +1,19 @@
 package dti.g25.projet_s.présentation.modèle;
 
 import android.content.Context;
+import android.os.Debug;
+import android.util.Log;
 
+import com.android.volley.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import dti.g25.projet_s.dao.ConvertisseurJsonGroupe;
+import dti.g25.projet_s.dao.ConvertisseurJsonSeance;
+
+import dti.g25.projet_s.dao.ConvertisseurJsonUtilisateur;
+import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
@@ -9,35 +21,39 @@ import dti.g25.projet_s.domaine.entité.Horaire;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
-import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
+import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Modèle {
+public class Modèle{
 
-    private String cléUtilisateur;
-    private Utilisateur utilisateur;
-    private List<CoursGroupe> coursGroupes;
-    private List<Seance> seances;
-    private DAOFactory daoFactory;
     private Context context;
+    private String cléConnexion;
+
+    private List<CoursGroupe> coursGroupes;
     private List<Seance> listeSeance;
     private List<Seance> listeSeanceCourGroupe;
+    private List<Utilisateur> listeUtilisateurs;
+
+    private DAOFactoryRESTAPI daoFactoryRESTAPI;
+
     private Utilisateur utilisateurActuelle;
-    private List<Utilisateur> listeUtilisateur;
+    private CoursGroupe coursGroupeActuelle;
 
     /**
      * constructeur vide
      */
-    public Modèle() {};
+    public Modèle() {
+        listeUtilisateurs = new ArrayList<>();
+    };
 
-    public Modèle(DAOFactory daoFactory) {
-        this.daoFactory = daoFactory;
-        coursGroupes = chargerCoursGroupeUtilisateur();
-        chargerSeanceUtilisateur();
+
+    public Modèle(Context context){
+        this.context=context;
+        daoFactoryRESTAPI = new DAOFactoryRESTAPI(context);
+        coursGroupes=new ArrayList<>();
     }
 
     /**
@@ -45,7 +61,7 @@ public class Modèle {
      * @param uneClé
      */
     public Modèle(String uneClé) {
-        cléUtilisateur = uneClé;
+        cléConnexion = uneClé;
         coursGroupes = chargerCoursGroupeUtilisateur();
         chargerSeanceUtilisateur();
     }
@@ -58,34 +74,25 @@ public class Modèle {
         return coursGroupes;
     }
 
-    public Modèle(Context context){
-        this.context=context;
-        coursGroupes=new ArrayList<>();
-    }
+
 
     public void addCoursGroupe(CoursGroupe courGroupe){
         coursGroupes.add(courGroupe);
     }
 
-    public void setUtilisateur(Utilisateur utilisateur){
-        this.utilisateur=utilisateur;
+    public void setJsonUtilisateurActuelle(JSONObject réponse) throws Exception {
+        this.utilisateurActuelle= new ConvertisseurJsonUtilisateur().décoderUtilisateur(réponse);
     }
 
     public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
-            return new ServeurFactice().ObtenirCourGroupe(cléUtilisateur);
+            return new ServeurFactice().ObtenirCourGroupe(cléConnexion);
        // return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
     }
 
-    /**
-     * charge les info de l'utilasateur
-     */
-    public void chargerInfoUtilisateur() throws Exception {
-        utilisateurActuelle =  new ServeurFactice().chargerInfoUtilisateur(cléUtilisateur);
-    }
 
     public void changerEtatSeance(int pos,EtatSeance etatSeance){
-        Seance seance=new GestionSeance().changerSatutSeance(etatSeance,seances.get(pos));
-        seances.set(pos,seance);
+        Seance seance=new GestionSeance().changerSatutSeance(etatSeance,listeSeance.get(pos));
+        listeSeance.set(pos,seance);
     }
 
     public CoursGroupe getCourGroupeParPos(int position){
@@ -103,8 +110,9 @@ public class Modèle {
     }
 
 
-    public void ajouterAbsenceParCourGroupe(boolean présence, Utilisateur unUtilisateur, int positionSeance, int postionCourGroupe) {
-        getListeSeanceParCourGroupe(postionCourGroupe).set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
+    public void ajouterAbsenceParCourGroupe(boolean présence, Utilisateur unUtilisateur, int positionSeance, int postionCourGroupe) throws Exception {
+
+        getListeSeanceParCourGroupe().set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
     }
 
     public Seance créerSéance(int indexGroupe, Horaire horaire) {
@@ -130,9 +138,9 @@ public class Modèle {
      * @param positionGroupe
      * @return
      */
-    public List<Utilisateur> getListeEtudiantsParCoursGroupe(int positionGroupe) {
+    public List<Utilisateur> getListeEtudiantsParCoursGroupe() {
         List<Utilisateur> listeEtudiants = new ArrayList<>();
-        List<Utilisateur> listeParticipant = getCourGroupeParPos(positionGroupe).getParticipants();
+        List<Utilisateur> listeParticipant = coursGroupeActuelle.getParticipants();
         for (Utilisateur unUtilisateur : listeParticipant) {
             if (unUtilisateur.getRôle() == Role.ÉLÈVE)
                 listeEtudiants.add(unUtilisateur);
@@ -145,6 +153,9 @@ public class Modèle {
         return utilisateurActuelle;
     }
 
+    public CoursGroupe getCoursGroupeActuelle() { return coursGroupeActuelle; }
+
+
     public void setEtatSeance(int positionSeance, EtatSeance etatSeance) {
         listeSeance.get(positionSeance).set_etat(etatSeance);
     }
@@ -153,10 +164,9 @@ public class Modèle {
         return listeSeance;
     }
 
-    public List<Seance> getListeSeanceParCourGroupe(int position) {
-        return getCourGroupeParPos(position).getListeSeances();
+    public List<Seance> getListeSeanceParCourGroupe() {
+        return listeSeanceCourGroupe;
     }
-
 
     /**
      * charge les utilsiateur de une seance
@@ -179,19 +189,14 @@ public class Modèle {
     }
 
 
-    public List<Utilisateur> getListeUtilisateur(){
-        return listeUtilisateur;
-    }
-
     /**
-     * retourne un utilsaiteur
-     * @param index
+     * retorune la lsite de sutilsaiteur visible acutelement
      * @return
      */
-    public Utilisateur getUtilisateurParIndex(int index){
-        List<Utilisateur> tousLesUsers = getListeUtilisateur();
-        return tousLesUsers.get(index);
+    public List<Utilisateur> getListeUtilisateurs(){
+        return listeUtilisateurs;
     }
+
 
     /**
      * rafrachi les donné du modèle
@@ -199,23 +204,66 @@ public class Modèle {
     public void rafraîchir() throws Exception {
         coursGroupes = chargerCoursGroupeUtilisateur();
         chargerSeanceUtilisateur();
-        chargerInfoUtilisateur();
     }
 
     /**
      * permet de mettre la clé d'utliateur
      * @param uneClé
      */
-    public void setCléUtilisateur(String uneClé) {
-        cléUtilisateur = uneClé;
+    public void setCléConnexion(String uneClé) {
+        cléConnexion = uneClé;
     }
 
     /**
      * Retourne un seance selon sa postion dans un cour groupe
-     * @param positionCoursGroupe
      * @param position
      */
-    public Seance getSeanceParCourGroupe(int positionCoursGroupe, int position) {
-        return getListeSeanceParCourGroupe(positionCoursGroupe).get(position);
+    public Seance getSeanceParCourGroupe( int position) {
+        return getListeSeanceParCourGroupe().get(position);
     }
+
+    public void setJSONSeances(JSONObject réponse, CoursGroupe unCourGroupe) throws JSONException {
+        listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, unCourGroupe);
+    }
+
+    //Requête Http
+    public void requeteHttpSeanceCourGroupe(int idGroupe, Response.Listener<JSONObject> réponse) {
+        daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, getCourGroupeParPos(idGroupe));
+    }
+
+    public void setJsonGroupes(JSONObject réponse) {
+        coursGroupes = new ConvertisseurJsonGroupe().décoderJsonListeGroupes(réponse);
+    }
+
+    public void setJsonGroupeActuelle(JSONObject réponse) throws Exception {
+        coursGroupeActuelle = new ConvertisseurJsonGroupe().décoderJsonGroupe(réponse);
+        Log.d("id : ", String.valueOf(coursGroupeActuelle.getId()));
+    }
+    
+    public void setJsonUtilisateurs(JSONObject réponse) throws Exception {
+        listeUtilisateurs = new ConvertisseurJsonUtilisateur().obtenirListeUtilisateurs(réponse);
+    }
+    public void addUtilisateurCoursGroupe(Utilisateur utilisateur) {
+        listeUtilisateurs.add(utilisateur);
+    }
+
+    public String getCléConnexion() {
+        return cléConnexion;
+    }
+
+    public Seance getSeanceParId(int id) {
+        Seance uneSeance = null;
+        for (Seance seance: listeSeanceCourGroupe
+             ) {
+            if(seance.getId() == id);
+            uneSeance = seance;
+        }
+
+        return uneSeance;
+    }
+
+    public void setJsonPrésenceSeance(JSONObject résultat, int idSeance) throws JSONException {
+        new ConvertisseurJsonSeance().présenceSeance(getSeanceParId(idSeance), résultat);
+    }
+
 }

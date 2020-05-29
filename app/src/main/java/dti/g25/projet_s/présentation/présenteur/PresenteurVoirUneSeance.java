@@ -38,17 +38,16 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
 
     public boolean estAutoriseAModifierStatutSeance(){
         if(_modele.getUtilisateurConnecte()!=null && _modele.getUtilisateurConnecte().getRôle()== Role.PROFESSEUR){
-
             return true;
         }else
         return false;
     }
 
     @Override
-    public Seance getSeance() {
+    public Seance getSeance(){
         if(_positionGroupe == -1)
             return _modele.getSeanceParPos(_positionSeance);
-        return _modele.getSeanceParCourGroupe(_positionGroupe, _positionSeance);
+        return _modele.getSeanceParCourGroupe(_positionSeance);
     }
 
     @Override
@@ -62,7 +61,7 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
         _positionGroupe = positionGroupe;
         _cléUtilisateur = cléUtilisateur;
 
-        _modele.setCléUtilisateur(_cléUtilisateur);
+        _modele.setCléConnexion(_cléUtilisateur);
         _modele.rafraîchir();
 
         _vue.afficherEstPrévue("Statut: "+ getSeance().get_etat().toString());
@@ -73,7 +72,7 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
 
 
     @Override
-    public void requeteModifierSatatutSeance() {
+    public void requeteModifierSatatutSeance() throws Exception {
         /**
          *         Intent intent= new Intent(_activite, popUp.class);
          *         _activite.startActivityForResult(intent, REQUEST_CODE_MODIFIER_ETAT);

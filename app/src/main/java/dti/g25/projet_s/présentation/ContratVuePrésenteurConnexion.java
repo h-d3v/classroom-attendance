@@ -8,6 +8,9 @@ public interface ContratVuePrésenteurConnexion {
     public interface IVueConnexion{
         public String getNomUtilisateur();
         public String getMotDePasseUtilisateur();
+        void setMessageErreur(String s);
+
+        boolean getCbSeSouvenir();
     }
 
     /**
@@ -15,6 +18,18 @@ public interface ContratVuePrésenteurConnexion {
      */
     public interface IPrésenteurConnexion {
         public Boolean tenterConnexion(String nomUtilisateur, String motDePasse) throws Exception;
+
+        public void tenterConnectionAutomatique();
+
+        void sauvegarderIdentifiants(String nomUtilisateur, String motDePasseUtilisateur);
+
+        String getNomUtilisateurSauvegarde();
+
+        String  getMotPasseUtilisateurSauvegarde();
+
+        void supprimerIdentifiants();
+
+        void terminerConnexion();
     }
 
 }

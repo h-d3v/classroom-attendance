@@ -2,13 +2,18 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Debug;
 import android.util.Log;
 
-import dti.g25.projet_s.domaine.entité.Role;
+import com.android.volley.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
+import dti.g25.projet_s.dao.DAOUtilisateurRESTAPI;
 import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
-import dti.g25.projet_s.présentation.vue.VueVoirCoursGroupe;
+import dti.g25.projet_s.présentation.modèle.dao.ModèleDAO;
 import dti.g25.projet_s.ui.activité.ConnexionActivité;
 import dti.g25.projet_s.ui.activité.VoirUnCourGroupeActivity;
 
@@ -21,14 +26,18 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
     private IContatVuePresenteurVoirCoursGroupe.IVueVoirCoursGroupe vueVoirCoursGroupe;
     private Modèle modèle;
     private Activity activity;
-    private int positionCoursGroupe;
 
     public PresenteurVoirCoursGroupe(IContatVuePresenteurVoirCoursGroupe.IVueVoirCoursGroupe vueVoirCoursGroupe, Modèle modèle, Activity activity) {
         this.vueVoirCoursGroupe = vueVoirCoursGroupe;
         this.modèle = modèle;
         this.activity = activity;
         if(modèle.getUtilisateurConnecte() == null)
-            activity.startActivityForResult(new Intent(new Intent(activity, ConnexionActivité.class)), REQUEST_CODE_CONEXION);
+            activity.startActivityForResult(new Intent(activity, ConnexionActivité.class), REQUEST_CODE_CONEXION);
+    }
+
+    @Override
+    public void rafraîchir() {
+        vueVoirCoursGroupe.rafraichir();
     }
 
     @Override
@@ -40,25 +49,20 @@ public class PresenteurVoirCoursGroupe implements IContatVuePresenteurVoirCoursG
     }
 
     @Override
+    public void commencerVoirCourGroupe(String cléConnexion) {
+        this.cléConnexion = cléConnexion;
+    }
+
+    @Override
     public void requeteVoirCoursGroupe(int position) {
         Intent intentVoirSéance = new Intent(activity, VoirUnCourGroupeActivity.class);
         intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, cléConnexion);
-        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, position);
+        intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, modèle.getCourGroupeParPos(position).getId());
         activity.startActivity(intentVoirSéance);
     }
 
     @Override
     public String getTitreCoursGroupe(int position) {
         return modèle.getCoursGroupes().get(position).toString();
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data) throws Exception {
-        if (requestCode == REQUEST_CODE_CONEXION && resultCode == Activity.RESULT_OK) {
-            cléConnexion=data.getStringExtra(EXTRA_CLÉ_CONNEXION);
-            modèle.setCléUtilisateur(cléConnexion);
-            modèle.rafraîchir();
-            Log.d("cour", modèle.getCourGroupeParPos(0).toString());
-            vueVoirCoursGroupe.rafraichir();
-        }
     }
 }

@@ -32,9 +32,9 @@ public class ServeurFactice {
 
                 for (int i = 0; i < 3; i++) {
                     listeSeance = new ArrayList<>();
-                    listeCourGroupe.add(new CoursGroupe(new LibelleCours("ART DRAMATIQUE", "BC" + i, "AD"), i));
+                    listeCourGroupe.add(new CoursGroupe(new LibelleCours("ART DRAMATIQUE", "BC" + i), i));
                     listeCourGroupe.get(i).setParticipants(listeParticipant);
-                    listeSeance.add(new Seance(listeCourGroupe.get(i), new Horaire(00.0, 5.5, "Mercredi")));
+                    listeSeance.add(new Seance(listeCourGroupe.get(i), new Horaire(00.0f, 5.5f, "Mercredi")));
                     listeCourGroupe.get(i).setListeSeances(listeSeance);
                 }
             }
@@ -47,9 +47,9 @@ public class ServeurFactice {
         Utilisateur unUtilisateur = null;
         if(uneClé != null) {
             if (uneClé.equals("uneCléÉlèves"))
-                unUtilisateur = new CréeationUtilisateur().CréerUtilisateur("Sakurai", Role.ÉLÈVE);
+                unUtilisateur = new CréeationUtilisateur().CréerUtilisateur(1, "Sakurai", Role.ÉLÈVE);
             if (uneClé.equals("uneCléProf"))
-                unUtilisateur = new CréeationUtilisateur().CréerUtilisateur("ReanuKeeves", Role.PROFESSEUR);
+                unUtilisateur = new CréeationUtilisateur().CréerUtilisateur(2,"ReanuKeeves", Role.PROFESSEUR);
         }
         return unUtilisateur;
     }

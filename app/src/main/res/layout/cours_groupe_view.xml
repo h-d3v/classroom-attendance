@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/tv_textCoursGroupe"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:layout_weight="1" />
 
-    <Button
+    <com.beardedhen.androidbootstrap.BootstrapWell
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        app:bootstrapSize="lg">
+
+
+        <TextView
+            android:id="@+id/tv_textCoursGroupe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Description du cours groupe.."
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
+    </com.beardedhen.androidbootstrap.BootstrapWell>
+
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
         android:id="@+id/btnVoirCoursGroupe"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="@string/voirDétails"
+        android:textColor="#2a2a2b"
+        android:background="@color/bootstrap_gray_dark"
+        app:bootstrapBrand="info"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:roundedCorners="true"
+        app:showOutline="false" />
+
+    <!--TextView
+       android:id="@+id/tv_textCoursGroupe"
+       android:layout_width="179dp"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:textColor="#2D5C80" /-->
+
+    <!--Button
+        android:id="@+id/btnVoirCoursGroupe"
+        android:layout_width="72dp"
         android:layout_height="120dp"
         android:layout_weight="1"
-        android:text="@string/voirDétails" />
+        android:text="@string/voirDétails" /-->
+
 </LinearLayout>

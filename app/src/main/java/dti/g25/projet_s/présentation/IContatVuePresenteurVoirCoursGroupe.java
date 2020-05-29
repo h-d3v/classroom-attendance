@@ -9,8 +9,13 @@ public interface IContatVuePresenteurVoirCoursGroupe {
 
     interface IPresenteurVoirCoursGroupe{
 
-      int getNombresItems();
-      void requeteVoirCoursGroupe(int position);
+        void rafraîchir();
+
+        int getNombresItems();
+
+        void commencerVoirCourGroupe(String cléConnexion);
+
+        void requeteVoirCoursGroupe(int position);
       String getTitreCoursGroupe(int position);
 
     }
