@@ -1,6 +1,7 @@
 package dti.g25.projet_s.présentation.modèle;
 
 import android.content.Context;
+import android.os.Debug;
 import android.util.Log;
 
 import com.android.volley.Response;
@@ -21,12 +22,12 @@ import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
-import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
+import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Modèle {
+public class Modèle{
 
     private Context context;
     private String cléConnexion;
@@ -111,7 +112,7 @@ public class Modèle {
 
     public void ajouterAbsenceParCourGroupe(boolean présence, Utilisateur unUtilisateur, int positionSeance, int postionCourGroupe) throws Exception {
 
-        getListeSeanceParCourGroupe(postionCourGroupe).set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
+        getListeSeanceParCourGroupe().set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
     }
 
     public Seance créerSéance(int indexGroupe, Horaire horaire) {
@@ -137,9 +138,9 @@ public class Modèle {
      * @param positionGroupe
      * @return
      */
-    public List<Utilisateur> getListeEtudiantsParCoursGroupe(int positionGroupe) {
+    public List<Utilisateur> getListeEtudiantsParCoursGroupe() {
         List<Utilisateur> listeEtudiants = new ArrayList<>();
-        List<Utilisateur> listeParticipant = getCourGroupeParPos(positionGroupe).getParticipants();
+        List<Utilisateur> listeParticipant = coursGroupeActuelle.getParticipants();
         for (Utilisateur unUtilisateur : listeParticipant) {
             if (unUtilisateur.getRôle() == Role.ÉLÈVE)
                 listeEtudiants.add(unUtilisateur);
@@ -163,8 +164,7 @@ public class Modèle {
         return listeSeance;
     }
 
-    public List<Seance> getListeSeanceParCourGroupe(final int position) {
-
+    public List<Seance> getListeSeanceParCourGroupe() {
         return listeSeanceCourGroupe;
     }
 
@@ -216,11 +216,10 @@ public class Modèle {
 
     /**
      * Retourne un seance selon sa postion dans un cour groupe
-     * @param positionCoursGroupe
      * @param position
      */
-    public Seance getSeanceParCourGroupe(int positionCoursGroupe, int position) throws Exception {
-        return getListeSeanceParCourGroupe(positionCoursGroupe).get(position);
+    public Seance getSeanceParCourGroupe( int position) {
+        return getListeSeanceParCourGroupe().get(position);
     }
 
     public void setJSONSeances(JSONObject réponse, CoursGroupe unCourGroupe) throws JSONException {
@@ -250,6 +249,21 @@ public class Modèle {
 
     public String getCléConnexion() {
         return cléConnexion;
+    }
+
+    public Seance getSeanceParId(int id) {
+        Seance uneSeance = null;
+        for (Seance seance: listeSeanceCourGroupe
+             ) {
+            if(seance.getId() == id);
+            uneSeance = seance;
+        }
+
+        return uneSeance;
+    }
+
+    public void setJsonPrésenceSeance(JSONObject résultat, int idSeance) throws JSONException {
+        new ConvertisseurJsonSeance().présenceSeance(getSeanceParId(idSeance), résultat);
     }
 
 }

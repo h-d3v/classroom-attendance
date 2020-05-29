@@ -48,7 +48,7 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
     public Seance getSeance() throws Exception {
         if(_positionGroupe == -1)
             return _modele.getSeanceParPos(_positionSeance);
-        return _modele.getSeanceParCourGroupe(_positionGroupe, _positionSeance);
+        return _modele.getSeanceParCourGroupe(_positionSeance);
     }
 
     @Override

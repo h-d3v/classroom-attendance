@@ -20,13 +20,13 @@ public class ConvertisseurJsonUtilisateur {
 
     public List<Utilisateur> obtenirListeUtilisateurs(JSONObject résultat) throws Exception {
         List<Utilisateur> utilisateurs= new ArrayList<>();
-
-        résultat = (JSONObject) résultat.get("_embedded");
-        résultat = (JSONObject) résultat.get("membres");
-        JSONArray listeSeance = résultat.names();
+        JSONObject résultatZoomé;
+        résultatZoomé = (JSONObject) résultat.get("_embedded");
+        résultatZoomé = (JSONObject) résultatZoomé.get("membres");
+        JSONArray listeSeance = résultatZoomé.names();
 
         for(int i = 0; i < listeSeance.length(); i++) {
-            JSONObject objectAcuel = (JSONObject) résultat.get(listeSeance.getString(i));
+            JSONObject objectAcuel = (JSONObject) résultatZoomé.get(listeSeance.getString(i));
 
             Log.d("une seance", String.valueOf(objectAcuel));
 

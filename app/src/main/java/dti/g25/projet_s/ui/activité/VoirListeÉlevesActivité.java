@@ -17,6 +17,7 @@ import java.util.Date;
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.dao.DAOCoursGroupeRESTAPI;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
+import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.présenteur.PrésenteurVoirListeÉlèves;
 import dti.g25.projet_s.présentation.vue.VueVoirListeÉlèves;
@@ -54,7 +55,7 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
 
         modèle.setCléConnexion(cléUtilisateur);
 
-        importerDonné(positionGroupe);
+        importerDonné(positionGroupe, positionSeance);
         try {
             présenteur.commencerListeÉlèvesPrésence(positionSeance, positionGroupe, cléUtilisateur);
         } catch (Exception e) {
@@ -73,14 +74,14 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
         }
     }
 
-    private void importerDonné(int idGroupe) {
+    private void importerDonné(final int idGroupe, final int idSeance) {
         final DAOFactoryRESTAPI daoFactoryRESTAPI = new DAOFactoryRESTAPI(this);
         daoFactoryRESTAPI.setCle(modèle.getCléConnexion());
 
         Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
             @Override
-            public void onResponse(JSONObject response) {
-                Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
+            public void onResponse(final JSONObject response) {
+                final Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject résultat) {
@@ -89,8 +90,30 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
+                        try {
+                            modèle.setJSONSeances(résultat, modèle.getCoursGroupeActuelle());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if(idSeance > -1) {
+                            final Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
 
-                        présenteur.rafraîchir();
+                                @Override
+                                public void onResponse(JSONObject résultat) {
+                                    try {
+                                        modèle.setJsonPrésenceSeance(résultat, idSeance);
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                    présenteur.rafraîchir();
+                                }
+                            };
+                            daoFactoryRESTAPI.obtenirPrésence(réponse, idSeance);
+
+                        } else {
+                            présenteur.rafraîchir();
+                        }
                     }
                 };
 
@@ -104,8 +127,6 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
         };
 
         daoFactoryRESTAPI.chargerUnCourGroupeParId(réponse, idGroupe);
-
-
 
     }
 }

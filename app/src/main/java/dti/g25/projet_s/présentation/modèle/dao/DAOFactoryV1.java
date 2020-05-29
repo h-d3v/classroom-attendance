@@ -38,6 +38,8 @@ public  abstract class DAOFactoryV1 {
 
     public abstract List<DAO<CoursGroupe>> chargerCoursGroupeParHoaire(DAO<Horaire> horaireDAO);
 
+    public abstract void obtenirPrésence(Response.Listener<JSONObject> response, int idPrésence);
+
     public abstract String getCle();
 
     public abstract String tenterConnection(String nomUtilisateur, String motDePasse, Response.ErrorListener errorResponse);
@@ -45,10 +47,6 @@ public  abstract class DAOFactoryV1 {
     public abstract void getSeancesParCourGroupe(Response.Listener<JSONObject> response, CoursGroupe courGroupe);
 
     public abstract void getListeÉlèvesCour(Response.Listener<JSONObject> response, CoursGroupe courGroupe);
-
-    public abstract void prendrePrésence();
-
-    public abstract void obtenirPrésence();
 
     public abstract void setCle(String cle);
 

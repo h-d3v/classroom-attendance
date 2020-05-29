@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import dti.g25.projet_s.domaine.entité.Absence;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.Horaire;
 import dti.g25.projet_s.domaine.entité.Seance;
@@ -38,23 +39,40 @@ public class ConvertisseurJsonSeance {
     public List<Seance> décoderJsonSéeances(JSONObject résultat, CoursGroupe coursGroupe) throws JSONException {
         List<Seance> seances = new ArrayList<>();
 
-        résultat = (JSONObject) résultat.get("_embedded");
-        résultat = (JSONObject) résultat.get("seances");
-        JSONArray listeSeance = résultat.names();
+        JSONObject résultatZoomé;
+        résultatZoomé = (JSONObject) résultat.get("_embedded");
+        résultatZoomé = (JSONObject) résultatZoomé.get("seances");
+        JSONArray listeSeance = résultatZoomé.names();
 
         for(int i = 0; i < listeSeance.length(); i++) {
-            JSONObject objectAcuel = (JSONObject) résultat.get(listeSeance.getString(i));
-
+            JSONObject objectAcuel = (JSONObject) résultatZoomé.get(listeSeance.getString(i));
+            Log.d("lance:", String.valueOf(objectAcuel));
             float heureDébut = obtenirHeureEnDouble(objectAcuel.getString("début"));
             float heureFin = obtenirHeureEnDouble(objectAcuel.getString("fin"));
             int id = objectAcuel.getInt("id");
             Horaire horaire = new GestionHoraire().créerHoraire(heureDébut, heureFin, objectAcuel.getString("date"));
-
             Seance unSeance = new GestionSeance().creerSeance(coursGroupe, horaire, id);
             seances.add(unSeance);
         }
 
         return seances;
+    }
+
+    public void présenceSeance(Seance seance, JSONObject résultat) throws JSONException {
+        JSONArray listeUtilisateur = résultat.names();
+
+        if(listeUtilisateur != null) {
+            for (int i = 0; i < listeUtilisateur.length(); i++) {
+                JSONObject objectAcuel = (JSONObject) résultat.get(listeUtilisateur.getString(i));
+
+                for (Absence absence : seance.getListeAbsence()) {
+                    if (objectAcuel.getString("nom").equals(absence.getUtilisateur().getUsername())) {
+                        absence.setPrésence(false);
+                    }
+                }
+
+            }
+        }
     }
 
 

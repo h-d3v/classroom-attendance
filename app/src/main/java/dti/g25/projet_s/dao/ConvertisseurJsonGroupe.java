@@ -31,6 +31,7 @@ public class ConvertisseurJsonGroupe {
                 String sigle = jsonObject.getString("sigle");
                 int num = jsonObject.getInt("num\u00e9ro");
                 groupes.add(new GestionCoursGroupe().creerCoursGroupe(new LibelleCours(titre,sigle), num, idCg));
+
             }
 
         } catch (JSONException e) {

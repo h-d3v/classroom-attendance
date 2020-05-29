@@ -40,13 +40,12 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
 
     @Override
     public Utilisateur getUtilisateurParPosition(int position) {
-        Log.d("username: ", modèle.getListeUtilisateurs().get(position).getUsername());
-        return modèle.getListeUtilisateurs().get(position);
+        return modèle.getListeEtudiantsParCoursGroupe().get(position);
     }
 
     @Override
     public String getPrésenceUtilisateurParPos(int position) throws Exception {
-        if(modèle.getSeanceParCourGroupe(positionCoursGroupe, positionSeance).getListeAbsence().get(position).getPrésence())
+        if(modèle.getSeanceParCourGroupe(positionSeance).getListeAbsence().get(position).getPrésence())
             return "présent";
         return "absent";
     }
@@ -76,9 +75,6 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
         if (requestCode == RESQUEST_CODE_VOIR_ELEVES && resultCode == Activity.RESULT_OK) {
            boolean présence =  data.getBooleanExtra(EXTRA_POSITION_PRÉSENCE, true);
            int positionÉlèves = data.getIntExtra(EXTRA_POSITION_ÉLÈVES, -1);
-
-           if(positionÉlèves > -1)
-                modèle.ajouterAbsenceParCourGroupe(présence, getUtilisateurParPosition(positionÉlèves), positionSeance, positionCoursGroupe);
 
            vue.rafraichir();
         }

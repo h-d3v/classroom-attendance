@@ -15,7 +15,6 @@
         android:theme="@style/AppTheme">
 
         <activity  android:name=".ui.activité.VoirListeSeancesActivity">
-
         </activity>
         <activity android:name=".ui.activité.MainActivity">
         </activity>
