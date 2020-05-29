@@ -39,22 +39,17 @@ public class ConvertisseurJsonSeance {
         List<Seance> seances = new ArrayList<>();
 
         résultat = (JSONObject) résultat.get("_embedded");
-        Log.d("embedded", String.valueOf(résultat));
         résultat = (JSONObject) résultat.get("seances");
         JSONArray listeSeance = résultat.names();
 
         for(int i = 0; i < listeSeance.length(); i++) {
             JSONObject objectAcuel = (JSONObject) résultat.get(listeSeance.getString(i));
 
-            Log.d("une seance", String.valueOf(objectAcuel));
-
             float heureDébut = obtenirHeureEnDouble(objectAcuel.getString("début"));
-            Log.d("heureDébut", String.valueOf(heureDébut));
             float heureFin = obtenirHeureEnDouble(objectAcuel.getString("fin"));
             int id = objectAcuel.getInt("id");
             Horaire horaire = new GestionHoraire().créerHoraire(heureDébut, heureFin, objectAcuel.getString("date"));
 
-            Log.d("date: ", String.valueOf(horaire.getHeureFin()));
             Seance unSeance = new GestionSeance().creerSeance(coursGroupe, horaire, id);
             seances.add(unSeance);
         }

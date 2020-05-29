@@ -30,7 +30,7 @@ public class ConvertisseurJsonUtilisateur {
 
             Log.d("une seance", String.valueOf(objectAcuel));
 
-            Utilisateur utilisateur = new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("id")));
+            Utilisateur utilisateur = new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("r\u00f4le")));
 
             utilisateurs.add(utilisateur);
         }
@@ -39,7 +39,7 @@ public class ConvertisseurJsonUtilisateur {
     }
 
     public Utilisateur décoderUtilisateur(JSONObject objectAcuel) throws Exception {
-        return new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("id")));
+        return new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("r\u00f4le")));
 
     }
 

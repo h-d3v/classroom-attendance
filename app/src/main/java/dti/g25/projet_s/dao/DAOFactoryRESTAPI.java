@@ -31,7 +31,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
 
     private static final String URL_ACCEUIL = "https://projet-s.dti.crosemont.quebec/api/v1/";
     private static final String TAG = "DAOFactoryRESTAPI" ;
-    private final static String URL__GET_SEANCE_COUR_GROUPE = "https://projet-s.dti.crosemont.quebec/api/v1/groupe/";
+    private final static String URL__GET_GROUPE = "https://projet-s.dti.crosemont.quebec/api/v1/groupe/";
     private static final String CNX_GET_POINT_ENTREE = "https://projet-s.dti.crosemont.quebec/api/v1/" ;
     private  Context context;
     private  String cle;
@@ -41,7 +41,6 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
 
     public DAOFactoryRESTAPI(Context context) {
         this.context = context;
-
     }
 
     @Override
@@ -69,6 +68,27 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     public void chargerUtilisateurActuel(Response.Listener onResponse) {
         System.out.println("Chargement de l'utiliasteur....");
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL_ACCEUIL, null, onResponse, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+cle);
+                return params;
+            }
+        };
+
+        Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
+    }
+
+    @Override
+    public void chargerUnCourGroupeParId(Response.Listener onResponse, int idCourGroupe){
+        String url = URL__GET_GROUPE + idCourGroupe + "?embed=true";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, onResponse, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
@@ -150,7 +170,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     @Override
     public void getSeancesParCourGroupe(Response.Listener<JSONObject> response, CoursGroupe courGroupe){
         List<Seance> listSeance = new ArrayList<>();
-        String url = URL__GET_SEANCE_COUR_GROUPE + courGroupe.getId() + "?embed=true";
+        String url = URL__GET_GROUPE + courGroupe.getId() + "?embed=true";
 
         JSONObject jsonn = new JSONObject();
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url , jsonn, response

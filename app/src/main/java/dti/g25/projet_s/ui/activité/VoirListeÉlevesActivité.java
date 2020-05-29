@@ -46,19 +46,10 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
         int positionGroupe = getIntent().getIntExtra(EXTRA_POSITION_GROUPE, -1);
         int positionSeance = getIntent().getIntExtra(EXTRA_POSITION_SEANCE, -1);
         String cléUtilisateur = getIntent().getStringExtra(EXTRA_CLÉ_CONNEXION);
-        Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject réponse) {
-                try {
-                    Log.d("Schéma", "ca passe ici");
-                        modèle.setJsonUtilsaiteurs(réponse);
-                        présenteur.rafraîchir();
-                    } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        };
 
+        modèle.setCléConnexion(cléUtilisateur);
+
+        importerDonné(positionGroupe);
         try {
             présenteur.commencerListeÉlèvesPrésence(positionSeance, positionGroupe, cléUtilisateur);
         } catch (Exception e) {
@@ -75,5 +66,22 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
         } catch (Exception e) {
             Log.e("Erreur", String.valueOf(e));
         }
+    }
+
+    private void importerDonné(int idGroupe) {
+
+
+        Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject réponse) {
+                try {
+                    Log.d("Schéma", "ca passe ici");
+                    modèle.setJsonUtilsaiteurs(réponse);
+                    présenteur.rafraîchir();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
     }
 }

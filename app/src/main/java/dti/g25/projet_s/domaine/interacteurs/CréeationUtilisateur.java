@@ -10,7 +10,7 @@ public class CréeationUtilisateur implements ICéeationUtilisateur {
 
         if(unNom.equals("") || unNom.isEmpty())
             throw new Exception("l'utilisateur n'a pas de nom est vide");
-        if(unRôle == null)
+        if(unRôle.equals(null))
             throw new Exception("l'utilisateur n'a pas de rôle");
 
         return new Utilisateur(id, unNom, unRôle);

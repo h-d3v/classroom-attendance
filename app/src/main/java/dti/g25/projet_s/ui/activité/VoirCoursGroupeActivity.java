@@ -82,7 +82,7 @@ public class VoirCoursGroupeActivity extends AppCompatActivity {
                     }
                 };
                 try {
-                    modèle.setUtilisateurActuelle(new ConvertisseurJsonUtilisateur().décoderUtilisateur(response));
+                    modèle.setJsonUtilisateurActuelle(response);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -91,6 +91,8 @@ public class VoirCoursGroupeActivity extends AppCompatActivity {
         });
 
         daoFactoryRESTAPI.chargerUtilisateurActuel(onResponse1);
+
+        presenteurVoirCoursGroupe.commencerVoirCourGroupe(data.getStringExtra(EXTRA_CLÉ_CONNEXION));
     }
 
 }

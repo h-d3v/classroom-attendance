@@ -20,6 +20,8 @@ public  abstract class DAOFactoryV1 {
 
     public abstract void chargerUtilisateurActuel(Response.Listener onResponse);
 
+    public abstract void chargerUnCourGroupeParId(Response.Listener onResponse, int idCourGroupe);
+
     public abstract List<DAO<Utilisateur>> chargerListeUtilisateursParCoursGroupe(DAO<CoursGroupe>coursGroupeDAO);
 
     public abstract List<DAO<Seance>> chargerListeSeanceParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO);

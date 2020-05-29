@@ -1,16 +1,15 @@
 package dti.g25.projet_s.présentation.modèle;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.Response;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import dti.g25.projet_s.dao.ConvertisseurJsonConnexion;
 import dti.g25.projet_s.dao.ConvertisseurJsonGroupe;
 import dti.g25.projet_s.dao.ConvertisseurJsonSeance;
-import org.json.JSONObject;
 
 import dti.g25.projet_s.dao.ConvertisseurJsonUtilisateur;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
@@ -18,7 +17,6 @@ import dti.g25.projet_s.dao.ServeurFactice;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.domaine.entité.EtatSeance;
 import dti.g25.projet_s.domaine.entité.Horaire;
-import dti.g25.projet_s.domaine.entité.LibelleCours;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
@@ -30,16 +28,18 @@ import java.util.List;
 
 public class Modèle {
 
-    private String cléConnexion;
-    private List<CoursGroupe> coursGroupes;
-    private List<Seance> seances;
-    private DAOFactory daoFactory;
     private Context context;
+    private String cléConnexion;
+
+    private List<CoursGroupe> coursGroupes;
     private List<Seance> listeSeance;
     private List<Seance> listeSeanceCourGroupe;
-    private Utilisateur utilisateurActuelle;
     private List<Utilisateur> listeUtilisateurs;
+
     private DAOFactoryRESTAPI daoFactoryRESTAPI;
+
+    private Utilisateur utilisateurActuelle;
+    private CoursGroupe coursGroupeActuelle;
 
     /**
      * constructeur vide
@@ -48,11 +48,6 @@ public class Modèle {
         listeUtilisateurs = new ArrayList<>();
     };
 
-    public Modèle(DAOFactory daoFactory) {
-        this.daoFactory = daoFactory;
-        coursGroupes = chargerCoursGroupeUtilisateur();
-        chargerSeanceUtilisateur();
-    }
 
     public Modèle(Context context){
         this.context=context;
@@ -84,8 +79,8 @@ public class Modèle {
         coursGroupes.add(courGroupe);
     }
 
-    public void setUtilisateurActuelle(Utilisateur utilisateur){
-        this.utilisateurActuelle=utilisateur;
+    public void setJsonUtilisateurActuelle(JSONObject réponse) throws Exception {
+        this.utilisateurActuelle= new ConvertisseurJsonUtilisateur().décoderUtilisateur(réponse);
     }
 
     public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
@@ -95,8 +90,8 @@ public class Modèle {
 
 
     public void changerEtatSeance(int pos,EtatSeance etatSeance){
-        Seance seance=new GestionSeance().changerSatutSeance(etatSeance,seances.get(pos));
-        seances.set(pos,seance);
+        Seance seance=new GestionSeance().changerSatutSeance(etatSeance,listeSeance.get(pos));
+        listeSeance.set(pos,seance);
     }
 
     public CoursGroupe getCourGroupeParPos(int position){
@@ -157,6 +152,9 @@ public class Modèle {
         return utilisateurActuelle;
     }
 
+    public CoursGroupe getCoursGroupeActuelle() { return coursGroupeActuelle; }
+
+
     public void setEtatSeance(int positionSeance, EtatSeance etatSeance) {
         listeSeance.get(positionSeance).set_etat(etatSeance);
     }
@@ -169,7 +167,6 @@ public class Modèle {
 
         return listeSeanceCourGroupe;
     }
-
 
     /**
      * charge les utilsiateur de une seance
@@ -231,8 +228,8 @@ public class Modèle {
         return getListeSeanceParCourGroupe(positionCoursGroupe).get(position);
     }
 
-    public void setJSONSeances(JSONObject réponse, int numeroGroupe, int idGroupe) throws JSONException {
-        listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, getCourGroupeParPos(idGroupe));
+    public void setJSONSeances(JSONObject réponse, CoursGroupe unCourGroupe) throws JSONException {
+        listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, unCourGroupe);
     }
 
     //Requête Http
@@ -241,7 +238,12 @@ public class Modèle {
     }
 
     public void setJsonGroupes(JSONObject réponse) {
-        coursGroupes = new ConvertisseurJsonGroupe().décoderJsonGroupe(réponse);
+        coursGroupes = new ConvertisseurJsonGroupe().décoderJsonListeGroupes(réponse);
+    }
+
+    public void setJsonGroupeActuelle(JSONObject réponse) throws Exception {
+        coursGroupeActuelle = new ConvertisseurJsonGroupe().décoderJsonGroupe(réponse);
+        Log.d("id : ", String.valueOf(coursGroupeActuelle.getId()));
     }
     
     public void setJsonUtilsaiteurs(JSONObject réponse) throws Exception {
@@ -254,4 +256,5 @@ public class Modèle {
     public String getCléConnexion() {
         return cléConnexion;
     }
+
 }

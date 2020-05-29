@@ -64,7 +64,6 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
 
     @Override
     public void commencerVoirCourGroupe(int position, String cléUtilisateur) throws Exception {
-
         _modele.getListeSeanceParCourGroupe(position);
         _positionCoursGroupe = position;
         _cléUtilisateur = cléUtilisateur;
@@ -134,9 +133,9 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
     @Override
     public void rafraîchir() {
         Log.d("passe", "présenteur");
-        _vue.afficherNomCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getTITRE());
-        _vue.afficherSigleCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getSigle());
-        _vue.afficherNombreÉlèvesInscrit(_modele.getListeEtudiantsParCoursGroupe(_positionCoursGroupe).size());
+        _vue.afficherNomCour(_modele.getCoursGroupeActuelle().getLibelleCours().getTITRE());
+        _vue.afficherSigleCour(_modele.getCoursGroupeActuelle().getLibelleCours().getSigle());
+        _vue.afficherNombreÉlèvesInscrit(_modele.getCoursGroupeActuelle().getParticipants().size());
         _vue.rafraichir();
     }
 
