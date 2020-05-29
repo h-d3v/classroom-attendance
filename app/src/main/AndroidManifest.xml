@@ -33,7 +33,7 @@
         </activity>
         <activity android:name=".ui.activité.VoirUnCourGroupeActivity"
             android:parentActivityName=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
-        <activity android:name=".ui.activité.VoirListeÉlevesPrésenceActivité"/>
+        <activity android:name=".ui.activité.VoirListeÉlevesActivité"/>
     </application>
 
 </manifest>

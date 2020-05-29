@@ -2,17 +2,13 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 
-import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
 import dti.g25.projet_s.présentation.modèle.Modèle;
-import dti.g25.projet_s.ui.activité.VoirListeÉlevesPrésenceActivité;
 import dti.g25.projet_s.ui.activité.VoirUnEleve;
 
-public class PrésenteurVoirListeÉlèvesPrésence implements ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves {
+public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirListeÉlèves.IPésenteurVoirListeÉlèves {
     private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
     private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
     private static final String EXTRA_POSITION_SEANCE = "dti.g25.projet_s.positionSeance";
@@ -27,8 +23,9 @@ public class PrésenteurVoirListeÉlèvesPrésence implements ContratVuePrésent
     private int positionCoursGroupe;
     private int positionSeance;
     private String cléUtilisateur;
+    private boolean peutPrendrePrésence = true;
 
-    public PrésenteurVoirListeÉlèvesPrésence(Activity activité, ContratVuePrésenteurVoirListeÉlèves.IVueVoirListeÉlèves vue, Modèle modèle) {
+    public PrésenteurVoirListeÉlèves(Activity activité, ContratVuePrésenteurVoirListeÉlèves.IVueVoirListeÉlèves vue, Modèle modèle) {
         this.activité=activité;
         this.modèle=modèle;
         this.vue=vue;
@@ -68,6 +65,9 @@ public class PrésenteurVoirListeÉlèvesPrésence implements ContratVuePrésent
         this.cléUtilisateur = cléUtilisateur;
         modèle.setCléUtilisateur(this.cléUtilisateur);
         modèle.rafraîchir();
+        if (positionSeance == -1) {
+            peutPrendrePrésence = false;
+        }
         vue.rafraichir();
     }
 
@@ -83,6 +83,11 @@ public class PrésenteurVoirListeÉlèvesPrésence implements ContratVuePrésent
            vue.rafraichir();
         }
 
+    }
+
+    @Override
+    public Boolean getpeutPrendrePrésence() {
+        return peutPrendrePrésence;
     }
 
 }

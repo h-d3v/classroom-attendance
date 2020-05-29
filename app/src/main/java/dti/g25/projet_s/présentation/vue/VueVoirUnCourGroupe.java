@@ -56,7 +56,7 @@ public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCour
         btnVoirListeEleves.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View bouton){
-
+                _presenteur.requeteVoirListeEleves();
             }
         });
         setRetainInstance(true);
