@@ -10,7 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.domaine.entité.Seance;
@@ -21,7 +22,7 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
     private ContratVpVoirUnCoursGroupe.IPrensenteurVoirCourGroupe _presenteur;
     private Button btnModifierPrésence;
     private Button btnModifierPrendrePrésence;
-    private BootstrapButton btnVoirDétails;
+    private Button btnVoirDétails;
 
 
     public SeanceAdapterUnCourGroupe(ContratVpVoirUnCoursGroupe.IPrensenteurVoirCourGroupe _presenteur) {
@@ -32,7 +33,7 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LinearLayout racine = (LinearLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.seance_view_cour_groupe_eleves, parent, false);
+                .inflate(R.layout.seance_view_cour_groupe, parent, false);
 
         return new RecyclerView.ViewHolder(racine){};
     }
@@ -48,7 +49,7 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
         }
         btnModifierPrésence =  ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence));
         btnModifierPrendrePrésence = ((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence));
-        btnVoirDétails = holder.itemView.findViewById(R.id.btnVoirDétails);
+        btnVoirDétails = ((Button)holder.itemView.findViewById(R.id.btnVoirDétails));
         ((TextView)holder.itemView.findViewById(R.id.tvSigleCoursGroupeSeance)).setText(seance.get_coursGroupe().getLibelleCours().getSigle());
 
         ((TextView)holder.itemView.findViewById(R.id.tvHeureDebutSe)).setText(seance.get_horaires().getHeureDebutString());
@@ -56,12 +57,12 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
         ((TextView)holder.itemView.findViewById(R.id.tvHeureFinSe)).setText(seance.get_horaires().getHeureFinString());
         ((TextView)holder.itemView.findViewById(R.id.tvEtatSeance)).setText(seance.get_etat().name());
 
-        //((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setVisibility(_presenteur.getVisibilteBouton());
-        //((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setEnabled(_presenteur.getUtilisateurUilisateurBouton());
-        //((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence)).setVisibility(_presenteur.getVisibilteBouton());
-        //((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence)).setEnabled(_presenteur.getUtilisateurUilisateurBouton());
+        ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setVisibility(_presenteur.getVisibilteBouton());
+        ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setEnabled(_presenteur.getUtilisateurUilisateurBouton());
+        ((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence)).setVisibility(_presenteur.getVisibilteBouton());
+        ((Button)holder.itemView.findViewById(R.id.btnPrendrePrésence)).setEnabled(_presenteur.getUtilisateurUilisateurBouton());
 
-        /*((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setOnClickListener(new View.OnClickListener() {
+        ((Button)holder.itemView.findViewById(R.id.btnModifierPrésence)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View bouton) {
                 _presenteur.requeteModifierPrésence(position);
@@ -73,9 +74,9 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
             public void onClick(View bouton) {
                 _presenteur.requetePrendrePrésence(position);
             }
-        });*/
+        });
 
-        holder.itemView.findViewById(R.id.btnVoirDétails).setOnClickListener(new View.OnClickListener() {
+        ((Button)holder.itemView.findViewById(R.id.btnVoirDétails)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View bouton) {
                 _presenteur.requeteVoirSeance(position); }
@@ -95,3 +96,4 @@ public class SeanceAdapterUnCourGroupe extends RecyclerView.Adapter<RecyclerView
     }
 
 }
+

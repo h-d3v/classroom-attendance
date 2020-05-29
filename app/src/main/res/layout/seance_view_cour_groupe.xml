@@ -97,7 +97,7 @@
             android:layout_marginTop="39dp"
             android:layout_marginBottom="22dp"
             android:autoText="true"
-            android:text="jdjdjd"
+            android:text="à"
             app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
             app:layout_constraintEnd_toStartOf="@+id/tvHeureFinSe"
             app:layout_constraintTop_toBottomOf="@+id/jourSeance"
@@ -124,6 +124,16 @@
             tools:ignore="VectorDrawableCompat" />
 
         <Button
+            android:id="@+id/btnVoirDétails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#49544A"
+            android:paddingTop="10dp"
+            android:text="@string/voirDétails"
+            tools:ignore="VectorDrawableCompat" />
+
+        <Button
             android:id="@+id/btnPrendrePrésence"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -133,15 +143,6 @@
             android:text="@string/prendrePrésence"
             tools:ignore="VectorDrawableCompat" />
 
-        <Button
-            android:id="@+id/btnVoirDétails"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#49544A"
-            android:paddingTop="10dp"
-            android:text="@string/voirDétails"
-            tools:ignore="VectorDrawableCompat" />
     </LinearLayout>
 
 </LinearLayout>
