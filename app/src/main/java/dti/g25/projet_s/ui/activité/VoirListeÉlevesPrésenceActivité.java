@@ -7,6 +7,11 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.android.volley.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
 import dti.g25.projet_s.présentation.modèle.Modèle;
@@ -23,12 +28,13 @@ public class VoirListeÉlevesPrésenceActivité  extends AppCompatActivity {
     private static final String EXTRA_POSITION_GROUPE = "dti.g25.projet_s.positionCourGroupe";
     private static final String EXTRA_POSITION_SEANCE = "dti.g25.projet_s.positionSeance";
 
-    PrésenteurVoirListeÉlèvesPrésence présenteur;
+    private PrésenteurVoirListeÉlèvesPrésence présenteur;
+    private Modèle modèle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_un_courgroupe);
-        Modèle modèle=new Modèle(this);
+        modèle=new Modèle(this);
         VueVoirListeÉlèvesPrésence vue=new VueVoirListeÉlèvesPrésence();
         présenteur= new PrésenteurVoirListeÉlèvesPrésence(this, vue, modèle);
         vue.set_presenteur(présenteur);
@@ -44,7 +50,19 @@ public class VoirListeÉlevesPrésenceActivité  extends AppCompatActivity {
         int positionGroupe = getIntent().getIntExtra(EXTRA_POSITION_GROUPE, -1);
         int positionSeance = getIntent().getIntExtra(EXTRA_POSITION_SEANCE, -1);
         String cléUtilisateur = getIntent().getStringExtra(EXTRA_CLÉ_CONNEXION);
-        
+        Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject réponse) {
+                try {
+                    Log.d("Schéma", "ca passe ici");
+                        modèle.setJsonUtilsaiteurs(réponse);
+                        présenteur.rafraîchir();
+                    } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
         try {
             présenteur.commencerListeÉlèvesPrésence(positionSeance, positionGroupe, cléUtilisateur);
         } catch (Exception e) {

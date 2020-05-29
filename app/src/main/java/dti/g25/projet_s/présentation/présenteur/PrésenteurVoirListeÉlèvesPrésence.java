@@ -85,4 +85,9 @@ public class PrésenteurVoirListeÉlèvesPrésence implements ContratVuePrésent
 
     }
 
+    @Override
+    public void rafraîchir() {
+        vue.rafraichir();
+    }
+
 }
