@@ -6,9 +6,7 @@ import android.content.Intent;
 
 import android.content.SharedPreferences;
 import android.util.Log;
-import com.android.volley.NetworkResponse;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
+import com.android.volley.*;
 
 import dti.g25.projet_s.dao.ConvertisseurJsonConnexion;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
@@ -60,14 +58,13 @@ public class PrésenteurConnexion implements ContratVuePrésenteurConnexion.IPr�
             Response.ErrorListener errorListener = new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                String message = null;
-                if(error.networkResponse.statusCode==401) {
+
+                if (error instanceof AuthFailureError) {
                     vue.setMessageErreur("Le mot de passe ou le nom d'utilisateur n'est pas valide");
-                }
-                else if(error.networkResponse.statusCode==500){
-                    vue.setMessageErreur("Le serveur est en panne, veuillz contavter votre administrateur");
-                }else {
-                    vue.setMessageErreur("Erreur :"+error.networkResponse.statusCode);
+                } else if (error instanceof ServerError) {
+                    vue.setMessageErreur("Le serveur est en panne, veuillez contacter votre administrateur");
+                } else if (error instanceof TimeoutError || error instanceof NoConnectionError){
+                    vue.setMessageErreur("Pas de connection");
                 }
             }
         };

@@ -36,6 +36,7 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
     public int getNombresItems() {
         if(modèle.getListeUtilisateurs() == null) return 0;
         return modèle.getListeUtilisateurs().size();
+
     }
 
     @Override
