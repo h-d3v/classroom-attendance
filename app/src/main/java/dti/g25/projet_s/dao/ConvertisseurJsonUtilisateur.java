@@ -28,8 +28,6 @@ public class ConvertisseurJsonUtilisateur {
         for(int i = 0; i < listeSeance.length(); i++) {
             JSONObject objectAcuel = (JSONObject) résultatZoomé.get(listeSeance.getString(i));
 
-            Log.d("une seance", String.valueOf(objectAcuel));
-
             Utilisateur utilisateur = new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("r\u00f4le")));
 
             utilisateurs.add(utilisateur);

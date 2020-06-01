@@ -109,6 +109,8 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
         intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _modele.getCléConnexion());
         intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
         intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, _modele.getListeSeanceParCourGroupe().get(positionSeance).getId());
+        Log.d("seance", String.valueOf(_modele.getListeSeanceParCourGroupe().get(positionSeance).getId()));
+        Log.d("position list:", String.valueOf(positionSeance));
         _activite.startActivity(intentVoirSéance);
     }
 

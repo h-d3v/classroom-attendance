@@ -100,7 +100,7 @@ public class PrendrePrésenceActivité extends AppCompatActivity {
                                         e.printStackTrace();
                                     }
                                     try {
-                                        présenteur.commencerPrendrePrésence(idGroupe, idSéance, modèle.getCléConnexion());
+                                        présenteur.commencerPrendrePrésence( idSéance, idGroupe, modèle.getCléConnexion());
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                     }
@@ -110,7 +110,7 @@ public class PrendrePrésenceActivité extends AppCompatActivity {
 
                         } else {
                             try {
-                                présenteur.commencerPrendrePrésence(idGroupe, idSéance, modèle.getCléConnexion());
+                                présenteur.commencerPrendrePrésence( idSéance, idGroupe, modèle.getCléConnexion());
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
