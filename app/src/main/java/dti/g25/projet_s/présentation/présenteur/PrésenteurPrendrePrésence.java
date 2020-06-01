@@ -11,12 +11,14 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.dao.Singleton;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.vue.VuePrendrePrésence;
+import dti.g25.projet_s.util.VolleyErrorListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -72,22 +74,12 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
     public void ajouterAbsence(boolean absence){
         if(absence){//On envoie la requete de presence au serveur
 
-            // url a modifier 29 par  l'id de la seance 23 par l'id de l'utilisateur
-            JsonObjectRequest request =  new JsonObjectRequest(Request.Method.PUT,"https://projet-s.dti.crosemont.quebec/api/v1/seance/" + positionSéeance +"/present/" + modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getId(), null, new Response.Listener<JSONObject>() {
+            StringRequest request  =  new StringRequest(Request.Method.PUT,"https://projet-s.dti.crosemont.quebec/api/v1/seance/" + positionSéeance +"/present/" + modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getId(), new Response.Listener() {
                 @Override
-                public void onResponse(JSONObject response) {
-                    Toast toast = Toast.makeText(activité, "absences enregistrées!", Toast.LENGTH_SHORT);
+                public void onResponse(Object response) {
+                    Toast toast = Toast.makeText(activité, "présence enregistrée!", Toast.LENGTH_SHORT);
                     toast.show();
-
-                }}, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error){
-
-                    Toast toast = Toast.makeText(activité, "Erreur de serveur", Toast.LENGTH_SHORT);
-                    toast.show();
-                }
-
-            }
+                }},VolleyErrorListener.fabriquerErrorListnerAfficherToasts(activité)
 
             ) {
                 @Override
@@ -99,22 +91,12 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
             };
             Singleton.getInstance(activité).addToRequestQueue(request);
         } else {
-            JsonObjectRequest request =  new JsonObjectRequest(Request.Method.DELETE,"https://projet-s.dti.crosemont.quebec/api/v1/seance/" + positionSéeance +"/present/" + modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getId(), null, new Response.Listener<JSONObject>() {
+            StringRequest request =  new StringRequest(Request.Method.DELETE,"https://projet-s.dti.crosemont.quebec/api/v1/seance/" + positionSéeance +"/present/" + modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getId(), new Response.Listener() {
                 @Override
-                public void onResponse(JSONObject response) {
-                    Toast toast = Toast.makeText(activité, "absences enregistrées!", Toast.LENGTH_SHORT);
+                public void onResponse(Object response) {
+                    Toast toast = Toast.makeText(activité, "absence enregistrée!", Toast.LENGTH_SHORT);
                     toast.show();
-
-                }}, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error){
-
-                    Toast toast = Toast.makeText(activité, "Erreur de serveur", Toast.LENGTH_SHORT);
-                    toast.show();
-                }
-
-            }
-
+                }},VolleyErrorListener.fabriquerErrorListnerAfficherToasts(activité)
             ) {
                 @Override
                 public Map<String,String > getHeaders()  {
