@@ -46,7 +46,7 @@ public class ConvertisseurJsonSeance {
 
         for(int i = 0; i < listeSeance.length(); i++) {
             JSONObject objectAcuel = (JSONObject) résultatZoomé.get(listeSeance.getString(i));
-            Log.d("lance:", String.valueOf(objectAcuel));
+            //Log.d("lance:", String.valueOf(objectAcuel));
             float heureDébut = obtenirHeureEnDouble(objectAcuel.getString("début"));
             float heureFin = obtenirHeureEnDouble(objectAcuel.getString("fin"));
             int id = objectAcuel.getInt("id");

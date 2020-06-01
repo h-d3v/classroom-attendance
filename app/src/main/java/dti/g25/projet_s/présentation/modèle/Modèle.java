@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Debug;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import com.android.volley.Response;
 
 import org.json.JSONException;
@@ -135,7 +136,7 @@ public class Modèle{
 
     /**
      * retourn la lsite des ETUDIANTS d'un cour
-     * @param positionGroupe
+     * @param
      * @return
      */
     public List<Utilisateur> getListeEtudiantsParCoursGroupe() {
@@ -265,5 +266,6 @@ public class Modèle{
     public void setJsonPrésenceSeance(JSONObject résultat, int idSeance) throws JSONException {
         new ConvertisseurJsonSeance().présenceSeance(getSeanceParId(idSeance), résultat);
     }
+
 
 }

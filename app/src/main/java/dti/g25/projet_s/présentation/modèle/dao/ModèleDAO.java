@@ -26,7 +26,7 @@ public class ModèleDAO {
     private DAOFactoryV1 daoFactory;
     private Context context;
     private List<DAO<Seance>> listeSeance;
-    private DAOUtilisateurRESTAPI utilisateurActuel;
+    private DAO<Utilisateur> utilisateurActuel;
     private List<DAO<Utilisateur>> listeUtilisateur;
     private String cle;
     private final String URL="https://projet-s.dti.crosemont.quebec/api/v0/utilisateurs";
@@ -49,7 +49,7 @@ public class ModèleDAO {
      * @param daoFactory  : la factory dao source d'acces aux donnees
      * @param utilisateur : l'utilisateur connecte de l'application
      */
-    public ModèleDAO(DAOFactoryV1 daoFactory, DAOUtilisateurRESTAPI utilisateur) {
+    public ModèleDAO(DAOFactoryV1 daoFactory, DAO<Utilisateur> utilisateur) {
         this.utilisateurActuel = utilisateur;
         this.daoFactory = daoFactory;
     }
@@ -76,7 +76,6 @@ public class ModèleDAO {
     }
 
 
-    public void chargerUserActuel() throws InterruptedException {utilisateurActuel.chargerParCleConnexion(cle);}
 
     /**
      * @param position: la position du coursGroupe dans la liste coursGroupe du modele
