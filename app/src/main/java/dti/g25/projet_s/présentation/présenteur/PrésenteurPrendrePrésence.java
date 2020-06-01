@@ -73,8 +73,8 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
     @Override
     public void ajouterAbsence(boolean absence){
         if(absence){//On envoie la requete de presence au serveur
-
-            StringRequest request  =  new StringRequest(Request.Method.PUT,"https://projet-s.dti.crosemont.quebec/api/v1/seance/" + positionSéeance +"/present/" + modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getId(), new Response.Listener() {
+            // url a modifier 29 par  l'id de la seance 23 par l'id de l'utilisateur
+            JsonObjectRequest request =  new JsonObjectRequest(Request.Method.PUT,"https://projet-s.dti.crosemont.quebec/api/v1/seance/" + positionSéeance +"/present/" + modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getId(), null, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(Object response) {
                     Toast toast = Toast.makeText(activité, "présence enregistrée!", Toast.LENGTH_SHORT);

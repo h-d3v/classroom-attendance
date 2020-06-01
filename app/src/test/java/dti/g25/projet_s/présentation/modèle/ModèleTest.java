@@ -149,14 +149,14 @@ public class ModèleTest extends TestCase {
         listeUtilisateur1.add(mockEleve17);
         listeUtilisateur1.add(mockEleve18);
 
-        horaire0= new Horaire(11.0, 12.0, "Lundi semaine #0");
-        horaire1= new Horaire(11.0, 12.0, "Lundi semaine #1");
-        horaire3= new Horaire(11.0, 12.0, "Lundi semaine #3");
-        horaire2= new Horaire(11.0, 12.0, "Lundi semaine #2");
-        horaire4= new Horaire(11.0, 12.0, "Lundi semaine #4");
-        horaire5= new Horaire(11.0, 12.0, "Lundi semaine #5");
-        horaire6= new Horaire(11.0, 12.0, "Lundi semaine #6");
-        horaire7= new Horaire(11.0, 12.0, "Lundi semaine #7");
+        horaire0= new Horaire(11.0f, 12.0f, "Lundi semaine #0");
+        horaire1= new Horaire(11.0f, 12.0f, "Lundi semaine #1");
+        horaire3= new Horaire(11.0f, 12.0f, "Lundi semaine #3");
+        horaire2= new Horaire(11.0f, 12.0f, "Lundi semaine #2");
+        horaire4= new Horaire(11.0f, 12.0f, "Lundi semaine #4");
+        horaire5= new Horaire(11.0f, 12.0f, "Lundi semaine #5");
+        horaire6= new Horaire(11.0f, 12.0f, "Lundi semaine #6");
+        horaire7= new Horaire(11.0f, 12.0f, "Lundi semaine #7");
 
 
 
