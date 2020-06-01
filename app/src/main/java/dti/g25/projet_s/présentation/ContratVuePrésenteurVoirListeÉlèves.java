@@ -22,6 +22,7 @@ public interface ContratVuePrésenteurVoirListeÉlèves {
         void onActivityResult(int requestCode, int resultCode, Intent data) throws Exception;
 
         Boolean getpeutPrendrePrésence();
+
         void rafraîchir();
     }
 

@@ -160,6 +160,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
                 return headers;
             }
         };
+        Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
     }
 
     @Override

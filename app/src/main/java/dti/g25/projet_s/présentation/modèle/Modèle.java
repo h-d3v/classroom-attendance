@@ -74,7 +74,6 @@ public class Modèle{
 
     /**
      * retourn la lsite des ETUDIANTS d'un cour
-     * @param
      * @return
      */
     public List<Utilisateur> getListeEtudiantsParCoursGroupe() {
