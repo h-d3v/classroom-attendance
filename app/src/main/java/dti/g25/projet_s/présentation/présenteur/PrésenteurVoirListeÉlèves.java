@@ -45,7 +45,7 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
     }
 
     @Override
-    public String getPrésenceUtilisateurParPos(int position) throws Exception {
+    public String getPrésenceUtilisateurParPos(int position) {
         if(modèle.getSeanceParCourGroupe(positionSeance).getListeAbsence().get(position).getPrésence())
             return "présent";
         return "absent";
@@ -58,11 +58,11 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
         intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, positionCoursGroupe);
         intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, positionSeance);
         intentVoirSéance.putExtra(EXTRA_POSITION_ÉLÈVES, position);
-        activité.startActivityForResult(intentVoirSéance, RESQUEST_CODE_VOIR_ELEVES);
+        activité.startActivity(intentVoirSéance);
     }
 
     @Override
-    public void commencerListeÉlèvesPrésence(int positionSeance, int positionCoursGroupe, String cléUtilisateur) throws Exception {
+    public void commencerListeÉlèvesPrésence(int positionSeance, int positionCoursGroupe, String cléUtilisateur) {
         this.positionSeance = positionSeance;
         this.positionCoursGroupe = positionCoursGroupe;
         this.cléUtilisateur = cléUtilisateur;
@@ -72,7 +72,7 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
     }
 
     @Override
-    public  void onActivityResult(int requestCode, int resultCode, Intent data) throws Exception {
+    public  void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == RESQUEST_CODE_VOIR_ELEVES && resultCode == Activity.RESULT_OK) {
            boolean présence =  data.getBooleanExtra(EXTRA_POSITION_PRÉSENCE, true);
            int positionÉlèves = data.getIntExtra(EXTRA_POSITION_ÉLÈVES, -1);

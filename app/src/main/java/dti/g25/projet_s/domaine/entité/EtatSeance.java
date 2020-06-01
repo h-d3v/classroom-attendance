@@ -7,9 +7,9 @@ public enum EtatSeance {
     @Override
     public String toString(){
         if (this == EtatSeance.ANULLEE) {
-            return "Seance anullee";
+            return "Séance annulée";
         } else {
-            return "Seance prevue";
+            return "Séance prévue";
         }
     }
 

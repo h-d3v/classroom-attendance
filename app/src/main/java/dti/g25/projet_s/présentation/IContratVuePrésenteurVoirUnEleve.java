@@ -10,14 +10,21 @@ public interface IContratVuePrésenteurVoirUnEleve {
         void requêteAjouterAbsence(boolean b);
 
         void commencerVoirUnÉlèves(int positionSeance, int positionGroupe, int positionÉlèves, String cléUtilisateur) throws Exception;
+
+        String getNomUtilisateur(int position);
+
+        void rafraichir();
+
     }
 
     interface  IVueVoirUnEleve {
-        void setNomUtilisateur(String unString);
+
         void onClickPositif(String[] list, int position);
+
         void onClickNegatif();
-        String getNomUtilisateur();
 
         void setVisibilitéPrésence(boolean b);
+
+        void setUsername(String username);
     }
 }

@@ -29,7 +29,7 @@ public class SingleChoiceDialogHeuresAbsenceFragment extends DialogFragment {
         try {
             mListener= (SingleChoiceListener) context;
         } catch (Exception e) {
-          throw new ClassCastException(getActivity().toString() + "SingleChoiceListener doit etre implémentée");
+          throw new ClassCastException(getActivity().toString() + " - SingleChoiceListener doit etre implémentée");
         }
     }
 
@@ -40,7 +40,7 @@ public class SingleChoiceDialogHeuresAbsenceFragment extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         final String[] list = getActivity().getResources().getStringArray(R.array.choix_heures_absences);
 
-        builder.setTitle("Selectionez le nombre d'heures absentées")
+        builder.setTitle("Sélectionnez le nombre d'heures absentées")
                 .setSingleChoiceItems(list, posiition, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
