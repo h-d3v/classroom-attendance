@@ -70,7 +70,6 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
         _positionCoursGroupe = position;
         _cléUtilisateur = cléUtilisateur;
         _modele.setCléConnexion(_cléUtilisateur);
-        _modele.rafraîchir();
         _vue.afficherNomCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getTITRE());
         _vue.afficherSigleCour(_modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours().getSigle());
         _vue.afficherNombreÉlèvesInscrit(_modele.getListeEtudiantsParCoursGroupe().size());

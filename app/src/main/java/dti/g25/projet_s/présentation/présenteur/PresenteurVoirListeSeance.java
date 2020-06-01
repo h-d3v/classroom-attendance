@@ -57,8 +57,8 @@ public class PresenteurVoirListeSeance implements ContratVpVoirListeSeances.IPre
 
     @Override
     public int getNbSeancesModele() {
-        if(_modele.getListeSeance()!=null){
-            return _modele.getListeSeance().size();
+        if(_modele.getListeEtudiantsParCoursGroupe()!=null){
+            return _modele.getListeEtudiantsParCoursGroupe().size();
         }
         return 0;
     }

@@ -22,31 +22,13 @@ public  abstract class DAOFactoryV1 {
 
     public abstract void chargerUnCourGroupeParId(Response.Listener onResponse, int idCourGroupe);
 
-    public abstract List<DAO<Utilisateur>> chargerListeUtilisateursParCoursGroupe(DAO<CoursGroupe>coursGroupeDAO);
-
-    public abstract List<DAO<Seance>> chargerListeSeanceParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO);
-
-    public abstract DAO<CoursGroupe> chargerCoursGroupeParSeance(DAO<Seance> seanceDAO);
-
-    public abstract List<DAO<Seance>> chargerListeSeanceParUtilisateur(DAO<Utilisateur> utilisateurDAO);
-
-    public abstract List<DAO<Utilisateur>> chargerListeUtilisateurParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO);
-
-    public abstract List<DAO<Utilisateur>> chargerListeUtilisateurParSeance(DAO<Seance> seanceDAO);
-
-    public abstract List<DAO<Horaire>> chargerHoraireParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO);
-
-    public abstract List<DAO<CoursGroupe>> chargerCoursGroupeParHoaire(DAO<Horaire> horaireDAO);
+    public abstract void getListeÉlèvesCour(Response.Listener<JSONObject> response, CoursGroupe courGroupe);
 
     public abstract void obtenirPrésence(Response.Listener<JSONObject> response, int idPrésence);
-
-    public abstract String getCle();
 
     public abstract String tenterConnection(String nomUtilisateur, String motDePasse, Response.ErrorListener errorResponse);
 
     public abstract void getSeancesParCourGroupe(Response.Listener<JSONObject> response, CoursGroupe courGroupe);
-
-    public abstract void getListeÉlèvesCour(Response.Listener<JSONObject> response, CoursGroupe courGroupe);
 
     public abstract void setCle(String cle);
 

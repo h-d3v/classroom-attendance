@@ -14,7 +14,6 @@ import org.json.JSONObject;
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
 import dti.g25.projet_s.présentation.modèle.Modèle;
-import dti.g25.projet_s.présentation.modèle.dao.DAOFactory;
 import dti.g25.projet_s.présentation.présenteur.PresenteurVoirUnCourGroupe;
 import dti.g25.projet_s.présentation.vue.VueVoirUnCourGroupe;
 
@@ -30,7 +29,7 @@ public class VoirUnCourGroupeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_un_courgroupe);
-        _modele=new Modèle(this);
+        _modele=new Modèle();
         VueVoirUnCourGroupe vue=new VueVoirUnCourGroupe();
         _presenteur= new PresenteurVoirUnCourGroupe(this, vue, _modele);
         vue.setPresenteur(_presenteur);
