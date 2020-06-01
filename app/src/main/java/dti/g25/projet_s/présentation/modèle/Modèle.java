@@ -1,44 +1,30 @@
 package dti.g25.projet_s.présentation.modèle;
 
-import android.content.Context;
-import android.os.Debug;
 import android.util.Log;
-
-import androidx.annotation.NonNull;
-import com.android.volley.Response;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import dti.g25.projet_s.dao.ConvertisseurJsonGroupe;
-import dti.g25.projet_s.dao.ConvertisseurJsonSeance;
-
-import dti.g25.projet_s.dao.ConvertisseurJsonUtilisateur;
-import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
-import dti.g25.projet_s.dao.ServeurFactice;
-import dti.g25.projet_s.domaine.entité.CoursGroupe;
-import dti.g25.projet_s.domaine.entité.EtatSeance;
-import dti.g25.projet_s.domaine.entité.Horaire;
-import dti.g25.projet_s.domaine.entité.Role;
-import dti.g25.projet_s.domaine.entité.Seance;
-import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
-import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import dti.g25.projet_s.dao.ConvertisseurJsonGroupe;
+import dti.g25.projet_s.dao.ConvertisseurJsonSeance;
+import dti.g25.projet_s.dao.ConvertisseurJsonUtilisateur;
+import dti.g25.projet_s.domaine.entité.CoursGroupe;
+import dti.g25.projet_s.domaine.entité.EtatSeance;
+import dti.g25.projet_s.domaine.entité.Role;
+import dti.g25.projet_s.domaine.entité.Seance;
+import dti.g25.projet_s.domaine.entité.Utilisateur;
+
 public class Modèle{
 
-    private Context context;
     private String cléConnexion;
 
     private List<CoursGroupe> coursGroupes;
     private List<Seance> listeSeance;
     private List<Seance> listeSeanceCourGroupe;
     private List<Utilisateur> listeUtilisateurs;
-
-    private DAOFactoryRESTAPI daoFactoryRESTAPI;
 
     private Utilisateur utilisateurActuelle;
     private CoursGroupe coursGroupeActuelle;
@@ -50,88 +36,40 @@ public class Modèle{
         listeUtilisateurs = new ArrayList<>();
     };
 
-
-    public Modèle(Context context){
-        this.context=context;
-        daoFactoryRESTAPI = new DAOFactoryRESTAPI(context);
-        coursGroupes=new ArrayList<>();
-    }
-
     /**
-     * Crée un modèle a partir d'une clé d'utilisateur
+     * Crée un modèle a partir d'une clé de connexion
      * @param uneClé
      */
     public Modèle(String uneClé) {
         cléConnexion = uneClé;
-        coursGroupes = chargerCoursGroupeUtilisateur();
-        chargerSeanceUtilisateur();
     }
 
+    //Getter
+
     /**
-     *
+     *permet d'obtenir tout les cour Groupe
      * @return
      */
     public List<CoursGroupe> getCoursGroupes() {
         return coursGroupes;
     }
 
-
-
-    public void addCoursGroupe(CoursGroupe courGroupe){
-        coursGroupes.add(courGroupe);
-    }
-
-    public void setJsonUtilisateurActuelle(JSONObject réponse) throws Exception {
-        this.utilisateurActuelle= new ConvertisseurJsonUtilisateur().décoderUtilisateur(réponse);
-    }
-
-    public List<CoursGroupe> chargerCoursGroupeUtilisateur(){
-            return new ServeurFactice().ObtenirCourGroupe(cléConnexion);
-       // return daoFactory.creerListeCoursGroupeParUtilisateur(this.utilisateur);
-    }
-
-
-    public void changerEtatSeance(int pos,EtatSeance etatSeance){
-        Seance seance=new GestionSeance().changerSatutSeance(etatSeance,listeSeance.get(pos));
-        listeSeance.set(pos,seance);
-    }
-
+    /**
+     * permte d'obtenir un cour par sa position
+     * @param position
+     * @return
+     */
     public CoursGroupe getCourGroupeParPos(int position){
         return coursGroupes.get(position);
     }
 
     /**
-     * Ajoute un absence selon un élèves
-     * @param présence
-     * @param unUtilisateur
+     * Permet d'obtenir une seance selon sa position
      * @param positionSeance
+     * @return
      */
-    public void ajouterAbsence(boolean présence, Utilisateur unUtilisateur, int positionSeance) {
-        listeSeance.set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
-    }
-
-
-    public void ajouterAbsenceParCourGroupe(boolean présence, Utilisateur unUtilisateur, int positionSeance, int postionCourGroupe) throws Exception {
-
-        getListeSeanceParCourGroupe().set(positionSeance, (new GestionSeance().ajouterAbsence(unUtilisateur, getSeanceParPos(positionSeance), présence)));
-    }
-
-    public Seance créerSéance(int indexGroupe, Horaire horaire) {
-        Seance uneSeance = new GestionSeance().creerSeance(getCourGroupeParPos(indexGroupe), horaire);
-        listeSeance.add(uneSeance);
-        return uneSeance;
-    }
-
     public Seance getSeanceParPos(int positionSeance){
         return listeSeance.get(positionSeance);
-    }
-
-    public int getPostionSeance(Seance seance){
-        return listeSeance.indexOf(seance);
-    }
-
-    public List<Utilisateur> getListUtlisateurParCourGroupe(int positionGroupe){
-        return getCourGroupeParPos(positionGroupe).getParticipants();
     }
 
     /**
@@ -150,39 +88,32 @@ public class Modèle{
         return listeEtudiants;
     }
 
+    /**
+     * pertmet d'obtenir l'utilsiateur connecté
+     * @return
+     */
     public Utilisateur getUtilisateurConnecte() {
         return utilisateurActuelle;
     }
 
+    /**
+     * Permet d'obtenir le cour groupe actuelle
+     * @return
+     */
     public CoursGroupe getCoursGroupeActuelle() { return coursGroupeActuelle; }
 
-
-    public void setEtatSeance(int positionSeance, EtatSeance etatSeance) {
-        listeSeance.get(positionSeance).set_etat(etatSeance);
-    }
-
-    public List<Seance> getListeSeance(){
-        return listeSeance;
-    }
-
+    /**
+     * Permet d'obtenir la liste des seance d'un Groupe
+     * @return
+     */
     public List<Seance> getListeSeanceParCourGroupe() {
         return listeSeanceCourGroupe;
     }
 
     /**
-     * charge les utilsiateur de une seance
+     * permet d'obtenir le rôle d'un utilsaiteur connecté
+     * @return
      */
-    public void chargerSeanceUtilisateur() {
-        listeSeance = new ArrayList<>();
-        if(coursGroupes != null) {
-            for (CoursGroupe unCour : coursGroupes) {
-                for (Seance uneSeance : unCour.getListeSeances()) {
-                    listeSeance.add(uneSeance);
-                }
-            }
-        }
-    }
-
     public Role getRoleUtilsaiteurConnecté() {
         if (utilisateurActuelle != null)
             return utilisateurActuelle.getRôle();
@@ -198,23 +129,6 @@ public class Modèle{
         return listeUtilisateurs;
     }
 
-
-    /**
-     * rafrachi les donné du modèle
-     */
-    public void rafraîchir() throws Exception {
-        coursGroupes = chargerCoursGroupeUtilisateur();
-        chargerSeanceUtilisateur();
-    }
-
-    /**
-     * permet de mettre la clé d'utliateur
-     * @param uneClé
-     */
-    public void setCléConnexion(String uneClé) {
-        cléConnexion = uneClé;
-    }
-
     /**
      * Retourne un seance selon sa postion dans un cour groupe
      * @param position
@@ -223,35 +137,19 @@ public class Modèle{
         return getListeSeanceParCourGroupe().get(position);
     }
 
-    public void setJSONSeances(JSONObject réponse, CoursGroupe unCourGroupe) throws JSONException {
-        listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, unCourGroupe);
-    }
-
-    //Requête Http
-    public void requeteHttpSeanceCourGroupe(int idGroupe, Response.Listener<JSONObject> réponse) {
-        daoFactoryRESTAPI.getSeancesParCourGroupe(réponse, getCourGroupeParPos(idGroupe));
-    }
-
-    public void setJsonGroupes(JSONObject réponse) {
-        coursGroupes = new ConvertisseurJsonGroupe().décoderJsonListeGroupes(réponse);
-    }
-
-    public void setJsonGroupeActuelle(JSONObject réponse) throws Exception {
-        coursGroupeActuelle = new ConvertisseurJsonGroupe().décoderJsonGroupe(réponse);
-        Log.d("id : ", String.valueOf(coursGroupeActuelle.getId()));
-    }
-    
-    public void setJsonUtilisateurs(JSONObject réponse) throws Exception {
-        listeUtilisateurs = new ConvertisseurJsonUtilisateur().obtenirListeUtilisateurs(réponse);
-    }
-    public void addUtilisateurCoursGroupe(Utilisateur utilisateur) {
-        listeUtilisateurs.add(utilisateur);
-    }
-
+    /**
+     * permet d'obtenir la cléde connxion de l'utilisateur
+     * @return
+     */
     public String getCléConnexion() {
         return cléConnexion;
     }
 
+    /**
+     * permet d'obtenir un séeance selon son id
+     * @param id
+     * @return
+     */
     public Seance getSeanceParId(int id) {
         Seance uneSeance = null;
         for (Seance seance: listeSeanceCourGroupe
@@ -263,9 +161,91 @@ public class Modèle{
         return uneSeance;
     }
 
-    public void setJsonPrésenceSeance(JSONObject résultat, int idSeance) throws JSONException {
-        new ConvertisseurJsonSeance().présenceSeance(getSeanceParId(idSeance), résultat);
+
+
+    //setter
+
+    /**
+     * permet de mettre la clé d'utliateur
+     * @param uneClé
+     */
+    public void setCléConnexion(String uneClé) {
+        cléConnexion = uneClé;
     }
 
+    public void setSeanceParId(Seance seance) {
+        for (int i = 0; listeSeanceCourGroupe.size() >  0; i++) {
+            if (seance.getId() == listeSeanceCourGroupe.get(i).getId()) {
+                listeSeanceCourGroupe.set(i, seance);
+            }
+        }
+    }
+
+    /**
+     * Permet de chagner l'êtat d'une séeance
+     * @param positionSeance
+     * @param etatSeance
+     */
+    public void setEtatSeance(int positionSeance, EtatSeance etatSeance) {
+        listeSeance.get(positionSeance).set_etat(etatSeance);
+    }
+
+    //Traitement des Requêtes JSON
+
+    /**
+     * Permet de mettre le cour groupe actuelle selon un objet JSON
+     * @param réponse
+     * @param unCourGroupe
+     * @throws JSONException
+     */
+    public void setJSONSeances(JSONObject réponse, CoursGroupe unCourGroupe) throws JSONException {
+        listeSeanceCourGroupe = new ConvertisseurJsonSeance().décoderJsonSéeances(réponse, unCourGroupe);
+    }
+
+    /**
+     * Met les courgroupe dans un variable selon un json mis en paramêtre
+     * @param réponse
+     */
+    public void setJsonGroupes(JSONObject réponse) {
+        coursGroupes = new ConvertisseurJsonGroupe().décoderJsonListeGroupes(réponse);
+    }
+
+    /**
+     * Permet de mettre le groupe acteulle dans une varaible grace a un objet json mis en parmêtre
+     * @param réponse
+     * @throws Exception
+     */
+    public void setJsonGroupeActuelle(JSONObject réponse) throws Exception {
+        coursGroupeActuelle = new ConvertisseurJsonGroupe().décoderJsonGroupe(réponse);
+        Log.d("id : ", String.valueOf(coursGroupeActuelle.getId()));
+    }
+
+    /**
+     * permet de mettre l'utilisateur
+     * @param réponse
+     * @throws Exception
+     */
+    public void setJsonUtilisateurs(JSONObject réponse) throws Exception {
+        listeUtilisateurs = new ConvertisseurJsonUtilisateur().obtenirListeUtilisateurs(réponse);
+    }
+
+    /**
+     * Permet d'obtenir la liste de présence dans une varaible grace a un objet json mis en parmêtre
+     * @param résultat
+     * @param idSeance
+     * @throws JSONException
+     */
+    public void setJsonPrésenceSeance(JSONObject résultat, int idSeance) throws JSONException {
+        setSeanceParId(new ConvertisseurJsonSeance().présenceSeance(getSeanceParId(idSeance), résultat));
+    }
+
+    /**
+     *Permet d'obtenir l'utilsiteur actuel dans une varaible grace a un objet json mis en parmêtre
+     * @param réponse
+     * @throws Exception
+     */
+    public void setJsonUtilisateurActuelle(JSONObject réponse) throws Exception {
+        this.utilisateurActuelle= new ConvertisseurJsonUtilisateur().décoderUtilisateur(réponse);
+    }
 
 }

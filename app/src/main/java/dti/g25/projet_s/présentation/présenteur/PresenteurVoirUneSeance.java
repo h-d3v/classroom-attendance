@@ -56,13 +56,11 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
     }
 
     @Override
-    public void commencerVoirSéance(int positionGroupe, int positionSéance, String cléUtilisateur) throws Exception {
+    public void commencerVoirSéance(int positionGroupe, int positionSéance, String cléUtilisateur) {
         _positionSeance = positionSéance;
         _positionGroupe = positionGroupe;
         _cléUtilisateur = cléUtilisateur;
-
         _modele.setCléConnexion(_cléUtilisateur);
-        _modele.rafraîchir();
 
         _vue.afficherEstPrévue("Statut: "+ getSeance().get_etat().toString());
         _vue.afficherHoraire("Debut:"+getSeance().get_horaires().getHeureDebutString()+" Fin:"+ getSeance().get_horaires().getHeureFinString()+" Journee:"+getSeance().get_horaires().getJournee());

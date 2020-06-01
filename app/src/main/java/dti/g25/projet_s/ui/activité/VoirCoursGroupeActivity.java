@@ -29,9 +29,8 @@ public class VoirCoursGroupeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_voir_cours_groupe);
         //A ajuster TODO
         VueVoirCoursGroupe vueVoirCoursGroupe= new VueVoirCoursGroupe();
-        modèle= new Modèle(this);
+        modèle= new Modèle();
         presenteurVoirCoursGroupe=new PresenteurVoirCoursGroupe(vueVoirCoursGroupe, modèle,this);
-        modèle.chargerCoursGroupeUtilisateur();
         vueVoirCoursGroupe.set_presenteur(presenteurVoirCoursGroupe);
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.layout_VoirCoursGroupes,vueVoirCoursGroupe);

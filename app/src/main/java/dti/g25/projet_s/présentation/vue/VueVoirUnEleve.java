@@ -4,16 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
-
-import dti.g25.projet_s.R;
-import dti.g25.projet_s.dao.MockDAOFactory;
-import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.présentation.IContratVuePrésenteurVoirUnEleve;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import dti.g25.projet_s.présentation.modèle.Modèle;
+
+import dti.g25.projet_s.R;
+import dti.g25.projet_s.présentation.IContratVuePrésenteurVoirUnEleve;
 
 public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVoirUnEleve.IVueVoirUnEleve, SingleChoiceDialogHeuresAbsenceFragment.SingleChoiceListener {
 

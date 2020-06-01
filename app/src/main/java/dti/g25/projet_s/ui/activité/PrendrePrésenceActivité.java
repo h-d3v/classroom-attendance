@@ -49,7 +49,7 @@ public class PrendrePrésenceActivité extends AppCompatActivity {
         setContentView(R.layout.activity_prendre_presence);
         VuePrendrePrésence vue = new VuePrendrePrésence();
         modèle = new Modèle();
-        modèle= new Modèle(this);
+        modèle= new Modèle();
         présenteur = new PrésenteurPrendrePrésence(this, vue, modèle);
         vue.setPrésenteur(présenteur);
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();

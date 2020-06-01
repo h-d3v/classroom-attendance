@@ -14,16 +14,11 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
-import dti.g25.projet_s.domaine.entité.Horaire;
-import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
-import dti.g25.projet_s.présentation.modèle.dao.DAO;
 import dti.g25.projet_s.présentation.modèle.dao.DAOFactoryV1;
 
 
@@ -37,8 +32,6 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     private  Context context;
     private  String cle;
     private Response.Listener<JSONObject> response;
-    private static List<DAO<CoursGroupe>> coursGroupes;
-
 
     public DAOFactoryRESTAPI(Context context) {
         this.context = context;
@@ -103,46 +96,6 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
         };
 
         Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
-    }
-
-    @Override
-    public List<DAO<Utilisateur>> chargerListeUtilisateursParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO) {
-        return null;
-    }
-
-    @Override
-    public  List<DAO<Seance>> chargerListeSeanceParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO) {
-        return null;
-    }
-
-    @Override
-    public DAO<CoursGroupe> chargerCoursGroupeParSeance(DAO<Seance> seanceDAO) {
-        return null;
-    }
-
-    @Override
-    public List<DAO<Seance>> chargerListeSeanceParUtilisateur(DAO<Utilisateur> utilisateurDAO) {
-        return null;
-    }
-
-    @Override
-    public List<DAO<Utilisateur>> chargerListeUtilisateurParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO) {
-        return null;
-    }
-
-    @Override
-    public List<DAO<Utilisateur>> chargerListeUtilisateurParSeance(DAO<Seance> seanceDAO) {
-        return null;
-    }
-
-    @Override
-    public List<DAO<Horaire>> chargerHoraireParCoursGroupe(DAO<CoursGroupe> coursGroupeDAO) {
-        return null;
-    }
-
-    @Override
-    public List<DAO<CoursGroupe>> chargerCoursGroupeParHoaire(DAO<Horaire> horaireDAO) {
-        return null;
     }
 
 
@@ -227,12 +180,6 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     };
 
         Singleton.getInstance(context).addToRequestQueue(jsonObjectRequest);
-    }
-
-
-    @Override
-    public String getCle() {
-        return cle;
     }
 
     @Override

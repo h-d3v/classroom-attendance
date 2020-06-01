@@ -2,7 +2,6 @@ package dti.g25.projet_s.ui.activité;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,17 +11,11 @@ import com.android.volley.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Date;
-
 import dti.g25.projet_s.R;
-import dti.g25.projet_s.dao.DAOCoursGroupeRESTAPI;
 import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
-import dti.g25.projet_s.domaine.entité.CoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.présentation.présenteur.PrésenteurVoirListeÉlèves;
 import dti.g25.projet_s.présentation.vue.VueVoirListeÉlèves;
-
-import static java.lang.String.valueOf;
 
 public class VoirListeÉlevesActivité extends AppCompatActivity {
 
@@ -36,7 +29,7 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_un_courgroupe);
-        modèle=new Modèle(this);
+        modèle=new Modèle();
         VueVoirListeÉlèves vue=new VueVoirListeÉlèves();
         présenteur= new PrésenteurVoirListeÉlèves(this, vue, modèle);
         vue.set_presenteur(présenteur);
@@ -59,18 +52,17 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
         try {
             présenteur.commencerListeÉlèvesPrésence(positionSeance, positionGroupe, cléUtilisateur);
         } catch (Exception e) {
-            Log.e("ErreurVoirListeÉlèvesP", valueOf(e));
+            e.printStackTrace();
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d("uneActivité", "Terminer");
         try {
             présenteur.onActivityResult(requestCode, resultCode, data);
         } catch (Exception e) {
-            Log.e("Erreur", String.valueOf(e));
+            e.printStackTrace();
         }
     }
 

@@ -2,18 +2,9 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 
-import com.android.volley.Response;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import dti.g25.projet_s.dao.DAOFactoryRESTAPI;
-import dti.g25.projet_s.dao.DAOUtilisateurRESTAPI;
 import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
-import dti.g25.projet_s.présentation.modèle.dao.ModèleDAO;
 import dti.g25.projet_s.ui.activité.ConnexionActivité;
 import dti.g25.projet_s.ui.activité.VoirUnCourGroupeActivity;
 

@@ -37,9 +37,8 @@ public class ConvertisseurJsonSeance {
         return seances;
     }
 
-    public void présenceSeance(Seance seance, JSONObject résultat) throws JSONException {
+    public Seance présenceSeance(Seance seance, JSONObject résultat) throws JSONException {
         JSONArray listeUtilisateur = résultat.names();
-
         if(listeUtilisateur != null) {
             for (int i = 0; i < listeUtilisateur.length(); i++) {
                 JSONObject objectAcuel = (JSONObject) résultat.get(listeUtilisateur.getString(i));
@@ -52,6 +51,8 @@ public class ConvertisseurJsonSeance {
 
             }
         }
+
+        return seance;
     }
 
 

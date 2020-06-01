@@ -17,7 +17,7 @@ public class BtnTestVoirUnCoursGroupeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Modèle modele= new Modèle(this);
+        Modèle modele= new Modèle();
         VueVoirBtnListeCoursGroupes vue=new VueVoirBtnListeCoursGroupes();
         _presenteur= new PresenteurBtnVoirListeCoursGroupe(this, vue, modele);
         vue.setPresenteur(_presenteur);
