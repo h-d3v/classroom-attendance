@@ -11,23 +11,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67b9ff8e-df3d-4a27-833e-89eb5bb08f3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/util/VolleyErrorListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonSeance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonSeance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonUtilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/dao/ConvertisseurJsonUtilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUnCourGroupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PresenteurVoirUnCourGroupe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurPrendrePrésence.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/présenteur/PrésenteurPrendrePrésence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirBtnListeCoursGroupes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/vue/VueVoirBtnListeCoursGroupes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/PrendrePrésenceActivité.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/ui/activité/PrendrePrésenceActivité.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel2_NoobTIme" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -60,7 +62,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="36-interaction-serveur-seeance" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,7 +83,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/dti/g25/projet_s" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/dti/g25/projet_s" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/dti/g25/projet_s/présentation/modèle/dao" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
@@ -96,9 +98,6 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="dti.g25.projet_s" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="dti.g25.projet_s.util" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
     </key>
@@ -109,6 +108,18 @@
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration name="ModèleTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
@@ -217,8 +228,31 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Java" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
       <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
@@ -265,7 +299,6 @@
       <workItem from="1589052460277" duration="18317000" />
       <workItem from="1589120934141" duration="9386000" />
       <workItem from="1590685793090" duration="4844000" />
-      <workItem from="1591021811024" duration="1628000" />
     </task>
     <task id="LOCAL-00001" summary="Entites CoursGroupe utilisateur(partiel)&#10;Interacteur CoursGroupe">
       <created>1587930708624</created>
@@ -334,12 +367,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="debut nouvelle version modele avec DAOS" />
@@ -361,16 +395,11 @@
     </state>
     <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589045392356" />
     <state x="100" y="99" width="1400" height="660" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1589057126089" />
-    <state x="613" y="137" width="325" height="459" key="#com.intellij.ide.util.MemberChooser" timestamp="1591025803272">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="1636" y="532" width="374" height="576" key="#com.intellij.ide.util.MemberChooser" timestamp="1590690171683">
+      <screen x="900" y="360" width="1920" height="1080" />
     </state>
     <state x="613" y="137" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589043572498" />
-    <state x="613" y="137" width="325" height="459" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1591025803272" />
     <state x="1636" y="532" width="374" height="576" key="#com.intellij.ide.util.MemberChooser/900.360.1920.1080/313.1440.1600.900/0.0.900.1440@900.360.1920.1080" timestamp="1590690171683" />
-    <state x="528" y="206" width="524" height="437" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1591025434838">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="528" y="206" width="524" height="437" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1591025434838" />
     <state x="1652" y="664" width="525" height="409" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590689263132">
       <screen x="900" y="360" width="1920" height="1080" />
     </state>
@@ -393,26 +422,26 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="583" y="133" width="424" height="586" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588962764411" />
-    <state width="1558" height="200" key="GridCell.Tab.0.bottom" timestamp="1591025873634">
+    <state width="1558" height="280" key="GridCell.Tab.0.bottom" timestamp="1589132703231">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485331" />
-    <state width="1558" height="200" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591025873634" />
-    <state width="1558" height="200" key="GridCell.Tab.0.center" timestamp="1591025873631">
+    <state width="1558" height="280" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
+    <state width="1558" height="280" key="GridCell.Tab.0.center" timestamp="1589132703231">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
-    <state width="1558" height="200" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591025873631" />
-    <state width="1558" height="200" key="GridCell.Tab.0.left" timestamp="1591025873631">
+    <state width="1558" height="280" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
+    <state width="1558" height="280" key="GridCell.Tab.0.left" timestamp="1589132703230">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
-    <state width="1558" height="200" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591025873631" />
-    <state width="1558" height="200" key="GridCell.Tab.0.right" timestamp="1591025873632">
+    <state width="1558" height="280" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589132703230" />
+    <state width="1558" height="280" key="GridCell.Tab.0.right" timestamp="1589132703231">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1558" height="217" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589051485330" />
-    <state width="1558" height="200" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591025873632" />
+    <state width="1558" height="280" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589132703231" />
     <state width="1558" height="269" key="GridCell.Tab.1.bottom" timestamp="1589121400638">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -442,11 +471,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="313" y="32" key="SettingsEditor/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1589039093495" />
-    <state x="596" y="207" width="387" height="433" key="chooseDestDirectoryDialog" timestamp="1591025432273">
+    <state x="596" y="207" width="629" height="515" key="chooseDestDirectoryDialog" timestamp="1588978518235">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="596" y="207" width="629" height="515" key="chooseDestDirectoryDialog/0.0.1600.860/1600.0.1920.1080@0.0.1600.860" timestamp="1588978518235" />
-    <state x="596" y="207" width="387" height="433" key="chooseDestDirectoryDialog/0.0.1600.860@0.0.1600.860" timestamp="1591025432273" />
     <state x="410" y="42" width="770" height="768" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589126696629">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

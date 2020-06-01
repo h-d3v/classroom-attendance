@@ -65,8 +65,8 @@ public class PrésenteurPrendrePrésence implements ContratVuePrésenteurPrendre
         this.positionGroupe = positionGroupe;
         this.cléUtilisateur = cléUtilisateur;
 
+        Log.d("Seance: ", String.valueOf(positionSéeance));
         itérateur = 0;
-        modèle.rafraîchir();
         vue.setTxtNomÉtudiant(modèle.getListeEtudiantsParCoursGroupe().get(itérateur).getUsername());
     }
 
