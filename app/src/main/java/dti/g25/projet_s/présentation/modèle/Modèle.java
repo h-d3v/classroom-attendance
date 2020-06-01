@@ -135,7 +135,6 @@ public class Modèle{
 
     /**
      * retourn la lsite des ETUDIANTS d'un cour
-     * @param positionGroupe
      * @return
      */
     public List<Utilisateur> getListeEtudiantsParCoursGroupe() {

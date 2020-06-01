@@ -2,12 +2,14 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
+import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.IContratVuePrésenteurVoirUnEleve;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 
 public class PresenteurVoirUnEleve implements IContratVuePrésenteurVoirUnEleve.IPrésenteurVoirUnEleve {
-
+    private static final String EXTRA_CLÉ_CONNEXION = "dti.g25.projet_s.cléConnexion";
     private static final String EXTRA_POSITION_PRÉSENCE = "dti.g25.projet_s.présence";
     private static final String EXTRA_POSITION_ÉLÈVES = "dti.g25.projet_s.positionÉlèves";
 
@@ -45,7 +47,17 @@ public class PresenteurVoirUnEleve implements IContratVuePrésenteurVoirUnEleve.
         }
         modèle.setCléConnexion(this.cléUtilisateur);
         modèle.rafraîchir();
-        vue.setNomUtilisateur(modèle.getListeEtudiantsParCoursGroupe().get(positionÉlèves).getUsername());
+    }
+
+    @Override
+    public String getNomUtilisateur(int position){
+        Utilisateur leUser = modèle.getListeEtudiantsParCoursGroupe().get(position);
+        return leUser.getUsername();
+    }
+
+    @Override
+    public void rafraichir(){
+        vue.setUsername(modèle.getListeEtudiantsParCoursGroupe().get(this.positionÉlèves).getUsername());
     }
 
 }

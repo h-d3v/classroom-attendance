@@ -1,5 +1,6 @@
 package dti.g25.projet_s.présentation.vue;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
     private ImageView imgEleve;
     private Button btnConfirmer, btnAbsence;
     private int nbHeures=0;
+    private int position;
 
 
     public void setPresenteur(IContratVuePrésenteurVoirUnEleve.IPrésenteurVoirUnEleve présenteur) {
@@ -34,11 +36,16 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
                               Bundle savedInstanceState) {
         View racine = inflater.inflate(R.layout.frag_voir_eleve_absent, container, false);
 
+        Intent intent = getActivity().getIntent();
+        position = intent.getIntExtra("EXTRA_POSITION_ÉLÈVES",0);
+
         tvNomEleve = racine.findViewById(R.id.tvNomEleve);
         tvDetailsEleve = racine.findViewById(R.id.tvDetailsEleve);
         imgEleve = racine.findViewById(R.id.imgEleve);
         btnConfirmer = racine.findViewById(R.id.btnConfirmer);
         btnAbsence = racine.findViewById(R.id.btnAbsence);
+        tvDetailsEleve.setText("la desc de l'eleve");
+
         //TODO Photo des étudiants à implementer
         btnAbsence.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,12 +72,6 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
         return racine;
     }
 
-    @Override
-    public String getNomUtilisateur() {
-        return null;
-    }
-
-    @Override
     public void setVisibilitéPrésence(boolean b) {
         btnConfirmer.setEnabled(b);
         btnAbsence.setEnabled(b);
@@ -81,10 +82,6 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
     }
 
     @Override
-    public void setNomUtilisateur(String unString) {
-        tvNomEleve.setText(unString);
-    }
-    @Override
     public void onClickPositif(String[] list, int position) {
         nbHeures = Integer.parseInt(list[position]);
     }
@@ -93,6 +90,11 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
     public void onClickNegatif() {
         Toast.makeText(getActivity(), "Action annulée",
                 Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void setUsername(String username){
+        tvNomEleve.setText(username);
     }
 
 }
