@@ -2,7 +2,6 @@ package dti.g25.projet_s.dao;
 
 import android.content.Context;
 import android.util.Base64;
-import android.util.Log;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -103,8 +102,6 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
     public String tenterConnection(final String nomUtilisateur, final String motDePasse, Response.ErrorListener errorResponse) {
         final String CNX_GET="https://projet-s.dti.crosemont.quebec/api/v1/auth_token";
 
-        Log.d("utlisateur: ", nomUtilisateur);
-        Log.d("mot de passe: ", motDePasse);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, CNX_GET, null, response, errorResponse) {
             @Override
             public Map<String, String> getHeaders() {
@@ -165,7 +162,7 @@ public class DAOFactoryRESTAPI extends DAOFactoryV1 {
 
     @Override
     public void obtenirPrésence(Response.Listener<JSONObject> response, int idSeance) {
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,URL_GET_SEANCE +1 +"/presents" , null, response
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,URL_GET_SEANCE + idSeance +"/presents" , null, response
                 , new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {

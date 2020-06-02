@@ -1,20 +1,14 @@
 package dti.g25.projet_s.dao;
 
-import android.util.Log;
-
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import dti.g25.projet_s.domaine.entité.Horaire;
 import dti.g25.projet_s.domaine.entité.Role;
-import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.domaine.interacteurs.CréeationUtilisateur;
-import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 
 public class ConvertisseurJsonUtilisateur {
 
@@ -25,7 +19,7 @@ public class ConvertisseurJsonUtilisateur {
         résultatZoomé = (JSONObject) résultatZoomé.get("membres");
         JSONArray listeSeance = résultatZoomé.names();
 
-        for(int i = 0; i < listeSeance.length(); i++) {
+        for(int i = 0; i < listeSeance.length() - 1; i++) {
             JSONObject objectAcuel = (JSONObject) résultatZoomé.get(listeSeance.getString(i));
 
             Utilisateur utilisateur = new CréeationUtilisateur().CréerUtilisateur(objectAcuel.getInt("id"), objectAcuel.getString("nom"), obtenirRôle(objectAcuel.getInt("r\u00f4le")));

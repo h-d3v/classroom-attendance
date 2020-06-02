@@ -2,20 +2,11 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Debug;
-import android.util.Log;
 import android.view.View;
-
-import com.android.volley.Response;
-
-import org.json.JSONObject;
-
-import java.util.List;
 
 import dti.g25.projet_s.domaine.entité.LibelleCours;
 import dti.g25.projet_s.domaine.entité.Role;
 import dti.g25.projet_s.domaine.entité.Seance;
-import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.ContratVpVoirUnCoursGroupe;
 import dti.g25.projet_s.présentation.modèle.Modèle;
 import dti.g25.projet_s.ui.activité.PrendrePrésenceActivité;
@@ -48,14 +39,6 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
         _vue=vue;
     }
 
-    public LibelleCours getLibelleCours(){
-        return _modele.getCourGroupeParPos(_positionCoursGroupe).getLibelleCours();
-    }
-
-    public int getNumeroCours(){
-        return _modele.getCourGroupeParPos(_positionCoursGroupe).getNumeroGroupe();
-    }
-
     @Override
     public void requeteVoirListeEleves() {
         Intent intentVoirSéance = new Intent(_activite, VoirListeÉlevesActivité.class);
@@ -65,7 +48,7 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
     }
 
     @Override
-    public void commencerVoirCourGroupe(int position, String cléUtilisateur) throws Exception {
+    public void commencerVoirCourGroupe(int position, String cléUtilisateur) {
         _modele.getListeSeanceParCourGroupe();
         _positionCoursGroupe = position;
         _cléUtilisateur = cléUtilisateur;
@@ -77,14 +60,14 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
     }
 
     @Override
-    public int getNbSeancesModele() throws Exception {
+    public int getNbSeancesModele(){
         if(_modele.getListeSeanceParCourGroupe() == null)
             return 0;
-        return _modele.getListeSeanceParCourGroupe().size();
+        return _modele.getListeSeanceParCourGroupe().size() - 1;
     }
 
     @Override
-    public Seance getSeanceParPos(int position) throws Exception {
+    public Seance getSeanceParPos(int position) {
         return _modele.getSeanceParCourGroupe( position);
     }
 
@@ -108,8 +91,6 @@ public class PresenteurVoirUnCourGroupe implements ContratVpVoirUnCoursGroupe.IP
         intentVoirSéance.putExtra(EXTRA_CLÉ_CONNEXION, _modele.getCléConnexion());
         intentVoirSéance.putExtra(EXTRA_POSITION_GROUPE, _positionCoursGroupe);
         intentVoirSéance.putExtra(EXTRA_POSITION_SEANCE, _modele.getListeSeanceParCourGroupe().get(positionSeance).getId());
-        Log.d("seance", String.valueOf(_modele.getListeSeanceParCourGroupe().get(positionSeance).getId()));
-        Log.d("position list:", String.valueOf(positionSeance));
         _activite.startActivity(intentVoirSéance);
     }
 
