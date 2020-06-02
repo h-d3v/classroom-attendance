@@ -9,7 +9,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.beardedhen.androidbootstrap.BootstrapButton;
 
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
@@ -26,7 +29,7 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                       int viewType) {
-        LinearLayout racine = (LinearLayout) LayoutInflater.from(parent.getContext())
+        ConstraintLayout racine = (ConstraintLayout) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.eleves_view, parent, false);
 
         return new RecyclerView.ViewHolder(racine) {
@@ -36,12 +39,12 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         ((TextView)holder.itemView.findViewById(R.id.txtNomÉlèves)).setText(présenteur.getUtilisateurParPosition(position).getUsername());
         try {
-            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+            //((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
         } catch (Exception e) {
             e.printStackTrace();
         }
         if(présenteur.getpeutPrendrePrésence()) {
-            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
+            holder.itemView.findViewById(R.id.btnAbsence).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View bouton) {
                     présenteur.requeteVoirÉlèves(position);
@@ -55,8 +58,8 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
             }
         } else {
             ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setVisibility(View.INVISIBLE);
-            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setText("Voir Élève");
-            ((Button) holder.itemView.findViewById(R.id.btnAbsence)).setOnClickListener(new View.OnClickListener() {
+
+            holder.itemView.findViewById(R.id.btnVoirProfil).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View bouton) {
                     présenteur.requeteVoirÉlèves(position);

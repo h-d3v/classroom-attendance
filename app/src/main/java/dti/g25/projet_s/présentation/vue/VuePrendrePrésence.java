@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
+
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurPrendrePrésence;
 
@@ -18,8 +20,8 @@ public class VuePrendrePrésence extends Fragment implements ContratVuePrésente
     private ContratVuePrésenteurPrendrePrésence.IPrésenteurPrendrePrésence présenteur;
 
     private TextView txtNomÉtudiant;
-    private Button btnPrésent;
-    private Button btnAbsent;
+    private BootstrapButton btnPrésent;
+    private BootstrapButton btnAbsent;
 
 
     /**

@@ -22,6 +22,8 @@
     <string name="vos_cours_et_groupes">Vos cours et groupes</string>
     <string name="liste_des_seances">Liste des séances</string>
     <string name="garderConnexion">Rester connecter?</string>
+    <string name="present">Présent</string>
+    <string name="image_eleve">image eleve</string>
     <string-array name="choix_heures_absences">
         <item>1 Heure</item>
         <item>2 Heures</item>

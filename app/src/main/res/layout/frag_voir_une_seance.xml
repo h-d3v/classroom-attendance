@@ -4,24 +4,69 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:orientation="vertical">
 
-    <TextView
+    <com.beardedhen.androidbootstrap.BootstrapLabel
+        android:text="Details cours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_detail_cours"
+        android:layout_marginBottom="10dp"
+        app:bootstrapBrand="regular"
+        app:bootstrapHeading="h5"
+        app:roundedCorners="true" />
+    <!--TextView
             android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/tv_detail_cours"/>
-    <TextView
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_detail_cours"/-->
+    <com.beardedhen.androidbootstrap.BootstrapLabel
+        android:text="Horaire cours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_horaire_cours"
+        android:layout_marginBottom="10dp"
+        app:bootstrapBrand="regular"
+        app:bootstrapHeading="h5"
+        app:roundedCorners="true" />
+    <!--TextView
             android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/tv_horaire_cours"/>
-    <TextView
+            android:layout_height="wrap_content" android:id="@+id/tv_horaire_cours"/-->
+    <com.beardedhen.androidbootstrap.BootstrapLabel
+        android:text="Statut cours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_est_prevu"
+        android:layout_marginBottom="10dp"
+        app:bootstrapBrand="regular"
+        app:bootstrapHeading="h5"
+        app:roundedCorners="true" />
+
+    <!--TextView
             android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/tv_est_prevu"/>
+            android:layout_height="wrap_content" android:id="@+id/tv_est_prevu"/-->
+
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/imageView"
             app:srcCompat="@android:drawable/ic_menu_my_calendar"/>
-    <Button
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/btnModifierStatut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        app:bootstrapSize="xl"
+        android:textStyle="bold"
+        app:bootstrapBrand="warning"
+        android:text="Changer le satut"
+        tools:ignore="VectorDrawableCompat" />
+
+    <!--Button
+            android:id="@+id/btnModifierStatut"
             android:text="modifierStatut"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/btnModifierStatut"/>
+            android:layout_height="wrap_content"
+           /-->
 </LinearLayout>
