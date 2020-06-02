@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
+
+import com.beardedhen.androidbootstrap.BootstrapButton;
+
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.domaine.entité.Seance;
 import dti.g25.projet_s.présentation.IContratVoirUneSeance;
@@ -22,7 +25,7 @@ public class VueVoirUneSeance extends Fragment implements IContratVoirUneSeance.
    private TextView _tvCours;
    private TextView _tvLibelle;
    private TextView _tvEstPrevue;
-   private Button _btnModifierStatut ;
+   private BootstrapButton _btnModifierStatut ;
    private AlertDialog.Builder builder;
 
 

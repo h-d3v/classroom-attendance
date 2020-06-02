@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
+
 import dti.g25.projet_s.R;
 import dti.g25.projet_s.présentation.IContratVuePrésenteurVoirUnEleve;
 
@@ -21,7 +23,7 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
     private IContratVuePrésenteurVoirUnEleve.IPrésenteurVoirUnEleve présenteur;
     private TextView tvNomEleve, tvDetailsEleve;
     private ImageView imgEleve;
-    private Button btnConfirmer, btnAbsence;
+    private BootstrapButton btnConfirmer, btnAbsence;
     private int nbHeures=0;
     private int position;
 
