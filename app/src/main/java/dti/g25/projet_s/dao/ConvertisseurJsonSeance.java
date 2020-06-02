@@ -16,6 +16,13 @@ import dti.g25.projet_s.domaine.interacteurs.GestionSeance;
 
 public class ConvertisseurJsonSeance {
 
+    /**
+     * Décode une ligne json d'une liste de séeance et la retourne
+     * @param résultat
+     * @param coursGroupe
+     * @return
+     * @throws JSONException
+     */
     public List<Seance> décoderJsonSéeances(JSONObject résultat, CoursGroupe coursGroupe) throws JSONException {
         List<Seance> seances = new ArrayList<>();
 
@@ -26,8 +33,8 @@ public class ConvertisseurJsonSeance {
 
         for(int i = 0; i < listeSeance.length(); i++) {
             JSONObject objectAcuel = (JSONObject) résultatZoomé.get(listeSeance.getString(i));
-            float heureDébut = obtenirHeureEnDouble(objectAcuel.getString("début"));
-            float heureFin = obtenirHeureEnDouble(objectAcuel.getString("fin"));
+            float heureDébut = obtenirHeureEnFloat(objectAcuel.getString("début"));
+            float heureFin = obtenirHeureEnFloat(objectAcuel.getString("fin"));
             int id = objectAcuel.getInt("id");
             Horaire horaire = new GestionHoraire().créerHoraire(heureDébut, heureFin, objectAcuel.getString("date"));
             Seance unSeance = new GestionSeance().creerSeance(coursGroupe, horaire, id);
@@ -37,15 +44,21 @@ public class ConvertisseurJsonSeance {
         return seances;
     }
 
+    /**.
+     * Retourn une seance avec en elle les présence des élèves
+     * @param seance
+     * @param résultat
+     * @return
+     * @throws JSONException
+     */
     public Seance présenceSeance(Seance seance, JSONObject résultat) throws JSONException {
         JSONArray listeUtilisateur = résultat.names();
         if(listeUtilisateur != null) {
             for (int i = 0; i < listeUtilisateur.length(); i++) {
                 JSONObject objectAcuel = (JSONObject) résultat.get(listeUtilisateur.getString(i));
-
                 for (Absence absence : seance.getListeAbsence()) {
                     if (objectAcuel.getString("nom").equals(absence.getUtilisateur().getUsername())) {
-                        absence.setPrésence(false);
+                        absence.setPrésence(true);
                     }
                 }
 
@@ -56,7 +69,12 @@ public class ConvertisseurJsonSeance {
     }
 
 
-    private float obtenirHeureEnDouble(String heureString) {
+    /**
+     * tranforme l'heure en String vers un float
+     * @param heureString
+     * @return
+     */
+    private float obtenirHeureEnFloat(String heureString) {
         float temp;
         String[] partie = heureString.split(":");
 

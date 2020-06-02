@@ -1,13 +1,6 @@
 package dti.g25.projet_s.domaine.interacteurs;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
-
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 
 import dti.g25.projet_s.domaine.entité.Absence;
 import dti.g25.projet_s.domaine.entité.CoursGroupe;

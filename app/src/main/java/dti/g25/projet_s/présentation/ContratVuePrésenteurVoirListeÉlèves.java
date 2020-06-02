@@ -19,8 +19,6 @@ public interface ContratVuePrésenteurVoirListeÉlèves {
 
         void commencerListeÉlèvesPrésence(int positionSeance, int positionCoursGroupe, String cléUtilisateur) throws Exception;
 
-        void onActivityResult(int requestCode, int resultCode, Intent data) throws Exception;
-
         Boolean getpeutPrendrePrésence();
 
         void rafraîchir();

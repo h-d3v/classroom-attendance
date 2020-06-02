@@ -5,16 +5,7 @@ import com.android.volley.Response;
 import org.json.JSONObject;
 
 import dti.g25.projet_s.domaine.entité.CoursGroupe;
-
-import dti.g25.projet_s.domaine.entité.Horaire;
-
-import dti.g25.projet_s.domaine.entité.Seance;
-
 import dti.g25.projet_s.domaine.entité.Utilisateur;
-
-
-
-import java.util.List;
 
 public  abstract class DAOFactoryV1 {
 

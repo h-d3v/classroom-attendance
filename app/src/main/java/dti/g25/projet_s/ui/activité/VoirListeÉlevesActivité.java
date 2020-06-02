@@ -2,6 +2,7 @@ package dti.g25.projet_s.ui.activité;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -56,17 +57,7 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        try {
-            présenteur.onActivityResult(requestCode, resultCode, data);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void importerDonné(final int idGroupe, final int idSeance) {
+    private void importerDonné(final int idGroupe, final int idSéance) {
         final DAOFactoryRESTAPI daoFactoryRESTAPI = new DAOFactoryRESTAPI(this);
         daoFactoryRESTAPI.setCle(modèle.getCléConnexion());
 
@@ -87,24 +78,33 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        if(idSeance > -1) {
+                        if(idSéance > -1) {
                             final Response.Listener<JSONObject> réponse = new Response.Listener<JSONObject>() {
 
                                 @Override
                                 public void onResponse(JSONObject résultat) {
                                     try {
-                                        modèle.setJsonPrésenceSeance(résultat, idSeance);
+                                        Log.d("passe", "passe ici");
+                                        modèle.setJsonPrésenceSeance(résultat, idSéance);
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
-                                    présenteur.rafraîchir();
+                                    try {
+                                        présenteur.rafraîchir();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
                                 }
                             };
-                            daoFactoryRESTAPI.obtenirPrésence(réponse, idSeance);
+                            daoFactoryRESTAPI.obtenirPrésence(réponse, idSéance);
 
                         } else {
-                            présenteur.rafraîchir();
+                            try {
+                                présenteur.rafraîchir();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 };
@@ -119,6 +119,5 @@ public class VoirListeÉlevesActivité extends AppCompatActivity {
         };
 
         daoFactoryRESTAPI.chargerUnCourGroupeParId(réponse, idGroupe);
-
     }
 }

@@ -1,6 +1,5 @@
 package dti.g25.projet_s.présentation.modèle;
 
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -78,6 +77,9 @@ public class Modèle{
      */
     public List<Utilisateur> getListeEtudiantsParCoursGroupe() {
         List<Utilisateur> listeEtudiants = new ArrayList<>();
+        if(coursGroupeActuelle == null) {
+            return null;
+        }
         List<Utilisateur> listeParticipant = coursGroupeActuelle.getParticipants();
         for (Utilisateur unUtilisateur : listeParticipant) {
             if (unUtilisateur.getRôle() == Role.ÉLÈVE)
@@ -160,8 +162,6 @@ public class Modèle{
         return uneSeance;
     }
 
-
-
     //setter
 
     /**
@@ -173,7 +173,7 @@ public class Modèle{
     }
 
     public void setSeanceParId(Seance seance) {
-        for (int i = 0; listeSeanceCourGroupe.size() >  0; i++) {
+        for (int i = 0; listeSeanceCourGroupe.size() >  i; i++) {
             if (seance.getId() == listeSeanceCourGroupe.get(i).getId()) {
                 listeSeanceCourGroupe.set(i, seance);
             }
@@ -216,7 +216,6 @@ public class Modèle{
      */
     public void setJsonGroupeActuelle(JSONObject réponse) throws Exception {
         coursGroupeActuelle = new ConvertisseurJsonGroupe().décoderJsonGroupe(réponse);
-        Log.d("id : ", String.valueOf(coursGroupeActuelle.getId()));
     }
 
     /**

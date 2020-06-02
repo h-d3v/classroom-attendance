@@ -2,7 +2,6 @@ package dti.g25.projet_s.présentation.présenteur;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 
 import dti.g25.projet_s.domaine.entité.Utilisateur;
 import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
@@ -34,8 +33,8 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
 
     @Override
     public int getNombresItems() {
-        if(modèle.getListeUtilisateurs() == null) return 0;
-        return modèle.getListeUtilisateurs().size();
+        if(modèle.getListeEtudiantsParCoursGroupe() == null) return 0;
+        return modèle.getListeEtudiantsParCoursGroupe().size();
 
     }
 
@@ -46,7 +45,7 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
 
     @Override
     public String getPrésenceUtilisateurParPos(int position) {
-        if(modèle.getSeanceParCourGroupe(positionSeance).getListeAbsence().get(position).getPrésence())
+        if(modèle.getSeanceParId(positionSeance).getListeAbsence().get(position).getPrésence())
             return "présent";
         return "absent";
     }
@@ -71,16 +70,7 @@ public class PrésenteurVoirListeÉlèves implements ContratVuePrésenteurVoirLi
         }
     }
 
-    @Override
-    public  void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RESQUEST_CODE_VOIR_ELEVES && resultCode == Activity.RESULT_OK) {
-           boolean présence =  data.getBooleanExtra(EXTRA_POSITION_PRÉSENCE, true);
-           int positionÉlèves = data.getIntExtra(EXTRA_POSITION_ÉLÈVES, -1);
 
-           vue.rafraichir();
-        }
-
-    }
 
     @Override
     public Boolean getpeutPrendrePrésence() {
