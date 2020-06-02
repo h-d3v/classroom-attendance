@@ -5,7 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <com.beardedhen.androidbootstrap.BootstrapLabel
+        android:id="@+id/tvNomEleve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="18dp"
+        android:text="Harold Sockphoto"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:bootstrapBrand="primary"
+        app:bootstrapHeading="h2"
+        app:layout_constraintBottom_toTopOf="@+id/imgEleve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:roundedCorners="true" />
+
+    <!--TextView
         android:id="@+id/tvNomEleve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,53 +32,93 @@
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" /-->
 
     <ImageView
         android:id="@+id/imgEleve"
-        android:layout_width="237dp"
-        android:layout_height="242dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="265dp"
+        android:layout_height="208dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDetailsEleve"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNomEleve"
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
 
-    <Button
+
+    <!--Button
         android:id="@+id/btnConfirmer"
         android:layout_width="143dp"
         android:layout_height="72dp"
-        android:layout_marginTop="29dp"
         android:backgroundTint="#64DD17"
-        android:text="Présent"
+        android:text="@string/present"
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnAbsence"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetailsEleve" />
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="558dp" /-->
 
-    <Button
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/btnConfirmer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="42dp"
+        android:text="@string/present"
+        app:bootstrapBrand="success"
+        app:bootstrapSize="xl"
+        app:buttonMode="regular"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnAbsence"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAbsence"
+        app:roundedCorners="true" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/btnAbsence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/absent"
+        app:bootstrapBrand="danger"
+        app:bootstrapSize="xl"
+        app:buttonMode="regular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnConfirmer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailsEleve"
+        app:roundedCorners="true" />
+    <!--Button
         android:id="@+id/btnAbsence"
         android:layout_width="142dp"
         android:layout_height="73dp"
-        android:layout_marginTop="29dp"
         android:backgroundTint="#DF1919"
         android:text="Absent"
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnConfirmer"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetailsEleve" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="558dp" /-->
 
-    <TextView
+    <com.beardedhen.androidbootstrap.BootstrapLabel
+        android:id="@+id/tvDetailsEleve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="53dp"
+        android:text="Details sur l'élève et séance, exemple heures d'absence, numero du cours, date seance"
+        app:bootstrapBrand="primary"
+        app:bootstrapHeading="h3"
+        app:layout_constraintBottom_toTopOf="@+id/btnAbsence"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgEleve"
+        app:roundedCorners="false" />
+
+    <!--TextView
         android:id="@+id/tvDetailsEleve"
         android:layout_width="237dp"
         android:layout_height="150dp"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="44dp"
         android:text="Details sur l'élève et séance"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgEleve" />
+        app:layout_constraintTop_toBottomOf="@+id/imgEleve" /-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@ public class VueVoirUnEleve extends Fragment implements IContratVuePrésenteurVo
     private IContratVuePrésenteurVoirUnEleve.IPrésenteurVoirUnEleve présenteur;
     private TextView tvNomEleve, tvDetailsEleve;
     private ImageView imgEleve;
-    private Button btnConfirmer, btnAbsence;
+    private BootstrapButton btnConfirmer, btnAbsence;
     private int nbHeures=0;
     private int position;
 
