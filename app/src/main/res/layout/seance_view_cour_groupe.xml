@@ -1,148 +1,144 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:baselineAligned="false">
+    android:layout_marginTop="15dp"
+    android:animateLayoutChanges="?android:attr/windowOverscan"
+    android:background="#60000000"
+    android:baselineAligned="false"
+    android:foregroundTint="#243CD8"
+    android:orientation="horizontal">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="96dp"
+        android:layout_width="249dp"
         android:layout_height="match_parent"
         android:layout_weight="5">
 
-        <TextView
-            android:id="@+id/tvSigleCoursGroupeSeance"
-            android:layout_width="108dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="58dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="420-987-YUL"
-            app:layout_constraintBottom_toTopOf="@+id/jourSeance"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.084"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
+        <com.beardedhen.androidbootstrap.BootstrapLabel
             android:id="@+id/tvEtatSeance"
-            android:layout_width="204dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:gravity="center"
             android:text="PRÉVUE"
+            android:textColor="#000000"
+            app:bootstrapBrand="success"
+            app:bootstrapHeading="h4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvHeureDebutSe" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeureSe"
+            app:roundedCorners="true" />
 
-        <TextView
+        <com.beardedhen.androidbootstrap.BootstrapLabel
             android:id="@+id/jourSeance"
-            android:layout_width="102dp"
-            android:layout_height="29dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="68dp"
-
-            android:autoText="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:gravity="center"
-            android:text="VENDREDI"
+            android:text="0-12-2099"
             android:textAlignment="center"
+            app:bootstrapBrand="warning"
+            app:bootstrapHeading="h4"
+            app:layout_constraintBottom_toTopOf="@+id/tvHeureSe"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSigleCoursGroupeSeance" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundedCorners="true" />
 
-        <TextView
-            android:id="@+id/tvHeureDebutSe"
-            android:layout_width="51dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="38dp"
-            android:autoText="true"
-            android:text="15H00"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
+        <com.beardedhen.androidbootstrap.BootstrapLabel
+            android:id="@+id/tvHeureSe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="De 15:00 À 16:00"
+            app:bootstrapBrand="regular"
+            app:bootstrapHeading="h5"
+            app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/jourSeance"
+            app:roundedCorners="true"
             tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/tvHeureFinSe"
-            android:layout_width="51dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="26dp"
-            android:autoText="true"
-            android:text="02H00"
-            app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvHeureDebutSe"
-            app:layout_constraintTop_toBottomOf="@+id/jourSeance"
-            app:layout_constraintVertical_bias="0.09" />
-
-        <TextView
-            android:layout_width="41dp"
-            android:layout_height="26dp"
-            android:layout_marginBottom="16dp"
-            android:autoText="true"
-            android:text="De:"
-            app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
-            app:layout_constraintEnd_toStartOf="@+id/tvHeureDebutSe" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="36dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="39dp"
-            android:layout_marginBottom="22dp"
-            android:autoText="true"
-            android:text="à"
-            app:layout_constraintBottom_toTopOf="@+id/tvEtatSeance"
-            app:layout_constraintEnd_toStartOf="@+id/tvHeureFinSe"
-            app:layout_constraintTop_toBottomOf="@+id/jourSeance"
-            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:layout_width="34dp"
-        android:layout_height="226dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_weight="5"
         android:clipToPadding="true"
         android:orientation="vertical"
-        android:paddingTop="15dp">
+        android:paddingTop="0dp">
 
-        <Button
-            android:id="@+id/btnModifierPrésence"
-            android:layout_width="match_parent"
+        <com.beardedhen.androidbootstrap.BootstrapButtonGroup
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#49544A"
-            android:paddingTop="10dp"
-            android:text="@string/modifierPrésence"
-            tools:ignore="VectorDrawableCompat" />
+            android:orientation="vertical"
+            android:text="BootstrapButtonGroup"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="lg"
+            app:roundedCorners="true">
 
-        <Button
-            android:id="@+id/btnVoirDétails"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#49544A"
-            android:paddingTop="10dp"
-            android:text="@string/voirDétails"
-            tools:ignore="VectorDrawableCompat" />
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/btnModifierPrésence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:text="@string/modifierPrésence"
+                app:bootstrapBrand="success"
+                app:bootstrapSize="lg"
+                app:roundedCorners="true"
+                tools:ignore="VectorDrawableCompat" />
 
-        <Button
-            android:id="@+id/btnPrendrePrésence"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#49544A"
-            android:paddingTop="10dp"
-            android:text="@string/prendrePrésence"
-            tools:ignore="VectorDrawableCompat" />
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/btnVoirDétails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#49544A"
+                android:paddingTop="10dp"
+                android:text="@string/voirDétails"
+                tools:ignore="VectorDrawableCompat" />
 
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/btnPrendrePrésence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#49544A"
+                android:paddingTop="10dp"
+                android:text="@string/prendrePrésence"
+                app:bootstrapBrand="info"
+                app:bootstrapSize="lg"
+                app:roundedCorners="true"
+                tools:ignore="VectorDrawableCompat" />
+
+
+            <!--Button
+                android:id="@+id/btnVoirDétails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#49544A"
+                android:paddingTop="10dp"
+                android:text="@string/voirDétails"
+                tools:ignore="VectorDrawableCompat" /-->
+
+            <!--Button
+                android:id="@+id/btnPrendrePrésence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#49544A"
+                android:paddingTop="10dp"
+                android:text="@string/prendrePrésence"
+                tools:ignore="VectorDrawableCompat" /-->
+
+        </com.beardedhen.androidbootstrap.BootstrapButtonGroup>
     </LinearLayout>
 
 </LinearLayout>

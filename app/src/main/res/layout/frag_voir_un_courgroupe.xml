@@ -25,42 +25,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp">
+        android:layout_height="251dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvNbEleves"
+        app:layout_constraintEnd_toStartOf="@+id/tvNomCour"
+        app:layout_constraintStart_toStartOf="@+id/tvNomCour"
+        app:layout_constraintTop_toTopOf="@+id/tvNbEleves">
 
-        <com.beardedhen.androidbootstrap.BootstrapLabel
-            android:id="@+id/textView4"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="53dp"
-            android:layout_marginEnd="66dp"
-            android:layout_marginBottom="32dp"
-            android:text="@string/nomCour"
-            app:layout_constraintBottom_toTopOf="@+id/textView5"
-            app:layout_constraintEnd_toStartOf="@+id/tvNomCour"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:bootstrapBrand="secondary"
-            app:bootstrapHeading="h6"
-            app:roundedCorners="true"
-            />
-
-        <com.beardedhen.androidbootstrap.BootstrapLabel
-            android:id="@+id/textView5"
-            android:text="@string/nbÉlèvesInscrit"
-            app:layout_constraintBottom_toTopOf="@+id/btnVoirListeEleves"
-            app:layout_constraintEnd_toStartOf="@+id/tvNbEleves"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="68dp"
-            android:layout_marginBottom="37dp"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:bootstrapBrand="secondary"
-            app:bootstrapHeading="h6"
-            app:roundedCorners="true"
-            />
         <!--TextView
             android:id="@+id/textView5"
             android:layout_width="0dp"
@@ -73,23 +43,6 @@
             app:layout_constraintEnd_toStartOf="@+id/tvNbEleves"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" /-->
-
-        <com.beardedhen.androidbootstrap.BootstrapLabel
-            android:id="@+id/tvNomCour"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="54dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginBottom="33dp"
-            android:text="un nom de cours"
-            app:layout_constraintBottom_toTopOf="@+id/tvNbEleves"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toTopOf="parent"
-            app:bootstrapBrand="secondary"
-            app:bootstrapHeading="h6"
-            app:roundedCorners="true"
-            />
 
         <!--TextView
             android:id="@+id/tvNomCour"
@@ -104,21 +57,6 @@
             app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toTopOf="parent" /-->
 
-        <com.beardedhen.androidbootstrap.BootstrapLabel
-            android:id="@+id/tvNbEleves"
-            android:text="@string/nbÉlèvesInscrit"
-            app:layout_constraintBottom_toTopOf="@+id/btnVoirListeEleves"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/tvNomCour"
-            android:layout_marginEnd="35dp"
-            android:layout_marginBottom="45dp"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:bootstrapBrand="secondary"
-            app:bootstrapHeading="h6"
-            app:roundedCorners="true"
-            />
         <!--TextView
             android:id="@+id/tvNbEleves"
             android:layout_width="0dp"
@@ -131,22 +69,52 @@
             app:layout_constraintStart_toEndOf="@+id/textView5"
             app:layout_constraintTop_toBottomOf="@+id/tvNomCour" /-->
 
+        <com.beardedhen.androidbootstrap.BootstrapLabel
+            android:id="@+id/tvNomCour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="31dp"
+            android:height="50dp"
+            android:text="un nom de cours intro aux app natives 2000"
+            app:bootstrapBrand="secondary"
+            app:bootstrapHeading="h5"
+            app:layout_constraintBottom_toTopOf="@+id/tvNbEleves"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundedCorners="true" />
+
+        <com.beardedhen.androidbootstrap.BootstrapLabel
+            android:id="@+id/tvNbEleves"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="25dp"
+            android:text="@string/nbÉlèvesInscrit"
+            app:bootstrapBrand="secondary"
+            app:bootstrapHeading="h5"
+            app:layout_constraintBottom_toTopOf="@+id/btnVoirListeEleves"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNomCour"
+            app:roundedCorners="true" />
+
         <com.beardedhen.androidbootstrap.BootstrapButton
             android:id="@+id/btnVoirListeEleves"
             android:layout_width="183dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="19dp"
             android:text="Consulter les élèves"
+            android:textColor="@color/textDark"
+            app:bootstrapBrand="info"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNbEleves"
-            app:bootstrapBrand="info"
-            app:bootstrapSize="lg"
-            app:buttonMode="regular"
-            app:showOutline="false"
             app:roundedCorners="true"
-            />
+            app:showOutline="false" />
 
         <!--Button
             android:id="@+id/btnVoirListeEleves"
