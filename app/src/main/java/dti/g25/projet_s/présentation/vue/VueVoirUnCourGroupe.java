@@ -1,5 +1,6 @@
 package dti.g25.projet_s.présentation.vue;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -55,6 +56,8 @@ public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCour
         rvListeSeance.setAdapter(seanceAdapter);
         rvListeSeance.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        btnVoirListeEleves.setTextColor(btnVoirListeEleves.getResources().getColor(R.color.textDark,null));
+
         btnVoirListeEleves.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View bouton){
@@ -73,8 +76,9 @@ public class VueVoirUnCourGroupe extends Fragment implements ContratVpVoirUnCour
         tvSigleDuCours.setText(sigle);
     }
 
+    @SuppressLint("SetTextI18n")
     public void afficherNombreÉlèvesInscrit(int unNombre) {
-        tvNbElevesInscrits.setText(String.valueOf(unNombre));
+        tvNbElevesInscrits.setText(unNombre +" étudiants inscrits");
     }
 
     @Override

@@ -1,4 +1,5 @@
 package dti.g25.projet_s.présentation.vue.adapter;
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -8,9 +9,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.beardedhen.androidbootstrap.BootstrapButton;
+
 import dti.g25.projet_s.présentation.IContatVuePresenteurVoirCoursGroupe;
 
 public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    BootstrapButton b;
 
     private IContatVuePresenteurVoirCoursGroupe.IPresenteurVoirCoursGroupe presenteurVoirCoursGroupe;
 
@@ -29,6 +35,7 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         };
     }
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         holder.itemView.findViewById(R.id.btnVoirCoursGroupe).setOnClickListener(new View.OnClickListener(){
@@ -38,7 +45,9 @@ public class CoursGroupeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             }
         });
         System.out.println("Ou rien");
-        ((TextView)holder.itemView.findViewById(R.id.tv_textCoursGroupe)).setText(presenteurVoirCoursGroupe.getTitreCoursGroupe(position));
+        b=holder.itemView.findViewById(R.id.btnVoirCoursGroupe);
+        b.setText(presenteurVoirCoursGroupe.getTitreCoursGroupe(position));
+        b.setTextColor(b.getResources().getColor(R.color.textDark, null));
     }
 
     /**
