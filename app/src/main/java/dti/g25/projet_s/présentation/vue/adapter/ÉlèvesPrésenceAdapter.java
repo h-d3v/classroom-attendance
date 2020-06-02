@@ -45,7 +45,7 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
             e.printStackTrace();
         }
         btnVoirProfil=holder.itemView.findViewById(R.id.btnVoirProfil);
-        btnVoirProfil.setText("Modifier présence");
+        btnVoirProfil.setText("Consulter");
         if(présenteur.getpeutPrendrePrésence()) {
            btnVoirProfil.setOnClickListener(new View.OnClickListener() {
                 @Override
