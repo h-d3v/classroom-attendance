@@ -9,28 +9,38 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        >
 
-        <activity android:name=".ui.activité.ConnexionActivité">
+        <activity android:name=".ui.activité.ConnexionActivité"
+            android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
-        <activity android:name=".ui.activité.VoirListeSeancesActivity"/>
-        <activity android:name=".ui.activité.MainActivity">
+        <activity android:name=".ui.activité.VoirListeSeancesActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
+        <activity android:name=".ui.activité.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
-        <activity android:name=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
-        <activity  android:name=".ui.activité.VoirCoursGroupeActivity">
+        <activity android:name=".ui.activité.BtnTestVoirUnCoursGroupeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
+        <activity  android:name=".ui.activité.VoirCoursGroupeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activité.PrendrePrésenceActivité">
+        <activity android:name=".ui.activité.PrendrePrésenceActivité"
+            android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
-        <activity android:name=".ui.activité.VoirUnEleve">
+        <activity android:name=".ui.activité.VoirUnEleve"
+            android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
-        <activity android:name=".ui.activité.VoirSeanceActivity">
+        <activity android:name=".ui.activité.VoirSeanceActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
         <activity android:name=".ui.activité.VoirUnCourGroupeActivity"
-            android:parentActivityName=".ui.activité.BtnTestVoirUnCoursGroupeActivity"/>
+            android:parentActivityName=".ui.activité.BtnTestVoirUnCoursGroupeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
         <activity android:name=".ui.activité.VoirListeÉlevesActivité"/>
 
         <meta-data
