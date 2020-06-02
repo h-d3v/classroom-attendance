@@ -46,7 +46,7 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
     @Override
     public Seance getSeance(){
         if(_positionGroupe == -1)
-            return _modele.getSeanceParPos(_positionSeance);
+            return null;
         return _modele.getSeanceParCourGroupe(_positionSeance);
     }
 
@@ -68,9 +68,17 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
         _vue.autoriserProf(_modele.getRoleUtilsaiteurConnecté().equals(Role.PROFESSEUR));
     }
 
+    @Override
+    public void rafraîchir() {
+        _vue.afficherEstPrévue("Statut: "+ getSeance().get_etat().toString());
+        _vue.afficherHoraire("Debut:"+getSeance().get_horaires().getHeureDebutString()+" Fin:"+ getSeance().get_horaires().getHeureFinString()+" \n Date:"+getSeance().get_horaires().getDate());
+        _vue.afficherLibelle(getSeance().get_coursGroupe().toString());
+        _vue.autoriserProf(_modele.getRoleUtilsaiteurConnecté().equals(Role.PROFESSEUR));
+    }
+
 
     @Override
-    public void requeteModifierSatatutSeance() throws Exception {
+    public void requeteModifierSatatutSeance() {
         /**
          *         Intent intent= new Intent(_activite, popUp.class);
          *         _activite.startActivityForResult(intent, REQUEST_CODE_MODIFIER_ETAT);
@@ -89,5 +97,7 @@ public class PresenteurVoirUneSeance implements IContratVoirUneSeance.IPresenteu
             _modele.getSeanceParPos(_positionSeance).set_etat(EtatSeance.valueOf(data.getStringExtra(EXTRA_ETAT_SEANCE)));
         }
     }
+
+
 
 }

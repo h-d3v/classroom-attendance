@@ -24,6 +24,8 @@ public interface IContratVoirUneSeance {
         Activity get_activite();
 
         void commencerVoirSéance(int positionProjet, int positionSéance, String cléUtilisateur) throws Exception;
+
+        void rafraîchir();
     }
 
 }
