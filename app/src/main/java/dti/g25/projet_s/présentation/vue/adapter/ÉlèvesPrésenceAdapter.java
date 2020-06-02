@@ -19,6 +19,7 @@ import dti.g25.projet_s.présentation.ContratVuePrésenteurVoirListeÉlèves;
 
 public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private BootstrapButton btnVoirProfil;
     private ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves présenteur;
 
     public ÉlèvesPrésenceAdapter(ContratVuePrésenteurVoirListeÉlèves.IPrésenteurVoirListeÉlèves présenteur){
@@ -29,7 +30,7 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                       int viewType) {
-        ConstraintLayout racine = (ConstraintLayout) LayoutInflater.from(parent.getContext())
+        LinearLayout racine = (LinearLayout) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.eleves_view, parent, false);
 
         return new RecyclerView.ViewHolder(racine) {
@@ -39,12 +40,14 @@ public class ÉlèvesPrésenceAdapter extends RecyclerView.Adapter<RecyclerView.
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         ((TextView)holder.itemView.findViewById(R.id.txtNomÉlèves)).setText(présenteur.getUtilisateurParPosition(position).getUsername());
         try {
-            //((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
+            ((TextView)holder.itemView.findViewById(R.id.txtPrésence)).setText(présenteur.getPrésenceUtilisateurParPos(position));
         } catch (Exception e) {
             e.printStackTrace();
         }
+        btnVoirProfil=holder.itemView.findViewById(R.id.btnVoirProfil);
+        btnVoirProfil.setText("Modifier présence");
         if(présenteur.getpeutPrendrePrésence()) {
-            holder.itemView.findViewById(R.id.btnAbsence).setOnClickListener(new View.OnClickListener() {
+           btnVoirProfil.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View bouton) {
                     présenteur.requeteVoirÉlèves(position);
